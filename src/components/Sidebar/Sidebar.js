@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
-import {Badge, Nav, NavItem, NavLink as RsNavLink} from 'reactstrap';
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Badge, Nav, NavItem, NavLink as RsNavLink } from 'reactstrap';
 import classNames from 'classnames';
 import nav from './_nav';
-import SidebarFooter from './../SidebarFooter';
-import SidebarForm from './../SidebarForm';
-import SidebarHeader from './../SidebarHeader';
-import SidebarMinimizer from './../SidebarMinimizer';
+import SidebarFooter from './../SidebarFooter/SidebarFooter';
+import SidebarForm from './../SidebarForm/SidebarForm';
+import SidebarHeader from './../SidebarHeader/SidebarHeader';
+import SidebarMinimizer from './../SidebarMinimizer/SidebarMinimizer';
 
 class Sidebar extends Component {
 

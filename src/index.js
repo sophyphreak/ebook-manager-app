@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 // Styles
 // Import Flag Icons Set
@@ -15,7 +15,7 @@ import '../scss/style.scss'
 import '../scss/core/_dropdown-menu-right.scss'
 
 // Containers
-import Full from './containers/Full/'
+import Full from './containers/Full/Full'
 
 ReactDOM.render((
   <HashRouter>
