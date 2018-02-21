@@ -13,6 +13,8 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import '../scss/style.scss'
 // Temp fix for reactstrap
 import '../scss/core/_dropdown-menu-right.scss'
+// Import ReactQuill styles
+import 'react-quill/dist/quill.snow.css';
 
 // Containers
 import Full from './containers/Full/Full'

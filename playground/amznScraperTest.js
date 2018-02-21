@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require('request'); // request is only back end-compatible
 const cheerio = require('cheerio');
 
 const asin = 'B0018E5GMY'
