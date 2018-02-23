@@ -14,7 +14,7 @@ class PromoSubmitter extends Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('A mesage was submitted to nowhere: ' + this.state.value);
     event.preventDefault();
   }
 
