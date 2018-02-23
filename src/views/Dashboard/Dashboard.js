@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import DiffChecker from '../../components/DiffChecker/DiffChecker';
+import PromoSubmitter from '../../components/PromoSubmitter/PromoSubmitter';
 
 class Dashboard extends Component {
 
   render() {
     return (
       <div className="animated fadeIn">
-        <DiffChecker />
+        <p>Hello World!</p>
+        <PromoSubmitter />
       </div>
     )
   }

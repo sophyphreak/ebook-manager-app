@@ -6,7 +6,8 @@ class DiffChecker extends React.Component {
   render() {
     return (
       <div>
-        <p>Hello from DiffChecker!</p>
+        <textarea />
+        <textarea />
       </div>
     );
   }
