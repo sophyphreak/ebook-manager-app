@@ -22,6 +22,7 @@ ShallowWrapper {
           Promotion Submitter
         </h4>,
         <form
+          className="form-layout"
           onSubmit={[Function]}
         >
           <ASIN
@@ -199,6 +200,7 @@ ShallowWrapper {
               value="Submit"
             />,
           ],
+          "className": "form-layout",
           "onSubmit": [Function],
         },
         "ref": null,
@@ -448,6 +450,7 @@ ShallowWrapper {
             Promotion Submitter
           </h4>,
           <form
+            className="form-layout"
             onSubmit={[Function]}
           >
             <ASIN
@@ -625,6 +628,7 @@ ShallowWrapper {
                 value="Submit"
               />,
             ],
+            "className": "form-layout",
             "onSubmit": [Function],
           },
           "ref": null,
