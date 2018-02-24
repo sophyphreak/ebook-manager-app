@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const Description = (props) => (
   <label>
     Description:*
-    <input type="text" value={props.value} onChange={props.onChange} />
+    <textarea type="text" value={props.value} onChange={props.onChange} />
   </label>
 );
 
