@@ -41,7 +41,7 @@ export default class PromoSubmitter extends Component {
     return (
       <div>
         <h4>Promotion Submitter</h4>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form-layout" onSubmit={this.handleSubmit}>
           <ASIN value={this.state.value} onChange={this.handleChange} />
           <FirstName value={this.state.value} onChange={this.handleChange} />
           <LastName value={this.state.value} onChange={this.handleChange} />
