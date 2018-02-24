@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
 
-class PromoSubmitter extends Component {
+import AmazonURL from '../FormElements/AmazonURL';
+import ASIN from '../FormElements/ASIN';
+import AuthorBio from '../FormElements/AuthorBio';
+import Cover from '../FormElements/Cover';
+import CurrentPrice from '../FormElements/CurrentPrice';
+import Description from '../FormElements/Description';
+import Email from '../FormElements/Email';
+import EndDate from '../FormElements/EndDate';
+import FirstName from '../FormElements/FirstName';
+import Genre from '../FormElements/Genre';
+import LastName from '../FormElements/LastName';
+import NumReviews from '../FormElements/NumReviews';
+import PressRelease from '../FormElements/PressRelease';
+import RegPrice from '../FormElements/RegPrice';
+import ReviewAvg from '../FormElements/ReviewAvg';
+import StartDate from '../FormElements/StartDate';
+import Title from '../FormElements/Title';
+import Website from '../FormElements/Website';
+
+export default class PromoSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
@@ -23,83 +42,27 @@ class PromoSubmitter extends Component {
       <div>
         <h4>Promotion Submitter</h4>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            ASIN:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Author First Name:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Author Last Name:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Email:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Author Biography:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Start Date:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            End Date:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Title:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Amazon URL:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Description:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Cover: <em>*Can't do this yet*</em>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            # reviews: *
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Review Avg:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Regular Price ($):*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Current Price ($):*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Genre:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Website:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <label>
-            Press Release:*
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
+          <ASIN value={this.state.value} onChange={this.handleChange} />
+          <FirstName value={this.state.value} onChange={this.handleChange} />
+          <LastName value={this.state.value} onChange={this.handleChange} />
+          <Email value={this.state.value} onChange={this.handleChange} />
+          <AuthorBio value={this.state.value} onChange={this.handleChange} />
+          <StartDate value={this.state.value} onChange={this.handleChange} />
+          <EndDate value={this.state.value} onChange={this.handleChange} />
+          <Title value={this.state.value} onChange={this.handleChange} />
+          <AmazonURL value={this.state.value} onChange={this.handleChange} />
+          <Description value={this.state.value} onChange={this.handleChange} />
+          <Cover value={this.state.value} onChange={this.handleChange} />
+          <NumReviews value={this.state.value} onChange={this.handleChange} />
+          <ReviewAvg value={this.state.value} onChange={this.handleChange} />
+          <RegPrice value={this.state.value} onChange={this.handleChange} />
+          <CurrentPrice value={this.state.value} onChange={this.handleChange} />
+          <Genre value={this.state.value} onChange={this.handleChange} />
+          <Website value={this.state.value} onChange={this.handleChange} />
+          <PressRelease value={this.state.value} onChange={this.handleChange} />
           <input type="submit" value="Submit" />
         </form>
       </div>
     );
   }
 };
-
-export default PromoSubmitter;
