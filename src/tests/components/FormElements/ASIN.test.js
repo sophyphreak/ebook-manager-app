@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Aside from '../../components/Aside/Aside';
+import ASIN from '../../../components/FormElements/ASIN';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<Aside />);
+  wrapper = shallow(<ASIN />);
 });
 
-test('should render Aside correctly', () => {
+test('should render ASIN correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });

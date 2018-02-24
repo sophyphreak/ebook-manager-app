@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SidebarForm from '../../components/SidebarForm/SidebarForm';
+import SidebarForm from '../../../components/SidebarForm/SidebarForm';
 
 let wrapper;
 

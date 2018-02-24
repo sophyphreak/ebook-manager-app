@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SidebarFooter from '../../components/SidebarFooter/SidebarFooter';
+import SidebarFooter from '../../../components/SidebarFooter/SidebarFooter';
 
 let wrapper;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SidebarHeader from '../../components/SidebarHeader/SidebarHeader';
+import SidebarHeader from '../../../components/SidebarHeader/SidebarHeader';
 
 let wrapper;
 

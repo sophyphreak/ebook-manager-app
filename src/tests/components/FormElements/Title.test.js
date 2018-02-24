@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Title from '../../../components/FormElements/Title';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<Sidebar />);
+  wrapper = shallow(<Title />);
 });
 
-test('should render Sidebar correctly', () => {
+test('should render Title correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });
