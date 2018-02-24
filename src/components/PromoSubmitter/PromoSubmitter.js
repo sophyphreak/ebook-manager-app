@@ -131,12 +131,16 @@ export default class PromoSubmitter extends Component {
 
   onRegPriceChange(e) {
     const RegPrice = e.target.value;
-    this.setState(() => ({ RegPrice }));
+    if (!RegPrice || RegPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ RegPrice }));
+    }
   };
 
   onCurrentPriceChange(e) {
     const CurrentPrice = e.target.value;
-    this.setState(() => ({ CurrentPrice }));
+    if (!CurrentPrice || CurrentPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ CurrentPrice }));
+    }
   };
 
   onGenreChange(e) {
