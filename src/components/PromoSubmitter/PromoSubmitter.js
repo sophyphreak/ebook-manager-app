@@ -155,7 +155,7 @@ export default class PromoSubmitter extends Component {
   };
 
   handleSubmit(event) {
-    alert('See console for state. (Ctrl + Alt + i, and then click Console tab)');
+    alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
     console.log(this.state);
     event.preventDefault();
   }
