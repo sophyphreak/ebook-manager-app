@@ -209,14 +209,14 @@ export default class PromoSubmitter extends Component {
     } else if (!this.state.amazonURL.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
       // currently accepts any valid URL
       this.setState(() => ({ error: 'Please provide a valid Amazon URL.' }));
-    } else if (!this.state.reviewAvg || parseInt(this.state.reviewAvg) > 5) { 
+    } else if (this.state.reviewAvg && parseInt(this.state.reviewAvg) > 5) { 
       this.setState(() => ({ error: 'Please provide a Review Avg of 5 or less.' }));      
-    } else if (!this.state.website || !this.state.website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
+    } else if (this.state.website && !this.state.website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
       this.setState(() => ({ error: 'Please provide a valid website URL.' }));
     } else {
       this.setState(() => ({ error: '' }));      
       console.log(this.state);
-      alert('See console for printed state. (Ctrl + Shift + i, and then click Console tab)');
+      alert('SUCCESS! See console for printed state. (Ctrl + Shift + i, and then click Console tab)');
     }
   
   // turn off validation for testing
