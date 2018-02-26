@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 
 class Dashboard extends Component {
 
@@ -7,7 +6,6 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <p>Hello World!</p>
-        <PromoSubmitter />
       </div>
     )
   }

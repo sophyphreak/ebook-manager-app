@@ -8,6 +8,7 @@ import Aside from '../../components/Aside/Aside';
 import Footer from '../../components/Footer/Footer';
 
 import Dashboard from '../../views/Dashboard/Dashboard';
+import PromoSubmitter from '../../views/PromoSubmitter/PromoSubmitter';
 
 class Full extends Component {
   render() {
@@ -21,6 +22,7 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/promo-submitter" name="Promo Submitter" component={PromoSubmitter}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>
