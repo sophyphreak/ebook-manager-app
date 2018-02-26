@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
 
 import AmazonURL from '../FormElements/AmazonURL';
 import ASIN from '../FormElements/ASIN';
@@ -28,8 +30,10 @@ export default class PromoSubmitter extends Component {
       lastName:     '',
       email:        '',
       authorBio:    '',
-      startDate:    '',
-      endDate:      '',
+      startDate:    moment(),
+      startDateCalendarFocused: false,
+      endDate:      moment(),
+      endDateCalendarFocused: false,
       title:        '',
       amazonURL:    '',
       description:  '',
@@ -50,7 +54,9 @@ export default class PromoSubmitter extends Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
     this.onStartDateChange = this.onStartDateChange.bind(this);
+    this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
     this.onEndDateChange = this.onEndDateChange.bind(this);
+    this.onEndDateFocusChange = this.onEndDateFocusChange.bind(this);    
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
@@ -92,14 +98,24 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ authorBio }));
   };
 
-  onStartDateChange(e) {
-    const startDate = e.target.value;
-    this.setState(() => ({ startDate }));
+  onStartDateChange(startDate) {
+    if (startDate) {
+      this.setState(() => ({ startDate }));
+    }
   };
 
-  onEndDateChange(e) {
-    const endDate = e.target.value;
-    this.setState(() => ({ endDate }));
+  onStartDateFocusChange({ focused }) {
+    this.setState(() => ({ startDateCalendarFocused: focused }))
+  };
+
+  onEndDateChange(endDate) {
+    if (endDate) {
+      this.setState(() => ({ endDate }));
+    }
+  };
+
+  onEndDateFocusChange({ focused }) {
+    this.setState(() => ({ endDateCalendarFocused: focused }))
   };
 
   onTitleChange(e) {
@@ -201,6 +217,11 @@ export default class PromoSubmitter extends Component {
       console.log(this.state);
       alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
     }
+  
+  // turn off validation for testing
+  // e.preventDefault();
+  // this.setState(() => ({ error: '' }));      
+  // console.log(this.state);
   }
 
   render() {
@@ -214,8 +235,18 @@ export default class PromoSubmitter extends Component {
           <LastName value={this.state.lastName} onChange={this.onLastNameChange} />
           <Email value={this.state.email} onChange={this.onEmailChange} />
           <AuthorBio value={this.state.authorBio} onChange={this.onAuthorBioChange} />
-          <StartDate value={this.state.startDate} onChange={this.onStartDateChange} />
-          <EndDate value={this.state.endDate} onChange={this.onEndDateChange} />
+          <StartDate 
+            date={this.state.startDate}
+            onDateChange={this.onStartDateChange}
+            focused={this.state.startDateCalendarFocused}
+            onFocusChange={this.onStartDateFocusChange}
+          />
+          <EndDate
+            date={this.state.endDate}
+            onDateChange={this.onEndDateChange}
+            focused={this.state.endDateCalendarFocused}
+            onFocusChange={this.onEndDateFocusChange}
+          />
           <Title value={this.state.title} onChange={this.onTitleChange} />
           <AmazonURL value={this.state.amazonURL} onChange={this.onAmazonURLChange} />
           <Description value={this.state.description} onChange={this.onDescriptionChange} />
@@ -228,8 +259,8 @@ export default class PromoSubmitter extends Component {
           <Website value={this.state.website} onChange={this.onWebsiteChange} />
           <PressRelease value={this.state.pressRelease} onChange={this.onPressReleaseChange} />
           <input type="submit" value="Submit" />
-        </form>
-      </div>
-    );
-  }
-};
+          </form>
+          </div>
+        );
+      }
+    };

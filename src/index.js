@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import 'react-dates/initialize';
 
 // Styles
 // Import Flag Icons Set
@@ -15,6 +16,8 @@ import '../scss/style.scss'
 import '../scss/core/_dropdown-menu-right.scss'
 // Import ReactQuill styles
 import 'react-quill/dist/quill.snow.css';
+// Import ReactDates styles
+import 'react-dates/lib/css/_datepicker.css';
 
 // Containers
 import Full from './containers/Full/Full'
