@@ -181,6 +181,13 @@ export default class PromoSubmitter extends Component {
       !this.state.pressRelease
     ) {
       this.setState(() => ({ error: 'Please fill in all required fields.'}));
+    } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+      this.setState(() => ({ error: 'Please provide a valid email address.' }));    
+    } else if (!this.state.amazonURL.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
+      // currently accepts any valid URL
+      this.setState(() => ({ error: 'Please provide a valid Amazon URL.' }));
+    } else if (!this.state.website || !this.state.website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
+      this.setState(() => ({ error: 'Please provide a valid website URL.' }));
     } else {
       this.setState(() => ({ error: '' }));      
       console.log(this.state);
