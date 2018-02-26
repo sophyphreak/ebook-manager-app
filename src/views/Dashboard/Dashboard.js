@@ -5,7 +5,8 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <p>Hello World!</p>
+        <h4>Your Dashboard</h4>
+        <p>Nothing here. Oh no!</p>
       </div>
     )
   }
