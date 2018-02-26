@@ -66,8 +66,10 @@ export default class PromoSubmitter extends Component {
   }
 
   onASINChange(e) {
-    const ASIN = e.target.value;
-    this.setState(() => ({ ASIN }));
+    const ASIN = e.target.value.toUpperCase();
+    if (ASIN.match(/^[0-9A-Z]{0,10}$/)) {
+      this.setState(() => ({ ASIN }));
+    }
   };
   
   onFirstNameChange(e) {
@@ -181,11 +183,15 @@ export default class PromoSubmitter extends Component {
       !this.state.pressRelease
     ) {
       this.setState(() => ({ error: 'Please fill in all required fields.'}));
+    } else if (!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
+      this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
     } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
       this.setState(() => ({ error: 'Please provide a valid email address.' }));    
     } else if (!this.state.amazonURL.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
       // currently accepts any valid URL
       this.setState(() => ({ error: 'Please provide a valid Amazon URL.' }));
+    } else if (!this.state.reviewAvg || parseInt(this.state.reviewAvg) > 5) { 
+      this.setState(() => ({ error: 'Please provide a Review Avg of 5 or less.' }));      
     } else if (!this.state.website || !this.state.website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
       this.setState(() => ({ error: 'Please provide a valid website URL.' }));
     } else {
@@ -202,23 +208,23 @@ export default class PromoSubmitter extends Component {
         <form className="form-layout" onSubmit={this.onSubmit}>
           {this.state.error && <p>{this.state.error}</p>}
           <ASIN value={this.state.ASIN} onChange={this.onASINChange} />
-          <FirstName value={this.state.FirstName} onChange={this.onFirstNameChange} />
-          <LastName value={this.state.LastName} onChange={this.onLastNameChange} />
-          <Email value={this.state.Email} onChange={this.onEmailChange} />
-          <AuthorBio value={this.state.AuthorBio} onChange={this.onAuthorBioChange} />
-          <StartDate value={this.state.StartDate} onChange={this.onStartDateChange} />
-          <EndDate value={this.state.EndDate} onChange={this.onEndDateChange} />
-          <Title value={this.state.Title} onChange={this.onTitleChange} />
-          <AmazonURL value={this.state.AmazonURL} onChange={this.onAmazonURLChange} />
-          <Description value={this.state.Description} onChange={this.onDescriptionChange} />
-          {/* <Cover value={this.state.Cover} onChange={this.onCoverChange} /> */}
-          <NumReviews value={this.state.NumReviews} onChange={this.onNumReviewsChange} />
-          <ReviewAvg value={this.state.ReviewAvg} onChange={this.onReviewAvgChange} />
-          <RegPrice value={this.state.RegPrice} onChange={this.onRegPriceChange} />
-          <CurrentPrice value={this.state.CurrentPrice} onChange={this.onCurrentPriceChange} />
-          <Genre value={this.state.Genre} onChange={this.onGenreChange} />
-          <Website value={this.state.Website} onChange={this.onWebsiteChange} />
-          <PressRelease value={this.state.PressRelease} onChange={this.onPressReleaseChange} />
+          <FirstName value={this.state.firstName} onChange={this.onFirstNameChange} />
+          <LastName value={this.state.lastName} onChange={this.onLastNameChange} />
+          <Email value={this.state.email} onChange={this.onEmailChange} />
+          <AuthorBio value={this.state.authorBio} onChange={this.onAuthorBioChange} />
+          <StartDate value={this.state.startDate} onChange={this.onStartDateChange} />
+          <EndDate value={this.state.endDate} onChange={this.onEndDateChange} />
+          <Title value={this.state.title} onChange={this.onTitleChange} />
+          <AmazonURL value={this.state.amazonURL} onChange={this.onAmazonURLChange} />
+          <Description value={this.state.description} onChange={this.onDescriptionChange} />
+          {/* <Cover value={this.state.cover} onChange={this.onCoverChange} /> */}
+          <NumReviews value={this.state.numReviews} onChange={this.onNumReviewsChange} />
+          <ReviewAvg value={this.state.reviewAvg} onChange={this.onReviewAvgChange} />
+          <RegPrice value={this.state.regPrice} onChange={this.onRegPriceChange} />
+          <CurrentPrice value={this.state.currentPrice} onChange={this.onCurrentPriceChange} />
+          <Genre value={this.state.genre} onChange={this.onGenreChange} />
+          <Website value={this.state.website} onChange={this.onWebsiteChange} />
+          <PressRelease value={this.state.pressRelease} onChange={this.onPressReleaseChange} />
           <input type="submit" value="Submit" />
         </form>
       </div>
