@@ -40,7 +40,8 @@ export default class PromoSubmitter extends Component {
       currentPrice: '',
       genre:        '',
       website:      '',
-      pressRelease: ''
+      pressRelease: '',
+      error: ''
     };
 
     this.onASINChange = this.onASINChange.bind(this);
@@ -160,11 +161,31 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ pressRelease }));
   };
 
-  onSubmit(event) {
-
-    console.log(this.state);
-    alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
-    event.preventDefault();
+  onSubmit(e) {
+    e.preventDefault();
+    if (
+      !this.state.ASIN ||
+      !this.state.firstName ||
+      !this.state.lastName ||
+      !this.state.email ||
+      !this.state.authorBio ||
+      !this.state.startDate ||
+      !this.state.endDate ||
+      !this.state.title ||
+      !this.state.amazonURL ||
+      !this.state.description ||
+      !this.state.numReviews ||
+      !this.state.regPrice ||
+      !this.state.currentPrice ||
+      !this.state.genre ||
+      !this.state.pressRelease
+    ) {
+      this.setState(() => ({ error: 'Please fill in all required fields.'}));
+    } else {
+      this.setState(() => ({ error: '' }));      
+      console.log(this.state);
+      alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
+    }
   }
 
   render() {
@@ -172,6 +193,7 @@ export default class PromoSubmitter extends Component {
       <div>
         <h4>Promotion Submitter</h4>
         <form className="form-layout" onSubmit={this.onSubmit}>
+          {this.state.error && <p>{this.state.error}</p>}
           <ASIN value={this.state.ASIN} onChange={this.onASINChange} />
           <FirstName value={this.state.FirstName} onChange={this.onFirstNameChange} />
           <LastName value={this.state.LastName} onChange={this.onLastNameChange} />
