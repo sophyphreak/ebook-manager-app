@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import AmazonURL from '../FormElements/AmazonURL';
 import ASIN from '../FormElements/ASIN';
 import AuthorBio from '../FormElements/AuthorBio';
-import Cover from '../FormElements/Cover';
+// import Cover from '../FormElements/Cover';
 import CurrentPrice from '../FormElements/CurrentPrice';
 import Description from '../FormElements/Description';
 import Email from '../FormElements/Email';
@@ -53,7 +53,7 @@ export default class PromoSubmitter extends Component {
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
-    this.onCoverChange = this.onCoverChange.bind(this);
+    // this.onCoverChange = this.onCoverChange.bind(this);
     this.onNumReviewsChange = this.onNumReviewsChange.bind(this);
     this.onReviewAvgChange = this.onReviewAvgChange.bind(this);
     this.onRegPriceChange = this.onRegPriceChange.bind(this);
@@ -114,10 +114,10 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ Description }));
   };
 
-  onCoverChange(e) {
-    const Cover = e.target.value;
-    this.setState(() => ({ Cover }));
-  };
+  // onCoverChange(e) {
+  //   const Cover = e.target.value;
+  //   this.setState(() => ({ Cover }));
+  // };
 
   onNumReviewsChange(e) {
     const NumReviews = e.target.value;
@@ -126,7 +126,9 @@ export default class PromoSubmitter extends Component {
 
   onReviewAvgChange(e) {
     const ReviewAvg = e.target.value;
-    this.setState(() => ({ ReviewAvg }));
+    if (!ReviewAvg || ReviewAvg.match(/^[0-5](\.\d{0,1})?$/)) {   
+      this.setState(() => ({ ReviewAvg }));
+    }
   };
 
   onRegPriceChange(e) {
@@ -179,7 +181,7 @@ export default class PromoSubmitter extends Component {
           <Title value={this.state.Title} onChange={this.onTitleChange} />
           <AmazonURL value={this.state.AmazonURL} onChange={this.onAmazonURLChange} />
           <Description value={this.state.Description} onChange={this.onDescriptionChange} />
-          <Cover value={this.state.Cover} onChange={this.onCoverChange} />
+          {/* <Cover value={this.state.Cover} onChange={this.onCoverChange} /> */}
           <NumReviews value={this.state.NumReviews} onChange={this.onNumReviewsChange} />
           <ReviewAvg value={this.state.ReviewAvg} onChange={this.onReviewAvgChange} />
           <RegPrice value={this.state.RegPrice} onChange={this.onRegPriceChange} />
