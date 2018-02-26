@@ -24,23 +24,23 @@ export default class PromoSubmitter extends Component {
     super(props);
     this.state = { 
       ASIN:         '',
-      FirstName:    '',
-      LastName:     '',
-      Email:        '',
-      AuthorBio:    '',
-      StartDate:    '',
-      EndDate:      '',
-      Title:        '',
-      AmazonURL:    '',
-      Description:  '',
-      Cover:        '',
-      NumReviews:   '',
-      ReviewAvg:    '',
-      RegPrice:     '',
-      CurrentPrice: '',
-      Genre:        '',
-      Website:      '',
-      PressRelease: ''
+      firstName:    '',
+      lastName:     '',
+      email:        '',
+      authorBio:    '',
+      startDate:    '',
+      endDate:      '',
+      title:        '',
+      amazonURL:    '',
+      description:  '',
+      // cover:        '',
+      numReviews:   '',
+      reviewAvg:    '',
+      regPrice:     '',
+      currentPrice: '',
+      genre:        '',
+      website:      '',
+      pressRelease: ''
     };
 
     this.onASINChange = this.onASINChange.bind(this);
@@ -61,7 +61,7 @@ export default class PromoSubmitter extends Component {
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onWebsiteChange = this.onWebsiteChange.bind(this);
     this.onPressReleaseChange = this.onPressReleaseChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onASINChange(e) {
@@ -70,99 +70,100 @@ export default class PromoSubmitter extends Component {
   };
   
   onFirstNameChange(e) {
-    const FirstName = e.target.value;
-    this.setState(() => ({ FirstName }));
+    const firstName = e.target.value;
+    this.setState(() => ({ firstName }));
   };
 
   onLastNameChange(e) {
-    const LastName = e.target.value;
-    this.setState(() => ({ LastName }));
+    const lastName = e.target.value;
+    this.setState(() => ({ lastName }));
   };
 
   onEmailChange(e) {
-    const Email = e.target.value;
-    this.setState(() => ({ Email }));
+    const email = e.target.value;
+    this.setState(() => ({ email }));
   };
 
   onAuthorBioChange(e) {
-    const AuthorBio = e.target.value;
-    this.setState(() => ({ AuthorBio }));
+    const authorBio = e.target.value;
+    this.setState(() => ({ authorBio }));
   };
 
   onStartDateChange(e) {
-    const StartDate = e.target.value;
-    this.setState(() => ({ StartDate }));
+    const startDate = e.target.value;
+    this.setState(() => ({ startDate }));
   };
 
   onEndDateChange(e) {
-    const EndDate = e.target.value;
-    this.setState(() => ({ EndDate }));
+    const endDate = e.target.value;
+    this.setState(() => ({ endDate }));
   };
 
   onTitleChange(e) {
-    const Title = e.target.value;
-    this.setState(() => ({ Title }));
+    const title = e.target.value;
+    this.setState(() => ({ title }));
   };
 
   onAmazonURLChange(e) {
-    const AmazonURL = e.target.value;
-    this.setState(() => ({ AmazonURL }));
+    const amazonURL = e.target.value;
+    this.setState(() => ({ amazonURL }));
   };
 
   onDescriptionChange(e) {
-    const Description = e.target.value;
-    this.setState(() => ({ Description }));
+    const description = e.target.value;
+    this.setState(() => ({ description }));
   };
 
   // onCoverChange(e) {
-  //   const Cover = e.target.value;
-  //   this.setState(() => ({ Cover }));
+  //   const cover = e.target.value;
+  //   this.setState(() => ({ cover }));
   // };
 
   onNumReviewsChange(e) {
-    const NumReviews = e.target.value;
-    this.setState(() => ({ NumReviews }));
+    const numReviews = e.target.value;
+    this.setState(() => ({ numReviews }));
   };
 
   onReviewAvgChange(e) {
-    const ReviewAvg = e.target.value;
-    if (!ReviewAvg || ReviewAvg.match(/^[0-5](\.\d{0,1})?$/)) {   
-      this.setState(() => ({ ReviewAvg }));
+    const reviewAvg = e.target.value;
+    if (!reviewAvg || reviewAvg.match(/^[0-5](\.\d{0,1})?$/)) {   
+      this.setState(() => ({ reviewAvg }));
     }
   };
 
   onRegPriceChange(e) {
-    const RegPrice = e.target.value;
-    if (!RegPrice || RegPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ RegPrice }));
+    const regPrice = e.target.value;
+    if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ regPrice }));
     }
   };
 
   onCurrentPriceChange(e) {
-    const CurrentPrice = e.target.value;
-    if (!CurrentPrice || CurrentPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ CurrentPrice }));
+    const currentPrice = e.target.value;
+    if (!currentPrice || currentPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ currentPrice }));
     }
   };
 
   onGenreChange(e) {
-    const Genre = e.target.value;
-    this.setState(() => ({ Genre }));
+    const genre = e.target.value;
+    this.setState(() => ({ genre }));
   };
 
   onWebsiteChange(e) {
-    const Website = e.target.value;
-    this.setState(() => ({ Website }));
+    const website = e.target.value;
+    this.setState(() => ({ website }));
   };
 
   onPressReleaseChange(e) {
-    const PressRelease = e.target.value;
-    this.setState(() => ({ PressRelease }));
+    const pressRelease = e.target.value;
+    this.setState(() => ({ pressRelease }));
   };
 
-  handleSubmit(event) {
-    alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
+  onSubmit(event) {
+
     console.log(this.state);
+    alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
     event.preventDefault();
   }
 
@@ -170,7 +171,7 @@ export default class PromoSubmitter extends Component {
     return (
       <div>
         <h4>Promotion Submitter</h4>
-        <form className="form-layout" onSubmit={this.handleSubmit}>
+        <form className="form-layout" onSubmit={this.onSubmit}>
           <ASIN value={this.state.ASIN} onChange={this.onASINChange} />
           <FirstName value={this.state.FirstName} onChange={this.onFirstNameChange} />
           <LastName value={this.state.LastName} onChange={this.onLastNameChange} />
