@@ -188,7 +188,6 @@ export default class PromoSubmitter extends Component {
       !this.state.firstName ||
       !this.state.lastName ||
       !this.state.email ||
-      !this.state.authorBio ||
       !this.state.startDate ||
       !this.state.endDate ||
       !this.state.title ||
@@ -205,6 +204,8 @@ export default class PromoSubmitter extends Component {
       this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
     } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
       this.setState(() => ({ error: 'Please provide a valid email address.' }));    
+    } else if (this.state.startDate > this.state.endDate) {
+      this.setState(() => ({ error: 'Please make sure the End Date comes after the Start Date.'}))
     } else if (!this.state.amazonURL.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
       // currently accepts any valid URL
       this.setState(() => ({ error: 'Please provide a valid Amazon URL.' }));
@@ -215,7 +216,7 @@ export default class PromoSubmitter extends Component {
     } else {
       this.setState(() => ({ error: '' }));      
       console.log(this.state);
-      alert('See console for state. (Ctrl + Shift + i, and then click Console tab)');
+      alert('See console for printed state. (Ctrl + Shift + i, and then click Console tab)');
     }
   
   // turn off validation for testing
