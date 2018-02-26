@@ -124,7 +124,9 @@ export default class PromoSubmitter extends Component {
 
   onNumReviewsChange(e) {
     const numReviews = e.target.value;
-    this.setState(() => ({ numReviews }));
+    if (!numReviews || numReviews.match(/^\d{1,}$/)) {
+      this.setState(() => ({ numReviews }));
+    }
   };
 
   onReviewAvgChange(e) {
