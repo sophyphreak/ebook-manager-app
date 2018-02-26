@@ -240,7 +240,7 @@ export default class PromoSubmitter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="animated fadeIn">
         <h4>Promotion Submitter</h4>
         <form className="form-layout" onSubmit={this.onSubmit}>
           {this.state.error && <p>{this.state.error}</p>}
