@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PromoSubmitter from '../../components/PromoSubmitter/PromoSubmitter';
+import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 
 class Dashboard extends Component {
 
