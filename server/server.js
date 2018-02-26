@@ -11,6 +11,14 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
+app.post('/promo_submitter', async (req, res) => {
+  try {
+    res.send('success!');
+  } catch (e) {
+    res.status(400).send(e);
+  };
+});
+
 app.listen(port, () => {
-  console.log('Server is up!');
+  console.log(`Server is up on ${port}!`);
 });

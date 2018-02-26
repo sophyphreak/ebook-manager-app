@@ -14,7 +14,6 @@ import FirstName from '../FormElements/FirstName';
 import Genre from '../FormElements/Genre';
 import LastName from '../FormElements/LastName';
 import NumReviews from '../FormElements/NumReviews';
-import PressRelease from '../FormElements/PressRelease';
 import RegPrice from '../FormElements/RegPrice';
 import ReviewAvg from '../FormElements/ReviewAvg';
 import StartDate from '../FormElements/StartDate';
@@ -44,7 +43,6 @@ export default class PromoSubmitter extends Component {
       currentPrice: '',
       genre:        '',
       website:      '',
-      pressRelease: '',
       error: ''
     };
 
@@ -67,7 +65,6 @@ export default class PromoSubmitter extends Component {
     this.onCurrentPriceChange = this.onCurrentPriceChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onWebsiteChange = this.onWebsiteChange.bind(this);
-    this.onPressReleaseChange = this.onPressReleaseChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -176,11 +173,6 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ website }));
   };
 
-  onPressReleaseChange(e) {
-    const pressRelease = e.target.value;
-    this.setState(() => ({ pressRelease }));
-  };
-
   onSubmit(e) {
     e.preventDefault();
     if (
@@ -196,8 +188,7 @@ export default class PromoSubmitter extends Component {
       !this.state.numReviews ||
       !this.state.regPrice ||
       !this.state.currentPrice ||
-      !this.state.genre ||
-      !this.state.pressRelease
+      !this.state.genre
     ) {
       this.setState(() => ({ error: 'Please fill in all required fields.'}));
     } else if (!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
@@ -217,13 +208,35 @@ export default class PromoSubmitter extends Component {
       this.setState(() => ({ error: '' }));      
       console.log(this.state);
       alert('SUCCESS! See console for printed state. (Ctrl + Shift + i, and then click Console tab)');
-    }
-  
-  // turn off validation for testing
+      
+      // // Currently constructing POST call to server in order to send an email      
+      // fetch('/promo_submitter', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     email: 'this is the email',
+      //     // then continue this with the other inputs, such as email body, etc.
+      //   })
+      // })
+      //   .then((response) => response.json())
+      //   .then((responseJson) => {
+      //     if (responseJson.success) {
+      //       console.log(responseJson);
+      //     }
+      //     console.log(responseJson);
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //   });
+    };
+  // // turn off validation for testing
   // e.preventDefault();
   // this.setState(() => ({ error: '' }));      
   // console.log(this.state);
-  }
+  };
 
   render() {
     return (
@@ -258,7 +271,6 @@ export default class PromoSubmitter extends Component {
           <CurrentPrice value={this.state.currentPrice} onChange={this.onCurrentPriceChange} />
           <Genre value={this.state.genre} onChange={this.onGenreChange} />
           <Website value={this.state.website} onChange={this.onWebsiteChange} />
-          <PressRelease value={this.state.pressRelease} onChange={this.onPressReleaseChange} />
           <input type="submit" value="Submit" />
           </form>
           </div>
