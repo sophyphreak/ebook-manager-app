@@ -4,6 +4,7 @@ import { SingleDatePicker } from 'react-dates';
 
 import BookDetailsOne from './PromoPages/BookDetailsOne';
 import BookDetailsTwo from './PromoPages/BookDetailsTwo';
+import SiteSelection from './PromoPages/SiteSelection';
 
 import CurrentPrice from '../FormElements/CurrentPrice';
 import EndDate from '../FormElements/EndDate';
@@ -35,6 +36,10 @@ export default class PromoSubmitter extends Component {
       authorBio:    '',
       // cover:        '',
       
+      // SiteSelection
+      promoType: '',
+      promoSites: '',
+
 
       startDate:    moment(),
       startDateCalendarFocused: false,
@@ -66,6 +71,10 @@ export default class PromoSubmitter extends Component {
     // this.onCoverChange = this.onCoverChange.bind(this);
     this.onSubmitBookDetailsTwo = this.onSubmitBookDetailsTwo.bind(this);
 
+    // SiteSelection
+    this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
+    this.onPromoSitesChange = this.onPromoSitesChange.bind(this);
+    this.onSubmitSiteSelection = this.onSubmitSiteSelection.bind(this);
 
     this.onStartDateChange = this.onStartDateChange.bind(this);
     this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
@@ -134,6 +143,35 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ email }));
   };
 
+  onSubmitBookDetailsOne(e) {
+    e.preventDefault();
+    if (
+      !this.state.title ||
+      !this.state.ASIN ||
+      !this.state.amazonURL ||
+      !this.state.regPrice ||
+      !this.state.isFiction ||
+      !this.state.genre ||
+      !this.state.firstName ||
+      !this.state.lastName ||
+      !this.state.email
+    ) {
+      this.setState(() => ({ error: 'Please fill in all required fields.' }));      
+    } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
+      this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
+    } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+      this.setState(() => ({ error: 'Please provide a valid email address.' }));    
+    } else {
+    console.log(this.state);
+
+    const error = '';
+    this.setState(() => ({ error }));
+
+    const currentPage = 'BookDetailsTwo';
+    this.setState(() => ({ currentPage }));
+    }
+  };
+
   // BookDetailsTwo
 
   onDescriptionChange(e) {
@@ -150,6 +188,58 @@ export default class PromoSubmitter extends Component {
   //   const cover = e.target.value;
   //   this.setState(() => ({ cover }));
   // };
+
+  onSubmitBookDetailsTwo(e) {
+    e.preventDefault();
+    if (
+      !this.state.description ||
+      !this.state.authorBio
+    ) {
+      this.setState(() => ({ error: 'Please fill in all required fields.' }));
+    } else {
+    console.log(this.state);
+
+    const error = ''
+    this.setState(() => ({ error }));
+
+    const currentPage = "SiteSelection";
+    this.setState(() => ({ currentPage }));
+    }
+  };
+
+
+  // SiteSelection
+
+  onPromoTypeChange(e) {
+    const promoType = e.target.value;
+    this.setState(() => ({ promoType }));
+  };
+
+  onPromoSitesChange(e) {
+    const promoSites = e.target.value;
+    this.setState(() => ({ promoSites }));
+  };
+
+  onSubmitSiteSelection(e) {
+    e.preventDefault();
+    console.log(this.state);
+    
+    if (
+      !this.state.promoType ||
+      !this.state.promoSites
+    ) {
+      this.setState(() => ({ error: 'Please fill in all required fields.' }));      
+    } else {
+      console.log(this.state);
+
+      const error = ''
+      this.setState(() => ({ error }));
+
+      const currentPage = "PromoDetails";
+      this.setState(() => ({ currentPage }));
+    }
+  };
+
 
 
 
@@ -199,53 +289,9 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ website }));
   };
 
-  onSubmitBookDetailsOne(e) {
-    e.preventDefault();    
-    // if (
-    //   !this.state.title ||
-    //   !this.state.ASIN ||
-    //   !this.state.amazonURL ||
-    //   !this.state.regPrice ||
-    //   !this.state.isFiction ||
-    //   !this.state.genre ||
-    //   !this.state.firstName ||
-    //   !this.state.lastName ||
-    //   !this.state.email
-    // ) {
-    //   this.setState(() => ({ error: 'Please fill in all required fields.' }));      
-    // } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
-    //   this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
-    // } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-    //   this.setState(() => ({ error: 'Please provide a valid email address.' }));    
-    // } else {
-      console.log(this.state);
-      
-      const error = '';
-      this.setState(() => ({ error }));
 
-      const currentPage = 'BookDetailsTwo';
-      this.setState(() => ({ currentPage }));
-    // }
-  };
 
-  onSubmitBookDetailsTwo(e) {
-    e.preventDefault();
-    // console.log(this.state);
-    if (
-      !this.state.description ||
-      !this.state.authorBio
-    ) {
-      this.setState(() => ({ error: 'Please fill in all required fields.' }));
-    } else {
-      console.log(this.state);
 
-      const error = ''
-      this.setState(() => ({ error }));
-
-      const currentPage = "SiteSelection";
-      this.setState(() => ({ currentPage }));
-    }
-  };
 
   // onSubmit(e) {
   //   e.preventDefault();
@@ -356,8 +402,20 @@ export default class PromoSubmitter extends Component {
             error={this.state.error}
           />
         }
-        {this.state.currentPage === 'SiteSelection' &&
-          <p>Cool beans!</p>
+        {
+          this.state.currentPage === 'SiteSelection' &&
+          <SiteSelection
+            promoType={this.state.promoType}
+            onPromoTypeChange={this.onPromoTypeChange}
+            promoSites={this.state.promoSites}
+            onPromoSitesChange={this.onPromoSitesChange}
+            onSubmit={this.onSubmitSiteSelection}
+            error={this.state.error}
+          />
+        }
+        {
+          this.state.currentPage === 'PromoDetails' &&
+          <p>Cool beans!</p>  
         }
       </div>
     );

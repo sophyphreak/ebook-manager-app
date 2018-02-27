@@ -37,6 +37,11 @@ ShallowWrapper {
                   name="Dashboard"
                   path="/dashboard"
                 />
+                <Route
+                  component={[Function]}
+                  name="Promo Submitter"
+                  path="/promo-submitter"
+                />
                 <Redirect
                   from="/"
                   push={false}
@@ -83,6 +88,11 @@ ShallowWrapper {
                     name="Dashboard"
                     path="/dashboard"
                   />
+                  <Route
+                    component={[Function]}
+                    name="Promo Submitter"
+                    path="/promo-submitter"
+                  />
                   <Redirect
                     from="/"
                     push={false}
@@ -123,6 +133,11 @@ ShallowWrapper {
                       name="Dashboard"
                       path="/dashboard"
                     />
+                    <Route
+                      component={[Function]}
+                      name="Promo Submitter"
+                      path="/promo-submitter"
+                    />
                     <Redirect
                       from="/"
                       push={false}
@@ -155,6 +170,11 @@ ShallowWrapper {
                       name="Dashboard"
                       path="/dashboard"
                     />
+                    <Route
+                      component={[Function]}
+                      name="Promo Submitter"
+                      path="/promo-submitter"
+                    />
                     <Redirect
                       from="/"
                       push={false}
@@ -176,6 +196,11 @@ ShallowWrapper {
                         name="Dashboard"
                         path="/dashboard"
                       />,
+                      <Route
+                        component={[Function]}
+                        name="Promo Submitter"
+                        path="/promo-submitter"
+                      />,
                       <Redirect
                         from="/"
                         push={false}
@@ -193,6 +218,19 @@ ShallowWrapper {
                         "component": [Function],
                         "name": "Dashboard",
                         "path": "/dashboard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "name": "Promo Submitter",
+                        "path": "/promo-submitter",
                       },
                       "ref": null,
                       "rendered": null,
@@ -269,6 +307,11 @@ ShallowWrapper {
                     name="Dashboard"
                     path="/dashboard"
                   />
+                  <Route
+                    component={[Function]}
+                    name="Promo Submitter"
+                    path="/promo-submitter"
+                  />
                   <Redirect
                     from="/"
                     push={false}
@@ -315,6 +358,11 @@ ShallowWrapper {
                       name="Dashboard"
                       path="/dashboard"
                     />
+                    <Route
+                      component={[Function]}
+                      name="Promo Submitter"
+                      path="/promo-submitter"
+                    />
                     <Redirect
                       from="/"
                       push={false}
@@ -355,6 +403,11 @@ ShallowWrapper {
                         name="Dashboard"
                         path="/dashboard"
                       />
+                      <Route
+                        component={[Function]}
+                        name="Promo Submitter"
+                        path="/promo-submitter"
+                      />
                       <Redirect
                         from="/"
                         push={false}
@@ -387,6 +440,11 @@ ShallowWrapper {
                         name="Dashboard"
                         path="/dashboard"
                       />
+                      <Route
+                        component={[Function]}
+                        name="Promo Submitter"
+                        path="/promo-submitter"
+                      />
                       <Redirect
                         from="/"
                         push={false}
@@ -408,6 +466,11 @@ ShallowWrapper {
                           name="Dashboard"
                           path="/dashboard"
                         />,
+                        <Route
+                          component={[Function]}
+                          name="Promo Submitter"
+                          path="/promo-submitter"
+                        />,
                         <Redirect
                           from="/"
                           push={false}
@@ -425,6 +488,19 @@ ShallowWrapper {
                           "component": [Function],
                           "name": "Dashboard",
                           "path": "/dashboard",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "component": [Function],
+                          "name": "Promo Submitter",
+                          "path": "/promo-submitter",
                         },
                         "ref": null,
                         "rendered": null,

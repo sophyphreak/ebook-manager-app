@@ -21,84 +21,33 @@ ShallowWrapper {
         <h4>
           Promotion Submitter
         </h4>,
-        <form
-          className="form-layout"
+        <BookDetailsOne
+          ASIN=""
+          amazonURL=""
+          email=""
+          error=""
+          firstName=""
+          genre=""
+          isFiction=""
+          lastName=""
+          onASINChange={[Function]}
+          onAmazonURLChange={[Function]}
+          onEmailChange={[Function]}
+          onFirstNameChange={[Function]}
+          onGenreChange={[Function]}
+          onIsFictionChange={[Function]}
+          onLastNameChange={[Function]}
+          onRegPriceChange={[Function]}
+          onSubGenreChange={[Function]}
           onSubmit={[Function]}
-        >
-          
-          <ASIN
-            onChange={[Function]}
-            value=""
-          />
-          <FirstName
-            onChange={[Function]}
-            value=""
-          />
-          <LastName
-            onChange={[Function]}
-            value=""
-          />
-          <Email
-            onChange={[Function]}
-            value=""
-          />
-          <AuthorBio
-            onChange={[Function]}
-            value=""
-          />
-          <StartDate
-            date={"2017-02-14T12:51:48.000Z"}
-            focused={false}
-            onDateChange={[Function]}
-            onFocusChange={[Function]}
-          />
-          <EndDate
-            date={"2017-02-14T12:51:48.000Z"}
-            focused={false}
-            onDateChange={[Function]}
-            onFocusChange={[Function]}
-          />
-          <Title
-            onChange={[Function]}
-            value=""
-          />
-          <AmazonURL
-            onChange={[Function]}
-            value=""
-          />
-          <Description
-            onChange={[Function]}
-            value=""
-          />
-          <NumReviews
-            onChange={[Function]}
-            value=""
-          />
-          <ReviewAvg
-            onChange={[Function]}
-            value=""
-          />
-          <RegPrice
-            onChange={[Function]}
-            value=""
-          />
-          <CurrentPrice
-            onChange={[Function]}
-            value=""
-          />
-          <Genre
-            onChange={[Function]}
-            value=""
-          />
-          <Website
-            onChange={[Function]}
-            value=""
-          />
-          <input
-            type="submit"
-            value="Submit"
-          />
-        </form>,
+          onTitleChange={[Function]}
+          regPrice=""
+          subGenre=""
+          title=""
+        />,
+        false,
+        false,
+        false,
       ],
     },
     "ref": null,
@@ -117,300 +66,38 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            "",
-            <ASIN
-              onChange={[Function]}
-              value=""
-            />,
-            <FirstName
-              onChange={[Function]}
-              value=""
-            />,
-            <LastName
-              onChange={[Function]}
-              value=""
-            />,
-            <Email
-              onChange={[Function]}
-              value=""
-            />,
-            <AuthorBio
-              onChange={[Function]}
-              value=""
-            />,
-            <StartDate
-              date={"2017-02-14T12:51:48.000Z"}
-              focused={false}
-              onDateChange={[Function]}
-              onFocusChange={[Function]}
-            />,
-            <EndDate
-              date={"2017-02-14T12:51:48.000Z"}
-              focused={false}
-              onDateChange={[Function]}
-              onFocusChange={[Function]}
-            />,
-            <Title
-              onChange={[Function]}
-              value=""
-            />,
-            <AmazonURL
-              onChange={[Function]}
-              value=""
-            />,
-            <Description
-              onChange={[Function]}
-              value=""
-            />,
-            <NumReviews
-              onChange={[Function]}
-              value=""
-            />,
-            <ReviewAvg
-              onChange={[Function]}
-              value=""
-            />,
-            <RegPrice
-              onChange={[Function]}
-              value=""
-            />,
-            <CurrentPrice
-              onChange={[Function]}
-              value=""
-            />,
-            <Genre
-              onChange={[Function]}
-              value=""
-            />,
-            <Website
-              onChange={[Function]}
-              value=""
-            />,
-            <input
-              type="submit"
-              value="Submit"
-            />,
-          ],
-          "className": "form-layout",
+          "ASIN": "",
+          "amazonURL": "",
+          "email": "",
+          "error": "",
+          "firstName": "",
+          "genre": "",
+          "isFiction": "",
+          "lastName": "",
+          "onASINChange": [Function],
+          "onAmazonURLChange": [Function],
+          "onEmailChange": [Function],
+          "onFirstNameChange": [Function],
+          "onGenreChange": [Function],
+          "onIsFictionChange": [Function],
+          "onLastNameChange": [Function],
+          "onRegPriceChange": [Function],
+          "onSubGenreChange": [Function],
           "onSubmit": [Function],
+          "onTitleChange": [Function],
+          "regPrice": "",
+          "subGenre": "",
+          "title": "",
         },
         "ref": null,
-        "rendered": Array [
-          "",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "date": "2017-02-14T12:51:48.000Z",
-              "focused": false,
-              "onDateChange": [Function],
-              "onFocusChange": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "date": "2017-02-14T12:51:48.000Z",
-              "focused": false,
-              "onDateChange": [Function],
-              "onFocusChange": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "onChange": [Function],
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "type": "submit",
-              "value": "Submit",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-        ],
-        "type": "form",
+        "rendered": null,
+        "type": [Function],
       },
+      false,
+      false,
+      false,
     ],
     "type": "div",
   },
@@ -424,84 +111,33 @@ ShallowWrapper {
           <h4>
             Promotion Submitter
           </h4>,
-          <form
-            className="form-layout"
+          <BookDetailsOne
+            ASIN=""
+            amazonURL=""
+            email=""
+            error=""
+            firstName=""
+            genre=""
+            isFiction=""
+            lastName=""
+            onASINChange={[Function]}
+            onAmazonURLChange={[Function]}
+            onEmailChange={[Function]}
+            onFirstNameChange={[Function]}
+            onGenreChange={[Function]}
+            onIsFictionChange={[Function]}
+            onLastNameChange={[Function]}
+            onRegPriceChange={[Function]}
+            onSubGenreChange={[Function]}
             onSubmit={[Function]}
-          >
-            
-            <ASIN
-              onChange={[Function]}
-              value=""
-            />
-            <FirstName
-              onChange={[Function]}
-              value=""
-            />
-            <LastName
-              onChange={[Function]}
-              value=""
-            />
-            <Email
-              onChange={[Function]}
-              value=""
-            />
-            <AuthorBio
-              onChange={[Function]}
-              value=""
-            />
-            <StartDate
-              date={"2017-02-14T12:51:48.000Z"}
-              focused={false}
-              onDateChange={[Function]}
-              onFocusChange={[Function]}
-            />
-            <EndDate
-              date={"2017-02-14T12:51:48.000Z"}
-              focused={false}
-              onDateChange={[Function]}
-              onFocusChange={[Function]}
-            />
-            <Title
-              onChange={[Function]}
-              value=""
-            />
-            <AmazonURL
-              onChange={[Function]}
-              value=""
-            />
-            <Description
-              onChange={[Function]}
-              value=""
-            />
-            <NumReviews
-              onChange={[Function]}
-              value=""
-            />
-            <ReviewAvg
-              onChange={[Function]}
-              value=""
-            />
-            <RegPrice
-              onChange={[Function]}
-              value=""
-            />
-            <CurrentPrice
-              onChange={[Function]}
-              value=""
-            />
-            <Genre
-              onChange={[Function]}
-              value=""
-            />
-            <Website
-              onChange={[Function]}
-              value=""
-            />
-            <input
-              type="submit"
-              value="Submit"
-            />
-          </form>,
+            onTitleChange={[Function]}
+            regPrice=""
+            subGenre=""
+            title=""
+          />,
+          false,
+          false,
+          false,
         ],
       },
       "ref": null,
@@ -520,300 +156,38 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              "",
-              <ASIN
-                onChange={[Function]}
-                value=""
-              />,
-              <FirstName
-                onChange={[Function]}
-                value=""
-              />,
-              <LastName
-                onChange={[Function]}
-                value=""
-              />,
-              <Email
-                onChange={[Function]}
-                value=""
-              />,
-              <AuthorBio
-                onChange={[Function]}
-                value=""
-              />,
-              <StartDate
-                date={"2017-02-14T12:51:48.000Z"}
-                focused={false}
-                onDateChange={[Function]}
-                onFocusChange={[Function]}
-              />,
-              <EndDate
-                date={"2017-02-14T12:51:48.000Z"}
-                focused={false}
-                onDateChange={[Function]}
-                onFocusChange={[Function]}
-              />,
-              <Title
-                onChange={[Function]}
-                value=""
-              />,
-              <AmazonURL
-                onChange={[Function]}
-                value=""
-              />,
-              <Description
-                onChange={[Function]}
-                value=""
-              />,
-              <NumReviews
-                onChange={[Function]}
-                value=""
-              />,
-              <ReviewAvg
-                onChange={[Function]}
-                value=""
-              />,
-              <RegPrice
-                onChange={[Function]}
-                value=""
-              />,
-              <CurrentPrice
-                onChange={[Function]}
-                value=""
-              />,
-              <Genre
-                onChange={[Function]}
-                value=""
-              />,
-              <Website
-                onChange={[Function]}
-                value=""
-              />,
-              <input
-                type="submit"
-                value="Submit"
-              />,
-            ],
-            "className": "form-layout",
+            "ASIN": "",
+            "amazonURL": "",
+            "email": "",
+            "error": "",
+            "firstName": "",
+            "genre": "",
+            "isFiction": "",
+            "lastName": "",
+            "onASINChange": [Function],
+            "onAmazonURLChange": [Function],
+            "onEmailChange": [Function],
+            "onFirstNameChange": [Function],
+            "onGenreChange": [Function],
+            "onIsFictionChange": [Function],
+            "onLastNameChange": [Function],
+            "onRegPriceChange": [Function],
+            "onSubGenreChange": [Function],
             "onSubmit": [Function],
+            "onTitleChange": [Function],
+            "regPrice": "",
+            "subGenre": "",
+            "title": "",
           },
           "ref": null,
-          "rendered": Array [
-            "",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "date": "2017-02-14T12:51:48.000Z",
-                "focused": false,
-                "onDateChange": [Function],
-                "onFocusChange": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "date": "2017-02-14T12:51:48.000Z",
-                "focused": false,
-                "onDateChange": [Function],
-                "onFocusChange": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "onChange": [Function],
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "type": "submit",
-                "value": "Submit",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-          ],
-          "type": "form",
+          "rendered": null,
+          "type": [Function],
         },
+        false,
+        false,
+        false,
       ],
       "type": "div",
     },
