@@ -13,7 +13,7 @@ app.get('*', (req, res) => {
 
 app.post('/promo_submitter', async (req, res) => {
   try {
-    res.send('success!');
+    res.send('success!'); // is this JSON format? I don't think it is
   } catch (e) {
     res.status(400).send(e);
   };

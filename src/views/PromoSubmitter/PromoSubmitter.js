@@ -5,6 +5,7 @@ import { SingleDatePicker } from 'react-dates';
 import BookDetailsOne from './PromoPages/BookDetailsOne';
 import BookDetailsTwo from './PromoPages/BookDetailsTwo';
 import SiteSelection from './PromoPages/SiteSelection';
+import DateSelection from './PromoPages/DateSelection';
 
 import CurrentPrice from '../FormElements/CurrentPrice';
 import EndDate from '../FormElements/EndDate';
@@ -40,11 +41,13 @@ export default class PromoSubmitter extends Component {
       promoType: '',
       promoSites: '',
 
-
+      // DateSelection
       startDate:    moment(),
-      startDateCalendarFocused: false,
       endDate:      moment(),
-      endDateCalendarFocused: false,
+      calendarFocus: null,
+      // startDateCalendarFocused: false,
+      // endDateCalendarFocused: false,
+
       numReviews:   '',
       reviewAvg:    '',
       currentPrice: '',
@@ -76,10 +79,16 @@ export default class PromoSubmitter extends Component {
     this.onPromoSitesChange = this.onPromoSitesChange.bind(this);
     this.onSubmitSiteSelection = this.onSubmitSiteSelection.bind(this);
 
-    this.onStartDateChange = this.onStartDateChange.bind(this);
-    this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
-    this.onEndDateChange = this.onEndDateChange.bind(this);
-    this.onEndDateFocusChange = this.onEndDateFocusChange.bind(this);    
+    // DateSelection
+    // this.onStartDateChange = this.onStartDateChange.bind(this);
+    // this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
+    // this.onEndDateChange = this.onEndDateChange.bind(this);
+    // this.onEndDateFocusChange = this.onEndDateFocusChange.bind(this);    
+    this.onDatesChange = this.onDatesChange.bind(this);
+    this.onFocusChange = this.onFocusChange.bind(this);
+    this.onSubmitDateSelection = this.onSubmitDateSelection.bind(this);
+
+    
     this.onNumReviewsChange = this.onNumReviewsChange.bind(this);
     this.onReviewAvgChange = this.onReviewAvgChange.bind(this);
     this.onCurrentPriceChange = this.onCurrentPriceChange.bind(this);
@@ -145,31 +154,31 @@ export default class PromoSubmitter extends Component {
 
   onSubmitBookDetailsOne(e) {
     e.preventDefault();
-    if (
-      !this.state.title ||
-      !this.state.ASIN ||
-      !this.state.amazonURL ||
-      !this.state.regPrice ||
-      !this.state.isFiction ||
-      !this.state.genre ||
-      !this.state.firstName ||
-      !this.state.lastName ||
-      !this.state.email
-    ) {
-      this.setState(() => ({ error: 'Please fill in all required fields.' }));      
-    } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
-      this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
-    } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      this.setState(() => ({ error: 'Please provide a valid email address.' }));    
-    } else {
-    console.log(this.state);
+    // if (
+    //   !this.state.title ||
+    //   !this.state.ASIN ||
+    //   !this.state.amazonURL ||
+    //   !this.state.regPrice ||
+    //   !this.state.isFiction ||
+    //   !this.state.genre ||
+    //   !this.state.firstName ||
+    //   !this.state.lastName ||
+    //   !this.state.email
+    // ) {
+    //   this.setState(() => ({ error: 'Please fill in all required fields.' }));      
+    // } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
+    //   this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
+    // } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+    //   this.setState(() => ({ error: 'Please provide a valid email address.' }));    
+    // } else {
+    // console.log(this.state);
 
     const error = '';
     this.setState(() => ({ error }));
 
     const currentPage = 'BookDetailsTwo';
     this.setState(() => ({ currentPage }));
-    }
+    // }
   };
 
   // BookDetailsTwo
@@ -221,9 +230,7 @@ export default class PromoSubmitter extends Component {
   };
 
   onSubmitSiteSelection(e) {
-    e.preventDefault();
-    console.log(this.state);
-    
+    e.preventDefault();    
     if (
       !this.state.promoType ||
       !this.state.promoSites
@@ -235,33 +242,54 @@ export default class PromoSubmitter extends Component {
       const error = ''
       this.setState(() => ({ error }));
 
-      const currentPage = "PromoDetails";
+      const currentPage = "DateSelection";
       this.setState(() => ({ currentPage }));
     }
   };
 
 
+  // DateSelection
 
+  // onStartDateChange(startDate) {
+  //   if (startDate) {
+  //     this.setState(() => ({ startDate }));
+  //   }
+  // };
 
-  onStartDateChange(startDate) {
-    if (startDate) {
-      this.setState(() => ({ startDate }));
-    }
+  // onStartDateFocusChange({ focused }) {
+  //   this.setState(() => ({ startDateCalendarFocused: focused }))
+  // };
+
+  // onEndDateChange(endDate) {
+  //   if (endDate) {
+  //     this.setState(() => ({ endDate }));
+  //   }
+  // };
+
+  // onEndDateFocusChange({ focused }) {
+  //   this.setState(() => ({ endDateCalendarFocused: focused }))
+  // };
+
+  onDatesChange({ startDate, endDate }) {
+    this.setState(() => ({ startDate, endDate }));
   };
 
-  onStartDateFocusChange({ focused }) {
-    this.setState(() => ({ startDateCalendarFocused: focused }))
+  onFocusChange(calendarFocus) {
+    this.setState(() => ({ calendarFocus }));
   };
 
-  onEndDateChange(endDate) {
-    if (endDate) {
-      this.setState(() => ({ endDate }));
-    }
+  onSubmitDateSelection(e) {
+    e.preventDefault();
+    console.log(this.state);
+
+    const error = ''
+    this.setState(() => ({ error }));
+    
+    const currentPage = "SubmissionSuccess";
+    this.setState(() => ({ currentPage }));
   };
 
-  onEndDateFocusChange({ focused }) {
-    this.setState(() => ({ endDateCalendarFocused: focused }))
-  };
+
 
   onNumReviewsChange(e) {
     const numReviews = e.target.value;
@@ -414,43 +442,21 @@ export default class PromoSubmitter extends Component {
           />
         }
         {
-          this.state.currentPage === 'PromoDetails' &&
-          <p>Cool beans!</p>  
+          this.state.currentPage === 'DateSelection' &&
+          <DateSelection
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+            onDatesChange={this.onDatesChange}
+            focusedInput={this.state.calendarFocus}
+            onFocusChange={this.onFocusChange}
+            onSubmit={this.onSubmitDateSelection}
+          />
+        }
+        {
+          this.state.currentPage === 'SubmissionSuccess' &&
+          <p className="animated fadeIn">Your Promo Submission has been submitted. Please wait for a confirmation email.</p>
         }
       </div>
     );
   }
 };
-
-        // <form className="form-layout" onSubmit={this.onSubmit}>
-    
-        //   { this.state.error && <p>{this.state.error}</p> }
-        // <ASIN value={this.state.ASIN} onChange={this.onASINChange} />
-        // <FirstName value={this.state.firstName} onChange={this.onFirstNameChange} />
-        // <LastName value={this.state.lastName} onChange={this.onLastNameChange} />
-        // <Email value={this.state.email} onChange={this.onEmailChange} />
-        // <AuthorBio value={this.state.authorBio} onChange={this.onAuthorBioChange} />
-        // <StartDate
-        //   date={this.state.startDate}
-        //   onDateChange={this.onStartDateChange}
-        //   focused={this.state.startDateCalendarFocused}
-        //   onFocusChange={this.onStartDateFocusChange}
-        // />
-        // <EndDate
-        //   date={this.state.endDate}
-        //   onDateChange={this.onEndDateChange}
-        //   focused={this.state.endDateCalendarFocused}
-        //   onFocusChange={this.onEndDateFocusChange}
-        // />
-        // <Title value={this.state.title} onChange={this.onTitleChange} />
-        // <AmazonURL value={this.state.amazonURL} onChange={this.onAmazonURLChange} />
-        // <Description value={this.state.description} onChange={this.onDescriptionChange} />
-        // {/* <Cover value={this.state.cover} onChange={this.onCoverChange} /> */}
-        // <NumReviews value={this.state.numReviews} onChange={this.onNumReviewsChange} />
-        // <ReviewAvg value={this.state.reviewAvg} onChange={this.onReviewAvgChange} />
-        // <RegPrice value={this.state.regPrice} onChange={this.onRegPriceChange} />
-        // <CurrentPrice value={this.state.currentPrice} onChange={this.onCurrentPriceChange} />
-        // <Genre value={this.state.genre} onChange={this.onGenreChange} />
-        // <Website value={this.state.website} onChange={this.onWebsiteChange} />
-        // <input type="submit" value="Submit" />
-        //   </form>
