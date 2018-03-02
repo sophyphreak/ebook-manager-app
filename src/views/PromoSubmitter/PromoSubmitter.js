@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import { SingleDatePicker } from 'react-dates';
+import axios from 'axios';
 
 import BookDetailsOne from './PromoPages/BookDetailsOne';
 import BookDetailsTwo from './PromoPages/BookDetailsTwo';
 import SiteSelection from './PromoPages/SiteSelection';
 import DateSelection from './PromoPages/DateSelection';
-
-import CurrentPrice from '../FormElements/CurrentPrice';
-import EndDate from '../FormElements/EndDate';
-import NumReviews from '../FormElements/NumReviews';
-import ReviewAvg from '../FormElements/ReviewAvg';
-import StartDate from '../FormElements/StartDate';
-import Website from '../FormElements/Website';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -45,13 +38,6 @@ export default class PromoSubmitter extends Component {
       startDate:    moment(),
       endDate:      moment(),
       calendarFocus: null,
-      // startDateCalendarFocused: false,
-      // endDateCalendarFocused: false,
-
-      numReviews:   '',
-      reviewAvg:    '',
-      currentPrice: '',
-      website:      '',
       error: ''
     };
   
@@ -80,20 +66,9 @@ export default class PromoSubmitter extends Component {
     this.onSubmitSiteSelection = this.onSubmitSiteSelection.bind(this);
 
     // DateSelection
-    // this.onStartDateChange = this.onStartDateChange.bind(this);
-    // this.onStartDateFocusChange = this.onStartDateFocusChange.bind(this);
-    // this.onEndDateChange = this.onEndDateChange.bind(this);
-    // this.onEndDateFocusChange = this.onEndDateFocusChange.bind(this);    
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.onSubmitDateSelection = this.onSubmitDateSelection.bind(this);
-
-    
-    this.onNumReviewsChange = this.onNumReviewsChange.bind(this);
-    this.onReviewAvgChange = this.onReviewAvgChange.bind(this);
-    this.onCurrentPriceChange = this.onCurrentPriceChange.bind(this);
-    this.onWebsiteChange = this.onWebsiteChange.bind(this);
-    // this.onSubmit = this.onSubmit.bind(this);
   }
 
   // BookDetailsOne
@@ -154,31 +129,31 @@ export default class PromoSubmitter extends Component {
 
   onSubmitBookDetailsOne(e) {
     e.preventDefault();
-    // if (
-    //   !this.state.title ||
-    //   !this.state.ASIN ||
-    //   !this.state.amazonURL ||
-    //   !this.state.regPrice ||
-    //   !this.state.isFiction ||
-    //   !this.state.genre ||
-    //   !this.state.firstName ||
-    //   !this.state.lastName ||
-    //   !this.state.email
-    // ) {
-    //   this.setState(() => ({ error: 'Please fill in all required fields.' }));      
-    // } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
-    //   this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
-    // } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-    //   this.setState(() => ({ error: 'Please provide a valid email address.' }));    
-    // } else {
-    // console.log(this.state);
+    if (
+      !this.state.title ||
+      !this.state.ASIN ||
+      !this.state.amazonURL ||
+      !this.state.regPrice ||
+      !this.state.isFiction ||
+      !this.state.genre ||
+      !this.state.firstName ||
+      !this.state.lastName ||
+      !this.state.email
+    ) {
+      this.setState(() => ({ error: 'Please fill in all required fields.' }));      
+    } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
+      this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
+    } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+      this.setState(() => ({ error: 'Please provide a valid email address.' }));    
+    } else {
+    console.log(this.state);
 
     const error = '';
     this.setState(() => ({ error }));
 
     const currentPage = 'BookDetailsTwo';
     this.setState(() => ({ currentPage }));
-    // }
+    };
   };
 
   // BookDetailsTwo
@@ -250,26 +225,6 @@ export default class PromoSubmitter extends Component {
 
   // DateSelection
 
-  // onStartDateChange(startDate) {
-  //   if (startDate) {
-  //     this.setState(() => ({ startDate }));
-  //   }
-  // };
-
-  // onStartDateFocusChange({ focused }) {
-  //   this.setState(() => ({ startDateCalendarFocused: focused }))
-  // };
-
-  // onEndDateChange(endDate) {
-  //   if (endDate) {
-  //     this.setState(() => ({ endDate }));
-  //   }
-  // };
-
-  // onEndDateFocusChange({ focused }) {
-  //   this.setState(() => ({ endDateCalendarFocused: focused }))
-  // };
-
   onDatesChange({ startDate, endDate }) {
     this.setState(() => ({ startDate, endDate }));
   };
@@ -282,109 +237,23 @@ export default class PromoSubmitter extends Component {
     e.preventDefault();
     console.log(this.state);
 
-    const error = ''
+    const error = '';
     this.setState(() => ({ error }));
     
     const currentPage = "SubmissionSuccess";
     this.setState(() => ({ currentPage }));
+
+    // Currently constructing POST call to server in order to send an email      
+    axios.post('/promo_submitter', {
+      body: 'This is a message!'
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   };
-
-
-
-  onNumReviewsChange(e) {
-    const numReviews = e.target.value;
-    if (!numReviews || numReviews.match(/^\d{1,}$/)) {
-      this.setState(() => ({ numReviews }));
-    }
-  };
-
-  onReviewAvgChange(e) {
-    const reviewAvg = e.target.value;
-    if (!reviewAvg || reviewAvg.match(/^[0-5](\.\d{0,1})?$/)) {   
-      this.setState(() => ({ reviewAvg }));
-    }
-  };
-
-  onCurrentPriceChange(e) {
-    const currentPrice = e.target.value;
-    if (!currentPrice || currentPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ currentPrice }));
-    }
-  };
-
-  onWebsiteChange(e) {
-    const website = e.target.value;
-    this.setState(() => ({ website }));
-  };
-
-
-
-
-
-  // onSubmit(e) {
-  //   e.preventDefault();
-  //   if (
-  //     !this.state.ASIN ||
-  //     !this.state.firstName ||
-  //     !this.state.lastName ||
-  //     !this.state.email ||
-  //     !this.state.startDate ||
-  //     !this.state.endDate ||
-  //     !this.state.title ||
-  //     !this.state.amazonURL ||
-  //     !this.state.description ||
-  //     !this.state.numReviews ||
-  //     !this.state.regPrice ||
-  //     !this.state.currentPrice ||
-  //     !this.state.genre
-  //   ) {
-  //     this.setState(() => ({ error: 'Please fill in all required fields.'}));
-  //   } else if (!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
-  //     this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
-  //   } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-  //     this.setState(() => ({ error: 'Please provide a valid email address.' }));    
-  //   } else if (this.state.startDate > this.state.endDate) {
-  //     this.setState(() => ({ error: 'Please make sure the End Date comes after the Start Date.'}))
-  //   } else if (!this.state.amazonURL.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
-  //     // currently accepts any valid URL
-  //     this.setState(() => ({ error: 'Please provide a valid Amazon URL.' }));
-  //   } else if (this.state.reviewAvg && parseInt(this.state.reviewAvg) > 5) { 
-  //     this.setState(() => ({ error: 'Please provide a Review Avg of 5 or less.' }));      
-  //   } else if (this.state.website && !this.state.website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
-  //     this.setState(() => ({ error: 'Please provide a valid website URL.' }));
-  //   } else {
-  //     this.setState(() => ({ error: '' }));      
-  //     console.log(this.state);
-  //     alert('SUCCESS! See console for printed state. (Ctrl + Shift + i, and then click Console tab)');
-      
-  //     // // Currently constructing POST call to server in order to send an email      
-  //     // fetch('/promo_submitter', {
-  //     //   method: 'POST',
-  //     //   headers: {
-  //     //     'Accept': 'application/json',
-  //     //     'Content-Type': 'application/json',
-  //     //   },
-  //     //   body: JSON.stringify({
-  //     //     email: 'this is the email',
-  //     //     // then continue this with the other inputs, such as email body, etc.
-  //     //   })
-  //     // })
-  //     //   .then((response) => response.json())
-  //     //   .then((responseJson) => {
-  //     //     if (responseJson.success) {
-  //     //       console.log(responseJson);
-  //     //     }
-  //     //     console.log(responseJson);
-  //     //   })
-  //     //   .catch((error) => {
-  //     //     console.error(error);
-  //     //   });
-  //   };
-  // // // turn off validation for testing
-  // // e.preventDefault();
-  // // this.setState(() => ({ error: '' }));      
-  // // console.log(this.state);
-  // };
 
   render() {
     return (
