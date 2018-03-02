@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const publicPath = path.join(__dirname, '..', 'build');
@@ -17,6 +18,7 @@ app.get('*', (req, res) => {
 app.post('/promo_submitter', async (req, res) => {
   try {
     res.send('success!');
+    console.log(req.body);
   } catch (e) {
     res.status(400).send(e);
   };

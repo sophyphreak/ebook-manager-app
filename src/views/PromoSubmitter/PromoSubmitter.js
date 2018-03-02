@@ -245,7 +245,7 @@ export default class PromoSubmitter extends Component {
 
     // Currently constructing POST call to server in order to send an email      
     axios.post('/promo_submitter', {
-      body: 'This is a message!'
+      body: this.state
     })
     .then((res) => {
       console.log(res);
