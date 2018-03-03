@@ -168,6 +168,8 @@ export default class PromoSubmitter extends Component {
       this.setState(() => ({ error: 'Please fill in all required fields.' }));      
     } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
       this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
+    } else if (!this.state.amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+      this.setState(() => ({ error: 'Please provide a valid Amazon url.'}))
     } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
       this.setState(() => ({ error: 'Please provide a valid email address.' }));    
     } else {
@@ -316,16 +318,6 @@ export default class PromoSubmitter extends Component {
       console.log(err);
     });
   };
-
-  // componentDidMount() {
-  //   axios.post('/api/promo_submitter', this.state)
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
 
   render() {
     return (

@@ -31,7 +31,7 @@ app.post('/api/promo_submitter', async (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
       from: 'wise-fox-app@sent.this', // sender address
-      to: 'robertwise1@gmail.com, arhorn@smcm.edu', // list of receivers
+      to: 'robertwise1@gmail.com', // list of receivers
       subject: 'The app sent this ✔', // Subject line
       text: req.body.text,
       html: req.body.html
