@@ -13,32 +13,57 @@ export default class PromoSubmitter extends Component {
     this.state = { 
       currentPage:  'BookDetailsOne',
 
+      // // BookDetailsOne
+      // title:        'Zhuangzi: The Essential Writings: With Selections from Traditional Commentaries (Hackett Classics)',
+      // ASIN:         'B003ZDNYWA',
+      // amazonURL:    'https://www.amazon.com/Zhuangzi-Essential-Selections-Traditional-Commentaries-ebook/dp/B003ZDNYWA/ref=pd_sim_351_2?_encoding=UTF8&psc=1&refRID=5J3S0PMW5KKDQHFM21NR',
+      // regPrice:     '$10.09',
+      // isFiction:    'Nonfiction',
+      // genre:        'Philosophy',
+      // subGenre:     'Eastern Philosophy',
+      // firstName:    'Brook',
+      // lastName:     'Ziporyn',
+      // email:        'fake-email@gmail.com',
+
+      // // BookDetailsTwo
+      // description:  'Ideal for students and scholars alike, this edition of Zhuangzi (Chuang Tzu) includes the complete Inner Chapters, extensive selections from the Outer and Miscellaneous Chapters, and judicious selections from two thousand years of traditional Chinese commentaries, which provide the reader access to the text as well as to its reception and interpretation. A glossary, brief biographies of the commentators, a bibliography, and an index are also included.',
+      // authorBio:    'Brook Ziporyn is Associate Professor of Religion and Philosophy, Northwestern University.',
+      // // cover:        '',
+      
+      // // SiteSelection
+      // promoType: '99 cents',
+      // promoSites: 'all of them please!',
+
+      // // DateSelection
+      // startDate:    moment('2018-3-1'),
+      // endDate:      moment('2018-3-5'),
+
       // BookDetailsOne
-      title:        '',
-      ASIN:         '',
-      amazonURL:    '',
-      regPrice:     '',
-      isFiction:    '',
-      genre:        '',
-      subGenre:     '',
-      firstName:    '',
-      lastName:     '',
-      email:        '',
+      title:         '',
+      ASIN:          '',
+      amazonURL:     '',
+      regPrice:      '',
+      isFiction:     '',
+      genre:         '',
+      subGenre:      '',
+      firstName:     '',
+      lastName:      '',
+      email:         '',
 
       // BookDetailsTwo
-      description:  '',
-      authorBio:    '',
+      description:   '',
+      authorBio:     '',
       // cover:        '',
-      
+
       // SiteSelection
-      promoType: '',
-      promoSites: '',
+      promoType:     '',
+      promoSites:    '',
 
       // DateSelection
-      startDate:    moment(),
-      endDate:      moment(),
+      startDate:     moment(),
+      endDate:       moment(),
       calendarFocus: null,
-      error: ''
+      error:         ''
     };
   
     // BookDetailsOne
@@ -244,8 +269,45 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ currentPage }));
 
     // Currently constructing POST call to server in order to send an email      
-    axios.post('/promo_submitter', {
-      body: this.state
+    axios.post('/api/promo_submitter', {
+      text: `PROMO SUBMITTER REQUEST
+
+        Title: ${this.state.title}
+        ASIN: ${this.state.ASIN}
+        Amazon URL: ${this.state.amazonURL}
+        Regular Price ($): ${this.state.amazonURL}
+        Fiction or Nonfiction?: ${this.state.isFiction}
+        Genre: ${this.state.genre}
+        Sub-Genre: ${this.state.subGenre}
+        Author First Name: ${this.state.firstName}
+        Author Last Name: ${this.state.lastName}
+        Email: ${this.state.email}
+        Description: ${this.state.description}
+        Author Biography: ${this.state.authorBio}
+        Promo Type: ${this.state.promoType}
+        Promo Sites: ${this.state.promoSites}
+        Start Date: ${this.state.startDate.format('MMMM Do YYYY')}
+        End Date: ${this.state.endDate.format('MMMM Do YYYY')}
+      `,
+      html: `
+        <h3>Promo Submitter Request</h3>
+        <p>Title: ${this.state.title}</p>
+        <p>ASIN: ${this.state.ASIN}</p>
+        <p>Amazon URL: ${this.state.amazonURL}</p>
+        <p>Regular Price ($): ${this.state.regPrice}</p>
+        <p>Fiction or Nonfiction?: ${this.state.isFiction}</p>
+        <p>Genre: ${this.state.genre}</p>
+        <p>Sub-Genre: ${this.state.subGenre}</p>
+        <p>Author First Name: ${this.state.firstName}</p>
+        <p>Author Last Name: ${this.state.lastName}</p>
+        <p>Email: ${this.state.email}</p>
+        <p>Description: ${this.state.description}</p>
+        <p>Author Biography: ${this.state.authorBio}</p>
+        <p>Promo Type: ${this.state.promoType}</p>
+        <p>Promo Sites: ${this.state.promoSites}</p>
+        <p>Start Date: ${this.state.startDate.format('MMMM Do YYYY')}</p>
+        <p>End Date: ${this.state.endDate.format('MMMM Do YYYY')}</p>
+      `
     })
     .then((res) => {
       console.log(res);
@@ -254,6 +316,16 @@ export default class PromoSubmitter extends Component {
       console.log(err);
     });
   };
+
+  // componentDidMount() {
+  //   axios.post('/api/promo_submitter', this.state)
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
     return (
