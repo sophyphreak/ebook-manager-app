@@ -94,6 +94,8 @@ export default class PromoSubmitter extends Component {
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.onSubmitDateSelection = this.onSubmitDateSelection.bind(this);
+
+    this.onClickBack = this.onClickBack.bind(this);
   }
 
   // BookDetailsOne
@@ -319,6 +321,21 @@ export default class PromoSubmitter extends Component {
     });
   };
 
+  onClickBack(e) {
+    if (this.state.currentPage === 'BookDetailsTwo') {
+      const currentPage = 'BookDetailsOne';
+      this.setState(() => ({ currentPage }));
+    };
+    if (this.state.currentPage === 'SiteSelection') {
+      const currentPage = 'BookDetailsTwo';
+      this.setState(() => ({ currentPage }));
+    };
+    if (this.state.currentPage === 'DateSelection') {
+      const currentPage = 'SiteSelection';
+      this.setState(() => ({ currentPage }));      
+    };
+  };
+
   render() {
     return (
       <div>
@@ -361,6 +378,7 @@ export default class PromoSubmitter extends Component {
             // onCoverChange={this.onCoverChange}
             onSubmit={this.onSubmitBookDetailsTwo}
             error={this.state.error}
+            onClickBack={this.onClickBack}
           />
         }
         {
@@ -372,6 +390,7 @@ export default class PromoSubmitter extends Component {
             onPromoSitesChange={this.onPromoSitesChange}
             onSubmit={this.onSubmitSiteSelection}
             error={this.state.error}
+            onClickBack={this.onClickBack}            
           />
         }
         {
@@ -383,6 +402,7 @@ export default class PromoSubmitter extends Component {
             focusedInput={this.state.calendarFocus}
             onFocusChange={this.onFocusChange}
             onSubmit={this.onSubmitDateSelection}
+            onClickBack={this.onClickBack}            
           />
         }
         {

@@ -17,6 +17,7 @@ const SiteSelection = (props) => (
       onChange={props.onPromoSitesChange}
     />
     <input type="submit" value="Submit" />
+    <button onClick={props.onClickBack}>Back</button>    
   </form>
 );
 

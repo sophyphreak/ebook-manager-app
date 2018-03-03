@@ -16,6 +16,7 @@ const DateSelection = (props) => (
       onFocusChange={props.onFocusChange}
     />
     <input type="submit" value="Submit" />
+    <button onClick={props.onClickBack}>Back</button>    
   </form>
 );
 

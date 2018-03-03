@@ -22,6 +22,7 @@ const BookDetailsTwo = (props) => (
       onChange={props.onCoverChange}
     />*/}
     <input type="submit" value="Submit" />
+    <button onClick={props.onClickBack}>Back</button>
   </form>
 );
 
