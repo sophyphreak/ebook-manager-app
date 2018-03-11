@@ -17,6 +17,10 @@ export default {
         variant: 'info',
         text: 'NEW'
       }
+    },
+    {
+      name: 'Playground',
+      url: '/playground'
     }
   ]
 };

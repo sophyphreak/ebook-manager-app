@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/Footer';
 
 import Dashboard from '../../views/Dashboard/Dashboard';
 import PromoSubmitter from '../../views/PromoSubmitter/PromoSubmitter';
+import FormTests from '../../../playground/FormTests';
 
 class Full extends Component {
   render() {
@@ -23,6 +24,7 @@ class Full extends Component {
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                 <Route path="/promo-submitter" name="Promo Submitter" component={PromoSubmitter}/>
+                <Route path="/playground" name="Playground" component={FormTests}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

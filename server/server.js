@@ -37,8 +37,6 @@ app.post('/api/promo_submitter', async (req, res) => {
       html: req.body.html
     };
 
-    // console.log(mailOptions);
-
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
