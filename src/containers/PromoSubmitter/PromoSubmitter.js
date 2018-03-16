@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import axios from 'axios';
 
-import BookDetailsOne from './PromoPages/BookDetailsOne';
-import BookDetailsTwo from './PromoPages/BookDetailsTwo';
-import SiteSelection from './PromoPages/SiteSelection';
-import DateSelection from './PromoPages/DateSelection';
+import BookDetailsOne from '../../components/PromoSubmitter/PromoPages/BookDetailsOne';
+import BookDetailsTwo from '../../components/PromoSubmitter/PromoPages/BookDetailsTwo';
+import SiteSelection from '../../components/PromoSubmitter/PromoPages/SiteSelection';
+import DateSelection from '../../components/PromoSubmitter/PromoPages/DateSelection';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {

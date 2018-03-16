@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import { Container } from 'reactstrap';
-import Header from '../../components/Header/Header';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
-import Aside from '../../components/Aside/Aside';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../coreui/Header/Header';
+import Sidebar from '../../coreui/Sidebar/Sidebar';
+import Breadcrumb from '../../coreui/Breadcrumb/Breadcrumb';
+import Aside from '../../coreui/Aside/Aside';
+import Footer from '../../coreui/Footer/Footer';
 
 import Dashboard from '../../views/Dashboard/Dashboard';
-import PromoSubmitter from '../../views/PromoSubmitter/PromoSubmitter';
-import FormTests from '../../../playground/FormTests';
+import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
+import FormTests from '../../playground/FormTests';
 
 class Full extends Component {
   render() {
