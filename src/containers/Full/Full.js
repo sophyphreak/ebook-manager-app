@@ -10,6 +10,7 @@ import Footer from '../../coreui/Footer/Footer';
 import Dashboard from '../../views/Dashboard/Dashboard';
 import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import FormTests from '../../playground/FormTests';
+import FormTests2 from '../../playground/FormTests2';
 
 class Full extends Component {
   render() {
@@ -24,7 +25,8 @@ class Full extends Component {
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                 <Route path="/promo-submitter" name="Promo Submitter" component={PromoSubmitter}/>
-                <Route path="/playground" name="Playground" component={FormTests}/>
+                <Route path="/playground" name="Playground" component={FormTests} />
+                <Route path="/playground2" name="Playground2" component={FormTests2}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

@@ -21,6 +21,10 @@ export default {
     {
       name: 'Playground',
       url: '/playground'
+    },
+    {
+      name: 'Playground 2',
+      url: '/playground2'
     }
   ]
 };
