@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
+import createHistory from 'history/createBrowserHistory';
 import "react-dates/initialize";
 
 // Styles
@@ -22,11 +23,13 @@ import "react-dates/lib/css/_datepicker.css";
 // Containers
 import Full from "./containers/Full/Full";
 
+export const history = createHistory();
+
 ReactDOM.render(
-  <HashRouter>
+  <Router history={history}>
     <Switch>
       <Route path="/" name="Home" component={Full} />
     </Switch>
-  </HashRouter>,
+  </Router>,
   document.getElementById("root")
 );
