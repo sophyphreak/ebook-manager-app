@@ -7,7 +7,7 @@ import Breadcrumb from '../../coreui/Breadcrumb/Breadcrumb';
 import Aside from '../../coreui/Aside/Aside';
 import Footer from '../../coreui/Footer/Footer';
 
-import Dashboard from '../../views/Dashboard/Dashboard';
+import Dashboard from '../../components/Dashboard/Dashboard';
 import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
