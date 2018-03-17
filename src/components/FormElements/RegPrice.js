@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const RegPrice = (props) => (
-  <label>
-    Regular Price ($):*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Regular Price:*"
+    {...props}
+  />
 );
 
 export default RegPrice;

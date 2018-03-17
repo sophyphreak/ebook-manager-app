@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const Genre = (props) => (
-  <label>
-    Genre:*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Genre:*"
+    {...props}
+  />
 );
 
-export default Genre;
+export default Genre; 

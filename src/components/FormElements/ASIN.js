@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const ASIN = (props) => (
-  <label>
-    ASIN:*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="ASIN:*"
+    {...props}
+  />
 );
 
 export default ASIN;

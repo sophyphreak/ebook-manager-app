@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const SubGenre = (props) => (
-  <label>
-    Sub Genre:
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Sub Genre:"
+    {...props}
+  />
 );
 
 export default SubGenre;

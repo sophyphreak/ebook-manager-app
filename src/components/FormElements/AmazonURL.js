@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const AmazonURL = (props) => (
-  <label>
-    Amazon URL:*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Amazon URL:*"
+    {...props}
+  />
 );
 
 export default AmazonURL;

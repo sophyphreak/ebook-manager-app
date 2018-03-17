@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const Title = (props) => (
-  <label>
-    Title:*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput 
+    label="Title:*" 
+    {...props}
+  />
 );
 
 export default Title;

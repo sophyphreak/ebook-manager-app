@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const FirstName = (props) => (
-  <label>
-    Author First Name:*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Author First Name:*"
+    {...props}
+  />
 );
 
 export default FirstName;

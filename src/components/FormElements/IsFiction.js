@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const IsFiction = (props) => (
-  <label>
-    Fiction or Non-fiction?*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Fiction or Non-fiction?*"
+    {...props}
+  />
 );
 
 export default IsFiction;

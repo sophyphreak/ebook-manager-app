@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import { 
+  Button,
+  CardFooter,
+  Form,
+  Label 
+} from 'reactstrap';
 
 import Title from '../../FormElements/Title';
 import ASIN from '../../FormElements/ASIN';
@@ -12,9 +18,8 @@ import LastName from '../../FormElements/LastName';
 import Email from '../../FormElements/Email';
 
 const BookDetailsOne = (props) => (
-  <form className="form-layout animated fadeIn" onSubmit={props.onSubmit}>
-    <br/>
-    <h5>Book Details</h5>
+  <Form className="animated fadeIn" onSubmit={props.onSubmit}>
+    <h2><strong>Book Details</strong></h2>
     {props.error && <p>{props.error}</p>}    
     <Title
       value={props.title}
@@ -56,8 +61,17 @@ const BookDetailsOne = (props) => (
       value={props.email}
       onChange={props.onEmailChange}
     />
-    <input type="submit" value="Submit" />    
-  </form>
+
+    <Button 
+      type="submit" 
+      size="sm" 
+      color="primary" 
+      value="Submit" 
+    >
+      <i className="fa fa-dot-circle-o" />
+      Submit
+    </Button>    
+  </Form>
 );
 
 export default BookDetailsOne;

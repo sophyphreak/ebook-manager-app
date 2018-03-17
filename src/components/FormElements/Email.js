@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import BasicInput from './BasicInput';
 
 const Email = (props) => (
-  <label>
-    Email:*
-    <input type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <BasicInput
+    label="Email:*"
+    {...props}
+  />
 );
 
 export default Email;

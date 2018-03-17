@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
-import moment from 'moment';
-import axios from 'axios';
+import React, { Component } from "react";
+import moment from "moment";
+import axios from "axios";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
+  Row
+} from 'reactstrap';
 
-import BookDetailsOne from '../../components/PromoSubmitter/PromoPages/BookDetailsOne';
-import BookDetailsTwo from '../../components/PromoSubmitter/PromoPages/BookDetailsTwo';
-import SiteSelection from '../../components/PromoSubmitter/PromoPages/SiteSelection';
-import DateSelection from '../../components/PromoSubmitter/PromoPages/DateSelection';
+import BookDetailsOne from "../../components/PromoSubmitter/PromoPages/BookDetailsOne";
+import BookDetailsTwo from "../../components/PromoSubmitter/PromoPages/BookDetailsTwo";
+import SiteSelection from "../../components/PromoSubmitter/PromoPages/SiteSelection";
+import DateSelection from "../../components/PromoSubmitter/PromoPages/DateSelection";
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      currentPage:  'BookDetailsOne',
+    this.state = {
+      currentPage: "BookDetailsOne",
 
       // // BookDetailsOne
       // title:        'Zhuangzi: The Essential Writings: With Selections from Traditional Commentaries (Hackett Classics)',
@@ -29,7 +36,7 @@ export default class PromoSubmitter extends Component {
       // description:  'Ideal for students and scholars alike, this edition of Zhuangzi (Chuang Tzu) includes the complete Inner Chapters, extensive selections from the Outer and Miscellaneous Chapters, and judicious selections from two thousand years of traditional Chinese commentaries, which provide the reader access to the text as well as to its reception and interpretation. A glossary, brief biographies of the commentators, a bibliography, and an index are also included.',
       // authorBio:    'Brook Ziporyn is Associate Professor of Religion and Philosophy, Northwestern University.',
       // // cover:        '',
-      
+
       // // SiteSelection
       // promoType: '99 cents',
       // promoSites: 'all of them please!',
@@ -39,33 +46,33 @@ export default class PromoSubmitter extends Component {
       // endDate:      moment('2018-3-5'),
 
       // BookDetailsOne
-      title:         '',
-      ASIN:          '',
-      amazonURL:     '',
-      regPrice:      '',
-      isFiction:     '',
-      genre:         '',
-      subGenre:      '',
-      firstName:     '',
-      lastName:      '',
-      email:         '',
+      title: "",
+      ASIN: "",
+      amazonURL: "",
+      regPrice: "",
+      isFiction: "",
+      genre: "",
+      subGenre: "",
+      firstName: "",
+      lastName: "",
+      email: "",
 
       // BookDetailsTwo
-      description:   '',
-      authorBio:     '',
+      description: "",
+      authorBio: "",
       // cover:        '',
 
       // SiteSelection
-      promoType:     '',
-      promoSites:    '',
+      promoType: "",
+      promoSites: "",
 
       // DateSelection
-      startDate:     moment(),
-      endDate:       moment(),
+      startDate: moment(),
+      endDate: moment(),
       calendarFocus: null,
-      error:         ''
+      error: ""
     };
-  
+
     // BookDetailsOne
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onASINChange = this.onASINChange.bind(this);
@@ -78,7 +85,7 @@ export default class PromoSubmitter extends Component {
     this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitBookDetailsOne = this.onSubmitBookDetailsOne.bind(this);
-    
+
     // BookDetailsTwo
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
     this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
@@ -103,56 +110,56 @@ export default class PromoSubmitter extends Component {
   onTitleChange(e) {
     const title = e.target.value;
     this.setState(() => ({ title }));
-  };
+  }
 
   onASINChange(e) {
     const ASIN = e.target.value.toUpperCase();
     if (ASIN.match(/^[0-9A-Z]{0,10}$/)) {
       this.setState(() => ({ ASIN }));
     }
-  };
+  }
 
   onAmazonURLChange(e) {
     const amazonURL = e.target.value;
     this.setState(() => ({ amazonURL }));
-  };
-  
+  }
+
   onRegPriceChange(e) {
     const regPrice = e.target.value;
     if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => ({ regPrice }));
     }
-  };
+  }
 
   onIsFictionChange(e) {
     const isFiction = e.target.value;
     this.setState(() => ({ isFiction }));
   }
-  
+
   onGenreChange(e) {
     const genre = e.target.value;
     this.setState(() => ({ genre }));
-  };
+  }
 
   onSubGenreChange(e) {
     const subGenre = e.target.value;
     this.setState(() => ({ subGenre }));
-  };
+  }
 
   onFirstNameChange(e) {
     const firstName = e.target.value;
     this.setState(() => ({ firstName }));
-  };
+  }
 
   onLastNameChange(e) {
     const lastName = e.target.value;
     this.setState(() => ({ lastName }));
-  };
+  }
 
   onEmailChange(e) {
     const email = e.target.value;
     this.setState(() => ({ email }));
-  };
+  }
 
   onSubmitBookDetailsOne(e) {
     e.preventDefault();
@@ -167,35 +174,39 @@ export default class PromoSubmitter extends Component {
       !this.state.lastName ||
       !this.state.email
     ) {
-      this.setState(() => ({ error: 'Please fill in all required fields.' }));      
-    } else if(!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
-      this.setState(() => ({ error: 'Please provide a valid ASIN.' }))
-    } else if (!this.state.amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      this.setState(() => ({ error: 'Please provide a valid Amazon url.'}))
-    } else if (!this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      this.setState(() => ({ error: 'Please provide a valid email address.' }));    
+      this.setState(() => ({ error: "Please fill in all required fields." }));
+    } else if (!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
+      this.setState(() => ({ error: "Please provide a valid ASIN." }));
+    } else if (
+      !this.state.amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)
+    ) {
+      this.setState(() => ({ error: "Please provide a valid Amazon url." }));
+    } else if (
+      !this.state.email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
+    ) {
+      this.setState(() => ({ error: "Please provide a valid email address." }));
     } else {
-    console.log(this.state);
+      console.log(this.state);
 
-    const error = '';
-    this.setState(() => ({ error }));
+      const error = "";
+      this.setState(() => ({ error }));
 
-    const currentPage = 'BookDetailsTwo';
-    this.setState(() => ({ currentPage }));
-    };
-  };
+      const currentPage = "BookDetailsTwo";
+      this.setState(() => ({ currentPage }));
+    }
+  }
 
   // BookDetailsTwo
 
   onDescriptionChange(e) {
     const description = e.target.value;
     this.setState(() => ({ description }));
-  };
+  }
 
   onAuthorBioChange(e) {
     const authorBio = e.target.value;
     this.setState(() => ({ authorBio }));
-  };
+  }
 
   // onCoverChange(e) {
   //   const cover = e.target.value;
@@ -204,77 +215,70 @@ export default class PromoSubmitter extends Component {
 
   onSubmitBookDetailsTwo(e) {
     e.preventDefault();
-    if (
-      !this.state.description ||
-      !this.state.authorBio
-    ) {
-      this.setState(() => ({ error: 'Please fill in all required fields.' }));
+    if (!this.state.description || !this.state.authorBio) {
+      this.setState(() => ({ error: "Please fill in all required fields." }));
     } else {
-    console.log(this.state);
+      console.log(this.state);
 
-    const error = ''
-    this.setState(() => ({ error }));
+      const error = "";
+      this.setState(() => ({ error }));
 
-    const currentPage = "SiteSelection";
-    this.setState(() => ({ currentPage }));
+      const currentPage = "SiteSelection";
+      this.setState(() => ({ currentPage }));
     }
-  };
-
+  }
 
   // SiteSelection
 
   onPromoTypeChange(e) {
     const promoType = e.target.value;
     this.setState(() => ({ promoType }));
-  };
+  }
 
   onPromoSitesChange(e) {
     const promoSites = e.target.value;
     this.setState(() => ({ promoSites }));
-  };
+  }
 
   onSubmitSiteSelection(e) {
-    e.preventDefault();    
-    if (
-      !this.state.promoType ||
-      !this.state.promoSites
-    ) {
-      this.setState(() => ({ error: 'Please fill in all required fields.' }));      
+    e.preventDefault();
+    if (!this.state.promoType || !this.state.promoSites) {
+      this.setState(() => ({ error: "Please fill in all required fields." }));
     } else {
       console.log(this.state);
 
-      const error = ''
+      const error = "";
       this.setState(() => ({ error }));
 
       const currentPage = "DateSelection";
       this.setState(() => ({ currentPage }));
     }
-  };
-
+  }
 
   // DateSelection
 
   onDatesChange({ startDate, endDate }) {
     this.setState(() => ({ startDate, endDate }));
-  };
+  }
 
   onFocusChange(calendarFocus) {
     this.setState(() => ({ calendarFocus }));
-  };
+  }
 
   onSubmitDateSelection(e) {
     e.preventDefault();
     console.log(this.state);
 
-    const error = '';
+    const error = "";
     this.setState(() => ({ error }));
-    
+
     const currentPage = "SubmissionSuccess";
     this.setState(() => ({ currentPage }));
 
-    // Currently constructing POST call to server in order to send an email      
-    axios.post('/api/promo_submitter', {
-      text: `PROMO SUBMITTER REQUEST
+    // Currently constructing POST call to server in order to send an email
+    axios
+      .post("/api/promo_submitter", {
+        text: `PROMO SUBMITTER REQUEST
 
         Title: ${this.state.title}
         ASIN: ${this.state.ASIN}
@@ -290,10 +294,10 @@ export default class PromoSubmitter extends Component {
         Author Biography: ${this.state.authorBio}
         Promo Type: ${this.state.promoType}
         Promo Sites: ${this.state.promoSites}
-        Start Date: ${this.state.startDate.format('MMMM Do YYYY')}
-        End Date: ${this.state.endDate.format('MMMM Do YYYY')}
+        Start Date: ${this.state.startDate.format("MMMM Do YYYY")}
+        End Date: ${this.state.endDate.format("MMMM Do YYYY")}
       `,
-      html: `
+        html: `
         <h3>Promo Submitter Request</h3>
         <p>Title: ${this.state.title}</p>
         <p>ASIN: ${this.state.ASIN}</p>
@@ -309,107 +313,114 @@ export default class PromoSubmitter extends Component {
         <p>Author Biography: ${this.state.authorBio}</p>
         <p>Promo Type: ${this.state.promoType}</p>
         <p>Promo Sites: ${this.state.promoSites}</p>
-        <p>Start Date: ${this.state.startDate.format('MMMM Do YYYY')}</p>
-        <p>End Date: ${this.state.endDate.format('MMMM Do YYYY')}</p>
+        <p>Start Date: ${this.state.startDate.format("MMMM Do YYYY")}</p>
+        <p>End Date: ${this.state.endDate.format("MMMM Do YYYY")}</p>
       `
-    })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  };
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   onClickBack(e) {
-    if (this.state.currentPage === 'BookDetailsTwo') {
-      const currentPage = 'BookDetailsOne';
+    if (this.state.currentPage === "BookDetailsTwo") {
+      const currentPage = "BookDetailsOne";
       this.setState(() => ({ currentPage }));
-    };
-    if (this.state.currentPage === 'SiteSelection') {
-      const currentPage = 'BookDetailsTwo';
+    }
+    if (this.state.currentPage === "SiteSelection") {
+      const currentPage = "BookDetailsTwo";
       this.setState(() => ({ currentPage }));
-    };
-    if (this.state.currentPage === 'DateSelection') {
-      const currentPage = 'SiteSelection';
-      this.setState(() => ({ currentPage }));      
-    };
-  };
+    }
+    if (this.state.currentPage === "DateSelection") {
+      const currentPage = "SiteSelection";
+      this.setState(() => ({ currentPage }));
+    }
+  }
 
   render() {
     return (
-      <div>
-        <h4>Promotion Submitter</h4>
-        {
-          this.state.currentPage === 'BookDetailsOne' && 
-          <BookDetailsOne
-            title={this.state.title}
-            onTitleChange={this.onTitleChange}
-            ASIN={this.state.ASIN}
-            onASINChange={this.onASINChange}
-            amazonURL={this.state.amazonURL}
-            onAmazonURLChange={this.onAmazonURLChange}
-            regPrice={this.state.regPrice}
-            onRegPriceChange={this.onRegPriceChange}
-            isFiction={this.state.isFiction}
-            onIsFictionChange={this.onIsFictionChange}
-            genre={this.state.genre}
-            onGenreChange={this.onGenreChange}
-            subGenre={this.state.subGenre}
-            onSubGenreChange={this.onSubGenreChange}
-            firstName={this.state.firstName}
-            onFirstNameChange={this.onFirstNameChange}
-            lastName={this.state.lastName}
-            onLastNameChange={this.onLastNameChange}
-            email={this.state.email}
-            onEmailChange={this.onEmailChange}
-            onSubmit={this.onSubmitBookDetailsOne}
-            error={this.state.error}
-          />
-        }
-        {
-          this.state.currentPage === 'BookDetailsTwo' &&
-          <BookDetailsTwo
-            description={this.state.description}
-            onDescriptionChange={this.onDescriptionChange}
-            authorBio={this.state.authorBio}
-            onAuthorBioChange={this.onAuthorBioChange}
-            // cover={this.state.cover}
-            // onCoverChange={this.onCoverChange}
-            onSubmit={this.onSubmitBookDetailsTwo}
-            error={this.state.error}
-            onClickBack={this.onClickBack}
-          />
-        }
-        {
-          this.state.currentPage === 'SiteSelection' &&
-          <SiteSelection
-            promoType={this.state.promoType}
-            onPromoTypeChange={this.onPromoTypeChange}
-            promoSites={this.state.promoSites}
-            onPromoSitesChange={this.onPromoSitesChange}
-            onSubmit={this.onSubmitSiteSelection}
-            error={this.state.error}
-            onClickBack={this.onClickBack}            
-          />
-        }
-        {
-          this.state.currentPage === 'DateSelection' &&
-          <DateSelection
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
-            onDatesChange={this.onDatesChange}
-            focusedInput={this.state.calendarFocus}
-            onFocusChange={this.onFocusChange}
-            onSubmit={this.onSubmitDateSelection}
-            onClickBack={this.onClickBack}            
-          />
-        }
-        {
-          this.state.currentPage === 'SubmissionSuccess' &&
-          <p className="animated fadeIn">Your Promo Submission has been submitted. Please wait for a confirmation email.</p>
-        }
-      </div>
+      <Row>
+        <Col sm="3" />
+        <Col xs="12" sm="6">
+          <Card>
+            <CardHeader>
+              <strong>Promotion Submitter</strong>
+            </CardHeader>
+            <CardBody>
+              {this.state.currentPage === "BookDetailsOne" && (
+                <BookDetailsOne
+                  title={this.state.title}
+                  onTitleChange={this.onTitleChange}
+                  ASIN={this.state.ASIN}
+                  onASINChange={this.onASINChange}
+                  amazonURL={this.state.amazonURL}
+                  onAmazonURLChange={this.onAmazonURLChange}
+                  regPrice={this.state.regPrice}
+                  onRegPriceChange={this.onRegPriceChange}
+                  isFiction={this.state.isFiction}
+                  onIsFictionChange={this.onIsFictionChange}
+                  genre={this.state.genre}
+                  onGenreChange={this.onGenreChange}
+                  subGenre={this.state.subGenre}
+                  onSubGenreChange={this.onSubGenreChange}
+                  firstName={this.state.firstName}
+                  onFirstNameChange={this.onFirstNameChange}
+                  lastName={this.state.lastName}
+                  onLastNameChange={this.onLastNameChange}
+                  email={this.state.email}
+                  onEmailChange={this.onEmailChange}
+                  onSubmit={this.onSubmitBookDetailsOne}
+                  error={this.state.error}
+                />
+              )}
+              {this.state.currentPage === "BookDetailsTwo" && (
+                <BookDetailsTwo
+                  description={this.state.description}
+                  onDescriptionChange={this.onDescriptionChange}
+                  authorBio={this.state.authorBio}
+                  onAuthorBioChange={this.onAuthorBioChange}
+                  // cover={this.state.cover}
+                  // onCoverChange={this.onCoverChange}
+                  onSubmit={this.onSubmitBookDetailsTwo}
+                  error={this.state.error}
+                  onClickBack={this.onClickBack}
+                />
+              )}
+              {this.state.currentPage === "SiteSelection" && (
+                <SiteSelection
+                  promoType={this.state.promoType}
+                  onPromoTypeChange={this.onPromoTypeChange}
+                  promoSites={this.state.promoSites}
+                  onPromoSitesChange={this.onPromoSitesChange}
+                  onSubmit={this.onSubmitSiteSelection}
+                  error={this.state.error}
+                  onClickBack={this.onClickBack}
+                />
+              )}
+              {this.state.currentPage === "DateSelection" && (
+                <DateSelection
+                  startDate={this.state.startDate}
+                  endDate={this.state.endDate}
+                  onDatesChange={this.onDatesChange}
+                  focusedInput={this.state.calendarFocus}
+                  onFocusChange={this.onFocusChange}
+                  onSubmit={this.onSubmitDateSelection}
+                  onClickBack={this.onClickBack}
+                />
+              )}
+              {this.state.currentPage === "SubmissionSuccess" && (
+                <p className="animated fadeIn">
+                  Your Promo Submission has been submitted. Please wait for a
+                  confirmation email.
+                </p>
+              )}
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
     );
   }
-};
+}
