@@ -19,7 +19,7 @@ import Email from '../../FormElements/Email';
 
 const BookDetailsOne = (props) => (
   <Form className="animated fadeIn" onSubmit={props.onSubmit}>
-    <h2><strong>Book Details</strong></h2>
+    <h4><strong>Book Details</strong></h4>
     {props.error && <p>{props.error}</p>}    
     <Title
       value={props.title}
