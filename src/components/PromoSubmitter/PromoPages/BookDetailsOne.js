@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { 
+  Card,
+  CardHeader,
+  CardBody,
   Button,
-  Form
+  Form,
+  Label
 } from 'reactstrap';
 
 import Title from '../../FormElements/Title';
 import ASIN from '../../FormElements/ASIN';
 import AmazonURL from '../../FormElements/AmazonURL';
-import RegPrice from '../../FormElements/RegPrice';
 import IsFiction from '../../FormElements/IsFiction';
 import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
@@ -28,9 +31,6 @@ const BookDetailsOne = ({
   amazonURL,
   onAmazonURLChange,
 
-  regPrice,
-  onRegPriceChange,
-
   isFiction,
   onIsFictionChange,
 
@@ -49,59 +49,60 @@ const BookDetailsOne = ({
   email,
   onEmailChange,
 }) => (
-  <Form className="animated fadeIn" onSubmit={onSubmit}>
-    <h4><strong>Book Details</strong></h4>
-    {error && <p>{error}</p>}    
-    <Title
-      value={title}
-      onChange={onTitleChange}
-    />
-    <ASIN
-      value={asin}
-      onChange={onAsinChange}
-    />
-    <AmazonURL
-      value={amazonURL}
-      onChange={onAmazonURLChange}
-    />
-    <RegPrice
-      value={regPrice}
-      onChange={onRegPriceChange}
-    />
-    <IsFiction
-      value={isFiction}
-      onChange={onIsFictionChange}
-    />
-    <Genre
-      value={genre}
-      onChange={onGenreChange}
-    />
-    <SubGenre
-      value={subGenre}
-      onChange={onSubGenreChange}
-    />
-    <FirstName
-      value={firstName}
-      onChange={onFirstNameChange}
-    />
-    <LastName
-      value={lastName}
-      onChange={onLastNameChange}
-    />
-    <Email
-      value={email}
-      onChange={onEmailChange}
-    />
-    <Button 
-      type="submit" 
-      size="sm" 
-      color="primary" 
-      value="Submit" 
-    >
-      <i className="fa fa-dot-circle-o" /> 
-      Submit
-    </Button>    
-  </Form>
+  <Card className="animated fadeIn">
+    <CardHeader>
+      <h4><strong>Book Promo - 1 of 3</strong></h4>
+    </CardHeader>
+    <CardBody>
+      <Form onSubmit={onSubmit}>
+        <Title
+          value={title}
+          onChange={onTitleChange}
+        />
+        <ASIN
+          value={asin}
+          onChange={onAsinChange}
+        />
+        <AmazonURL
+          value={amazonURL}
+          onChange={onAmazonURLChange}
+        />
+        <IsFiction
+          value={isFiction}
+          onChange={onIsFictionChange}
+        />
+        <Genre
+          value={genre}
+          onChange={onGenreChange}
+        />
+        <SubGenre
+          value={subGenre}
+          onChange={onSubGenreChange}
+        />
+        <FirstName
+          value={firstName}
+          onChange={onFirstNameChange}
+        />
+        <LastName
+          value={lastName}
+          onChange={onLastNameChange}
+        />
+        <Email
+          value={email}
+          onChange={onEmailChange}
+        />
+        {error && <p>{error}</p>}        
+        <Button 
+          type="submit" 
+          size="sm" 
+          color="primary" 
+          value="Submit" 
+        >
+          Next Section
+        </Button>  
+      </Form>
+    </CardBody>
+  </Card>
 );
 
 export default BookDetailsOne;

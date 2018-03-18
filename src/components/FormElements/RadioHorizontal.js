@@ -5,12 +5,12 @@ import {
   Input
 } from 'reactstrap';
 
-const RadioInput = ({ label, options, value, onChange }) => (
+const RadioHorizontal = ({ label, options, value, onChange }) => (
   <FormGroup>
     {label && <Label>{label}</Label>}
     {
       options.map((option, i) => (
-        <FormGroup className="radio-input__indent" check key={i}>
+        <FormGroup check inline key={i}>
           <Input
             type="radio"
             value={option}
@@ -18,12 +18,12 @@ const RadioInput = ({ label, options, value, onChange }) => (
             checked={value === option}
           />
           <Label check>
-            {option}
+            {option}   
           </Label>
         </FormGroup>
       ))
     }
   </FormGroup>
-); 
+);
 
-export default RadioInput;  
+export default RadioHorizontal;

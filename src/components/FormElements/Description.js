@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import TextAreaInput from './TextAreaInput';
 
 const Description = (props) => (
-  <label>
-    Description:*
-    <textarea type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <TextAreaInput
+    label="Book description:*"
+    {...props}
+  />
 );
 
 export default Description;

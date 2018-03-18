@@ -30,7 +30,6 @@ export default class PromoSubmitter extends Component {
 
       // // SiteSelection
       // promoType: '99 cents',
-      // promoSites: 'all of them please!',
 
       // // DateSelection
       // startDate:    moment('2018-3-1'),
@@ -40,34 +39,29 @@ export default class PromoSubmitter extends Component {
       title: "",
       asin: "",
       amazonURL: "",
-      regPrice: "",
       isFiction: "",
       genre: "",
       subGenre: "",
       firstName: "",
       lastName: "",
       email: "",
-
+      
       // BookDetailsTwo
-      description: "",
-      authorBio: "",
-      // cover:        '',
-
-      // SiteSelection
+      regPrice: "",
       promoType: "",
-      promoSites: "",
-
-      // DateSelection
       startDate: moment(),
       endDate: moment(),
-      calendarFocus: null
+      calendarFocus: null,
+      
+      // BookDetailsThree
+      description: "",
+      authorBio: ""
     };
 
     // BookDetailsOne
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
-    this.onRegPriceChange = this.onRegPriceChange.bind(this);
     this.onIsFictionChange = this.onIsFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
@@ -75,22 +69,18 @@ export default class PromoSubmitter extends Component {
     this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitBookDetailsOne = this.onSubmitBookDetailsOne.bind(this);
-
+    
     // BookDetailsTwo
-    this.onDescriptionChange = this.onDescriptionChange.bind(this);
-    this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
-    // this.onCoverChange = this.onCoverChange.bind(this);
-    this.onSubmitBookDetailsTwo = this.onSubmitBookDetailsTwo.bind(this);
-
-    // SiteSelection
+    this.onRegPriceChange = this.onRegPriceChange.bind(this);
     this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
-    this.onPromoSitesChange = this.onPromoSitesChange.bind(this);
-    this.onSubmitSiteSelection = this.onSubmitSiteSelection.bind(this);
-
-    // DateSelection
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
-    this.onSubmitDateSelection = this.onSubmitDateSelection.bind(this);
+    this.onSubmitBookDetailsTwo = this.onSubmitBookDetailsTwo.bind(this);
+    
+    // BookDetailsThree
+    this.onDescriptionChange = this.onDescriptionChange.bind(this);
+    this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
+    this.onSubmitBookDetailsThree = this.onSubmitBookDetailsThree.bind(this);
 
     this.onClickBack = this.onClickBack.bind(this);
   }
@@ -112,13 +102,6 @@ export default class PromoSubmitter extends Component {
   onAmazonURLChange(e) {
     const amazonURL = e.target.value;
     this.setState(() => ({ amazonURL }));
-  }
-
-  onRegPriceChange(e) {
-    const regPrice = e.target.value;
-    if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ regPrice }));
-    }
   }
 
   onIsFictionChange(e) {
@@ -157,7 +140,6 @@ export default class PromoSubmitter extends Component {
       !this.state.title ||
       !this.state.asin ||
       !this.state.amazonURL ||
-      !this.state.regPrice ||
       !this.state.isFiction ||
       !this.state.genre ||
       !this.state.firstName ||
@@ -188,6 +170,48 @@ export default class PromoSubmitter extends Component {
 
   // BookDetailsTwo
 
+  onRegPriceChange(e) {
+    const regPrice = e.target.value;
+    if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ regPrice }));
+    }
+  }
+
+  onPromoTypeChange(e) {
+    const promoType = e.target.value;
+    this.setState(() => ({ promoType }));
+  }
+
+  onDatesChange({ startDate, endDate }) {
+    this.setState(() => ({ startDate, endDate }));
+  }
+
+  onFocusChange(calendarFocus) {
+    this.setState(() => ({ calendarFocus }));
+  }
+
+  onSubmitBookDetailsTwo(e) {
+    e.preventDefault();
+    if (
+      !this.state.regPrice || 
+      !this.state.promoType ||
+      !this.state.startDate ||
+      !this.state.endDate
+    ) {
+      this.setState(() => ({ error: "Please fill in all required fields." }));
+    } else {
+      console.log(this.state);
+
+      const error = "";
+      this.setState(() => ({ error }));
+
+      const currentPage = "BookDetailsThree";
+      this.setState(() => ({ currentPage }));
+    }
+  }
+
+  // BookDetailsThree
+
   onDescriptionChange(e) {
     const description = e.target.value;
     this.setState(() => ({ description }));
@@ -198,121 +222,72 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ authorBio }));
   }
 
-  // onCoverChange(e) {
-  //   const cover = e.target.value;
-  //   this.setState(() => ({ cover }));
-  // };
-
-  onSubmitBookDetailsTwo(e) {
+  onSubmitBookDetailsThree(e) {
     e.preventDefault();
-    if (!this.state.description || !this.state.authorBio) {
+    if (
+      !this.state.description || 
+      !this.state.authorBio
+    ) {
       this.setState(() => ({ error: "Please fill in all required fields." }));
     } else {
+
       console.log(this.state);
 
       const error = "";
       this.setState(() => ({ error }));
 
-      const currentPage = "SiteSelection";
+      const currentPage = "SubmissionSuccess";
       this.setState(() => ({ currentPage }));
+
+      // Currently constructing POST call to server in order to send an email
+      axios
+        .post("/api/promo_submitter", {
+          text: `PROMO SUBMITTER REQUEST
+
+          Title: ${this.state.title}
+          ASIN: ${this.state.asin}
+          Amazon URL: ${this.state.amazonURL}
+          Regular Price ($): ${this.state.amazonURL}
+          Fiction or Nonfiction?: ${this.state.isFiction}
+          Genre: ${this.state.genre}
+          Sub-Genre: ${this.state.subGenre}
+          Author First Name: ${this.state.firstName}
+          Author Last Name: ${this.state.lastName}
+          Email: ${this.state.email}
+          Description: ${this.state.description}
+          Author Biography: ${this.state.authorBio}
+          Promo Type: ${this.state.promoType}
+          Promo Sites: ${this.state.promoSites}
+          Start Date: ${this.state.startDate.format("MMMM Do YYYY")}
+          End Date: ${this.state.endDate.format("MMMM Do YYYY")}
+        `,
+          html: `
+          <h3>Promo Submitter Request</h3>
+          <p>Title: ${this.state.title}</p>
+          <p>ASIN: ${this.state.asin}</p>
+          <p>Amazon URL: ${this.state.amazonURL}</p>
+          <p>Regular Price ($): ${this.state.regPrice}</p>
+          <p>Fiction or Nonfiction?: ${this.state.isFiction}</p>
+          <p>Genre: ${this.state.genre}</p>
+          <p>Sub-Genre: ${this.state.subGenre}</p>
+          <p>Author First Name: ${this.state.firstName}</p>
+          <p>Author Last Name: ${this.state.lastName}</p>
+          <p>Email: ${this.state.email}</p>
+          <p>Description: ${this.state.description}</p>
+          <p>Author Biography: ${this.state.authorBio}</p>
+          <p>Promo Type: ${this.state.promoType}</p>
+          <p>Promo Sites: ${this.state.promoSites}</p>
+          <p>Start Date: ${this.state.startDate.format("MMMM Do YYYY")}</p>
+          <p>End Date: ${this.state.endDate.format("MMMM Do YYYY")}</p>
+        `
+        })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
-  }
-
-  // SiteSelection
-
-  onPromoTypeChange(e) {
-    const promoType = e.target.value;
-    this.setState(() => ({ promoType }));
-  }
-
-  onPromoSitesChange(e) {
-    const promoSites = e.target.value;
-    this.setState(() => ({ promoSites }));
-  }
-
-  onSubmitSiteSelection(e) {
-    e.preventDefault();
-    if (!this.state.promoType || !this.state.promoSites) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else {
-      console.log(this.state);
-
-      const error = "";
-      this.setState(() => ({ error }));
-
-      const currentPage = "DateSelection";
-      this.setState(() => ({ currentPage }));
-    }
-  }
-
-  // DateSelection
-
-  onDatesChange({ startDate, endDate }) {
-    this.setState(() => ({ startDate, endDate }));
-  }
-
-  onFocusChange(calendarFocus) {
-    this.setState(() => ({ calendarFocus }));
-  }
-
-  onSubmitDateSelection(e) {
-    e.preventDefault();
-    console.log(this.state);
-
-    const error = "";
-    this.setState(() => ({ error }));
-
-    const currentPage = "SubmissionSuccess";
-    this.setState(() => ({ currentPage }));
-
-    // Currently constructing POST call to server in order to send an email
-    axios
-      .post("/api/promo_submitter", {
-        text: `PROMO SUBMITTER REQUEST
-
-        Title: ${this.state.title}
-        ASIN: ${this.state.asin}
-        Amazon URL: ${this.state.amazonURL}
-        Regular Price ($): ${this.state.amazonURL}
-        Fiction or Nonfiction?: ${this.state.isFiction}
-        Genre: ${this.state.genre}
-        Sub-Genre: ${this.state.subGenre}
-        Author First Name: ${this.state.firstName}
-        Author Last Name: ${this.state.lastName}
-        Email: ${this.state.email}
-        Description: ${this.state.description}
-        Author Biography: ${this.state.authorBio}
-        Promo Type: ${this.state.promoType}
-        Promo Sites: ${this.state.promoSites}
-        Start Date: ${this.state.startDate.format("MMMM Do YYYY")}
-        End Date: ${this.state.endDate.format("MMMM Do YYYY")}
-      `,
-        html: `
-        <h3>Promo Submitter Request</h3>
-        <p>Title: ${this.state.title}</p>
-        <p>ASIN: ${this.state.asin}</p>
-        <p>Amazon URL: ${this.state.amazonURL}</p>
-        <p>Regular Price ($): ${this.state.regPrice}</p>
-        <p>Fiction or Nonfiction?: ${this.state.isFiction}</p>
-        <p>Genre: ${this.state.genre}</p>
-        <p>Sub-Genre: ${this.state.subGenre}</p>
-        <p>Author First Name: ${this.state.firstName}</p>
-        <p>Author Last Name: ${this.state.lastName}</p>
-        <p>Email: ${this.state.email}</p>
-        <p>Description: ${this.state.description}</p>
-        <p>Author Biography: ${this.state.authorBio}</p>
-        <p>Promo Type: ${this.state.promoType}</p>
-        <p>Promo Sites: ${this.state.promoSites}</p>
-        <p>Start Date: ${this.state.startDate.format("MMMM Do YYYY")}</p>
-        <p>End Date: ${this.state.endDate.format("MMMM Do YYYY")}</p>
-      `
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }
 
   onClickBack(e) {
@@ -320,12 +295,8 @@ export default class PromoSubmitter extends Component {
       const currentPage = "BookDetailsOne";
       this.setState(() => ({ currentPage }));
     }
-    if (this.state.currentPage === "SiteSelection") {
+    if (this.state.currentPage === "BookDetailsThree") {
       const currentPage = "BookDetailsTwo";
-      this.setState(() => ({ currentPage }));
-    }
-    if (this.state.currentPage === "DateSelection") {
-      const currentPage = "SiteSelection";
       this.setState(() => ({ currentPage }));
     }
   }
@@ -347,7 +318,6 @@ export default class PromoSubmitter extends Component {
       description,
       authorBio,
       promoType,
-      promoSites,
       startDate,
       endDate,
       calendarFocus
@@ -362,26 +332,23 @@ export default class PromoSubmitter extends Component {
         title={title}
         asin={asin}
         amazonURL={amazonURL}
-        regPrice={regPrice}
         isFiction={isFiction}
         genre={genre}
         subGenre={subGenre}
         firstName={firstName}
         lastName={lastName}
         email={email}
-
+        
         // BookDetailsTwo
-        description={description}
-        authorBio={authorBio}
-
-        // SiteSelection
+        regPrice={regPrice}
         promoType={promoType}
-        promoSites={promoSites}
-
-        // DateSelection
         startDate={startDate}
         endDate={endDate}
         calendarFocus={calendarFocus}
+        
+        // BookDetailsThree
+        description={description}
+        authorBio={authorBio}
 
         // Methods
         onClickBack={this.onClickBack}
@@ -390,7 +357,6 @@ export default class PromoSubmitter extends Component {
         onTitleChange={this.onTitleChange}
         onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
-        onRegPriceChange={this.onRegPriceChange}
         onIsFictionChange={this.onIsFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}
@@ -398,21 +364,18 @@ export default class PromoSubmitter extends Component {
         onLastNameChange={this.onLastNameChange}
         onEmailChange={this.onEmailChange}
         onSubmitBookDetailsOne={this.onSubmitBookDetailsOne}
-
+        
         // BookDetailsTwo
-        onDescriptionChange={this.onDescriptionChange}
-        onAuthorBioChange={this.onAuthorBioChange}
-        onSubmitBookDetailsTwo={this.onSubmitBookDetailsTwo}
-
-        // SiteSelection
+        onRegPriceChange={this.onRegPriceChange}
         onPromoTypeChange={this.onPromoTypeChange}
-        onPromoSitesChange={this.onPromoSitesChange}
-        onSubmitSiteSelection={this.onSubmitSiteSelection}
-
-        // DateSelection
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
-        onSubmitDateSelection={this.onSubmitDateSelection}
+        onSubmitBookDetailsTwo={this.onSubmitBookDetailsTwo}
+        
+        // BookDetailsThree
+        onDescriptionChange={this.onDescriptionChange}
+        onAuthorBioChange={this.onAuthorBioChange}
+        onSubmitBookDetailsThree={this.onSubmitBookDetailsThree}
         />
     );
   }

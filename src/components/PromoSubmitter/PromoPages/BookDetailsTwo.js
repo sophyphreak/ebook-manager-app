@@ -1,29 +1,74 @@
 import React, { Component } from 'react';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Button,
+  Form
+} from 'reactstrap';
 
-import Description from '../../FormElements/Description';
-import AuthorBio from '../../FormElements/AuthorBio';
-// import Cover from '../../FormElements/Cover';
+import RegPrice from '../../FormElements/RegPrice';
+import PromoType from '../../FormElements/PromoType';
+import DatesPicker from '../../FormElements/DatesPicker';
 
-const BookDetailsTwo = (props) => (
-  <form className="form-layout animated fadeIn" onSubmit={props.onSubmit}>
-    <br />
-    <h5>Book Details</h5>
-    {props.error && <p>{props.error}</p>}
-    <Description
-      value={props.description}
-      onChange={props.onDescriptionChange}
-    />
-    <AuthorBio
-      value={props.authorBio}
-      onChange={props.onAuthorBioChange}
-    />
-    {/*<Cover
-      value={props.cover}
-      onChange={props.onCoverChange}
-    />*/}
-    <input type="submit" value="Submit" />
-    <button onClick={props.onClickBack}>Back</button>
-  </form>
-);
+const BookDetailsTwo = ({
+  error,
+  onClickBack,
+  onSubmit,
+
+  regPrice,
+  onRegPriceChange,
+
+  promoType,
+  onPromoTypeChange,
+
+  startDate,
+  endDate,
+  focusedInput,
+  onDatesChange,
+  onFocusChange
+}) => (
+    <Card className="animated fadeIn">
+      <CardHeader>
+        <h4><strong>Book Promo - 2 of 3</strong></h4>
+      </CardHeader>
+      <CardBody>
+        <Form onSubmit={onSubmit}>
+          <RegPrice
+            value={regPrice}
+            onChange={onRegPriceChange}
+          />
+          <PromoType
+            value={promoType}
+            onChange={onPromoTypeChange}
+          />
+          <DatesPicker
+            startDate={startDate}
+            endDate={endDate}
+            onDatesChange={onDatesChange}
+            focusedInput={focusedInput}
+            onFocusChange={onFocusChange}
+          />
+          {error && <p>{error}</p>}
+          <br />
+          <Button
+            onClick={onClickBack}
+            size="sm"
+            color="basic"
+          >
+            Go Back
+          </Button>
+          <Button
+            type="submit"
+            size="sm"
+            color="primary"
+            value="Submit"
+          >
+            Next Section
+          </Button>
+        </Form>
+      </CardBody>
+    </Card>
+  );
 
 export default BookDetailsTwo;

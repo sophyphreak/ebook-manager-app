@@ -9,8 +9,7 @@ import {
 
 import BookDetailsOne from "../../components/PromoSubmitter/PromoPages/BookDetailsOne";
 import BookDetailsTwo from "../../components/PromoSubmitter/PromoPages/BookDetailsTwo";
-import SiteSelection from "../../components/PromoSubmitter/PromoPages/SiteSelection";
-import DateSelection from "../../components/PromoSubmitter/PromoPages/DateSelection";
+import BookDetailsThree from "../../components/PromoSubmitter/PromoPages/BookDetailsThree";
 
 const PromoComponent = ({
   // Variables
@@ -21,26 +20,23 @@ const PromoComponent = ({
   title,
   asin,
   amazonURL,
-  regPrice,
   isFiction,
   genre,
   subGenre,
   firstName,
   lastName,
   email,
-
+  
   // BookDetailsTwo
-  description,
-  authorBio,
-
-  // SiteSelection
+  regPrice,
   promoType,
-  promoSites,
-
-  // DateSelection
   startDate,
   endDate,
   calendarFocus,
+  
+  // BookDetailsThree
+  description,
+  authorBio,
 
   // Methods
   onClickBack,
@@ -49,7 +45,6 @@ const PromoComponent = ({
   onTitleChange,
   onAsinChange,
   onAmazonURLChange,
-  onRegPriceChange,
   onIsFictionChange,
   onGenreChange,
   onSubGenreChange,
@@ -57,101 +52,86 @@ const PromoComponent = ({
   onLastNameChange,
   onEmailChange,
   onSubmitBookDetailsOne,
-
+  
   // BookDetailsTwo
-  onDescriptionChange,
-  onAuthorBioChange,
-  onSubmitBookDetailsTwo,
-
-  // SiteSelection
+  onRegPriceChange,
   onPromoTypeChange,
-  onPromoSitesChange,
-  onSubmitSiteSelection,
-
-  // DateSelection
   onDatesChange,
   onFocusChange,
-  onSubmitDateSelection
+  onSubmitBookDetailsTwo,
+  
+  // BookDetailsThree
+  onDescriptionChange,
+  onAuthorBioChange,
+  onSubmitBookDetailsThree,
 }) => (
   <Row>
     <Col sm="3" />
     <Col xs="12" sm="6">
-      <Card>
-        <CardHeader>
-          <strong>Promotion Submitter</strong>
-        </CardHeader>
-        <CardBody>
-          {currentPage === "BookDetailsOne" && (
-            <BookDetailsOne
-              error={error}
-              title={title}
-              asin={asin}
-              regPrice={regPrice}
-              amazonURL={amazonURL}
-              isFiction={isFiction}
-              genre={genre}
-              subGenre={subGenre}
-              firstName={firstName}
-              lastName={lastName}
-              email={email}
-
-              onTitleChange={onTitleChange}
-              onAsinChange={onAsinChange}
-              onAmazonURLChange={onAmazonURLChange}
-              onRegPriceChange={onRegPriceChange}
-              onIsFictionChange={onIsFictionChange}
-              onGenreChange={onGenreChange}
-              onSubGenreChange={onSubGenreChange}
-              onFirstNameChange={onFirstNameChange}
-              onLastNameChange={onLastNameChange}
-              onEmailChange={onEmailChange}
-              onSubmit={onSubmitBookDetailsOne}
-            />
-          )}
-          {currentPage === "BookDetailsTwo" && (
-            <BookDetailsTwo
-              error={error}
-              description={description}
-              authorBio={authorBio}
-
-              onDescriptionChange={onDescriptionChange}
-              onAuthorBioChange={onAuthorBioChange}
-              onClickBack={onClickBack}
-              onSubmit={onSubmitBookDetailsTwo}
-            />
-          )}
-          {currentPage === "SiteSelection" && (
-            <SiteSelection
-              error={error}
-              promoType={promoType}
-              promoSites={promoSites}
-              
-              onPromoTypeChange={onPromoTypeChange}
-              onPromoSitesChange={onPromoSitesChange}
-              onClickBack={onClickBack}
-              onSubmit={onSubmitSiteSelection}
-            />
-          )}
-          {currentPage === "DateSelection" && (
-            <DateSelection
-              startDate={startDate}
-              endDate={endDate}
-              focusedInput={calendarFocus}
-
-              onDatesChange={onDatesChange}
-              onFocusChange={onFocusChange}
-              onClickBack={onClickBack}
-              onSubmit={onSubmitDateSelection}
-            />
-          )}
-          {currentPage === "SubmissionSuccess" && (
-            <p className="animated fadeIn">
-              Your Promo Submission has been submitted. Please wait for a
-              confirmation email.
-                </p>
-          )}
-        </CardBody>
-      </Card>
+      {
+        currentPage === "BookDetailsOne" && (
+          <BookDetailsOne
+            error={error}
+            title={title}
+            asin={asin}
+            amazonURL={amazonURL}
+            isFiction={isFiction}
+            genre={genre}
+            subGenre={subGenre}
+            firstName={firstName}
+            lastName={lastName}
+            email={email}
+            
+            onTitleChange={onTitleChange}
+            onAsinChange={onAsinChange}
+            onAmazonURLChange={onAmazonURLChange}
+            onIsFictionChange={onIsFictionChange}
+            onGenreChange={onGenreChange}
+            onSubGenreChange={onSubGenreChange}
+            onFirstNameChange={onFirstNameChange}
+            onLastNameChange={onLastNameChange}
+            onEmailChange={onEmailChange}
+            onSubmit={onSubmitBookDetailsOne}
+          />
+        )
+      }
+      {
+        currentPage === "BookDetailsTwo" && (
+          <BookDetailsTwo
+            error={error}
+            regPrice={regPrice}
+            promoType={promoType}
+            startDate={startDate}
+            endDate={endDate}
+            focusedInput={calendarFocus}
+            
+            onRegPriceChange={onRegPriceChange}
+            onPromoTypeChange={onPromoTypeChange}
+            onDatesChange={onDatesChange}
+            onFocusChange={onFocusChange}
+            onClickBack={onClickBack}
+            onSubmit={onSubmitBookDetailsTwo}
+          />
+        )
+      }
+        {currentPage === "BookDetailsThree" && (
+          <BookDetailsThree
+          error={error}
+          description={description}
+          authorBio={authorBio}
+          
+          onDescriptionChange={onDescriptionChange}
+          onAuthorBioChange={onAuthorBioChange}
+          onClickBack={onClickBack}
+          onSubmit={onSubmitBookDetailsThree}
+        />
+      )}
+      {currentPage === "SubmissionSuccess" && (
+        <p className="animated fadeIn">
+          Your Promo Submission has been submitted. Please wait for a
+          confirmation email.
+        </p>
+      )}
     </Col>
   </Row>
 );

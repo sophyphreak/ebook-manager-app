@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import RadioInput from './RadioInput';
+import RadioHorizontal from './RadioHorizontal';
 
 const IsFiction = (props) => (
-  <RadioInput
+  <RadioHorizontal
     label=""
     options={['Fiction', 'Non-fiction']}
     {...props}

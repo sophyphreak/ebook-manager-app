@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import TextAreaInput from './TextAreaInput';
 
 const AuthorBio = (props) => (
-  <label>
-    Author Biography:*
-    <textarea type="text" value={props.value} onChange={props.onChange} />
-  </label>
+  <TextAreaInput
+    label="Author Biography:*"
+    {...props}
+  />
 );
 
 export default AuthorBio;
