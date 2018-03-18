@@ -19,7 +19,7 @@ const PromoComponent = ({
 
   // BookDetailsOne
   title,
-  ASIN,
+  asin,
   amazonURL,
   regPrice,
   isFiction,
@@ -47,7 +47,7 @@ const PromoComponent = ({
 
   // BookDetailsOne
   onTitleChange,
-  onASINChange,
+  onAsinChange,
   onAmazonURLChange,
   onRegPriceChange,
   onIsFictionChange,
@@ -85,7 +85,7 @@ const PromoComponent = ({
             <BookDetailsOne
               error={error}
               title={title}
-              ASIN={ASIN}
+              asin={asin}
               regPrice={regPrice}
               amazonURL={amazonURL}
               isFiction={isFiction}
@@ -96,7 +96,7 @@ const PromoComponent = ({
               email={email}
 
               onTitleChange={onTitleChange}
-              onASINChange={onASINChange}
+              onAsinChange={onAsinChange}
               onAmazonURLChange={onAmazonURLChange}
               onRegPriceChange={onRegPriceChange}
               onIsFictionChange={onIsFictionChange}

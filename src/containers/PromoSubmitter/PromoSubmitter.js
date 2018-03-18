@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import moment from "moment";
 import axios from "axios";
 
-
 import PromoComponent from '../../components/PromoSubmitter/PromoComponent';
 
 export default class PromoSubmitter extends Component {

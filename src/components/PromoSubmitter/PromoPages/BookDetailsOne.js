@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { 
   Button,
-  CardFooter,
-  Form,
-  Label 
+  Form
 } from 'reactstrap';
 
 import Title from '../../FormElements/Title';
@@ -17,58 +15,90 @@ import FirstName from '../../FormElements/FirstName';
 import LastName from '../../FormElements/LastName';
 import Email from '../../FormElements/Email';
 
-const BookDetailsOne = (props) => (
-  <Form className="animated fadeIn" onSubmit={props.onSubmit}>
+const BookDetailsOne = ({
+  error,
+  onSubmit,
+  
+  title,
+  onTitleChange,
+
+  asin,
+  onAsinChange,
+
+  amazonURL,
+  onAmazonURLChange,
+
+  regPrice,
+  onRegPriceChange,
+
+  isFiction,
+  onIsFictionChange,
+
+  genre,
+  onGenreChange,
+
+  subGenre,
+  onSubGenreChange,
+
+  firstName,
+  onFirstNameChange,
+
+  lastName,
+  onLastNameChange,
+
+  email,
+  onEmailChange,
+}) => (
+  <Form className="animated fadeIn" onSubmit={onSubmit}>
     <h4><strong>Book Details</strong></h4>
-    {props.error && <p>{props.error}</p>}    
+    {error && <p>{error}</p>}    
     <Title
-      value={props.title}
-      onChange={props.onTitleChange}
+      value={title}
+      onChange={onTitleChange}
     />
     <ASIN
-      value={props.ASIN}
-      onChange={props.onASINChange}
+      value={asin}
+      onChange={onAsinChange}
     />
     <AmazonURL
-      value={props.amazonURL}
-      onChange={props.onAmazonURLChange}
+      value={amazonURL}
+      onChange={onAmazonURLChange}
     />
     <RegPrice
-      value={props.regPrice}
-      onChange={props.onRegPriceChange}
+      value={regPrice}
+      onChange={onRegPriceChange}
     />
     <IsFiction
-      value={props.isFiction}
-      onChange={props.onIsFictionChange}
+      value={isFiction}
+      onChange={onIsFictionChange}
     />
     <Genre
-      value={props.genre}
-      onChange={props.onGenreChange}
+      value={genre}
+      onChange={onGenreChange}
     />
     <SubGenre
-      value={props.subGenre}
-      onChange={props.onSubGenreChange}
+      value={subGenre}
+      onChange={onSubGenreChange}
     />
     <FirstName
-      value={props.firstName}
-      onChange={props.onFirstNameChange}
+      value={firstName}
+      onChange={onFirstNameChange}
     />
     <LastName
-      value={props.lastName}
-      onChange={props.onLastNameChange}
+      value={lastName}
+      onChange={onLastNameChange}
     />
     <Email
-      value={props.email}
-      onChange={props.onEmailChange}
+      value={email}
+      onChange={onEmailChange}
     />
-
     <Button 
       type="submit" 
       size="sm" 
       color="primary" 
       value="Submit" 
     >
-      <i className="fa fa-dot-circle-o" />
+      <i className="fa fa-dot-circle-o" /> 
       Submit
     </Button>    
   </Form>

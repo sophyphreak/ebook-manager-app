@@ -14,8 +14,7 @@ export default {
       url: '/promo-submitter',
       icon: 'icon-envelope-open',
       badge: {
-        variant: 'info',
-        text: 'NEW'
+        variant: 'info'
       }
     },
     {
