@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import BasicInput from './BasicInput';
+import RadioInput from './RadioInput';
 
 const IsFiction = (props) => (
-  <BasicInput
-    label="Fiction or Non-fiction?*"
+  <RadioInput
+    label=""
+    options={['Fiction', 'Non-fiction']}
     {...props}
   />
 );

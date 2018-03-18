@@ -38,7 +38,7 @@ export default class PromoSubmitter extends Component {
 
       // BookDetailsOne
       title: "",
-      ASIN: "",
+      asin: "",
       amazonURL: "",
       regPrice: "",
       isFiction: "",
@@ -65,7 +65,7 @@ export default class PromoSubmitter extends Component {
 
     // BookDetailsOne
     this.onTitleChange = this.onTitleChange.bind(this);
-    this.onASINChange = this.onASINChange.bind(this);
+    this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onRegPriceChange = this.onRegPriceChange.bind(this);
     this.onIsFictionChange = this.onIsFictionChange.bind(this);
@@ -102,10 +102,10 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ title }));
   }
 
-  onASINChange(e) {
-    const ASIN = e.target.value.toUpperCase();
-    if (ASIN.match(/^[0-9A-Z]{0,10}$/)) {
-      this.setState(() => ({ ASIN }));
+  onAsinChange(e) {
+    const asin = e.target.value.toUpperCase();
+    if (asin.match(/^[0-9A-Z]{0,10}$/)) {
+      this.setState(() => ({ asin }));
     }
   }
 
@@ -155,7 +155,7 @@ export default class PromoSubmitter extends Component {
     e.preventDefault();
     if (
       !this.state.title ||
-      !this.state.ASIN ||
+      !this.state.asin ||
       !this.state.amazonURL ||
       !this.state.regPrice ||
       !this.state.isFiction ||
@@ -165,7 +165,7 @@ export default class PromoSubmitter extends Component {
       !this.state.email
     ) {
       this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else if (!this.state.ASIN.match(/^[0-9A-Z]{10}$/)) {
+    } else if (!this.state.asin.match(/^[0-9A-Z]{10}$/)) {
       this.setState(() => ({ error: "Please provide a valid ASIN." }));
     } else if (
       !this.state.amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)
@@ -271,7 +271,7 @@ export default class PromoSubmitter extends Component {
         text: `PROMO SUBMITTER REQUEST
 
         Title: ${this.state.title}
-        ASIN: ${this.state.ASIN}
+        ASIN: ${this.state.asin}
         Amazon URL: ${this.state.amazonURL}
         Regular Price ($): ${this.state.amazonURL}
         Fiction or Nonfiction?: ${this.state.isFiction}
@@ -290,7 +290,7 @@ export default class PromoSubmitter extends Component {
         html: `
         <h3>Promo Submitter Request</h3>
         <p>Title: ${this.state.title}</p>
-        <p>ASIN: ${this.state.ASIN}</p>
+        <p>ASIN: ${this.state.asin}</p>
         <p>Amazon URL: ${this.state.amazonURL}</p>
         <p>Regular Price ($): ${this.state.regPrice}</p>
         <p>Fiction or Nonfiction?: ${this.state.isFiction}</p>
@@ -335,7 +335,7 @@ export default class PromoSubmitter extends Component {
       currentPage,
       error,
       title,
-      ASIN,
+      asin,
       amazonURL,
       regPrice,
       isFiction,
@@ -360,7 +360,7 @@ export default class PromoSubmitter extends Component {
 
         // BookDetailsOne
         title={title}
-        ASIN={ASIN}
+        asin={asin}
         amazonURL={amazonURL}
         regPrice={regPrice}
         isFiction={isFiction}
@@ -388,7 +388,7 @@ export default class PromoSubmitter extends Component {
 
         // BookDetailsOne
         onTitleChange={this.onTitleChange}
-        onASINChange={this.onASINChange}
+        onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
         onRegPriceChange={this.onRegPriceChange}
         onIsFictionChange={this.onIsFictionChange}

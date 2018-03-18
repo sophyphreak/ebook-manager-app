@@ -14,8 +14,6 @@ import "simple-line-icons/css/simple-line-icons.css";
 import "../scss/style.scss";
 // Temp fix for reactstrap
 import "../scss/core/_dropdown-menu-right.scss";
-// // Import ReactQuill styles
-// import 'react-quill/dist/quill.snow.css';
 // Import ReactDates styles
 import "react-dates/lib/css/_datepicker.css";
 
