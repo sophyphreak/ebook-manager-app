@@ -1,25 +1,17 @@
 import React, { Component } from "react";
 import moment from "moment";
 import axios from "axios";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  Row
-} from 'reactstrap';
 
-import BookDetailsOne from "../../components/PromoSubmitter/PromoPages/BookDetailsOne";
-import BookDetailsTwo from "../../components/PromoSubmitter/PromoPages/BookDetailsTwo";
-import SiteSelection from "../../components/PromoSubmitter/PromoPages/SiteSelection";
-import DateSelection from "../../components/PromoSubmitter/PromoPages/DateSelection";
+
+import PromoComponent from '../../components/PromoSubmitter/PromoComponent';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: "BookDetailsOne",
-
+      error: "",
+      
       // // BookDetailsOne
       // title:        'Zhuangzi: The Essential Writings: With Selections from Traditional Commentaries (Hackett Classics)',
       // ASIN:         'B003ZDNYWA',
@@ -69,8 +61,7 @@ export default class PromoSubmitter extends Component {
       // DateSelection
       startDate: moment(),
       endDate: moment(),
-      calendarFocus: null,
-      error: ""
+      calendarFocus: null
     };
 
     // BookDetailsOne
@@ -341,86 +332,89 @@ export default class PromoSubmitter extends Component {
   }
 
   render() {
+    const {
+      currentPage,
+      error,
+      title,
+      ASIN,
+      amazonURL,
+      regPrice,
+      isFiction,
+      genre,
+      subGenre,
+      firstName,
+      lastName,
+      email,
+      description,
+      authorBio,
+      promoType,
+      promoSites,
+      startDate,
+      endDate,
+      calendarFocus
+    } = this.state;
     return (
-      <Row>
-        <Col sm="3" />
-        <Col xs="12" sm="6">
-          <Card>
-            <CardHeader>
-              <strong>Promotion Submitter</strong>
-            </CardHeader>
-            <CardBody>
-              {this.state.currentPage === "BookDetailsOne" && (
-                <BookDetailsOne
-                  title={this.state.title}
-                  onTitleChange={this.onTitleChange}
-                  ASIN={this.state.ASIN}
-                  onASINChange={this.onASINChange}
-                  amazonURL={this.state.amazonURL}
-                  onAmazonURLChange={this.onAmazonURLChange}
-                  regPrice={this.state.regPrice}
-                  onRegPriceChange={this.onRegPriceChange}
-                  isFiction={this.state.isFiction}
-                  onIsFictionChange={this.onIsFictionChange}
-                  genre={this.state.genre}
-                  onGenreChange={this.onGenreChange}
-                  subGenre={this.state.subGenre}
-                  onSubGenreChange={this.onSubGenreChange}
-                  firstName={this.state.firstName}
-                  onFirstNameChange={this.onFirstNameChange}
-                  lastName={this.state.lastName}
-                  onLastNameChange={this.onLastNameChange}
-                  email={this.state.email}
-                  onEmailChange={this.onEmailChange}
-                  onSubmit={this.onSubmitBookDetailsOne}
-                  error={this.state.error}
-                />
-              )}
-              {this.state.currentPage === "BookDetailsTwo" && (
-                <BookDetailsTwo
-                  description={this.state.description}
-                  onDescriptionChange={this.onDescriptionChange}
-                  authorBio={this.state.authorBio}
-                  onAuthorBioChange={this.onAuthorBioChange}
-                  // cover={this.state.cover}
-                  // onCoverChange={this.onCoverChange}
-                  onSubmit={this.onSubmitBookDetailsTwo}
-                  error={this.state.error}
-                  onClickBack={this.onClickBack}
-                />
-              )}
-              {this.state.currentPage === "SiteSelection" && (
-                <SiteSelection
-                  promoType={this.state.promoType}
-                  onPromoTypeChange={this.onPromoTypeChange}
-                  promoSites={this.state.promoSites}
-                  onPromoSitesChange={this.onPromoSitesChange}
-                  onSubmit={this.onSubmitSiteSelection}
-                  error={this.state.error}
-                  onClickBack={this.onClickBack}
-                />
-              )}
-              {this.state.currentPage === "DateSelection" && (
-                <DateSelection
-                  startDate={this.state.startDate}
-                  endDate={this.state.endDate}
-                  onDatesChange={this.onDatesChange}
-                  focusedInput={this.state.calendarFocus}
-                  onFocusChange={this.onFocusChange}
-                  onSubmit={this.onSubmitDateSelection}
-                  onClickBack={this.onClickBack}
-                />
-              )}
-              {this.state.currentPage === "SubmissionSuccess" && (
-                <p className="animated fadeIn">
-                  Your Promo Submission has been submitted. Please wait for a
-                  confirmation email.
-                </p>
-              )}
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
+      <PromoComponent 
+        // State
+        currentPage={currentPage}
+        error={error}
+
+        // BookDetailsOne
+        title={title}
+        ASIN={ASIN}
+        amazonURL={amazonURL}
+        regPrice={regPrice}
+        isFiction={isFiction}
+        genre={genre}
+        subGenre={subGenre}
+        firstName={firstName}
+        lastName={lastName}
+        email={email}
+
+        // BookDetailsTwo
+        description={description}
+        authorBio={authorBio}
+
+        // SiteSelection
+        promoType={promoType}
+        promoSites={promoSites}
+
+        // DateSelection
+        startDate={startDate}
+        endDate={endDate}
+        calendarFocus={calendarFocus}
+
+        // Methods
+        onClickBack={this.onClickBack}
+
+        // BookDetailsOne
+        onTitleChange={this.onTitleChange}
+        onASINChange={this.onASINChange}
+        onAmazonURLChange={this.onAmazonURLChange}
+        onRegPriceChange={this.onRegPriceChange}
+        onIsFictionChange={this.onIsFictionChange}
+        onGenreChange={this.onGenreChange}
+        onSubGenreChange={this.onSubGenreChange}
+        onFirstNameChange={this.onFirstNameChange}
+        onLastNameChange={this.onLastNameChange}
+        onEmailChange={this.onEmailChange}
+        onSubmitBookDetailsOne={this.onSubmitBookDetailsOne}
+
+        // BookDetailsTwo
+        onDescriptionChange={this.onDescriptionChange}
+        onAuthorBioChange={this.onAuthorBioChange}
+        onSubmitBookDetailsTwo={this.onSubmitBookDetailsTwo}
+
+        // SiteSelection
+        onPromoTypeChange={this.onPromoTypeChange}
+        onPromoSitesChange={this.onPromoSitesChange}
+        onSubmitSiteSelection={this.onSubmitSiteSelection}
+
+        // DateSelection
+        onDatesChange={this.onDatesChange}
+        onFocusChange={this.onFocusChange}
+        onSubmitDateSelection={this.onSubmitDateSelection}
+        />
     );
   }
 }
