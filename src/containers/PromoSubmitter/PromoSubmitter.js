@@ -154,6 +154,10 @@ export default class PromoSubmitter extends Component {
       !this.state.email
     ) {
       this.setState(() => ({ error: "Please fill in all required fields." }));
+    } else if (
+      this.state.isFiction === 'Fiction' && !this.state.genre
+    ) {
+      this.setState(() => ({ error: "Please select a genre." }));      
     } else if (!this.state.asin.match(/^[0-9A-Z]{10}$/)) {
       this.setState(() => ({ error: "Please provide a valid ASIN." }));
     } else if (

@@ -36,7 +36,6 @@ const BookDetailsThree = ({
             onChange={onAuthorBioChange}
           />
           {error && <p>{error}</p>}
-          <br />
           <Button
             onClick={onClickBack}
             size="sm"

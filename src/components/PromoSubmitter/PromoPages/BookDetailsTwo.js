@@ -50,7 +50,6 @@ const BookDetailsTwo = ({
             onFocusChange={onFocusChange}
           />
           {error && <p>{error}</p>}
-          <br />
           <Button
             onClick={onClickBack}
             size="sm"
