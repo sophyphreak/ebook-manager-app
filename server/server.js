@@ -20,18 +20,28 @@ app.post('/api/promo_submitter', async (req, res) => {
     res.send('email received!');
     // console.log(req.body);
 
+    // // Use my smcm.edu email for really sending emails
+    // const transporter = nodemailer.createTransport({
+    //   service: 'Gmail',
+    //   auth: {
+    //     user: 'arhorn@smcm.edu',
+    //     pass: 'jwskjytuieirpjjw'
+    //   }
+    // });
+
     const transporter = nodemailer.createTransport({
-      service: 'Gmail',
+      host: 'smtp.ethereal.email',
+      port: 587,
       auth: {
-        user: 'arhorn@smcm.edu',
-        pass: 'jwskjytuieirpjjw'
+        user: 'yryckxusolx7zmsx@ethereal.email',
+        pass: 'C5bvNJQv9bfcybgcU5'
       }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
       from: 'wise-fox-app@sent.this', // sender address
-      to: 'robertwise1@gmail.com', // list of receivers
+      to: 'arhorn@gmail.com', // list of receivers
       subject: 'The app sent this ✔', // Subject line
       text: req.body.text,
       html: req.body.html
