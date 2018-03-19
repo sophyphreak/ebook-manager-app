@@ -29,7 +29,7 @@ const PromoComponent = ({
   email,
   
   // BookDetailsTwo
-  regPrice,
+  price,
   promoType,
   startDate,
   endDate,
@@ -55,7 +55,7 @@ const PromoComponent = ({
   onSubmitBookDetailsOne,
   
   // BookDetailsTwo
-  onRegPriceChange,
+  onPriceChange,
   onPromoTypeChange,
   onDatesChange,
   onFocusChange,
@@ -101,13 +101,13 @@ const PromoComponent = ({
         currentPage === "BookDetailsTwo" && (
           <BookDetailsTwo
             error={error}
-            regPrice={regPrice}
+            price={price}
             promoType={promoType}
             startDate={startDate}
             endDate={endDate}
             focusedInput={calendarFocus}
             
-            onRegPriceChange={onRegPriceChange}
+            onPriceChange={onPriceChange}
             onPromoTypeChange={onPromoTypeChange}
             onDatesChange={onDatesChange}
             onFocusChange={onFocusChange}

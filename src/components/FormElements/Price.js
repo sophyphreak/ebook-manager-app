@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import BasicInput from './BasicInput';
 
-const RegPrice = (props) => (
+const Price = (props) => (
   <BasicInput
-    label="Regular Price:*"
+    label="Price:*"
     {...props}
   />
 );
 
-export default RegPrice;
+export default Price;

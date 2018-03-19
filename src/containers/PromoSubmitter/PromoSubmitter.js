@@ -15,7 +15,7 @@ export default class PromoSubmitter extends Component {
       // title:        'Zhuangzi: The Essential Writings: With Selections from Traditional Commentaries (Hackett Classics)',
       // ASIN:         'B003ZDNYWA',
       // amazonURL:    'https://www.amazon.com/Zhuangzi-Essential-Selections-Traditional-Commentaries-ebook/dp/B003ZDNYWA/ref=pd_sim_351_2?_encoding=UTF8&psc=1&refRID=5J3S0PMW5KKDQHFM21NR',
-      // regPrice:     '$10.09',
+      // price:     '$10.09',
       // isFiction:    'Nonfiction',
       // genre:        'Philosophy',
       // subGenre:     'Eastern Philosophy',
@@ -48,7 +48,7 @@ export default class PromoSubmitter extends Component {
       email: "",
       
       // BookDetailsTwo
-      regPrice: "",
+      price: "",
       promoType: "",
       startDate: moment(),
       endDate: moment(),
@@ -72,7 +72,7 @@ export default class PromoSubmitter extends Component {
     this.onSubmitBookDetailsOne = this.onSubmitBookDetailsOne.bind(this);
     
     // BookDetailsTwo
-    this.onRegPriceChange = this.onRegPriceChange.bind(this);
+    this.onPriceChange = this.onPriceChange.bind(this);
     this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
@@ -181,10 +181,10 @@ export default class PromoSubmitter extends Component {
 
   // BookDetailsTwo
 
-  onRegPriceChange(e) {
-    const regPrice = e.target.value;
-    if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ regPrice }));
+  onPriceChange(e) {
+    const price = e.target.value;
+    if (!price || price.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ price }));
     }
   }
 
@@ -204,7 +204,7 @@ export default class PromoSubmitter extends Component {
   onSubmitBookDetailsTwo(e) {
     e.preventDefault();
     if (
-      !this.state.regPrice || 
+      !this.state.price || 
       !this.state.promoType ||
       !this.state.startDate ||
       !this.state.endDate
@@ -277,7 +277,7 @@ export default class PromoSubmitter extends Component {
           <p>Title: ${this.state.title}</p>
           <p>ASIN: ${this.state.asin}</p>
           <p>Amazon URL: ${this.state.amazonURL}</p>
-          <p>Regular Price ($): ${this.state.regPrice}</p>
+          <p>Regular Price ($): ${this.state.price}</p>
           <p>Fiction or Nonfiction?: ${this.state.isFiction}</p>
           <p>Genre: ${this.state.genre}</p>
           <p>Sub-Genre: ${this.state.subGenre}</p>
@@ -319,7 +319,7 @@ export default class PromoSubmitter extends Component {
       title,
       asin,
       amazonURL,
-      regPrice,
+      price,
       isFiction,
       genre,
       isGenreDisabled,
@@ -353,7 +353,7 @@ export default class PromoSubmitter extends Component {
         email={email}
         
         // BookDetailsTwo
-        regPrice={regPrice}
+        price={price}
         promoType={promoType}
         startDate={startDate}
         endDate={endDate}
@@ -379,7 +379,7 @@ export default class PromoSubmitter extends Component {
         onSubmitBookDetailsOne={this.onSubmitBookDetailsOne}
         
         // BookDetailsTwo
-        onRegPriceChange={this.onRegPriceChange}
+        onPriceChange={this.onPriceChange}
         onPromoTypeChange={this.onPromoTypeChange}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
