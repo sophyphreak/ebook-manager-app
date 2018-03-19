@@ -7,7 +7,7 @@ import {
   Form
 } from 'reactstrap';
 
-import RegPrice from '../../FormElements/RegPrice';
+import Price from '../../FormElements/Price';
 import PromoType from '../../FormElements/PromoType';
 import DatesPicker from '../../FormElements/DatesPicker';
 
@@ -16,8 +16,8 @@ const BookDetailsTwo = ({
   onClickBack,
   onSubmit,
 
-  regPrice,
-  onRegPriceChange,
+  price,
+  onPriceChange,
 
   promoType,
   onPromoTypeChange,
@@ -34,9 +34,9 @@ const BookDetailsTwo = ({
       </CardHeader>
       <CardBody>
         <Form onSubmit={onSubmit}>
-          <RegPrice
-            value={regPrice}
-            onChange={onRegPriceChange}
+          <Price
+            value={price}
+            onChange={onPriceChange}
           />
           <PromoType
             value={promoType}

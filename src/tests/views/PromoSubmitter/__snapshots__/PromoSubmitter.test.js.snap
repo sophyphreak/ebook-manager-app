@@ -37,11 +37,11 @@ ShallowWrapper {
           onGenreChange={[Function]}
           onIsFictionChange={[Function]}
           onLastNameChange={[Function]}
-          onRegPriceChange={[Function]}
+          onPriceChange={[Function]}
           onSubGenreChange={[Function]}
           onSubmit={[Function]}
           onTitleChange={[Function]}
-          regPrice=""
+          price=""
           subGenre=""
           title=""
         />,
@@ -83,11 +83,11 @@ ShallowWrapper {
           "onGenreChange": [Function],
           "onIsFictionChange": [Function],
           "onLastNameChange": [Function],
-          "onRegPriceChange": [Function],
+          "onPriceChange": [Function],
           "onSubGenreChange": [Function],
           "onSubmit": [Function],
           "onTitleChange": [Function],
-          "regPrice": "",
+          "price": "",
           "subGenre": "",
           "title": "",
         },
@@ -127,11 +127,11 @@ ShallowWrapper {
             onGenreChange={[Function]}
             onIsFictionChange={[Function]}
             onLastNameChange={[Function]}
-            onRegPriceChange={[Function]}
+            onPriceChange={[Function]}
             onSubGenreChange={[Function]}
             onSubmit={[Function]}
             onTitleChange={[Function]}
-            regPrice=""
+            price=""
             subGenre=""
             title=""
           />,
@@ -173,11 +173,11 @@ ShallowWrapper {
             "onGenreChange": [Function],
             "onIsFictionChange": [Function],
             "onLastNameChange": [Function],
-            "onRegPriceChange": [Function],
+            "onPriceChange": [Function],
             "onSubGenreChange": [Function],
             "onSubmit": [Function],
             "onTitleChange": [Function],
-            "regPrice": "",
+            "price": "",
             "subGenre": "",
             "title": "",
           },
