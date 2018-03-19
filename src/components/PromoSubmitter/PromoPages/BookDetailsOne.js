@@ -36,6 +36,7 @@ const BookDetailsOne = ({
 
   genre,
   onGenreChange,
+  isGenreDisabled,
 
   subGenre,
   onSubGenreChange,
@@ -74,6 +75,7 @@ const BookDetailsOne = ({
         <Genre
           value={genre}
           onChange={onGenreChange}
+          isGenreDisabled={isGenreDisabled}
         />
         <SubGenre
           value={subGenre}

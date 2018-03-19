@@ -22,6 +22,7 @@ const PromoComponent = ({
   amazonURL,
   isFiction,
   genre,
+  isGenreDisabled,
   subGenre,
   firstName,
   lastName,
@@ -77,6 +78,7 @@ const PromoComponent = ({
             amazonURL={amazonURL}
             isFiction={isFiction}
             genre={genre}
+            isGenreDisabled={isGenreDisabled}
             subGenre={subGenre}
             firstName={firstName}
             lastName={lastName}

@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
-import BasicInput from './BasicInput';
+import SelectInput from './SelectInput';
 
-const Genre = (props) => (
-  <BasicInput
+const Genre = ({
+  isGenreDisabled,
+  ...props
+}) => (
+  <SelectInput
     label="Genre:*"
+    options={[
+      'Please select',
+      'Romance', 
+      'Erotica',
+      'Mystery/Thriller',
+      'Science Fiction',
+      'Young Adult',
+      'Literary Fiction',
+      'Children'
+    ]}
+    isDisabled={isGenreDisabled}
     {...props}
   />
 );
