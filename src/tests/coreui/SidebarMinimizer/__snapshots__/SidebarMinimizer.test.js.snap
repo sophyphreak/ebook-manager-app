@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SidebarMinimizer correctly 1`] = `
+<button
+  className="sidebar-minimizer"
+  onClick={[Function]}
+  type="button"
+/>
+`;

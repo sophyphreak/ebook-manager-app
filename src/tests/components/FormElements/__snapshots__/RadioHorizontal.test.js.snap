@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render RadioHorizontal correctly 1`] = `
+<FormGroup
+  tag="div"
+>
+  <FormGroup
+    check={true}
+    inline={true}
+    key="0"
+    tag="div"
+  >
+    <Input
+      checked={false}
+      type="radio"
+      value="option 0"
+    />
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      option 0
+    </Label>
+  </FormGroup>
+  <FormGroup
+    check={true}
+    inline={true}
+    key="1"
+    tag="div"
+  >
+    <Input
+      checked={false}
+      type="radio"
+      value="option 1"
+    />
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      option 1
+    </Label>
+  </FormGroup>
+  <FormGroup
+    check={true}
+    inline={true}
+    key="2"
+    tag="div"
+  >
+    <Input
+      checked={false}
+      type="radio"
+      value="option 2"
+    />
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      option 2
+    </Label>
+  </FormGroup>
+</FormGroup>
+`;

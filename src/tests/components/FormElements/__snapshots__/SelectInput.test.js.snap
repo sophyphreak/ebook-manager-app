@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SelectInput correctly 1`] = `
+<FormGroup
+  tag="div"
+>
+  <Input
+    type="select"
+  >
+    <option
+      key="0"
+      value="option 0"
+    >
+      option 0
+    </option>
+    <option
+      key="1"
+      value="option 1"
+    >
+      option 1
+    </option>
+    <option
+      key="2"
+      value="option 2"
+    >
+      option 2
+    </option>
+  </Input>
+</FormGroup>
+`;

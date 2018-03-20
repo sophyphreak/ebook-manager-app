@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Dashboard correctly 1`] = `
+<div
+  className="animated fadeIn"
+>
+  <h4>
+    Your Dashboard
+  </h4>
+  <p>
+    Nothing here. Oh no!
+  </p>
+</div>
+`;

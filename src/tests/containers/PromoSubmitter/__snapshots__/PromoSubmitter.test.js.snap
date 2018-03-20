@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PromoSubmitter correctly 1`] = `
+<PromoComponent
+  amazonURL=""
+  asin=""
+  authorBio=""
+  calendarFocus={null}
+  currentPage="BookDetailsOne"
+  description=""
+  email=""
+  endDate={"2017-02-14T12:51:48.000Z"}
+  error=""
+  firstName=""
+  genre=""
+  isFiction=""
+  isGenreDisabled={true}
+  lastName=""
+  onAmazonURLChange={[Function]}
+  onAsinChange={[Function]}
+  onAuthorBioChange={[Function]}
+  onClickBack={[Function]}
+  onDatesChange={[Function]}
+  onDescriptionChange={[Function]}
+  onEmailChange={[Function]}
+  onFirstNameChange={[Function]}
+  onFocusChange={[Function]}
+  onGenreChange={[Function]}
+  onIsFictionChange={[Function]}
+  onLastNameChange={[Function]}
+  onPriceChange={[Function]}
+  onPromoTypeChange={[Function]}
+  onSubGenreChange={[Function]}
+  onSubmitBookDetailsOne={[Function]}
+  onSubmitBookDetailsThree={[Function]}
+  onSubmitBookDetailsTwo={[Function]}
+  onTitleChange={[Function]}
+  price=""
+  promoType=""
+  startDate={"2017-02-14T12:51:48.000Z"}
+  subGenre=""
+  title=""
+/>
+`;

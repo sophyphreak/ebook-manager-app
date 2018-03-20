@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render IsFiction correctly 1`] = `
+<RadioHorizontal
+  label=""
+  options={
+    Array [
+      "Fiction",
+      "Non-fiction",
+    ]
+  }
+/>
+`;

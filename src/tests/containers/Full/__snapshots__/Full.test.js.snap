@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Full correctly 1`] = `
+<div
+  className="app"
+>
+  <Header />
+  <div
+    className="app-body"
+  >
+    <Sidebar />
+    <main
+      className="main"
+    >
+      <Component />
+      <Container
+        fluid={true}
+        tag="div"
+      >
+        <Switch>
+          <Route
+            component={[Function]}
+            name="Dashboard"
+            path="/dashboard"
+          />
+          <Route
+            component={[Function]}
+            name="Promo Submitter"
+            path="/promo-submitter"
+          />
+          <Route
+            component={[Function]}
+            name="Playground"
+            path="/playground"
+          />
+          <Route
+            component={[Function]}
+            name="Playground2"
+            path="/playground2"
+          />
+          <Redirect
+            from="/"
+            push={false}
+            to="/dashboard"
+          />
+        </Switch>
+      </Container>
+    </main>
+    <Aside />
+  </div>
+  <Footer />
+</div>
+`;

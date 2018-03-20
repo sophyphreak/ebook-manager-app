@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<header
+  className="app-header navbar"
+>
+  <NavbarToggler
+    className="d-lg-none"
+    onClick={[Function]}
+    tag="button"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </NavbarToggler>
+  <NavbarBrand
+    href="#"
+    tag="a"
+  />
+  <NavbarToggler
+    className="d-md-down-none mr-auto"
+    onClick={[Function]}
+    tag="button"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </NavbarToggler>
+  <NavbarToggler
+    className="d-md-down-none"
+    onClick={[Function]}
+    tag="button"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </NavbarToggler>
+</header>
+`;

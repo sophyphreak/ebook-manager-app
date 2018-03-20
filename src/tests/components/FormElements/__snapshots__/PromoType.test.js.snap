@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PromoType correctly 1`] = `
+<RadioInput
+  label="Select Promotion Type:*"
+  options={
+    Array [
+      "Free (Limited Time)",
+      "99 cents",
+      "Perma Free",
+    ]
+  }
+/>
+`;
