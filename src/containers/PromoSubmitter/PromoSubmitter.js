@@ -3,6 +3,7 @@ import moment from "moment";
 import axios from "axios";
 
 import PromoComponent from '../../components/PromoSubmitter/PromoComponent';
+import promoPostToServer from './promoPostToServer/promoPostToServer';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -190,12 +191,7 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage2(e) {
     e.preventDefault();
-    const {
-      price,
-      promoType,
-      startDate,
-      endDate
-    } = this.state;
+    const { price, promoType, startDate, endDate } = this.state;
     if (
       !price || 
       !promoType ||
@@ -228,23 +224,7 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage3(e) {
     e.preventDefault();
-    const {
-      title,
-      asin,
-      amazonURL,
-      isFiction,
-      genre,
-      subGenre,
-      firstName,
-      lastName,
-      email,
-      description,
-      authorBio,
-      promoType,
-      promoSites,
-      startDate,
-      endDate
-    } = this.state;
+    const { description, authorBio } = this.state;
     if (
       !description || 
       !authorBio
@@ -260,54 +240,7 @@ export default class PromoSubmitter extends Component {
       const currentPage = "SubmissionSuccess";
       this.setState(() => ({ currentPage }));
 
-      // Currently constructing POST call to server in order to send an email
-      axios
-        .post("/api/promo_submitter", {
-          text: `PROMO SUBMITTER REQUEST
-
-          Title: ${title}
-          ASIN: ${asin}
-          Amazon URL: ${amazonURL}
-          Regular Price ($): ${amazonURL}
-          Fiction or Nonfiction?: ${isFiction}
-          Genre: ${genre}
-          Sub-Genre: ${subGenre}
-          Author First Name: ${firstName}
-          Author Last Name: ${lastName}
-          Email: ${email}
-          Description: ${description}
-          Author Biography: ${authorBio}
-          Promo Type: ${promoType}
-          Promo Sites: ${promoSites}
-          Start Date: ${startDate.format("MMMM Do YYYY")}
-          End Date: ${endDate.format("MMMM Do YYYY")}
-        `,
-          html: `
-          <h3>Promo Submitter Request</h3>
-          <p>Title: ${title}</p>
-          <p>ASIN: ${asin}</p>
-          <p>Amazon URL: ${amazonURL}</p>
-          <p>Regular Price ($): ${price}</p>
-          <p>Fiction or Nonfiction?: ${isFiction}</p>
-          <p>Genre: ${genre}</p>
-          <p>Sub-Genre: ${subGenre}</p>
-          <p>Author First Name: ${firstName}</p>
-          <p>Author Last Name: ${lastName}</p>
-          <p>Email: ${email}</p>
-          <p>Description: ${description}</p>
-          <p>Author Biography: ${authorBio}</p>
-          <p>Promo Type: ${promoType}</p>
-          <p>Promo Sites: ${promoSites}</p>
-          <p>Start Date: ${startDate.format("MMMM Do YYYY")}</p>
-          <p>End Date: ${endDate.format("MMMM Do YYYY")}</p>
-        `
-        })
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      promoPostToServer(this.state);
     }
   }
 
