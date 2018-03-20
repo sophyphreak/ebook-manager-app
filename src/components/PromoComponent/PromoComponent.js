@@ -7,9 +7,9 @@ import {
   Row
 } from 'reactstrap';
 
-import PromoPage1 from "../../components/PromoSubmitter/PromoPages/PromoPage1";
-import PromoPage2 from "../../components/PromoSubmitter/PromoPages/PromoPage2";
-import PromoPage3 from "../../components/PromoSubmitter/PromoPages/PromoPage3";
+import PromoPage1 from "./PromoPages/PromoPage1";
+import PromoPage2 from "./PromoPages/PromoPage2";
+import PromoPage3 from "./PromoPages/PromoPage3";
 
 const PromoComponent = ({
   // Variables

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const promoPostToServer = ({
   title,
   asin,

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import moment from "moment";
+// import moment from "moment";
 
-import PromoComponent from '../../components/PromoComponent/PromoComponent';
-import promoPostToServer from './promoPostToServer/promoPostToServer';
+import PromoComponent from '../../components/PromoSubmitter/PromoComponent';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -22,14 +21,14 @@ export default class PromoSubmitter extends Component {
       firstName: "",
       lastName: "",
       email: "",
-      
+
       // PromoPage2
       price: "",
       promoType: "",
       startDate: moment(),
       endDate: moment(),
       calendarFocus: null,
-      
+
       // PromoPage3
       description: "",
       authorBio: ""
@@ -46,14 +45,14 @@ export default class PromoSubmitter extends Component {
     this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitPromoPage1 = this.onSubmitPromoPage1.bind(this);
-    
+
     // PromoPage2
     this.onPriceChange = this.onPriceChange.bind(this);
     this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.onSubmitPromoPage2 = this.onSubmitPromoPage2.bind(this);
-    
+
     // PromoPage3
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
     this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
@@ -142,7 +141,7 @@ export default class PromoSubmitter extends Component {
     } else if (
       isFiction === 'Fiction' && !genre
     ) {
-      this.setState(() => ({ error: "Please select a genre." }));      
+      this.setState(() => ({ error: "Please select a genre." }));
     } else if (
       !asin.match(/^[0-9A-Z]{10}$/)
     ) {
@@ -192,7 +191,7 @@ export default class PromoSubmitter extends Component {
     e.preventDefault();
     const { price, promoType, startDate, endDate } = this.state;
     if (
-      !price || 
+      !price ||
       !promoType ||
       !startDate ||
       !endDate
@@ -225,7 +224,7 @@ export default class PromoSubmitter extends Component {
     e.preventDefault();
     const { description, authorBio } = this.state;
     if (
-      !description || 
+      !description ||
       !authorBio
     ) {
       this.setState(() => ({ error: "Please fill in all required fields." }));
@@ -277,7 +276,7 @@ export default class PromoSubmitter extends Component {
       calendarFocus
     } = this.state;
     return (
-      <PromoComponent 
+      <PromoComponent
         // State
         currentPage={currentPage}
         error={error}
@@ -293,14 +292,14 @@ export default class PromoSubmitter extends Component {
         firstName={firstName}
         lastName={lastName}
         email={email}
-        
+
         // PromoPage2
         price={price}
         promoType={promoType}
         startDate={startDate}
         endDate={endDate}
         calendarFocus={calendarFocus}
-        
+
         // PromoPage3
         description={description}
         authorBio={authorBio}
@@ -319,19 +318,19 @@ export default class PromoSubmitter extends Component {
         onLastNameChange={this.onLastNameChange}
         onEmailChange={this.onEmailChange}
         onSubmitPromoPage1={this.onSubmitPromoPage1}
-        
+
         // PromoPage2
         onPriceChange={this.onPriceChange}
         onPromoTypeChange={this.onPromoTypeChange}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
         onSubmitPromoPage2={this.onSubmitPromoPage2}
-        
+
         // PromoPage3
         onDescriptionChange={this.onDescriptionChange}
         onAuthorBioChange={this.onAuthorBioChange}
         onSubmitPromoPage3={this.onSubmitPromoPage3}
-        />
+      />
     );
   }
 }
