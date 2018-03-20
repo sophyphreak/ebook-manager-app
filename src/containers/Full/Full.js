@@ -4,7 +4,6 @@ import { Container } from 'reactstrap';
 import Header from '../../coreui/Header/Header';
 import Sidebar from '../../coreui/Sidebar/Sidebar';
 import Breadcrumb from '../../coreui/Breadcrumb/Breadcrumb';
-import Aside from '../../coreui/Aside/Aside';
 import Footer from '../../coreui/Footer/Footer';
 
 import Dashboard from '../../components/Dashboard/Dashboard';
@@ -33,7 +32,6 @@ class Full extends Component {
               </Switch>
             </Container>
           </main>
-          <Aside />
         </div>
         <Footer />
       </div>
