@@ -11,6 +11,7 @@ import Dashboard from '../../components/Dashboard/Dashboard';
 import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
+import NotFoundPage from '../../components/NotFoundPage';
 
 class Full extends Component {
   render() {
@@ -27,7 +28,8 @@ class Full extends Component {
                 <Route path="/promo-submitter" name="Promo Submitter" component={PromoSubmitter}/>
                 <Route path="/playground" name="Playground" component={FormTests} />
                 <Route path="/playground2" name="Playground2" component={FormTests2}/>
-                <Redirect from="/" to="/dashboard"/>
+                <Redirect from="/" to="/dashboard" exact={true}/>
+                <Route component={NotFoundPage} />
               </Switch>
             </Container>
           </main>
