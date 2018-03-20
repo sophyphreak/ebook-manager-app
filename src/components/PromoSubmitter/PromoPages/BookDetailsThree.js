@@ -12,7 +12,7 @@ import AuthorBio from '../../FormElements/AuthorBio';
 
 const BookDetailsThree = ({
   error,
-  onClickBack,
+  onBack,
   onSubmit,
 
   description,
@@ -37,7 +37,7 @@ const BookDetailsThree = ({
           />
           {error && <p>{error}</p>}
           <Button
-            onClick={onClickBack}
+            onClick={onBack}
             size="sm"
             color="basic"
           >

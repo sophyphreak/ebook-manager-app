@@ -10,7 +10,7 @@ exports[`should render Footer correctly 1`] = `
     >
       CoreUI
     </a>
-     © 2018 creativeLabs.
+     © 2018 Redbeard.
   </span>
   <span
     className="ml-auto"

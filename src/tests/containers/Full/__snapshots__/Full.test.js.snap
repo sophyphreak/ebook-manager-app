@@ -39,9 +39,13 @@ exports[`should render Full correctly 1`] = `
             path="/playground2"
           />
           <Redirect
+            exact={true}
             from="/"
             push={false}
             to="/dashboard"
+          />
+          <Route
+            component={[Function]}
           />
         </Switch>
       </Container>

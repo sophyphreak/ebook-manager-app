@@ -13,7 +13,7 @@ import DatesPicker from '../../FormElements/DatesPicker';
 
 const BookDetailsTwo = ({
   error,
-  onClickBack,
+  onBack,
   onSubmit,
 
   price,
@@ -51,7 +51,7 @@ const BookDetailsTwo = ({
           />
           {error && <p>{error}</p>}
           <Button
-            onClick={onClickBack}
+            onClick={onBack}
             size="sm"
             color="basic"
           >

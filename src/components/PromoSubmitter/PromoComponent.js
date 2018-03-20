@@ -40,7 +40,7 @@ const PromoComponent = ({
   authorBio,
 
   // Methods
-  onClickBack,
+  onBack,
 
   // BookDetailsOne
   onTitleChange,
@@ -111,7 +111,7 @@ const PromoComponent = ({
             onPromoTypeChange={onPromoTypeChange}
             onDatesChange={onDatesChange}
             onFocusChange={onFocusChange}
-            onClickBack={onClickBack}
+            onBack={onBack}
             onSubmit={onSubmitBookDetailsTwo}
           />
         )
@@ -124,7 +124,7 @@ const PromoComponent = ({
           
           onDescriptionChange={onDescriptionChange}
           onAuthorBioChange={onAuthorBioChange}
-          onClickBack={onClickBack}
+          onBack={onBack}
           onSubmit={onSubmitBookDetailsThree}
         />
       )}
