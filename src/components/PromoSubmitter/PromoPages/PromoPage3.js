@@ -10,7 +10,7 @@ import {
 import Description from '../../FormElements/Description';
 import AuthorBio from '../../FormElements/AuthorBio';
 
-const BookDetailsThree = ({
+const PromoPage3 = ({
   error,
   onBack,
   onSubmit,
@@ -56,4 +56,4 @@ const BookDetailsThree = ({
     </Card>
   );
 
-export default BookDetailsThree;
+export default PromoPage3;

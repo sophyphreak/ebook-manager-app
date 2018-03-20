@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render BookDetailsTwo correctly 1`] = `
+exports[`should render PromoPage2 correctly 1`] = `
 <Card
   className="animated fadeIn"
   tag="div"

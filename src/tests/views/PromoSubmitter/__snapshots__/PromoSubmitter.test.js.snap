@@ -21,7 +21,7 @@ ShallowWrapper {
         <h4>
           Promotion Submitter
         </h4>,
-        <BookDetailsOne
+        <PromoPage1
           ASIN=""
           amazonURL=""
           email=""
@@ -111,7 +111,7 @@ ShallowWrapper {
           <h4>
             Promotion Submitter
           </h4>,
-          <BookDetailsOne
+          <PromoPage1
             ASIN=""
             amazonURL=""
             email=""

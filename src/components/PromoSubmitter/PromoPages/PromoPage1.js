@@ -18,7 +18,7 @@ import FirstName from '../../FormElements/FirstName';
 import LastName from '../../FormElements/LastName';
 import Email from '../../FormElements/Email';
 
-const BookDetailsOne = ({
+const PromoPage1 = ({
   error,
   onSubmit,
   
@@ -107,4 +107,4 @@ const BookDetailsOne = ({
   </Card>
 );
 
-export default BookDetailsOne;
+export default PromoPage1;

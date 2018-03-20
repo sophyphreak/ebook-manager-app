@@ -7,16 +7,16 @@ import {
   Row
 } from 'reactstrap';
 
-import BookDetailsOne from "../../components/PromoSubmitter/PromoPages/BookDetailsOne";
-import BookDetailsTwo from "../../components/PromoSubmitter/PromoPages/BookDetailsTwo";
-import BookDetailsThree from "../../components/PromoSubmitter/PromoPages/BookDetailsThree";
+import PromoPage1 from "../../components/PromoSubmitter/PromoPages/PromoPage1";
+import PromoPage2 from "../../components/PromoSubmitter/PromoPages/PromoPage2";
+import PromoPage3 from "../../components/PromoSubmitter/PromoPages/PromoPage3";
 
 const PromoComponent = ({
   // Variables
   currentPage,
   error,
 
-  // BookDetailsOne
+  // PromoPage1
   title,
   asin,
   amazonURL,
@@ -28,21 +28,21 @@ const PromoComponent = ({
   lastName,
   email,
   
-  // BookDetailsTwo
+  // PromoPage2
   price,
   promoType,
   startDate,
   endDate,
   calendarFocus,
   
-  // BookDetailsThree
+  // PromoPage3
   description,
   authorBio,
 
   // Methods
   onBack,
 
-  // BookDetailsOne
+  // PromoPage1
   onTitleChange,
   onAsinChange,
   onAmazonURLChange,
@@ -52,26 +52,26 @@ const PromoComponent = ({
   onFirstNameChange,
   onLastNameChange,
   onEmailChange,
-  onSubmitBookDetailsOne,
+  onSubmitPromoPage1,
   
-  // BookDetailsTwo
+  // PromoPage2
   onPriceChange,
   onPromoTypeChange,
   onDatesChange,
   onFocusChange,
-  onSubmitBookDetailsTwo,
+  onSubmitPromoPage2,
   
-  // BookDetailsThree
+  // PromoPage3
   onDescriptionChange,
   onAuthorBioChange,
-  onSubmitBookDetailsThree,
+  onSubmitPromoPage3,
 }) => (
   <Row>
     <Col sm="3" />
     <Col xs="12" sm="6">
       {
-        currentPage === "BookDetailsOne" && (
-          <BookDetailsOne
+        currentPage === "PromoPage1" && (
+          <PromoPage1
             error={error}
             title={title}
             asin={asin}
@@ -93,13 +93,13 @@ const PromoComponent = ({
             onFirstNameChange={onFirstNameChange}
             onLastNameChange={onLastNameChange}
             onEmailChange={onEmailChange}
-            onSubmit={onSubmitBookDetailsOne}
+            onSubmit={onSubmitPromoPage1}
           />
         )
       }
       {
-        currentPage === "BookDetailsTwo" && (
-          <BookDetailsTwo
+        currentPage === "PromoPage2" && (
+          <PromoPage2
             error={error}
             price={price}
             promoType={promoType}
@@ -112,12 +112,12 @@ const PromoComponent = ({
             onDatesChange={onDatesChange}
             onFocusChange={onFocusChange}
             onBack={onBack}
-            onSubmit={onSubmitBookDetailsTwo}
+            onSubmit={onSubmitPromoPage2}
           />
         )
       }
-        {currentPage === "BookDetailsThree" && (
-          <BookDetailsThree
+        {currentPage === "PromoPage3" && (
+          <PromoPage3
           error={error}
           description={description}
           authorBio={authorBio}
@@ -125,7 +125,7 @@ const PromoComponent = ({
           onDescriptionChange={onDescriptionChange}
           onAuthorBioChange={onAuthorBioChange}
           onBack={onBack}
-          onSubmit={onSubmitBookDetailsThree}
+          onSubmit={onSubmitPromoPage3}
         />
       )}
       {currentPage === "SubmissionSuccess" && (

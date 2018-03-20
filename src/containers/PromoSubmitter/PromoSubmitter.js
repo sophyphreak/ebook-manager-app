@@ -8,10 +8,10 @@ export default class PromoSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: "BookDetailsOne",
+      currentPage: "PromoPage1",
       error: "",
 
-      // BookDetailsOne
+      // PromoPage1
       title: "",
       asin: "",
       amazonURL: "",
@@ -23,19 +23,19 @@ export default class PromoSubmitter extends Component {
       lastName: "",
       email: "",
       
-      // BookDetailsTwo
+      // PromoPage2
       price: "",
       promoType: "",
       startDate: moment(),
       endDate: moment(),
       calendarFocus: null,
       
-      // BookDetailsThree
+      // PromoPage3
       description: "",
       authorBio: ""
     };
 
-    // BookDetailsOne
+    // PromoPage1
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
@@ -45,24 +45,24 @@ export default class PromoSubmitter extends Component {
     this.onFirstNameChange = this.onFirstNameChange.bind(this);
     this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
-    this.onSubmitBookDetailsOne = this.onSubmitBookDetailsOne.bind(this);
+    this.onSubmitPromoPage1 = this.onSubmitPromoPage1.bind(this);
     
-    // BookDetailsTwo
+    // PromoPage2
     this.onPriceChange = this.onPriceChange.bind(this);
     this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
-    this.onSubmitBookDetailsTwo = this.onSubmitBookDetailsTwo.bind(this);
+    this.onSubmitPromoPage2 = this.onSubmitPromoPage2.bind(this);
     
-    // BookDetailsThree
+    // PromoPage3
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
     this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
-    this.onSubmitBookDetailsThree = this.onSubmitBookDetailsThree.bind(this);
+    this.onSubmitPromoPage3 = this.onSubmitPromoPage3.bind(this);
 
     this.onBack = this.onBack.bind(this);
   }
 
-  // BookDetailsOne
+  // PromoPage1
 
   onTitleChange(e) {
     const title = e.target.value;
@@ -118,7 +118,7 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ email }));
   }
 
-  onSubmitBookDetailsOne(e) {
+  onSubmitPromoPage1(e) {
     e.preventDefault();
     const {
       title,
@@ -161,12 +161,12 @@ export default class PromoSubmitter extends Component {
       const error = "";
       this.setState(() => ({ error }));
 
-      const currentPage = "BookDetailsTwo";
+      const currentPage = "PromoPage2";
       this.setState(() => ({ currentPage }));
     }
   }
 
-  // BookDetailsTwo
+  // PromoPage2
 
   onPriceChange(e) {
     const price = e.target.value;
@@ -188,7 +188,7 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ calendarFocus }));
   }
 
-  onSubmitBookDetailsTwo(e) {
+  onSubmitPromoPage2(e) {
     e.preventDefault();
     const {
       price,
@@ -209,12 +209,12 @@ export default class PromoSubmitter extends Component {
       const error = "";
       this.setState(() => ({ error }));
 
-      const currentPage = "BookDetailsThree";
+      const currentPage = "PromoPage3";
       this.setState(() => ({ currentPage }));
     }
   }
 
-  // BookDetailsThree
+  // PromoPage3
 
   onDescriptionChange(e) {
     const description = e.target.value;
@@ -226,7 +226,7 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ authorBio }));
   }
 
-  onSubmitBookDetailsThree(e) {
+  onSubmitPromoPage3(e) {
     e.preventDefault();
     const {
       title,
@@ -312,12 +312,12 @@ export default class PromoSubmitter extends Component {
   }
 
   onBack(e) {
-    if (this.state.currentPage === "BookDetailsTwo") {
-      const currentPage = "BookDetailsOne";
+    if (this.state.currentPage === "PromoPage2") {
+      const currentPage = "PromoPage1";
       this.setState(() => ({ currentPage }));
     }
-    if (this.state.currentPage === "BookDetailsThree") {
-      const currentPage = "BookDetailsTwo";
+    if (this.state.currentPage === "PromoPage3") {
+      const currentPage = "PromoPage2";
       this.setState(() => ({ currentPage }));
     }
   }
@@ -350,7 +350,7 @@ export default class PromoSubmitter extends Component {
         currentPage={currentPage}
         error={error}
 
-        // BookDetailsOne
+        // PromoPage1
         title={title}
         asin={asin}
         amazonURL={amazonURL}
@@ -362,21 +362,21 @@ export default class PromoSubmitter extends Component {
         lastName={lastName}
         email={email}
         
-        // BookDetailsTwo
+        // PromoPage2
         price={price}
         promoType={promoType}
         startDate={startDate}
         endDate={endDate}
         calendarFocus={calendarFocus}
         
-        // BookDetailsThree
+        // PromoPage3
         description={description}
         authorBio={authorBio}
 
         // Methods
         onBack={this.onBack}
 
-        // BookDetailsOne
+        // PromoPage1
         onTitleChange={this.onTitleChange}
         onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
@@ -386,19 +386,19 @@ export default class PromoSubmitter extends Component {
         onFirstNameChange={this.onFirstNameChange}
         onLastNameChange={this.onLastNameChange}
         onEmailChange={this.onEmailChange}
-        onSubmitBookDetailsOne={this.onSubmitBookDetailsOne}
+        onSubmitPromoPage1={this.onSubmitPromoPage1}
         
-        // BookDetailsTwo
+        // PromoPage2
         onPriceChange={this.onPriceChange}
         onPromoTypeChange={this.onPromoTypeChange}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
-        onSubmitBookDetailsTwo={this.onSubmitBookDetailsTwo}
+        onSubmitPromoPage2={this.onSubmitPromoPage2}
         
-        // BookDetailsThree
+        // PromoPage3
         onDescriptionChange={this.onDescriptionChange}
         onAuthorBioChange={this.onAuthorBioChange}
-        onSubmitBookDetailsThree={this.onSubmitBookDetailsThree}
+        onSubmitPromoPage3={this.onSubmitPromoPage3}
         />
     );
   }

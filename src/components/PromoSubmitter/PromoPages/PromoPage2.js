@@ -11,7 +11,7 @@ import Price from '../../FormElements/Price';
 import PromoType from '../../FormElements/PromoType';
 import DatesPicker from '../../FormElements/DatesPicker';
 
-const BookDetailsTwo = ({
+const PromoPage2 = ({
   error,
   onBack,
   onSubmit,
@@ -70,4 +70,4 @@ const BookDetailsTwo = ({
     </Card>
   );
 
-export default BookDetailsTwo;
+export default PromoPage2;

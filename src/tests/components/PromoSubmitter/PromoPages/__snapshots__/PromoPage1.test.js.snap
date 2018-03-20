@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render BookDetailsThree correctly 1`] = `
+exports[`should render PromoPage1 correctly 1`] = `
 <Card
   className="animated fadeIn"
   tag="div"
@@ -10,7 +10,7 @@ exports[`should render BookDetailsThree correctly 1`] = `
   >
     <h4>
       <strong>
-        Book Promo - 3 of 3
+        Book Promo - 1 of 3
       </strong>
     </h4>
   </CardHeader>
@@ -20,15 +20,15 @@ exports[`should render BookDetailsThree correctly 1`] = `
     <Form
       tag="form"
     >
-      <Description />
-      <AuthorBio />
-      <Button
-        color="basic"
-        size="sm"
-        tag="button"
-      >
-        Go Back
-      </Button>
+      <Title />
+      <ASIN />
+      <AmazonURL />
+      <IsFiction />
+      <Genre />
+      <SubGenre />
+      <FirstName />
+      <LastName />
+      <Email />
       <Button
         color="primary"
         size="sm"
