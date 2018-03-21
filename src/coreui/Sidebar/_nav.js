@@ -21,6 +21,7 @@ export default {
     {
       name: 'Social Media',
       url: '/social-media-submitter',
+      icon: 'icon-people',
       badge: {
         variant: 'info',
         text: 'NEW'
@@ -29,6 +30,7 @@ export default {
     {
       name: 'Press Release',
       url: '/press-release-submitter',
+      icon: 'icon-docs',
       badge: {
         variant: 'info',
         text: 'NEW'
@@ -37,6 +39,7 @@ export default {
     {
       name: 'Alerts Submitter',
       url: '/alerts-submitter',
+      icon: 'icon-bell',
       badge: {
         variant: 'info',
         text: 'NEW'
