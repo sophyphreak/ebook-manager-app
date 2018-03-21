@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AlertsPage1 correctly 1`] = `
+<Card
+  className="animated fadeIn"
+  tag="div"
+>
+  <CardHeader
+    tag="div"
+  >
+    <h4>
+      <strong>
+        Alerts - 1 of 3
+      </strong>
+    </h4>
+  </CardHeader>
+  <CardBody
+    tag="div"
+  >
+    <Form
+      tag="form"
+    >
+      <Title />
+      <ASIN />
+      <AmazonURL />
+      <IsFiction />
+      <Genre />
+      <SubGenre />
+      <FirstName />
+      <LastName />
+      <Email />
+      <Button
+        color="primary"
+        size="sm"
+        tag="button"
+        type="submit"
+        value="Submit"
+      >
+        Next Section
+      </Button>
+    </Form>
+  </CardBody>
+</Card>
+`;
