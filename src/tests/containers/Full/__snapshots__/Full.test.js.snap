@@ -30,6 +30,21 @@ exports[`should render Full correctly 1`] = `
           />
           <Route
             component={[Function]}
+            name="Social Media Submitter"
+            path="/social-media-submitter"
+          />
+          <Route
+            component={[Function]}
+            name="Press Release Submitter"
+            path="/press-release-submitter"
+          />
+          <Route
+            component={[Function]}
+            name="Alerts Submitter"
+            path="/alerts-submitter"
+          />
+          <Route
+            component={[Function]}
             name="Playground"
             path="/playground"
           />
@@ -50,7 +65,6 @@ exports[`should render Full correctly 1`] = `
         </Switch>
       </Container>
     </main>
-    <Aside />
   </div>
   <Footer />
 </div>

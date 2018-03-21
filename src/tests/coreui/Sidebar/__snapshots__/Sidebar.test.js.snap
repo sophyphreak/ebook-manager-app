@@ -71,6 +71,84 @@ exports[`should render Sidebar correctly 1`] = `
           ariaCurrent="true"
           className="nav-link"
           onClick={[Function]}
+          to="/social-media-submitter"
+        >
+          <i
+            className=""
+          />
+          Social Media
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
+        </NavLink>
+      </NavItem>
+      <NavItem
+        className=""
+        key="3"
+        tag="li"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav-link"
+          onClick={[Function]}
+          to="/press-release-submitter"
+        >
+          <i
+            className=""
+          />
+          Press Release
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
+        </NavLink>
+      </NavItem>
+      <NavItem
+        className=""
+        key="4"
+        tag="li"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav-link"
+          onClick={[Function]}
+          to="/alerts-submitter"
+        >
+          <i
+            className=""
+          />
+          Alerts Submitter
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
+        </NavLink>
+      </NavItem>
+      <NavItem
+        className=""
+        key="5"
+        tag="li"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav-link"
+          onClick={[Function]}
           to="/playground"
         >
           <i
@@ -81,7 +159,7 @@ exports[`should render Sidebar correctly 1`] = `
       </NavItem>
       <NavItem
         className=""
-        key="3"
+        key="6"
         tag="li"
       >
         <NavLink

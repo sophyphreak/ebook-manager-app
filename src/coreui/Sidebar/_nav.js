@@ -14,7 +14,32 @@ export default {
       url: '/promo-submitter',
       icon: 'icon-envelope-open',
       badge: {
-        variant: 'info'
+        variant: 'info',
+        text: ''
+      }
+    },
+    {
+      name: 'Social Media',
+      url: '/social-media-submitter',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
+    },
+    {
+      name: 'Press Release',
+      url: '/press-release-submitter',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
+    },
+    {
+      name: 'Alerts Submitter',
+      url: '/alerts-submitter',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
       }
     },
     {

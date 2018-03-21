@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
+import alertsPostToServer from './alertsPostToServer/alertsPostToServer';
 
 export default class AlertsSubmitter extends Component {
   constructor(props) {
@@ -238,7 +239,7 @@ export default class AlertsSubmitter extends Component {
       const currentPage = "SubmissionSuccess";
       this.setState(() => ({ currentPage }));
 
-      promoPostToServer(this.state);
+      alertsPostToServer(this.state);
     }
   }
 

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-// import moment from "moment";
+import moment from "moment";
 
 import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
+import socialMediaPostToServer from './socialMediaPostToServer/socialMediaPostToServer';
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
@@ -238,7 +239,7 @@ export default class SocialMediaSubmitter extends Component {
       const currentPage = "SubmissionSuccess";
       this.setState(() => ({ currentPage }));
 
-      promoPostToServer(this.state);
+      socialMediaPostToServer(this.state);
     }
   }
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
+import pressReleasePostToServer from './pressReleasePostToServer/pressRelasePostToServer';
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
@@ -238,7 +239,7 @@ export default class PressReleaseSubmitter extends Component {
       const currentPage = "SubmissionSuccess";
       this.setState(() => ({ currentPage }));
 
-      promoPostToServer(this.state);
+      pressReleasePostToServer(this.state);
     }
   }
 
