@@ -12,7 +12,7 @@ export default {
     {
       name: 'Promo Submitter',
       url: '/promo-submitter',
-      icon: 'icon-envelope-open',
+      icon: 'icon-chart',
       badge: {
         variant: 'info',
         text: ''
