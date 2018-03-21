@@ -47,11 +47,13 @@ export default {
     },
     {
       name: 'Playground',
-      url: '/playground'
+      url: '/playground',
+      icon: 'fa fa-fort-awesome'
     },
     {
       name: 'Playground 2',
-      url: '/playground2'
+      url: '/playground2',
+      icon: 'fa fa-fort-awesome'      
     }
   ]
 };
