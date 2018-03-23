@@ -23,7 +23,7 @@ exports[`should render AlertsPage1 correctly 1`] = `
       <Title />
       <ASIN />
       <AmazonURL />
-      <IsFiction />
+      <FictionOrNonFiction />
       <Genre />
       <SubGenre />
       <FirstName />

@@ -23,7 +23,7 @@ exports[`should render SocialMediaPage1 correctly 1`] = `
       <Title />
       <ASIN />
       <AmazonURL />
-      <IsFiction />
+      <FictionOrNonFiction />
       <Genre />
       <SubGenre />
       <FirstName />

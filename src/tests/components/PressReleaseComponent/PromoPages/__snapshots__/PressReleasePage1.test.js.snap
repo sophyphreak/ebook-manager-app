@@ -23,7 +23,7 @@ exports[`should render PressReleasePage1 correctly 1`] = `
       <Title />
       <ASIN />
       <AmazonURL />
-      <IsFiction />
+      <FictionOrNonFiction />
       <Genre />
       <SubGenre />
       <FirstName />

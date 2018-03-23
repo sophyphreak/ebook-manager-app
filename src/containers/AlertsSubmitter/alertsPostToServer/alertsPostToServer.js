@@ -4,7 +4,7 @@ const alertsPostToServer = ({
   title,
   asin,
   amazonURL,
-  isFiction,
+  fictionOrNonFiction,
   genre,
   subGenre,
   firstName,
@@ -25,7 +25,7 @@ const alertsPostToServer = ({
             ASIN: ${asin}
             Amazon URL: ${amazonURL}
             Regular Price ($): ${amazonURL}
-            Fiction or Nonfiction?: ${isFiction}
+            Fiction or Nonfiction?: ${fictionOrNonFiction}
             Genre: ${genre}
             Sub-Genre: ${subGenre}
             Author First Name: ${firstName}
@@ -44,7 +44,7 @@ const alertsPostToServer = ({
             <p>ASIN: ${asin}</p>
             <p>Amazon URL: ${amazonURL}</p>
             <p>Regular Price ($): ${price}</p>
-            <p>Fiction or Nonfiction?: ${isFiction}</p>
+            <p>Fiction or Nonfiction?: ${fictionOrNonFiction}</p>
             <p>Genre: ${genre}</p>
             <p>Sub-Genre: ${subGenre}</p>
             <p>Author First Name: ${firstName}</p>

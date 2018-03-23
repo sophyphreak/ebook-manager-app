@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RadioHorizontal from './RadioHorizontal';
 
-const IsFiction = (props) => (
+const FictionOrNonFiction = (props) => (
   <RadioHorizontal
     label=""
     options={['Fiction', 'Non-fiction']}
@@ -9,4 +9,4 @@ const IsFiction = (props) => (
   />
 );
 
-export default IsFiction;
+export default FictionOrNonFiction;

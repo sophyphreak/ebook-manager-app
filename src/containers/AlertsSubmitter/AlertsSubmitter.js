@@ -15,7 +15,7 @@ export default class AlertsSubmitter extends Component {
       title: "",
       asin: "",
       amazonURL: "",
-      isFiction: "",
+      fictionOrNonFiction: "",
       genre: "",
       isGenreDisabled: true,
       subGenre: "",
@@ -39,7 +39,7 @@ export default class AlertsSubmitter extends Component {
     this.onTitleChange = this.onTitleChange.bind(this);
     this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
-    this.onIsFictionChange = this.onIsFictionChange.bind(this);
+    this.onFictionOrNonFictionChange = this.onFictionOrNonFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
     this.onFirstNameChange = this.onFirstNameChange.bind(this);
@@ -81,16 +81,16 @@ export default class AlertsSubmitter extends Component {
     this.setState(() => ({ amazonURL }));
   }
 
-  onIsFictionChange(e) {
-    const isFiction = e.target.value;
-    if (isFiction === 'Fiction') {
+  onFictionOrNonFictionChange(e) {
+    const fictionOrNonFiction = e.target.value;
+    if (fictionOrNonFiction === 'Fiction') {
       const isGenreDisabled = false;
       this.setState(() => ({ isGenreDisabled }));
     } else {
       const isGenreDisabled = true;
       this.setState(() => ({ isGenreDisabled }));
     };
-    this.setState(() => ({ isFiction }));
+    this.setState(() => ({ fictionOrNonFiction }));
   }
 
   onGenreChange(e) {
@@ -124,7 +124,7 @@ export default class AlertsSubmitter extends Component {
       title,
       asin,
       amazonURL,
-      isFiction,
+      fictionOrNonFiction,
       firstName,
       lastName,
       email
@@ -133,14 +133,14 @@ export default class AlertsSubmitter extends Component {
       !title ||
       !asin ||
       !amazonURL ||
-      !isFiction ||
+      !fictionOrNonFiction ||
       !firstName ||
       !lastName ||
       !email
     ) {
       this.setState(() => ({ error: "Please fill in all required fields." }));
     } else if (
-      isFiction === 'Fiction' && !genre
+      fictionOrNonFiction === 'Fiction' && !genre
     ) {
       this.setState(() => ({ error: "Please select a genre." }));
     } else if (
@@ -262,7 +262,7 @@ export default class AlertsSubmitter extends Component {
       asin,
       amazonURL,
       price,
-      isFiction,
+      fictionOrNonFiction,
       genre,
       isGenreDisabled,
       subGenre,
@@ -286,7 +286,7 @@ export default class AlertsSubmitter extends Component {
         title={title}
         asin={asin}
         amazonURL={amazonURL}
-        isFiction={isFiction}
+        fictionOrNonFiction={fictionOrNonFiction}
         genre={genre}
         isGenreDisabled={isGenreDisabled}
         subGenre={subGenre}
@@ -312,7 +312,7 @@ export default class AlertsSubmitter extends Component {
         onTitleChange={this.onTitleChange}
         onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
-        onIsFictionChange={this.onIsFictionChange}
+        onFictionOrNonFictionChange={this.onFictionOrNonFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}
         onFirstNameChange={this.onFirstNameChange}

@@ -11,7 +11,7 @@ import {
 import Title from '../../FormElements/Title';
 import ASIN from '../../FormElements/ASIN';
 import AmazonURL from '../../FormElements/AmazonURL';
-import IsFiction from '../../FormElements/IsFiction';
+import FictionOrNonFiction from '../../FormElements/FictionOrNonFiction';
 import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
 import FirstName from '../../FormElements/FirstName';
@@ -31,8 +31,8 @@ const SocialMediaPage1 = ({
   amazonURL,
   onAmazonURLChange,
 
-  isFiction,
-  onIsFictionChange,
+  fictionOrNonFiction,
+  onFictionOrNonFictionChange,
 
   genre,
   onGenreChange,
@@ -68,9 +68,9 @@ const SocialMediaPage1 = ({
           value={amazonURL}
           onChange={onAmazonURLChange}
         />
-        <IsFiction
-          value={isFiction}
-          onChange={onIsFictionChange}
+        <FictionOrNonFiction
+          value={fictionOrNonFiction}
+          onChange={onFictionOrNonFictionChange}
         />
         <Genre
           value={genre}

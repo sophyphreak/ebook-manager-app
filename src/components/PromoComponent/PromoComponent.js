@@ -20,7 +20,7 @@ const PromoComponent = ({
   title,
   asin,
   amazonURL,
-  isFiction,
+  fictionOrNonFiction,
   genre,
   isGenreDisabled,
   subGenre,
@@ -46,7 +46,7 @@ const PromoComponent = ({
   onTitleChange,
   onAsinChange,
   onAmazonURLChange,
-  onIsFictionChange,
+  onFictionOrNonFictionChange,
   onGenreChange,
   onSubGenreChange,
   onFirstNameChange,
@@ -76,7 +76,7 @@ const PromoComponent = ({
             title={title}
             asin={asin}
             amazonURL={amazonURL}
-            isFiction={isFiction}
+            fictionOrNonFiction={fictionOrNonFiction}
             genre={genre}
             isGenreDisabled={isGenreDisabled}
             subGenre={subGenre}
@@ -87,7 +87,7 @@ const PromoComponent = ({
             onTitleChange={onTitleChange}
             onAsinChange={onAsinChange}
             onAmazonURLChange={onAmazonURLChange}
-            onIsFictionChange={onIsFictionChange}
+            onFictionOrNonFictionChange={onFictionOrNonFictionChange}
             onGenreChange={onGenreChange}
             onSubGenreChange={onSubGenreChange}
             onFirstNameChange={onFirstNameChange}
