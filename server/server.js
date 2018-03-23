@@ -18,18 +18,9 @@ app.get('*', (req, res) => {
 app.post('/api/promo_submitter', async (req, res) => {
   try {
     res.send('email received!');
-    // console.log(req.body);
+    console.log(req.body);
 
-    // // Use my smcm.edu email for really sending emails
-    // const transporter = nodemailer.createTransport({
-    //   service: 'Gmail',
-    //   auth: {
-    //     user: 'arhorn@smcm.edu',
-    //     pass: 'jwskjytuieirpjjw'
-    //   }
-    // });
-
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       host: 'smtp.ethereal.email',
       port: 587,
       auth: {
@@ -43,8 +34,8 @@ app.post('/api/promo_submitter', async (req, res) => {
       from: 'wise-fox-app@sent.this', // sender address
       to: 'arhorn@gmail.com', // list of receivers
       subject: 'The app sent this ✔', // Subject line
-      text: req.body.text,
-      html: req.body.html
+      text: req.body.toWiseFox.text,
+      html: req.body.toWiseFox.html
     };
 
     // send mail with defined transport object
@@ -56,6 +47,32 @@ app.post('/api/promo_submitter', async (req, res) => {
       // Preview only available when sending through an Ethereal account
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
+  
+    // Use my smcm.edu email for really sending emails
+    transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: 'arhorn@smcm.edu',
+        pass: 'jwskjytuieirpjjw'
+      }
+    });
+
+    mailOptions = {
+      from: 'Wise Fox App <wise-fox-app@sent.this>', // sender address
+      to: req.body.userEmail, // list of receivers
+      subject: 'Promo Submission Received!', // Subject line
+      text: req.body.toUser.text,
+      html: req.body.toUser.html
+    }
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);
+    });
+
+
   } catch (e) {
     res.status(400).send(e);
   };

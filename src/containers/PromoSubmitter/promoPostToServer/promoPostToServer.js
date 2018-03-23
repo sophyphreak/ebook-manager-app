@@ -10,53 +10,101 @@ const promoPostToServer = ({
   firstName,
   lastName,
   email,
-  description,
-  authorBio,
+  price,
   promoType,
-  promoSites,
   startDate,
-  endDate
+  endDate,
+  description,
+  authorBio
 }) => {
+  console.log("i'm here i swear");
   axios
     .post("/api/promo_submitter", {
-      text: `PROMO SUBMITTER REQUEST
-  
-            Title: ${title}
-            ASIN: ${asin}
-            Amazon URL: ${amazonURL}
-            Regular Price ($): ${amazonURL}
-            Fiction or Nonfiction?: ${fictionOrNonFiction}
-            Genre: ${genre}
-            Sub-Genre: ${subGenre}
-            Author First Name: ${firstName}
-            Author Last Name: ${lastName}
-            Email: ${email}
-            Description: ${description}
-            Author Biography: ${authorBio}
-            Promo Type: ${promoType}
-            Promo Sites: ${promoSites}
-            Start Date: ${startDate.format("MMMM Do YYYY")}
-            End Date: ${endDate.format("MMMM Do YYYY")}
-          `,
-      html: `
-            <h3>Promo Submitter Request</h3>
-            <p>Title: ${title}</p>
-            <p>ASIN: ${asin}</p>
-            <p>Amazon URL: ${amazonURL}</p>
-            <p>Regular Price ($): ${price}</p>
-            <p>Fiction or Nonfiction?: ${fictionOrNonFiction}</p>
-            <p>Genre: ${genre}</p>
-            <p>Sub-Genre: ${subGenre}</p>
-            <p>Author First Name: ${firstName}</p>
-            <p>Author Last Name: ${lastName}</p>
-            <p>Email: ${email}</p>
-            <p>Description: ${description}</p>
-            <p>Author Biography: ${authorBio}</p>
-            <p>Promo Type: ${promoType}</p>
-            <p>Promo Sites: ${promoSites}</p>
-            <p>Start Date: ${startDate.format("MMMM Do YYYY")}</p>
-            <p>End Date: ${endDate.format("MMMM Do YYYY")}</p>
-          `
+      toWiseFox: {
+        text: `PROMO SUBMITTER REQUEST
+    
+              Title: ${title}
+              ASIN: ${asin}
+              Amazon URL: ${amazonURL}
+              Fiction or Nonfiction?: ${fictionOrNonFiction}
+              Genre: ${genre}
+              Sub-Genre: ${subGenre}
+              Author First Name: ${firstName}
+              Author Last Name: ${lastName}
+              Email: ${email}
+              Regular Price ($): ${price}
+              Promo Type: ${promoType}
+              Start Date: ${startDate.format("MMMM Do YYYY")}
+              End Date: ${endDate.format("MMMM Do YYYY")}
+              Description: ${description}
+              Author Biography: ${authorBio}
+            `,
+        html: `
+              <h3>Promo Submitter Request</h3>
+              <p>Title: ${title}</p>
+              <p>ASIN: ${asin}</p>
+              <p>Amazon URL: ${amazonURL}</p>
+              <p>Fiction or Nonfiction?: ${fictionOrNonFiction}</p>
+              <p>Genre: ${genre}</p>
+              <p>Sub-Genre: ${subGenre}</p>
+              <p>Author First Name: ${firstName}</p>
+              <p>Author Last Name: ${lastName}</p>
+              <p>Email: ${email}</p>
+              <p>Regular Price ($): ${price}</p>
+              <p>Promo Type: ${promoType}</p>
+              <p>Start Date: ${startDate.format("MMMM Do YYYY")}</p>
+              <p>End Date: ${endDate.format("MMMM Do YYYY")}</p>
+              <p>Description: ${description}</p>
+              <p>Author Biography: ${authorBio}</p>
+            `
+      },
+      toUser: {
+        text: `Thank you for sending your promotion submission request!
+              Please let us know if any of the below information is incorrect.
+              We will send you an email when the promotion submission is finished.
+
+              Title: ${title}
+              ASIN: ${asin}
+              Amazon URL: ${amazonURL}
+              Regular Price ($): ${amazonURL}
+              Fiction or Nonfiction?: ${fictionOrNonFiction}
+              Genre: ${genre}
+              Sub-Genre: ${subGenre}
+              Author First Name: ${firstName}
+              Author Last Name: ${lastName}
+              Email: ${email}
+              Regular Price: ${price}
+              Promo Type: ${promoType}
+              Start Date: ${startDate.format("MMMM Do YYYY")}
+              End Date: ${endDate.format("MMMM Do YYYY")}
+              Description: ${description}
+              Author Biography: ${authorBio}
+
+              Thanks again!
+              --Wise Fox
+            `,
+        html: `<p>Thank you for sending your promotion submission request!</p>
+              <p>Please let us know if any of the below information is incorrect.</p>
+              <p>We will send you an email when the promotion submission is finished.</p>
+
+              <p>Title: ${title}</p>
+              <p>ASIN: ${asin}</p>
+              <p>Amazon URL: ${amazonURL}</p>
+              <p>Regular Price ($): ${price}</p>
+              <p>Fiction or Nonfiction?: ${fictionOrNonFiction}</p>
+              <p>Genre: ${genre}</p>
+              <p>Sub-Genre: ${subGenre}</p>
+              <p>Author First Name: ${firstName}</p>
+              <p>Author Last Name: ${lastName}</p>
+              <p>Email: ${email}</p>
+              <p>Promo Type: ${promoType}</p>
+              <p>Start Date: ${startDate.format("MMMM Do YYYY")}</p>
+              <p>End Date: ${endDate.format("MMMM Do YYYY")}</p>
+              <p>Description: ${description}</p>
+              <p>Author Biography: ${authorBio}</p>
+            `
+      },
+      userEmail: `${email}`
     })
     .then(res => {
       console.log(res);
