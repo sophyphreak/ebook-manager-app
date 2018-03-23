@@ -3,7 +3,7 @@ import BasicInput from './BasicInput';
 
 const Price = (props) => (
   <BasicInput
-    label="Price:*"
+    label="Regular Price:*"
     {...props}
   />
 );
