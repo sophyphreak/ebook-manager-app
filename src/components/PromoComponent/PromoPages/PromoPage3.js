@@ -49,7 +49,7 @@ const PromoPage3 = ({
             color="primary"
             value="Submit"
           >
-            Next Section
+            Submit
           </Button>
         </Form>
       </CardBody>
