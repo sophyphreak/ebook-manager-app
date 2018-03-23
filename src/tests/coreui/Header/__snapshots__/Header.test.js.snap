@@ -28,15 +28,5 @@ exports[`should render Header correctly 1`] = `
       className="navbar-toggler-icon"
     />
   </NavbarToggler>
-  <NavbarToggler
-    className="d-md-down-none"
-    onClick={[Function]}
-    tag="button"
-    type="button"
-  >
-    <span
-      className="navbar-toggler-icon"
-    />
-  </NavbarToggler>
 </header>
 `;

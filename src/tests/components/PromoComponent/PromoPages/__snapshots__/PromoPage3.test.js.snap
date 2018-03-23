@@ -36,7 +36,7 @@ exports[`should render PromoPage3 correctly 1`] = `
         type="submit"
         value="Submit"
       >
-        Next Section
+        Submit
       </Button>
     </Form>
   </CardBody>

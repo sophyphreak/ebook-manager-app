@@ -50,7 +50,7 @@ exports[`should render Sidebar correctly 1`] = `
           to="/promo-submitter"
         >
           <i
-            className="icon-envelope-open"
+            className="icon-chart"
           />
           Promo Submitter
           <Badge
@@ -74,7 +74,7 @@ exports[`should render Sidebar correctly 1`] = `
           to="/social-media-submitter"
         >
           <i
-            className=""
+            className="icon-people"
           />
           Social Media
           <Badge
@@ -100,7 +100,7 @@ exports[`should render Sidebar correctly 1`] = `
           to="/press-release-submitter"
         >
           <i
-            className=""
+            className="icon-docs"
           />
           Press Release
           <Badge
@@ -126,7 +126,7 @@ exports[`should render Sidebar correctly 1`] = `
           to="/alerts-submitter"
         >
           <i
-            className=""
+            className="icon-bell"
           />
           Alerts Submitter
           <Badge
@@ -152,7 +152,7 @@ exports[`should render Sidebar correctly 1`] = `
           to="/playground"
         >
           <i
-            className=""
+            className="fa fa-fort-awesome"
           />
           Playground
         </NavLink>
@@ -170,7 +170,7 @@ exports[`should render Sidebar correctly 1`] = `
           to="/playground2"
         >
           <i
-            className=""
+            className="fa fa-fort-awesome"
           />
           Playground 2
         </NavLink>

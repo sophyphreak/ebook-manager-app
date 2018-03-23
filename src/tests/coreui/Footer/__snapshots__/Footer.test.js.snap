@@ -6,9 +6,9 @@ exports[`should render Footer correctly 1`] = `
 >
   <span>
     <a
-      href="http://coreui.io"
+      href="http://wisefoxpub.com/"
     >
-      CoreUI
+      Wise Fox
     </a>
      © 2018 Redbeard.
   </span>
@@ -17,9 +17,9 @@ exports[`should render Footer correctly 1`] = `
   >
     Powered by 
     <a
-      href="http://coreui.io"
+      href="http://wisefoxpub.com/"
     >
-      CoreUI
+      Wise Fox!
     </a>
   </span>
 </footer>

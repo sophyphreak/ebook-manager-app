@@ -2,6 +2,6 @@
 
 exports[`should render Price correctly 1`] = `
 <BasicInput
-  label="Price:*"
+  label="Regular Price:*"
 />
 `;

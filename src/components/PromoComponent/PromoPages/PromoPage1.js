@@ -74,11 +74,13 @@ const PromoPage1 = ({
         />
         {
           fictionOrNonFiction === 'Fiction' && 
-          <Genre
-            value={genre}
-            onChange={onGenreChange}
-            isGenreDisabled={isGenreDisabled}
-          />
+          <div className="animated fadeIn">
+            <Genre 
+              value={genre}
+              onChange={onGenreChange}
+              isGenreDisabled={isGenreDisabled}
+            />
+          </div>
         }
         <SubGenre
           value={subGenre}

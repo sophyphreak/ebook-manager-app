@@ -5,7 +5,7 @@ exports[`should render PromoComponent correctly 1`] = `
   tag="div"
 >
   <Col
-    sm="3"
+    sm="2"
     tag="div"
     widths={
       Array [
@@ -18,7 +18,7 @@ exports[`should render PromoComponent correctly 1`] = `
     }
   />
   <Col
-    sm="6"
+    sm="8"
     tag="div"
     widths={
       Array [

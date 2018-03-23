@@ -24,7 +24,6 @@ exports[`should render PromoPage1 correctly 1`] = `
       <ASIN />
       <AmazonURL />
       <FictionOrNonFiction />
-      <Genre />
       <SubGenre />
       <FirstName />
       <LastName />
