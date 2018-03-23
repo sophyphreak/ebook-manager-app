@@ -68,8 +68,8 @@ const promoPostToServer = ({
               Amazon URL: ${amazonURL}
               Regular Price ($): ${amazonURL}
               Fiction or Nonfiction?: ${fictionOrNonFiction}
-              Genre: ${genre}
-              Sub-Genre: ${subGenre}
+              Genre: ${genre || 'None'}
+              Sub-Genre: ${subGenre || 'None'}
               Author First Name: ${firstName}
               Author Last Name: ${lastName}
               Email: ${email}
@@ -92,8 +92,8 @@ const promoPostToServer = ({
               <p>Amazon URL: ${amazonURL}</p>
               <p>Regular Price ($): ${price}</p>
               <p>Fiction or Nonfiction?: ${fictionOrNonFiction}</p>
-              <p>Genre: ${genre}</p>
-              <p>Sub-Genre: ${subGenre}</p>
+              <p>Genre: ${genre || 'None'}</p>
+              <p>Sub-Genre: ${subGenre || 'None'}</p>
               <p>Author First Name: ${firstName}</p>
               <p>Author Last Name: ${lastName}</p>
               <p>Email: ${email}</p>
