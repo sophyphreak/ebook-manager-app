@@ -41,6 +41,7 @@ const PromoPage3 = ({
           />
           {error.message && <p>{error.message}</p>}
           <Button
+            className=".back-button"
             onClick={onBack}
             size="sm"
             color="basic"
