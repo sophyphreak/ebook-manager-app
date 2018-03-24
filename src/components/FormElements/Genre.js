@@ -17,7 +17,6 @@ const Genre = ({
       'Literary Fiction',
       'Children'
     ]}
-    isDisabled={isGenreDisabled}
     {...props}
   />
 );

@@ -5,12 +5,11 @@ import {
   Input
 } from 'reactstrap';
 
-const SelectInput = ({ label, isDisabled, options, value, onChange }) => (
+const SelectInput = ({ label, options, value, onChange }) => (
   <FormGroup>
     {label && <Label>{label}</Label>}
     <Input
       type="select"
-      disabled={isDisabled}
       onChange={onChange}
     >
       {

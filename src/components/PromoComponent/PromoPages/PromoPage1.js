@@ -24,9 +24,11 @@ const PromoPage1 = ({
   
   title,
   onTitleChange,
+  titleError,
 
   asin,
   onAsinChange,
+
 
   amazonURL,
   onAmazonURLChange,
@@ -36,7 +38,6 @@ const PromoPage1 = ({
 
   genre,
   onGenreChange,
-  isGenreDisabled,
 
   subGenre,
   onSubGenreChange,
@@ -78,7 +79,6 @@ const PromoPage1 = ({
             <Genre 
               value={genre}
               onChange={onGenreChange}
-              isGenreDisabled={isGenreDisabled}
             />
           </div>
         }

@@ -17,7 +17,6 @@ export default class PromoSubmitter extends Component {
       amazonURL: "",
       fictionOrNonFiction: "",
       genre: "",
-      isGenreDisabled: true,
       subGenre: "",
       firstName: "",
       lastName: "",
@@ -83,13 +82,6 @@ export default class PromoSubmitter extends Component {
 
   onFictionOrNonFictionChange(e) {
     const fictionOrNonFiction = e.target.value;
-    if (fictionOrNonFiction === 'Fiction') {
-      const isGenreDisabled = false;
-      this.setState(() => ({ isGenreDisabled }));
-    } else {
-      const isGenreDisabled = true;
-      this.setState(() => ({ isGenreDisabled }));
-    };
     this.setState(() => ({ fictionOrNonFiction }));
   }
 
@@ -264,7 +256,6 @@ export default class PromoSubmitter extends Component {
       price,
       fictionOrNonFiction,
       genre,
-      isGenreDisabled,
       subGenre,
       firstName,
       lastName,
@@ -288,7 +279,6 @@ export default class PromoSubmitter extends Component {
         amazonURL={amazonURL}
         fictionOrNonFiction={fictionOrNonFiction}
         genre={genre}
-        isGenreDisabled={isGenreDisabled}
         subGenre={subGenre}
         firstName={firstName}
         lastName={lastName}
