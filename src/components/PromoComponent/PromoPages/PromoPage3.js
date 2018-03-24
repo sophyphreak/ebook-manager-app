@@ -30,12 +30,16 @@ const PromoPage3 = ({
           <Description
             value={description}
             onChange={onDescriptionChange}
+            hasError={!!error.message}
+            errorMessage={error.description}
           />
           <AuthorBio
             value={authorBio}
             onChange={onAuthorBioChange}
+            hasError={!!error.message}
+            errorMessage={error.authorBio}
           />
-          {error && <p>{error}</p>}
+          {error.message && <p>{error.message}</p>}
           <Button
             onClick={onBack}
             size="sm"

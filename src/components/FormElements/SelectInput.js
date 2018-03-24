@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {
+  FormFeedback,
   FormGroup,
   Label,
   Input
 } from 'reactstrap';
+import isValid from './isValid/isValid';
 
 const SelectInput = ({ 
-  error, 
-  valid, 
-  invalid, 
+  hasError, 
+  errorMessage,
   label, 
   options, 
   value, 
@@ -19,8 +20,7 @@ const SelectInput = ({
     <Input
       type="select"
       onChange={onChange}
-      valid={valid}
-      invalid={invalid}
+      valid={isValid(hasError, errorMessage)}
     >
       {
         options.map((option, i) => (
@@ -33,7 +33,7 @@ const SelectInput = ({
         ))
       }
     </Input>
-    {error && <FormFeedback>{error}</FormFeedback>}    
+    {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}    
   </FormGroup>
 );
 

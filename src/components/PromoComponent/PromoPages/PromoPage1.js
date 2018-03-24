@@ -29,7 +29,6 @@ const PromoPage1 = ({
   asin,
   onAsinChange,
 
-
   amazonURL,
   onAmazonURLChange,
 
@@ -60,25 +59,25 @@ const PromoPage1 = ({
         <Title
           value={title}
           onChange={onTitleChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.title}
         />
         <ASIN
           value={asin}
           onChange={onAsinChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.asin}
         />
         <AmazonURL
           value={amazonURL}
           onChange={onAmazonURLChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.amazonURL}          
         />
         <FictionOrNonFiction
           value={fictionOrNonFiction}
           onChange={onFictionOrNonFictionChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.fictionOrNonFiction}                    
         />
         {
@@ -87,7 +86,7 @@ const PromoPage1 = ({
             <Genre 
               value={genre}
               onChange={onGenreChange}
-              isError={!!error.message}
+              hasError={!!error.message}
               errorMessage={error.genre}                                  
             />
           </div>
@@ -95,25 +94,25 @@ const PromoPage1 = ({
         <SubGenre
           value={subGenre}
           onChange={onSubGenreChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.subGenre}                              
         />
         <FirstName
           value={firstName}
           onChange={onFirstNameChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.firstName}                                        
         />
         <LastName
           value={lastName}
           onChange={onLastNameChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.lastName}                                                  
         />
         <Email
           value={email}
           onChange={onEmailChange}
-          isError={!!error.message}
+          hasError={!!error.message}
           errorMessage={error.email}
         />
         {error.message && <p>{error.message}</p>}        

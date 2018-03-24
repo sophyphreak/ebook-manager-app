@@ -1,39 +1,29 @@
 import React, { Component } from 'react';
 import {
-  FormGroup,
   FormFeedback,
+  FormGroup,
   Label,
   Input
 } from 'reactstrap';
+import isValid from './isValid/isValid';
 
 const BasicInput = ({ 
-  isError, 
+  hasError, 
   errorMessage,
   label, 
   value, 
   onChange
- }) => {
-  const isValid = (isError, errorMessage) => {
-    if (isError && !errorMessage) {
-      return true;
-    }
-    if (isError && !!errorMessage) {
-      return false;
-    }
-    return null;
-  };
-
-  return (
+ }) => (
   <FormGroup>
     <Label>{label}</Label>
     <Input 
       type="text" 
       value={value} 
       onChange={onChange} 
-      valid={isValid(isError, errorMessage)}
+      valid={isValid(hasError, errorMessage)}
     />
     {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}
   </FormGroup>
-)};
+);
 
 export default BasicInput;

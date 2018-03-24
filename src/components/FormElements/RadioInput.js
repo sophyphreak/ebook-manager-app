@@ -4,14 +4,14 @@ import {
   Label,
   Input
 } from 'reactstrap';
+import isValid from './isValid/isValid';
 
 const RadioInput = ({ 
-  error, 
-  valid, 
-  invalid, 
+  hasError, 
+  errorMessage, 
   label, 
   options, 
-  alue, 
+  value, 
   onChange 
 }) => (
   <FormGroup>
@@ -24,13 +24,12 @@ const RadioInput = ({
             value={option}
             onChange={onChange}
             checked={value === option}
-            valid={valid}
-            invalid={invalid}
+            valid={isValid(hasError, errorMessage)}
           />
           <Label check>
             {option}
           </Label>
-          {error && <FormFeedback>{error}</FormFeedback>}              
+          {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}              
         </FormGroup>
       ))
     }

@@ -37,10 +37,14 @@ const PromoPage2 = ({
           <Price
             value={price}
             onChange={onPriceChange}
+            hasError={!!error.message}
+            errorMessage={error.price}
           />
           <PromoType
             value={promoType}
             onChange={onPromoTypeChange}
+            hasError={!!error.message}
+            errorMessage={error.promoType}
           />
           <DatesPicker
             startDate={startDate}
@@ -49,7 +53,7 @@ const PromoPage2 = ({
             focusedInput={focusedInput}
             onFocusChange={onFocusChange}
           />
-          {error && <p>{error}</p>}
+          {error.message && <p>{error.message}</p>}
           <Button
             onClick={onBack}
             size="sm"

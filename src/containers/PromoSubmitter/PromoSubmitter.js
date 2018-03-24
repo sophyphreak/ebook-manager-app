@@ -161,7 +161,7 @@ export default class PromoSubmitter extends Component {
       error.amazonURL = 'Please fill in an Amazon URL.';
     };
     if (!fictionOrNonFiction) {
-      error.fictionOrNonFiction = 'Please select Fiction or Non-fiction.';
+      error.fictionOrNonFiction = 'this will not render to screen';
     };
     if (!firstName) {
       error.firstName = 'Please enter an author first name.';
@@ -173,7 +173,7 @@ export default class PromoSubmitter extends Component {
       error.email = 'Please enter an email.';
     };
     if (fictionOrNonFiction === 'Fiction' && !genre) {
-      error.fictionOrNonFiction = 'Please select Fiction or Non-fiction.';
+      error.genre = 'Please select a genre.';
     };
     if (asin && !asin.match(/^[0-9A-Z]{10}$/)) {
       error.asin = 'Please provide a valid, 10-character ASIN';
