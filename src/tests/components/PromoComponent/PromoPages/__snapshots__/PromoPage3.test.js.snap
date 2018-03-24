@@ -20,8 +20,14 @@ exports[`should render PromoPage3 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Description />
-      <AuthorBio />
+      <Description
+        errorMessage=""
+        hasError={false}
+      />
+      <AuthorBio
+        errorMessage=""
+        hasError={false}
+      />
       <Button
         color="basic"
         size="sm"

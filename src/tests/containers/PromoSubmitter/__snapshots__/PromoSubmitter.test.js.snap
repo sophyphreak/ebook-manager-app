@@ -10,11 +10,27 @@ exports[`should render PromoSubmitter correctly 1`] = `
   description=""
   email=""
   endDate={"2017-02-14T12:51:48.000Z"}
-  error=""
+  error={
+    Object {
+      "amazonURL": "",
+      "asin": "",
+      "authorBio": "",
+      "datePicker": "",
+      "description": "",
+      "email": "",
+      "fictionOrNonFiction": "",
+      "firstName": "",
+      "genre": "",
+      "lastName": "",
+      "message": "",
+      "price": "",
+      "promoType": "",
+      "title": "",
+    }
+  }
   fictionOrNonFiction=""
   firstName=""
   genre=""
-  isGenreDisabled={true}
   lastName=""
   onAmazonURLChange={[Function]}
   onAsinChange={[Function]}

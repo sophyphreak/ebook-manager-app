@@ -6,7 +6,7 @@ exports[`should render FictionOrNonFiction correctly 1`] = `
   options={
     Array [
       "Fiction",
-      "Non-fiction",
+      "Non-fiction *",
     ]
   }
 />

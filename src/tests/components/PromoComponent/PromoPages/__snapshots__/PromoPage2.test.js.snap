@@ -20,8 +20,14 @@ exports[`should render PromoPage2 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Price />
-      <PromoTypes />
+      <Price
+        errorMessage=""
+        hasError={false}
+      />
+      <PromoTypes
+        errorMessage=""
+        hasError={false}
+      />
       <DatesPicker />
       <Button
         color="basic"

@@ -6,6 +6,7 @@ exports[`should render SelectInput correctly 1`] = `
 >
   <Input
     type="select"
+    valid={null}
   >
     <option
       key="0"

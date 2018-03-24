@@ -18,6 +18,7 @@ exports[`should render TextAreaInput correctly 1`] = `
   />
   <Input
     type="textarea"
+    valid={null}
   />
 </FormGroup>
 `;

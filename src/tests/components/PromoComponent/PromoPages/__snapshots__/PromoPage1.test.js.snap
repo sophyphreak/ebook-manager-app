@@ -20,14 +20,37 @@ exports[`should render PromoPage1 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Title />
-      <ASIN />
-      <AmazonURL />
-      <FictionOrNonFiction />
-      <SubGenre />
-      <FirstName />
-      <LastName />
-      <Email />
+      <Title
+        errorMessage=""
+        hasError={false}
+      />
+      <ASIN
+        errorMessage=""
+        hasError={false}
+      />
+      <AmazonURL
+        errorMessage=""
+        hasError={false}
+      />
+      <FictionOrNonFiction
+        errorMessage=""
+        hasError={false}
+      />
+      <SubGenre
+        hasError={false}
+      />
+      <FirstName
+        errorMessage=""
+        hasError={false}
+      />
+      <LastName
+        errorMessage=""
+        hasError={false}
+      />
+      <Email
+        errorMessage=""
+        hasError={false}
+      />
       <Button
         color="primary"
         size="sm"

@@ -18,6 +18,7 @@ exports[`should render BasicInput correctly 1`] = `
   />
   <Input
     type="text"
+    valid={null}
   />
 </FormGroup>
 `;

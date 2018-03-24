@@ -137,9 +137,7 @@ export default class PromoSubmitter extends Component {
       lastName,
       email
     } = this.state;
-    let error = this.state.error;
-
-    error = {
+    let error = {
       message: "",
       title: "",
       asin: "",
@@ -156,12 +154,19 @@ export default class PromoSubmitter extends Component {
     };
     if (!asin) {
       error.asin = 'Please fill in an ASIN.';
+    } else if (!asin.match(/^[0-9A-Z]{10}$/)) {
+      error.asin = 'Please provide a valid, 10-character ASIN';
     };
     if (!amazonURL) {
       error.amazonURL = 'Please fill in an Amazon URL.';
+    } else if (!amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+      error.amazonURL = 'Please provide a valid Amazon.com URL.';
     };
     if (!fictionOrNonFiction) {
       error.fictionOrNonFiction = 'this will not render to screen';
+    };
+    if (!genre && fictionOrNonFiction === 'Fiction') {
+      error.genre = 'Please select a genre.';
     };
     if (!firstName) {
       error.firstName = 'Please enter an author first name.';
@@ -171,17 +176,7 @@ export default class PromoSubmitter extends Component {
     };
     if (!email) {
       error.email = 'Please enter an email.';
-    };
-    if (fictionOrNonFiction === 'Fiction' && !genre) {
-      error.genre = 'Please select a genre.';
-    };
-    if (asin && !asin.match(/^[0-9A-Z]{10}$/)) {
-      error.asin = 'Please provide a valid, 10-character ASIN';
-    };
-    if (amazonURL && !amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonURL = 'Please provide a valid Amazon.com URL.';
-    };
-    if (email && !email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
       error.email = 'Please provide a valid email address.;'
     };
     if (
@@ -200,7 +195,10 @@ export default class PromoSubmitter extends Component {
     if (!error.message) {
       console.log(this.state);
       const currentPage = "PromoPage2";
-      this.setState(() => ({ currentPage }));
+      this.setState(() => ({ 
+        error,
+        currentPage
+      }));
     };
   };
 
@@ -228,25 +226,39 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage2(e) {
     e.preventDefault();
-    const { price, promoType, startDate, endDate } = this.state;
+    const { 
+      price, 
+      promoType
+    } = this.state;
+    let error = {
+      message: "",
+      price: "",
+      promoType: ""
+    }
+
+    if (!price) {
+      error.price = "Please enter a price.";
+    };
+    if (!promoType) {
+      error.promoType = "this also won't render";
+    };
     if (
-      !price || 
-      !promoType ||
-      !startDate ||
-      !endDate
+      error.price ||
+      error.promoType
     ) {
-      const message = 'Please fill in all required fields.'
-      this.setState(() => ({ error: { message } }));
-    } else {
+      error.message = "Please fix all errors.";
+      this.setState(() => ({ error }));
+    };
+    if (!error.message) {
       console.log(this.state);
 
-      const message = "";
-      this.setState(() => ({ error: { message } }));
-
       const currentPage = "PromoPage3";
-      this.setState(() => ({ currentPage }));
-    }
-  }
+      this.setState(() => ({ 
+        error,
+        currentPage
+       }));
+    }  
+  };
 
   // PromoPage3
 
@@ -262,22 +274,36 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage3(e) {
     e.preventDefault();
-    const { description, authorBio } = this.state;
+    const { 
+      description, 
+      authorBio
+    } = this.state;
+    let error = {
+      message: "",
+      description: "",
+      authorBio: ""
+    };
+
+    if (!description) {
+      error.description = "Please enter a book description.";
+    };
+    if (!authorBio) {
+      error.authorBio = "Please enter an author biography.";
+    };
     if (
-      !description || 
-      !authorBio
+      error.description ||
+      error.authorBio
     ) {
-      const message = 'Please fill in all required fields.';
-      this.setState(() => ({ error: { message } }));
-    } else {
-
+      error.message = "Please fix all errors.";
+      this.setState(() => ({ error }));
+    }
+    if (!error.message) {
       console.log(this.state);
-
-      const message = "";
-      this.setState(() => ({ error: { message } }));
-
       const currentPage = "SubmissionSuccess";
-      this.setState(() => ({ currentPage }));
+      this.setState(() => ({ 
+        error,
+        currentPage 
+      }));
 
       promoPostToServer(this.state);
     }

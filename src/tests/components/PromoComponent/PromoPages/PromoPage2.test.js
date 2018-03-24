@@ -2,10 +2,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import PromoPage2 from '../../../../components/PromoComponent/PromoPages/PromoPage2';
 
-let wrapper;
+let error, wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<PromoPage2 />);
+  error = {
+    message: "",
+    price: "",
+    promoType: ""
+  };
+  wrapper = shallow(<PromoPage2 error={error} />);
 });
 
 test('should render PromoPage2 correctly', () => {

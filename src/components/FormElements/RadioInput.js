@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  FormFeedback,
   FormGroup,
   Label,
   Input
@@ -29,10 +30,9 @@ const RadioInput = ({
           <Label check>
             {option}
           </Label>
-          {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}              
-        </FormGroup>
-      ))
-    }
+          </FormGroup>
+        ))
+      }
   </FormGroup>
 ); 
 
