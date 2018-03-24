@@ -60,18 +60,26 @@ const PromoPage1 = ({
         <Title
           value={title}
           onChange={onTitleChange}
+          isError={!!error.message}
+          errorMessage={error.title}
         />
         <ASIN
           value={asin}
           onChange={onAsinChange}
+          isError={!!error.message}
+          errorMessage={error.asin}
         />
         <AmazonURL
           value={amazonURL}
           onChange={onAmazonURLChange}
+          isError={!!error.message}
+          errorMessage={error.amazonURL}          
         />
         <FictionOrNonFiction
           value={fictionOrNonFiction}
           onChange={onFictionOrNonFictionChange}
+          isError={!!error.message}
+          errorMessage={error.fictionOrNonFiction}                    
         />
         {
           fictionOrNonFiction === 'Fiction' && 
@@ -79,26 +87,36 @@ const PromoPage1 = ({
             <Genre 
               value={genre}
               onChange={onGenreChange}
+              isError={!!error.message}
+              errorMessage={error.genre}                                  
             />
           </div>
         }
         <SubGenre
           value={subGenre}
           onChange={onSubGenreChange}
+          isError={!!error.message}
+          errorMessage={error.subGenre}                              
         />
         <FirstName
           value={firstName}
           onChange={onFirstNameChange}
+          isError={!!error.message}
+          errorMessage={error.firstName}                                        
         />
         <LastName
           value={lastName}
           onChange={onLastNameChange}
+          isError={!!error.message}
+          errorMessage={error.lastName}                                                  
         />
         <Email
           value={email}
           onChange={onEmailChange}
+          isError={!!error.message}
+          errorMessage={error.email}
         />
-        {error && <p>{error}</p>}        
+        {error.message && <p>{error.message}</p>}        
         <Button 
           type="submit" 
           size="sm" 

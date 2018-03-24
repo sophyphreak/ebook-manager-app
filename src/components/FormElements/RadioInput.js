@@ -5,7 +5,15 @@ import {
   Input
 } from 'reactstrap';
 
-const RadioInput = ({ label, options, value, onChange }) => (
+const RadioInput = ({ 
+  error, 
+  valid, 
+  invalid, 
+  label, 
+  options, 
+  alue, 
+  onChange 
+}) => (
   <FormGroup>
     {label && <Label>{label}</Label>}
     {
@@ -16,10 +24,13 @@ const RadioInput = ({ label, options, value, onChange }) => (
             value={option}
             onChange={onChange}
             checked={value === option}
+            valid={valid}
+            invalid={invalid}
           />
           <Label check>
             {option}
           </Label>
+          {error && <FormFeedback>{error}</FormFeedback>}              
         </FormGroup>
       ))
     }

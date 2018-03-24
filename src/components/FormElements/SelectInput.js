@@ -5,12 +5,22 @@ import {
   Input
 } from 'reactstrap';
 
-const SelectInput = ({ label, options, value, onChange }) => (
+const SelectInput = ({ 
+  error, 
+  valid, 
+  invalid, 
+  label, 
+  options, 
+  value, 
+  onChange 
+}) => (
   <FormGroup>
     {label && <Label>{label}</Label>}
     <Input
       type="select"
       onChange={onChange}
+      valid={valid}
+      invalid={invalid}
     >
       {
         options.map((option, i) => (
@@ -23,6 +33,7 @@ const SelectInput = ({ label, options, value, onChange }) => (
         ))
       }
     </Input>
+    {error && <FormFeedback>{error}</FormFeedback>}    
   </FormGroup>
 );
 

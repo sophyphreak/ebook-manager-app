@@ -5,7 +5,15 @@ import {
   Input
 } from 'reactstrap';
 
-const RadioHorizontal = ({ label, options, value, onChange }) => (
+const RadioHorizontal = ({ 
+  error, 
+  valid, 
+  invalid, 
+  label, 
+  options, 
+  value, 
+  onChange 
+}) => (
   <FormGroup>
     {label && <Label>{label}</Label>}
     {
@@ -16,6 +24,8 @@ const RadioHorizontal = ({ label, options, value, onChange }) => (
             value={option}
             onChange={onChange}
             checked={value === option}
+            valid={valid}
+            invalid={invalid}
           />
           <Label check>
             {option}   
@@ -23,6 +33,7 @@ const RadioHorizontal = ({ label, options, value, onChange }) => (
         </FormGroup>
       ))
     }
+    {error && <FormFeedback>{error}</FormFeedback>}    
   </FormGroup>
 );
 

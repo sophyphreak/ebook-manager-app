@@ -7,9 +7,8 @@ import {
 } from 'reactstrap';
 
 const BasicInput = ({ 
-  error, 
-  valid, 
-  invalid, 
+  isError, 
+  errorMessage,
   label, 
   value, 
   onChange
@@ -17,13 +16,13 @@ const BasicInput = ({
   <FormGroup>
     <Label>{label}</Label>
     <Input 
-      valid={valid}
-      invalid={invalid}
       type="text" 
       value={value} 
       onChange={onChange} 
+      valid={isError && !errorMessage}
+      invalid={isError && !!errorMessage}      
     />
-    {error && <FormFeedback>{error}</FormFeedback>}
+    {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}
   </FormGroup>
 );
 
