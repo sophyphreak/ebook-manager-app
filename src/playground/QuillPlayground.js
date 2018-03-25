@@ -8,29 +8,31 @@ import {
 export default class QuillPlayground extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { text: '' }
-    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      text: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-
   handleChange(value) {
     this.setState({ text: value })
   }
   render() {
     return (
       <Row>
-        <Col sm="6"> 
-          <ReactQuill 
+        <Col xs="12" sm="6">
+          <ReactQuill
             value={this.state.text}
-            onChange={this.handleChange} 
+            onChange={this.handleChange}
+            placeholder="Please type or paste your listing here. An HTML version will appear on the right."
           />
         </Col>
-        <Col sm="6">
+        <Col xs="12" sm="6">
           <textarea
-            className="ql-editor textarea"
+            className="textarea ql-editor"
             value={this.state.text}
           />
         </Col>
       </Row>
-    )
+    );
   }
-};
+}
