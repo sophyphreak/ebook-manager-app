@@ -23,12 +23,12 @@ export default class QuillPlayground extends React.Component {
           <ReactQuill
             value={this.state.text}
             onChange={this.handleChange}
-            placeholder="Please type or paste your listing here. An HTML version will appear on the right."
+            placeholder="Please type or paste your listing here"
           />
         </Col>
         <Col xs="12" sm="6">
           <textarea
-            className="textarea ql-editor"
+            className="ql-editor--textarea"
             value={this.state.text}
           />
         </Col>

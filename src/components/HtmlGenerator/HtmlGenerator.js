@@ -34,12 +34,13 @@ export default class HtmlGenerator extends React.Component {
           <ReactQuill
             value={this.state.text}
             onChange={this.handleChange}
+            placeholder="Please type or paste your listing here"
             modules={modules}
           />
         </Col>
         <Col xs="12" sm="6">
           <textarea
-            className="textarea ql-editor"
+            className="ql-editor--textarea"
             value={this.state.text}
           />
         </Col>
