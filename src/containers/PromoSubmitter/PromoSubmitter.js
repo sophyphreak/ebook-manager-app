@@ -177,7 +177,7 @@ export default class PromoSubmitter extends Component {
     if (!email) {
       error.email = 'Please enter an email.';
     } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      error.email = 'Please provide a valid email address.;'
+      error.email = 'Please provide a valid email address.';
     };
     if (
       error.title ||
