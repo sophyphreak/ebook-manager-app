@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-import {
-  Col,
-  Row
-} from 'reactstrap';
+import { html as beautify } from 'js-beautify'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { ClippyIcon } from 'react-octicons';
+import { Button, Col, Row } from 'reactstrap';
 
 export default class HtmlGenerator extends React.Component {
   constructor(props) {
@@ -40,9 +40,15 @@ export default class HtmlGenerator extends React.Component {
         </Col>
         <Col xs="12" sm="6">
           <textarea
-            className="ql-editor--textarea"
-            value={this.state.text}
+          className="ql-editor--textarea"
+          value={beautify(this.state.text)}
           />
+          { 
+            this.state.text &&
+            <CopyToClipboard text={beautify(this.state.text)}>
+              <button><ClippyIcon /></button>
+            </CopyToClipboard>
+          }
         </Col>
       </Row>
     );
