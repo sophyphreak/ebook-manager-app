@@ -30,6 +30,7 @@ exports[`should render PromoPage2 correctly 1`] = `
       />
       <DatesPicker />
       <Button
+        className="back-button"
         color="basic"
         size="sm"
         tag="button"

@@ -20,7 +20,7 @@ exports[`should render PromoSubmitter correctly 1`] = `
       "email": "",
       "fictionOrNonFiction": "",
       "firstName": "",
-      "genre": "",
+      "genre": "Please select",
       "lastName": "",
       "message": "",
       "price": "",

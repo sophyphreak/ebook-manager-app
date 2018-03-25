@@ -29,6 +29,7 @@ exports[`should render PromoPage3 correctly 1`] = `
         hasError={false}
       />
       <Button
+        className=".back-button"
         color="basic"
         size="sm"
         tag="button"

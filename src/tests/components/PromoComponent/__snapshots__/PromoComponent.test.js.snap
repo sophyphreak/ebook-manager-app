@@ -5,20 +5,12 @@ exports[`should render PromoComponent correctly 1`] = `
   tag="div"
 >
   <Col
-    sm="2"
-    tag="div"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
+    sm={
+      Object {
+        "offset": 2,
+        "size": 8,
+      }
     }
-  />
-  <Col
-    sm="8"
     tag="div"
     widths={
       Array [

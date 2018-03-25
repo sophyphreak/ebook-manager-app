@@ -36,7 +36,11 @@ export default {
     {
       name: 'HTML Generator',
       url: '/html-generator',
-      icon: 'icon-docs'
+      icon: 'icon-docs',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
     },
     {
       name: 'Playground',
@@ -51,7 +55,11 @@ export default {
     {
       name: 'Quill Playground',
       url: '/quill-playground',
-      icon: 'fa fa-fort-awesome'
+      icon: 'fa fa-fort-awesome',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
     }
   ]
 };
