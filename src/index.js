@@ -16,6 +16,8 @@ import "../scss/style.scss";
 import "../scss/core/_dropdown-menu-right.scss";
 // Import ReactDates styles
 import "react-dates/lib/css/_datepicker.css";
+// Import ReactQuill styles
+import 'react-quill/dist/quill.snow.css'
 
 // Containers
 import Full from "./containers/Full/Full";

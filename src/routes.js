@@ -6,6 +6,7 @@ const routes = {
   '/press-release-submitter': 'Press Release Submitter',
   '/alerts-submitter': 'Alerts Submitter',
   '/playground': 'Playground',
-  '/playground2': 'Playground 2'
+  '/playground2': 'Playground 2',
+  '/quill-playground': 'Quill Playground'
 };
 export default routes;

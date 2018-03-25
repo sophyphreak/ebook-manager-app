@@ -54,6 +54,11 @@ export default {
       name: 'Playground 2',
       url: '/playground2',
       icon: 'fa fa-fort-awesome'      
+    },
+    {
+      name: 'Quill Playground',
+      url: '/quill-playground',
+      icon: 'fa fa-fort-awesome'
     }
   ]
 };
