@@ -66,8 +66,7 @@ const PromoComponent = ({
   onSubmitPromoPage3,
 }) => (
   <Row>
-    <Col sm="2" />
-    <Col xs="12" sm="8">
+    <Col xs="12" sm={{ size: 8, offset: 2 }}>
       {
         currentPage === "PromoPage1" && (
           <PromoPage1
