@@ -32,6 +32,18 @@ export default class HtmlGenerator extends React.Component {
     const { width } = this.state;
     const isMobile = width <= 500;
 
+    const modules = {
+      toolbar: [
+        [{ 'header': [1, 2, 3, false] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }], 
+        [{ 'script': 'sub' }, { 'script': 'super' }],
+        [{ 'indent': '-1' }, { 'indent': '+1' }],    
+        ['link'],
+        ['clean']
+      ],
+    };
+
     if (isMobile) {
       return (
         <div>
@@ -39,6 +51,7 @@ export default class HtmlGenerator extends React.Component {
             <ReactQuill
               value={this.state.text}
               onChange={this.handleChange}
+              modules={modules}
             />
           </Row>
           <Row>
@@ -55,6 +68,7 @@ export default class HtmlGenerator extends React.Component {
             <ReactQuill
               value={this.state.text}
               onChange={this.handleChange}
+              modules={modules}
             />
           </Col>
           <Col xs="12" sm="6">
