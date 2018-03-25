@@ -20,12 +20,11 @@ export default class QuillPlayground extends React.Component {
       <Row>
         <Col sm="6"> 
           <ReactQuill 
-            className="ql-editor"
             value={this.state.text}
             onChange={this.handleChange} 
           />
         </Col>
-        <Col>
+        <Col sm="6">
           <textarea
             className="ql-editor textarea"
             value={this.state.text}

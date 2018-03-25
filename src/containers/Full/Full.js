@@ -15,6 +15,7 @@ import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
 import NotFoundPage from '../../components/NotFoundPage';
 import QuillPlayground from '../../playground/QuillPlayground';
+import HtmlGenerator from '../../components/HtmlGenerator/HtmlGenerator';
 
 class Full extends Component {
   render() {
@@ -31,9 +32,10 @@ class Full extends Component {
                 <Route path="/promo-submitter" name="Promo Submitter" component={PromoSubmitter} />
                 <Route path="/social-media-submitter" name="Social Media Submitter" component={SocialMediaSubmitter} />
                 <Route path="/press-release-submitter" name="Press Release Submitter" component={PressReleaseSubmitter} />
-                <Route path="/alerts-submitter" name="Alerts Submitter" component={AlertsSubmitter}/>
+                <Route path="/alerts-submitter" name="Alerts Submitter" component={AlertsSubmitter} />
+                <Route path="/html-generator" name="HTML Listing Generator" component={HtmlGenerator} />
                 <Route path="/playground" name="Playground" component={FormTests} />
-                <Route path="/playground2" name="Playground2" component={FormTests2}/>
+                <Route path="/playground2" name="Playground2" component={FormTests2} />
                 <Route path="/quill-playground" name="Quill Playground" component={QuillPlayground} />
                 <Redirect from="/" to="/dashboard" exact={true}/>
                 <Route component={NotFoundPage} />
