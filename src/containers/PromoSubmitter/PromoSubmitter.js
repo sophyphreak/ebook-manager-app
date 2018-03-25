@@ -15,7 +15,7 @@ export default class PromoSubmitter extends Component {
         asin: "",
         amazonURL: "",
         fictionOrNonFiction: "",
-        genre: "",
+        genre: "Please select",
         firstName: "",
         lastName: "",
         email: "",
@@ -165,7 +165,7 @@ export default class PromoSubmitter extends Component {
     if (!fictionOrNonFiction) {
       error.fictionOrNonFiction = 'this will not render to screen';
     };
-    if (!genre && fictionOrNonFiction === 'Fiction') {
+    if (genre === 'Please select' && fictionOrNonFiction === 'Fiction') {
       error.genre = 'Please select a genre.';
     };
     if (!firstName) {
