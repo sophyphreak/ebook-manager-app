@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import BasicInput from './BasicInput';
 
-const Email = (props) => (
+const Email = ({ label, ...props }) => (
   <BasicInput
-    label="Email:*"
+    label={label}
     {...props}
   />
 );

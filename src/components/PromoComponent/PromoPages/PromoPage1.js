@@ -24,7 +24,6 @@ const PromoPage1 = ({
   
   title,
   onTitleChange,
-  titleError,
 
   asin,
   onAsinChange,
@@ -110,6 +109,7 @@ const PromoPage1 = ({
           errorMessage={error.lastName}                                                  
         />
         <Email
+          label="Email:*"
           value={email}
           onChange={onEmailChange}
           hasError={!!error.message}
