@@ -46,7 +46,7 @@ const AlertsPage = ({
     <CardBody>
       <Form onSubmit={onSubmitAlert}>
         <AmazonURL
-          label="Amazon URL*"
+          label="Amazon URL"
           value={amazonURL}
           onChange={onAmazonURLChange}
           hasError={!!error.message}

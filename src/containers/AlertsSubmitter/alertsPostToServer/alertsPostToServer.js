@@ -14,11 +14,11 @@ const promoPostToServer = ({
         subject: 'Alert Request',
         text: `ALERT REQUEST
 
-              Amazon URL: ${amazonURL}
+              ${amazonURL ? `Amazon URL: ${amazonURL}` : ''}
               Alert user: 
               ${alertMe['On the date'] ? ' - On the date' : ''}
               ${alertMe['One week before'] ? ' - One week before' : ''}
-              ${alertMe['Two weeks before'] ? ' - Two weeks before' : ''}              ${alertMe['On the date'] && '- On the date'}
+              ${alertMe['Two weeks before'] ? ' - Two weeks before' : ''}    
               Notes: ${notes}
               Date: ${date.format("MMMM Do YYYY")}
               Email to notify: ${email}
@@ -26,7 +26,7 @@ const promoPostToServer = ({
             `,
         html: `
               <h3>Alert Request</h3>
-              <p>Amazon URL: ${amazonURL}</p>
+              ${amazonURL ? `<p>Amazon URL: ${amazonURL}</p>` : ''}
               <p>Alert user:</p>
               <ul>
                 ${alertMe['On the date'] ? '<li>On the date</li>' : ''}
@@ -47,7 +47,7 @@ const promoPostToServer = ({
 
               -------------------------------------
 
-              Amazon URL: ${amazonURL}
+              ${amazonURL ? `Amazon URL: ${amazonURL}` : ''}              
               Alert Me: 
                 ${alertMe['On the date'] ? ' - On the date' : ''}
                 ${alertMe['One week before'] ? ' - One week before' : ''}
@@ -68,7 +68,7 @@ const promoPostToServer = ({
               We will send you an email when the promotion submission is finished.</p>
               <hr />          
               <blockquote>
-                <p>Amazon URL: ${amazonURL}</p>
+                ${amazonURL ? `<p>Amazon URL: ${amazonURL}</p>` : ''}                
                 <p>Alert user:</p>
                 <ul>
                   ${alertMe['On the date'] ? '<li>On the date</li>' : ''}

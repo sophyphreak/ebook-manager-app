@@ -95,10 +95,8 @@ export default class AlertsSubmitter extends Component {
       notes: "",
       email: "",
       email2: ""
-    };
-    if (!amazonURL) {
-      error.amazonURL = 'Please fill in an Amazon URL.';
-    } else if (!amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+    }; 
+    if (amazonURL && !amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
       error.amazonURL = 'Please provide a valid Amazon.com URL.';
     };
     if (
