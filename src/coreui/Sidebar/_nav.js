@@ -31,16 +31,16 @@ export default {
     {
       name: 'Alerts Submitter',
       url: '/alerts-submitter',
-      icon: 'icon-bell'
-    },
-    {
-      name: 'HTML Generator',
-      url: '/html-generator',
-      icon: 'icon-docs',
+      icon: 'icon-bell',
       badge: {
         variant: 'info',
         text: 'NEW'
       }
+    },
+    {
+      name: 'HTML Generator',
+      url: '/html-generator',
+      icon: 'icon-docs'
     },
     {
       name: 'Playground',
@@ -55,11 +55,7 @@ export default {
     {
       name: 'Quill Playground',
       url: '/quill-playground',
-      icon: 'fa fa-fort-awesome',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
+      icon: 'fa fa-fort-awesome'
     }
   ]
 };
