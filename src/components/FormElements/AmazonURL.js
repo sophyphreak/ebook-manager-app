@@ -3,7 +3,6 @@ import BasicInput from './BasicInput';
 
 const AmazonURL = (props) => (
   <BasicInput
-    label="Amazon URL:*"
     {...props}
   />
 );

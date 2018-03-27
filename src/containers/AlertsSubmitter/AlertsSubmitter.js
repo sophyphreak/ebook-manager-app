@@ -11,15 +11,12 @@ export default class AlertsSubmitter extends Component {
       currentPage: 'AlertsPage',
       error: {
         message: "",
-        asin: "",
         amazonURL: "",
         alertMe: "",
         notes: "",
         email: "",
         email2: ""
       },
-      title: "",
-      asin: "",
       amazonURL: "",
       alertMe: {
         onDate: false,
@@ -33,8 +30,6 @@ export default class AlertsSubmitter extends Component {
       email2: ""
     };
 
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onAlertMeChange = this.onAlertMeChange.bind(this);
     this.onDateChange = this.onDateChange.bind(this);
@@ -44,18 +39,6 @@ export default class AlertsSubmitter extends Component {
     this.onEmail2Change = this.onEmail2Change.bind(this);
     this.onSubmitAlert = this.onSubmitAlert.bind(this);
   };
-
-  onTitleChange(e) {
-    const title = e.target.value;
-    this.setState(() => ({ title }));
-  }
-
-  onAsinChange(e) {
-    const asin = e.target.value.toUpperCase();
-    if (asin.match(/^[0-9A-Z]{0,10}$/)) {
-      this.setState(() => ({ asin }));
-    }
-  }
 
   onAmazonURLChange(e) {
     const amazonURL = e.target.value;
@@ -93,7 +76,6 @@ export default class AlertsSubmitter extends Component {
   onSubmitAlert(e) {
     e.preventDefault();
     const {
-      asin,
       amazonURL,
       alertMe,
       date,
@@ -103,17 +85,12 @@ export default class AlertsSubmitter extends Component {
     } = this.state;
     let error = {
       message: "",
-      title: "",
-      asin: "",
       amazonURL: "",
       alertMe: "",
       alertDate: "",
       notes: "",
       email: "",
       email2: ""
-    };
-    if (asin && !asin.match(/^[0-9A-Z]{10}$/)) {
-      error.asin = 'Please provide a valid, 10-character ASIN';
     };
     if (!amazonURL) {
       error.amazonURL = 'Please fill in an Amazon URL.';
@@ -139,7 +116,6 @@ export default class AlertsSubmitter extends Component {
       error.email2 = 'Please provide a valid email adddress.';
     }
     if (
-      error.asin ||
       error.amazonURL ||
       error.alertMe ||
       error.email ||
@@ -163,8 +139,6 @@ export default class AlertsSubmitter extends Component {
     const {
       currentPage,
       error,
-      title,
-      asin,
       amazonURL,
       alertMe,
       date,
@@ -177,8 +151,6 @@ export default class AlertsSubmitter extends Component {
       <AlertsComponent
         currentPage={currentPage}
         error={error}
-        title={title}
-        asin={asin}
         amazonURL={amazonURL}
         alertMe={alertMe}
         date={date}
@@ -187,8 +159,6 @@ export default class AlertsSubmitter extends Component {
         email={email}
         email2={email2}
 
-        onTitleChange={this.onTitleChange}
-        onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
         onAlertMeChange={this.onAlertMeChange}
         onDateChange={this.onDateChange}
