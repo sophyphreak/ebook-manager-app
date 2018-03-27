@@ -25,12 +25,10 @@ export default class HtmlGenerator extends Component {
 
   render() {
     const { editorState } = this.state;
-
     const rawContentState = convertToRaw(editorState.getCurrentContent());
-
     const markup = draftToHtml(rawContentState);
     return (
-      <Row>
+      <Row className="animated fadeIn">
         <Col xs="12" sm="6">
           <Editor
             editorState={editorState}
@@ -48,7 +46,11 @@ export default class HtmlGenerator extends Component {
             readOnly={true} 
           />
           {
-            <CopyToClipboard text={markup}>
+            markup.length > 10 &&
+            <CopyToClipboard 
+              className="fadeIn animated"
+              text={markup}
+              >
               <button><ClippyIcon /></button>
             </CopyToClipboard>
           }
