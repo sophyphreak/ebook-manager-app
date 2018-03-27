@@ -15,7 +15,6 @@ import HtmlGenerator from '../../components/HtmlGenerator/HtmlGenerator';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
 import QuillPlayground from '../../playground/QuillPlayground';
-import DraftjsPlayground from '../../playground/DraftjsPlayground';
 import NotFoundPage from '../../components/NotFoundPage';
 
 class Full extends Component {
@@ -37,8 +36,6 @@ class Full extends Component {
                 <Route path="/html-generator" name="HTML Listing Generator" component={HtmlGenerator} />
                 <Route path="/playground" name="Playground" component={FormTests} />
                 <Route path="/playground2" name="Playground2" component={FormTests2} />
-                <Route path="/quill-playground" name="Quill Playground" component={QuillPlayground} />
-                <Route path="/draftjs-playground" name="Draftjs Playground" component={DraftjsPlayground} />
                 <Redirect from="/" to="/dashboard" exact={true}/>
                 <Route component={NotFoundPage} />
               </Switch>

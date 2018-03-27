@@ -1,56 +1,59 @@
-import React from 'react';
-import ReactQuill from 'react-quill';
-import { html as beautify } from 'js-beautify'
+import React, { Component } from 'react';
+import { EditorState, convertToRaw } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
+import { Editor } from 'react-draft-wysiwyg';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ClippyIcon } from 'react-octicons';
-import { Button, Col, Row } from 'reactstrap';
+import {
+  Col,
+  Input,
+  Row,
+} from 'reactstrap';
 
-export default class HtmlGenerator extends React.Component {
+export default class HtmlGenerator extends Component {
   constructor(props) {
-    super(props)
-    this.state = { 
-      text: ''
+    super(props);
+    this.state = {
+      editorState: EditorState.createEmpty(),
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.onEditorStateChange = this.onEditorStateChange.bind(this);
   }
-  handleChange(value) {
-    this.setState({ text: value })
-  }
+
+  onEditorStateChange(editorState) {
+    this.setState(() => ({ editorState }));
+  };
+
   render() {
-    const modules = {
-      toolbar: [
-        [{ 'header': [1, 2, 3, false] }],
-        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }], 
-        [{ 'script': 'sub' }, { 'script': 'super' }],
-        [{ 'indent': '-1' }, { 'indent': '+1' }],    
-        ['link'],
-        ['clean']
-      ],
-    };
+    const { editorState } = this.state;
+
+    const rawContentState = convertToRaw(editorState.getCurrentContent());
+
+    const markup = draftToHtml(rawContentState);
     return (
       <Row>
         <Col xs="12" sm="6">
-          <ReactQuill
-            value={this.state.text}
-            onChange={this.handleChange}
-            placeholder="Please type or paste your listing here"
-            modules={modules}
+          <Editor
+            editorState={editorState}
+            wrapperClassName="demo-wrapper"
+            editorClassName="demo-editor"
+            toolbarClassName="demoo-toolbar"
+            onEditorStateChange={this.onEditorStateChange}
           />
         </Col>
         <Col xs="12" sm="6">
-          <textarea
-          className="ql-editor--textarea"
-          value={beautify(this.state.text)}
+          <Input 
+            type="textarea" 
+            value={markup} 
+            className="demo-editor--textarea"
+            readOnly={true} 
           />
-          { 
-            this.state.text &&
-            <CopyToClipboard text={beautify(this.state.text)}>
+          {
+            <CopyToClipboard text={markup}>
               <button><ClippyIcon /></button>
             </CopyToClipboard>
           }
         </Col>
       </Row>
-    );
+    )
   }
 }

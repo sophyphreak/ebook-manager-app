@@ -38,6 +38,15 @@ export default {
       }
     },
     {
+      name: 'HTML Generator',
+      url: '/html-generator',
+      icon: 'icon-docs',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
+    },
+    {
       name: 'Playground',
       url: '/playground',
       icon: 'fa fa-fort-awesome'
@@ -46,15 +55,6 @@ export default {
       name: 'Playground 2',
       url: '/playground2',
       icon: 'fa fa-fort-awesome'      
-    },
-    {
-      name: 'Draft Playground',
-      url: '/draftjs-playground',
-      icon: 'fa fa-fort-awesome',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
     }
   ]
 };
