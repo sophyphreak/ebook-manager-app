@@ -1,14 +1,16 @@
-.ql-editor {
+.demo-editor {
     min-height: 30em;
     background: #F8F8FF;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .demo-toolbar {
     background: #F8F8FF;
 }
 
-.ql-editor--textarea {
-    min-height: 40em;
+.demo-editor--textarea {
+    min-height: 30em;
     background: #F8F8FF;
     width: 100%;
 }

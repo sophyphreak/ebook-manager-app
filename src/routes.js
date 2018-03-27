@@ -8,6 +8,7 @@ const routes = {
   '/html-generator': 'HTML Listing Generator',
   '/playground': 'Playground',
   '/playground2': 'Playground 2',
-  '/quill-playground': 'Quill Playground'
+  '/quill-playground': 'Quill Playground',
+  '/draftjs-playground': 'Draftjs Playground'
 };
 export default routes;
