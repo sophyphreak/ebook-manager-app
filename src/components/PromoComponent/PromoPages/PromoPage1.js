@@ -68,6 +68,7 @@ const PromoPage1 = ({
           errorMessage={error.asin}
         />
         <AmazonURL
+          label="Amazon URL*"
           value={amazonURL}
           onChange={onAmazonURLChange}
           hasError={!!error.message}

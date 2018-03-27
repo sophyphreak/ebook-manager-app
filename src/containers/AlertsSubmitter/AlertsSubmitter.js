@@ -19,12 +19,12 @@ export default class AlertsSubmitter extends Component {
       },
       amazonURL: "",
       alertMe: {
-        onDate: false,
-        weekBefore: false,
-        twoWeeksBefore: false
+        'On the date': false,
+        'One week before': false,
+        'Two weeks before': false
       },
       date: moment(),
-      calendarFocus: null, 
+      calendarFocused: false, 
       notes: "",
       email: "",
       email2: ""
@@ -45,17 +45,21 @@ export default class AlertsSubmitter extends Component {
     this.setState(() => ({ amazonURL }));
   }
 
-  onAlertMeChange(e) { // This probably won't work as is
-    const alertMe = e.target.value;
+  onAlertMeChange(e) { 
+    const option = e.target.value;
+    let alertMe = this.state.alertMe;
+    alertMe[option] = !alertMe[option];
     this.setState(() => ({ alertMe }));
   }
 
-  onDateChange({ date }) {
-    this.setState(() => ({ date }));
+  onDateChange(date) {
+    if (date) {
+      this.setState(() => ({ date }));
+    }
   }
 
-  onFocusChange(calendarFocus) {
-    this.setState(() => ({ calendarFocus }));
+  onFocusChange({ focused }) {
+    this.setState(() => ({ calendarFocused: focused }));
   }
 
   onNotesChange(e) {
@@ -98,9 +102,9 @@ export default class AlertsSubmitter extends Component {
       error.amazonURL = 'Please provide a valid Amazon.com URL.';
     };
     if (
-      alertMe.onDate === false &&
-      alertMe.weekBefore === false &&
-      alertMe.twoWeeksBefore === false
+      alertMe['On the date'] === false &&
+      alertMe['One week before'] === false &&
+      alertMe['Two weeks before'] === false
     ) {
       error.alertMe = 'This will not render.';
     }
@@ -142,7 +146,7 @@ export default class AlertsSubmitter extends Component {
       amazonURL,
       alertMe,
       date,
-      calendarFocus,
+      calendarFocused,
       notes,
       email,
       email2
@@ -154,7 +158,7 @@ export default class AlertsSubmitter extends Component {
         amazonURL={amazonURL}
         alertMe={alertMe}
         date={date}
-        focusedInput={calendarFocus}
+        calendarFocused={calendarFocused}
         notes={notes}
         email={email}
         email2={email2}

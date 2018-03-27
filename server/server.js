@@ -15,7 +15,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-app.post('/api/promo_submitter', async (req, res) => {
+app.post('/api/submitter', async (req, res) => {
   try {
     res.send('email received!');
     console.log(req.body);
@@ -33,7 +33,7 @@ app.post('/api/promo_submitter', async (req, res) => {
     let mailOptions = {
       from: 'wise-fox-app@sent.this', // sender address
       to: 'arhorn@gmail.com', // list of receivers
-      subject: 'The app sent this ✔', // Subject line
+      subject: req.body.toWiseFox.subject, // Subject line
       text: req.body.toWiseFox.text,
       html: req.body.toWiseFox.html
     };
@@ -60,7 +60,7 @@ app.post('/api/promo_submitter', async (req, res) => {
     mailOptions = {
       from: 'Wise Fox App <wise-fox-app@sent.this>', // sender address
       to: req.body.userEmail, // list of receivers
-      subject: 'Promo Submission Received!', // Subject line
+      subject: req.body.toUser.subject, // Subject line
       text: req.body.toUser.text,
       html: req.body.toUser.html
     }

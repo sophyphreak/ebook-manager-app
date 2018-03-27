@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import BasicInput from './BasicInput';
+import TextAreaInput from './TextAreaInput';
 
 const Notes = (props) => (
-  <Notes
+  <TextAreaInput
     {...props}
   />
 );

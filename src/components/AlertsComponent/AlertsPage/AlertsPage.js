@@ -9,7 +9,7 @@ import {
 
 import AmazonURL from '../../FormElements/AmazonURL';
 import AlertMe from '../../FormElements/AlertMe';
-import DatePicker from '../../FormElements/DatePicker';
+import SingleDate from '../../FormElements/SingleDate';
 import Notes from '../../FormElements/Notes';
 import Email from '../../FormElements/Email';
 
@@ -25,7 +25,7 @@ const AlertsPage = ({
   date,
   onDateChange,
 
-  focusedInput,
+  calendarFocused,
   onFocusChange,
 
   notes,
@@ -54,16 +54,16 @@ const AlertsPage = ({
         />
         <AlertMe
           label="Alert Me*"
-          value={alertMe}
+          options={alertMe}
           onChange={onAlertMeChange}
           hasError={!!error.message}
           errorMessage={error.alertMe}
         />
-        <DatePicker 
+        <SingleDate 
           label="Alert Date*"
-          value={date}
-          onChange={onDateChange}
-          focusedInput={focusedInput}
+          date={date}
+          onDateChange={onDateChange}
+          focused={calendarFocused}
           onFocusChange={onFocusChange}
         />
         <Notes 
@@ -71,7 +71,7 @@ const AlertsPage = ({
           value={notes}
           onChange={onNotesChange}
           hasError={!!error.message}
-          errorMessage={error.Notes}
+          errorMessage={error.notes}
         />
         <Email
           label="Email to notify*"          

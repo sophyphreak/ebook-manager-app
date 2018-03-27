@@ -1,29 +1,28 @@
-import React, { Component } from 'react';
-import {
-  FormGroup,
-  Label,
+import React from 'react';
+import { 
+  FormGroup, 
+  Label, 
   Input
 } from 'reactstrap';
 import isValid from './isValid/isValid';
 
-const RadioInput = ({ 
-  hasError, 
-  errorMessage, 
-  label, 
-  options, 
-  value, 
-  onChange 
+const CheckboxInput = ({
+  hasError,
+  errorMessage,
+  label,
+  options,
+  onChange
 }) => (
   <FormGroup>
     {label && <Label>{label}</Label>}
     {
-      options.map((option, i) => (
-        <FormGroup className="radio-input__indent" check key={i}>
+      Object.keys(options).map((option, i ) => (
+        <FormGroup className="checkbox-input__indent" key={i}>
           <Input
-            type="radio"
+            type="checkbox"
             value={option}
             onChange={onChange}
-            checked={value === option}
+            checked={options[option]}
             valid={isValid(hasError, errorMessage)}
           />
           <Label check>
@@ -33,6 +32,6 @@ const RadioInput = ({
       ))
     }
   </FormGroup>
-); 
+);
 
-export default RadioInput;  
+export default CheckboxInput;

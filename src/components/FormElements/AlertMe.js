@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import BasicInput from './BasicInput';
+import CheckboxInput from './CheckboxInput';
 
 const AlertMe = (props) => (
-  <BasicInput
-    label="Alert Me:*"
+  <CheckboxInput
     {...props}
   />
 );
