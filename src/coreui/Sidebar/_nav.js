@@ -41,6 +41,7 @@ export default {
     {
       name: 'Quill HTML Gen',
       url: '/quill-html-gen',
+      icon: 'icon-docs',
       badge: {
         variant: 'info',
         text: 'NEW'

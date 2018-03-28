@@ -5,7 +5,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ClippyIcon } from 'react-octicons';
 import { Button, Col, Row } from 'reactstrap';
 
-export default class HtmlGenerator extends React.Component {
+export default class QuillPlayground extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ export default class HtmlGenerator extends React.Component {
   }
   render() {
     return (
-      <Row>
+      <Row className="animated fadeIn">
         <Col xs="12" sm="6">
           <ReactQuill
             value={this.state.text}
@@ -32,8 +32,11 @@ export default class HtmlGenerator extends React.Component {
             value={beautify(this.state.text)}
           />
           {
-            this.state.text &&
-            <CopyToClipboard text={beautify(this.state.text)}>
+            this.state.text.length > 11 &&
+            <CopyToClipboard 
+              className="animated fadeIn"
+              text={beautify(this.state.text)}
+            >
               <button><ClippyIcon /></button>
             </CopyToClipboard>
           }
