@@ -3,14 +3,14 @@ import ReactQuill from 'react-quill';
 import { html as beautify } from 'js-beautify'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ClippyIcon } from 'react-octicons';
-import { 
-  Button, 
+import {
+  Button,
   Col,
-  Input, 
-  Row 
+  Input,
+  Row
 } from 'reactstrap';
 
-export default class QuillPlayground extends React.Component {
+export default class QuillTheWorks extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,6 +22,16 @@ export default class QuillPlayground extends React.Component {
     this.setState({ text: value })
   }
   render() {
+    const modules = {
+      toolbar: [
+        [{ 'header': [1, 2, 3, false] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'script': 'sub' }, { 'script': 'super' }],
+        ['link'],
+        ['clean']
+      ],
+    };
     return (
       <Row className="animated fadeIn">
         <Col xs="12" sm="6">
@@ -29,6 +39,7 @@ export default class QuillPlayground extends React.Component {
             value={this.state.text}
             onChange={this.handleChange}
             placeholder="Please type or paste your listing here"
+            modules={modules}
           />
         </Col>
         <Col xs="12" sm="6">
@@ -40,7 +51,7 @@ export default class QuillPlayground extends React.Component {
           />
           {
             this.state.text.length > 11 &&
-            <CopyToClipboard 
+            <CopyToClipboard
               className="animated fadeIn"
               text={beautify(this.state.text)}
             >

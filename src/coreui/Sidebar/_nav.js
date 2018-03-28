@@ -47,14 +47,15 @@ export default {
         text: 'NEW'
       }
     },
-    // {
-    //   name: 'Draft Drag-n-Drop',
-    //   url: '/draft-drag-n-drop',
-    //   badge: {
-    //     variant: 'info',
-    //     text: 'NEW'
-    //   }
-    // },
+    {
+      name: 'Quill The Works',
+      url: '/quill-the-works',
+      icon: 'icon-docs',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
+    },
     {
       name: 'Playground',
       url: '/playground',
