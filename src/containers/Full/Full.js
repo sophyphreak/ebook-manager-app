@@ -11,7 +11,6 @@ import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import SocialMediaSubmitter from '../SocialMediaSubmitter/SocialMediaSubmitter';
 import PressReleaseSubmitter from '../PressReleaseSubmitter/PressReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
-import HtmlGenerator from '../../components/HtmlGenerator/HtmlGenerator';
 import QuillPlayground from '../../playground/QuillPlayground';
 import QuillTheWorks from '../../playground/QuillTheWorks'
 import FormTests from '../../playground/FormTests';
@@ -34,7 +33,6 @@ class Full extends Component {
                 <Route path="/social-media-submitter" name="Social Media Submitter" component={SocialMediaSubmitter} />
                 <Route path="/press-release-submitter" name="Press Release Submitter" component={PressReleaseSubmitter} />
                 <Route path="/alerts-submitter" name="Alerts Submitter" component={AlertsSubmitter} />
-                <Route path="/html-generator" name="HTML Listing Generator" component={HtmlGenerator} />
                 <Route path="/quill-html-gen" name="Quill HTML Gen" component={QuillPlayground} />
                 <Route path="/quill-the-works" name="Quill The Works" component={QuillTheWorks} />
                 <Route path="/playground" name="Playground" component={FormTests} />
