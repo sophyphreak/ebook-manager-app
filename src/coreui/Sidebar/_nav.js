@@ -31,21 +31,29 @@ export default {
     {
       name: 'Alerts Submitter',
       url: '/alerts-submitter',
-      icon: 'icon-bell',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
+      icon: 'icon-bell'
     },
     {
       name: 'HTML Generator',
       url: '/html-generator',
-      icon: 'icon-docs',
+      icon: 'icon-docs'
+    },
+    {
+      name: 'Quill HTML Gen',
+      url: '/quill-html-gen',
       badge: {
         variant: 'info',
         text: 'NEW'
       }
     },
+    // {
+    //   name: 'Draft Drag-n-Drop',
+    //   url: '/draft-drag-n-drop',
+    //   badge: {
+    //     variant: 'info',
+    //     text: 'NEW'
+    //   }
+    // },
     {
       name: 'Playground',
       url: '/playground',

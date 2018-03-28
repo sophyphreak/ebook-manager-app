@@ -74,6 +74,7 @@
     "react-test-renderer": "^16.2.0",
     "rimraf": "2.6.2",
     "source-list-map": "2.0.0",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack-dev-server": "2.11.1"
   },
   "engines": {

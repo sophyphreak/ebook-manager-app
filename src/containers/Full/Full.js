@@ -12,9 +12,10 @@ import SocialMediaSubmitter from '../SocialMediaSubmitter/SocialMediaSubmitter';
 import PressReleaseSubmitter from '../PressReleaseSubmitter/PressReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import HtmlGenerator from '../../components/HtmlGenerator/HtmlGenerator';
+import QuillPlayground from '../../playground/QuillPlayground';
+// import DraftDragnDrop from '../../playground/DraftDragnDrop';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
-import QuillPlayground from '../../playground/QuillPlayground';
 import NotFoundPage from '../../components/NotFoundPage';
 
 class Full extends Component {
@@ -34,6 +35,7 @@ class Full extends Component {
                 <Route path="/press-release-submitter" name="Press Release Submitter" component={PressReleaseSubmitter} />
                 <Route path="/alerts-submitter" name="Alerts Submitter" component={AlertsSubmitter} />
                 <Route path="/html-generator" name="HTML Listing Generator" component={HtmlGenerator} />
+                <Route path="/quill-html-gen" name="Quill HTML Gen" component={QuillPlayground} />
                 <Route path="/playground" name="Playground" component={FormTests} />
                 <Route path="/playground2" name="Playground2" component={FormTests2} />
                 <Redirect from="/" to="/dashboard" exact={true}/>
@@ -49,3 +51,4 @@ class Full extends Component {
 }
 
 export default Full;
+// <Route path="/draft-drag-n-drop" name="Draft Drag-n-Drop" component={DraftDragnDrop} />

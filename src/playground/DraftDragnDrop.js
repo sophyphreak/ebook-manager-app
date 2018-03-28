@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { EditorState, convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
-import { Editor } from 'react-draft-wysiwyg';
+import { Editor } from 'draft-wysiwyg';
 import { html as beautify } from 'js-beautify'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ClippyIcon } from 'react-octicons';
@@ -11,7 +11,7 @@ import {
   Row,
 } from 'reactstrap';
 
-export default class HtmlGenerator extends Component {
+export default class DraftDragnDrop extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,18 +40,18 @@ export default class HtmlGenerator extends Component {
           />
         </Col>
         <Col xs="12" sm="6">
-          <Input 
-            type="textarea" 
-            value={beautify(markup)} 
+          <Input
+            type="textarea"
+            value={beautify(markup)}
             className="demo-editor--textarea"
-            readOnly={true} 
+            readOnly={true}
           />
           {
             markup.length > 10 &&
-            <CopyToClipboard 
+            <CopyToClipboard
               className="fadeIn animated"
               text={beautify(markup)}
-              >
+            >
               <button><ClippyIcon /></button>
             </CopyToClipboard>
           }

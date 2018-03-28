@@ -6,7 +6,9 @@ const routes = {
   '/press-release-submitter': 'Press Release Submitter',
   '/alerts-submitter': 'Alerts Submitter',
   '/html-generator': 'HTML Listing Generator',
+  '/quill-html-gen': 'Quill HTML Generator',
+  // '/draft-drag-n-drop': 'Draft Drag-n-Drop',
   '/playground': 'Playground',
-  '/playground2': 'Playground 2',
+  '/playground2': 'Playground 2'
 };
 export default routes;
