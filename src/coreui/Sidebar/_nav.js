@@ -34,11 +34,6 @@ export default {
       icon: 'icon-bell'
     },
     {
-      name: 'HTML Generator',
-      url: '/html-generator',
-      icon: 'icon-docs'
-    },
-    {
       name: 'Quill HTML Gen',
       url: '/quill-html-gen',
       icon: 'icon-docs',
