@@ -18,12 +18,6 @@ const PressReleasePage1 = ({
   error,
   onSubmit,
   
-  title,
-  onTitleChange,
-
-  asin,
-  onAsinChange,
-
   amazonURL,
   onAmazonURLChange,
 

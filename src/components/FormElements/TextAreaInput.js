@@ -17,6 +17,7 @@ const TextAreaInput = ({
   <FormGroup>
     <Label>{label}</Label>
     <Input
+      className="textarea"
       type="textarea"
       value={value}
       onChange={onChange}
