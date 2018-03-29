@@ -8,26 +8,16 @@ import {
   Label
 } from 'reactstrap';
 
-import Title from '../../FormElements/Title';
-import ASIN from '../../FormElements/ASIN';
 import AmazonURL from '../../FormElements/AmazonURL';
 import FictionOrNonFiction from '../../FormElements/FictionOrNonFiction';
 import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
-import FirstName from '../../FormElements/FirstName';
-import LastName from '../../FormElements/LastName';
 import Email from '../../FormElements/Email';
 
 const PromoPage1 = ({
   error,
   onSubmit,
   
-  title,
-  onTitleChange,
-
-  asin,
-  onAsinChange,
-
   amazonURL,
   onAmazonURLChange,
 
@@ -40,12 +30,6 @@ const PromoPage1 = ({
   subGenre,
   onSubGenreChange,
 
-  firstName,
-  onFirstNameChange,
-
-  lastName,
-  onLastNameChange,
-
   email,
   onEmailChange,
 }) => (
@@ -55,18 +39,6 @@ const PromoPage1 = ({
     </CardHeader>
     <CardBody>
       <Form onSubmit={onSubmit}>
-        <Title
-          value={title}
-          onChange={onTitleChange}
-          hasError={!!error.message}
-          errorMessage={error.title}
-        />
-        <ASIN
-          value={asin}
-          onChange={onAsinChange}
-          hasError={!!error.message}
-          errorMessage={error.asin}
-        />
         <AmazonURL
           label="Amazon URL*"
           value={amazonURL}
@@ -96,18 +68,6 @@ const PromoPage1 = ({
           onChange={onSubGenreChange}
           hasError={!!error.message}
           errorMessage={error.subGenre}                              
-        />
-        <FirstName
-          value={firstName}
-          onChange={onFirstNameChange}
-          hasError={!!error.message}
-          errorMessage={error.firstName}                                        
-        />
-        <LastName
-          value={lastName}
-          onChange={onLastNameChange}
-          hasError={!!error.message}
-          errorMessage={error.lastName}                                                  
         />
         <Email
           label="Email:*"

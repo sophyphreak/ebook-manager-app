@@ -11,13 +11,9 @@ export default class PromoSubmitter extends Component {
       currentPage: "PromoPage1",
       error: {
         message: "",
-        title: "",
-        asin: "",
         amazonURL: "",
         fictionOrNonFiction: "",
         genre: "Please select",
-        firstName: "",
-        lastName: "",
         email: "",
         price: "",
         promoType: "",
@@ -27,14 +23,10 @@ export default class PromoSubmitter extends Component {
       },
 
       // PromoPage1
-      title: "",
-      asin: "",
       amazonURL: "",
       fictionOrNonFiction: "",
       genre: "",
       subGenre: "",
-      firstName: "",
-      lastName: "",
       email: "",
       
       // PromoPage2
@@ -50,14 +42,10 @@ export default class PromoSubmitter extends Component {
     };
 
     // PromoPage1
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onFictionOrNonFictionChange = this.onFictionOrNonFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
-    this.onFirstNameChange = this.onFirstNameChange.bind(this);
-    this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitPromoPage1 = this.onSubmitPromoPage1.bind(this);
     
@@ -77,18 +65,6 @@ export default class PromoSubmitter extends Component {
   }
 
   // PromoPage1
-
-  onTitleChange(e) {
-    const title = e.target.value;
-    this.setState(() => ({ title }));
-  }
-
-  onAsinChange(e) {
-    const asin = e.target.value.toUpperCase();
-    if (asin.match(/^[0-9A-Z]{0,10}$/)) {
-      this.setState(() => ({ asin }));
-    }
-  }
 
   onAmazonURLChange(e) {
     const amazonURL = e.target.value;
@@ -110,16 +86,6 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ subGenre }));
   }
 
-  onFirstNameChange(e) {
-    const firstName = e.target.value;
-    this.setState(() => ({ firstName }));
-  }
-
-  onLastNameChange(e) {
-    const lastName = e.target.value;
-    this.setState(() => ({ lastName }));
-  }
-
   onEmailChange(e) {
     const email = e.target.value;
     this.setState(() => ({ email }));
@@ -128,35 +94,19 @@ export default class PromoSubmitter extends Component {
   onSubmitPromoPage1(e) {
     e.preventDefault();
     const {
-      title,
-      asin,
       amazonURL,
       fictionOrNonFiction,
       genre,
-      firstName,
-      lastName,
       email
     } = this.state;
     let error = {
       message: "",
-      title: "",
-      asin: "",
       amazonURL: "",
       fictionOrNonFiction: "",
       genre: "",
-      firstName: "",
-      lastName: "",
       email: ""
     };
 
-    if (!title) {
-      error.title = 'Please fill in a title.';
-    };
-    if (!asin) {
-      error.asin = 'Please fill in an ASIN.';
-    } else if (!asin.match(/^[0-9A-Z]{10}$/)) {
-      error.asin = 'Please provide a valid, 10-character ASIN';
-    };
     if (!amazonURL) {
       error.amazonURL = 'Please fill in an Amazon URL.';
     } else if (!amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
@@ -168,25 +118,15 @@ export default class PromoSubmitter extends Component {
     if (genre === 'Please select' && fictionOrNonFiction === 'Fiction') {
       error.genre = 'Please select a genre.';
     };
-    if (!firstName) {
-      error.firstName = 'Please enter an author first name.';
-    };
-    if (!lastName) {
-      error.lastName = 'Please enter an author last name.';
-    };
     if (!email) {
       error.email = 'Please enter an email.';
     } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
       error.email = 'Please provide a valid email address.';
     };
     if (
-      error.title ||
-      error.asin ||
       error.amazonURL ||
       error.fictionOrNonFiction ||
       error.genre ||
-      error.firstName ||
-      error.lastName ||
       error.email
     ) {
       error.message = 'Please fix errors.'
@@ -263,7 +203,7 @@ export default class PromoSubmitter extends Component {
   // PromoPage3
 
   onDescriptionChange(e) {
-    const description = e.target.value;
+    const description = e.target.value.slice(0, 1999);
     this.setState(() => ({ description }));
   }
 
@@ -331,8 +271,6 @@ export default class PromoSubmitter extends Component {
       fictionOrNonFiction,
       genre,
       subGenre,
-      firstName,
-      lastName,
       email,
       description,
       authorBio,
@@ -348,14 +286,10 @@ export default class PromoSubmitter extends Component {
         error={error}
 
         // PromoPage1
-        title={title}
-        asin={asin}
         amazonURL={amazonURL}
         fictionOrNonFiction={fictionOrNonFiction}
         genre={genre}
         subGenre={subGenre}
-        firstName={firstName}
-        lastName={lastName}
         email={email}
         
         // PromoPage2
@@ -373,14 +307,10 @@ export default class PromoSubmitter extends Component {
         onBack={this.onBack}
 
         // PromoPage1
-        onTitleChange={this.onTitleChange}
-        onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
         onFictionOrNonFictionChange={this.onFictionOrNonFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}
-        onFirstNameChange={this.onFirstNameChange}
-        onLastNameChange={this.onLastNameChange}
         onEmailChange={this.onEmailChange}
         onSubmitPromoPage1={this.onSubmitPromoPage1}
         
@@ -395,7 +325,7 @@ export default class PromoSubmitter extends Component {
         onDescriptionChange={this.onDescriptionChange}
         onAuthorBioChange={this.onAuthorBioChange}
         onSubmitPromoPage3={this.onSubmitPromoPage3}
-        />
+      />
     );
   }
 }

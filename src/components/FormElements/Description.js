@@ -3,7 +3,6 @@ import TextAreaInput from './TextAreaInput';
 
 const Description = (props) => (
   <TextAreaInput
-    label="Book description:*"
     {...props}
   />
 );

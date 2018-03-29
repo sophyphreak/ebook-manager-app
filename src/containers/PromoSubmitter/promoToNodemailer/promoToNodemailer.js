@@ -2,14 +2,10 @@ import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrde
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const promoToNodemailer = ({
-  title,
-  asin,
   amazonURL,
   fictionOrNonFiction,
   genre,
   subGenre,
-  firstName,
-  lastName,
   email,
   price,
   promoType,
@@ -20,14 +16,10 @@ const promoToNodemailer = ({
 }) => {
   const submissionType = 'Book Promotion';
   let rawBody = {
-    'Title': title,
-    'ASIN': asin,
     'Amazon URL': amazonURL,
     'Fiction or Nonfiction?': fictionOrNonFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
-    'Author First Name': firstName,
-    'Author Last Name': lastName,
     'Email': email,
     'Regular Price': price,
     'Promo Type': promoType,

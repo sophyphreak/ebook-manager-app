@@ -8,14 +8,10 @@ import {
   Label
 } from 'reactstrap';
 
-import Title from '../../FormElements/Title';
-import ASIN from '../../FormElements/ASIN';
 import AmazonURL from '../../FormElements/AmazonURL';
 import FictionOrNonFiction from '../../FormElements/FictionOrNonFiction';
 import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
-import FirstName from '../../FormElements/FirstName';
-import LastName from '../../FormElements/LastName';
 import Email from '../../FormElements/Email';
 
 const PressReleasePage1 = ({
@@ -56,14 +52,6 @@ const PressReleasePage1 = ({
     </CardHeader>
     <CardBody>
       <Form onSubmit={onSubmit}>
-        <Title
-          value={title}
-          onChange={onTitleChange}
-        />
-        <ASIN
-          value={asin}
-          onChange={onAsinChange}
-        />
         <AmazonURL
           value={amazonURL}
           onChange={onAmazonURLChange}
@@ -80,14 +68,6 @@ const PressReleasePage1 = ({
         <SubGenre
           value={subGenre}
           onChange={onSubGenreChange}
-        />
-        <FirstName
-          value={firstName}
-          onChange={onFirstNameChange}
-        />
-        <LastName
-          value={lastName}
-          onChange={onLastNameChange}
         />
         <Email
           value={email}

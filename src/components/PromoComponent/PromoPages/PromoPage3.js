@@ -28,6 +28,7 @@ const PromoPage3 = ({
       <CardBody>
         <Form onSubmit={onSubmit}>
           <Description
+            label="Promotional Book Description (Max 2,000 characters)"
             value={description}
             onChange={onDescriptionChange}
             hasError={!!error.message}

@@ -14,14 +14,10 @@ const PromoComponent = ({
   error,
 
   // PromoPage1
-  title,
-  asin,
   amazonURL,
   fictionOrNonFiction,
   genre,
   subGenre,
-  firstName,
-  lastName,
   email,
   
   // PromoPage2
@@ -39,14 +35,10 @@ const PromoComponent = ({
   onBack,
 
   // PromoPage1
-  onTitleChange,
-  onAsinChange,
   onAmazonURLChange,
   onFictionOrNonFictionChange,
   onGenreChange,
   onSubGenreChange,
-  onFirstNameChange,
-  onLastNameChange,
   onEmailChange,
   onSubmitPromoPage1,
   
@@ -68,24 +60,16 @@ const PromoComponent = ({
         currentPage === "PromoPage1" && (
           <PromoPage1
             error={error}
-            title={title}
-            asin={asin}
             amazonURL={amazonURL}
             fictionOrNonFiction={fictionOrNonFiction}
             genre={genre}
             subGenre={subGenre}
-            firstName={firstName}
-            lastName={lastName}
             email={email}
             
-            onTitleChange={onTitleChange}
-            onAsinChange={onAsinChange}
             onAmazonURLChange={onAmazonURLChange}
             onFictionOrNonFictionChange={onFictionOrNonFictionChange}
             onGenreChange={onGenreChange}
             onSubGenreChange={onSubGenreChange}
-            onFirstNameChange={onFirstNameChange}
-            onLastNameChange={onLastNameChange}
             onEmailChange={onEmailChange}
             onSubmit={onSubmitPromoPage1}
           />
