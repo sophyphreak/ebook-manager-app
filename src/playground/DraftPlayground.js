@@ -26,7 +26,7 @@ export default class DraftPlayground extends Component {
   render() {
     const { editorState } = this.state;
     const rawContentState = convertToRaw(editorState.getCurrentContent());
-    const markup = draftToHtml(rawContentState);
+    const markup = draftToHtml(rawContentState).replace(/<\/?span[^>]*>/g, "");
     return (
       <Row className="animated fadeIn">
         <Col xs="12" sm="6">

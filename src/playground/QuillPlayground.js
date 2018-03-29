@@ -19,8 +19,9 @@ export default class QuillPlayground extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(value) {
-    this.setState({ text: value })
-  }
+    const text = value.replace(/<\/?span[^>]*>/g, "");
+    this.setState({ text });
+  };
   render() {
     return (
       <Row className="animated fadeIn">
