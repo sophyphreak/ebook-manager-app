@@ -2,25 +2,32 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
-import pressReleasePostToServer from './pressReleasePostToServer/pressRelasePostToServer';
+import pressReleaseToNodemailer from './pressReleaseToNodemailer/pressReleaseToNodemailer';
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: "PressReleasePage1",
-      error: "",
+      error: {
+        message: "",
+        amazonURL: "",
+        fictionOrNonFiction: "",
+        genre: "",
+        email: "",
+        price: "",
+        promoType: "",
+        datePicker: "",
+        website: "",
+        keywords: "",
+        releaseText: ""
+      },
 
       // PressReleasePage1
-      title: "",
-      asin: "",
       amazonURL: "",
       fictionOrNonFiction: "",
       genre: "",
-      isGenreDisabled: true,
       subGenre: "",
-      firstName: "",
-      lastName: "",
       email: "",
 
       // PressReleasePage2
@@ -31,19 +38,16 @@ export default class PressReleaseSubmitter extends Component {
       calendarFocus: null,
 
       // PressReleasePage3
-      description: "",
-      authorBio: ""
+      website: "",
+      keywords: "",
+      releaseText: ""
     };
 
     // PressReleasePage1
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onFictionOrNonFictionChange = this.onFictionOrNonFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
-    this.onFirstNameChange = this.onFirstNameChange.bind(this);
-    this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitPressReleasePage1 = this.onSubmitPressReleasePage1.bind(this);
 
@@ -55,26 +59,15 @@ export default class PressReleaseSubmitter extends Component {
     this.onSubmitPressReleasePage2 = this.onSubmitPressReleasePage2.bind(this);
 
     // PressReleasePage3
-    this.onDescriptionChange = this.onDescriptionChange.bind(this);
-    this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
+    this.onWebsiteChange = this.onWebsiteChange.bind(this);
+    this.onKeywordsChange = this.onKeywordsChange.bind(this);
+    this.onReleaseTextChange = this.onReleaseTextChange.bind(this);
     this.onSubmitPressReleasePage3 = this.onSubmitPressReleasePage3.bind(this);
 
     this.onBack = this.onBack.bind(this);
   }
 
   // PressReleasePage1
-
-  onTitleChange(e) {
-    const title = e.target.value;
-    this.setState(() => ({ title }));
-  }
-
-  onAsinChange(e) {
-    const asin = e.target.value.toUpperCase();
-    if (asin.match(/^[0-9A-Z]{0,10}$/)) {
-      this.setState(() => ({ asin }));
-    }
-  }
 
   onAmazonURLChange(e) {
     const amazonURL = e.target.value;
@@ -83,13 +76,6 @@ export default class PressReleaseSubmitter extends Component {
 
   onFictionOrNonFictionChange(e) {
     const fictionOrNonFiction = e.target.value;
-    if (fictionOrNonFiction === 'Fiction') {
-      const isGenreDisabled = false;
-      this.setState(() => ({ isGenreDisabled }));
-    } else {
-      const isGenreDisabled = true;
-      this.setState(() => ({ isGenreDisabled }));
-    };
     this.setState(() => ({ fictionOrNonFiction }));
   }
 
@@ -103,16 +89,6 @@ export default class PressReleaseSubmitter extends Component {
     this.setState(() => ({ subGenre }));
   }
 
-  onFirstNameChange(e) {
-    const firstName = e.target.value;
-    this.setState(() => ({ firstName }));
-  }
-
-  onLastNameChange(e) {
-    const lastName = e.target.value;
-    this.setState(() => ({ lastName }));
-  }
-
   onEmailChange(e) {
     const email = e.target.value;
     this.setState(() => ({ email }));
@@ -121,50 +97,53 @@ export default class PressReleaseSubmitter extends Component {
   onSubmitPressReleasePage1(e) {
     e.preventDefault();
     const {
-      title,
-      asin,
       amazonURL,
       fictionOrNonFiction,
-      firstName,
-      lastName,
+      genre,
       email
     } = this.state;
+    let error = {
+      message: "",
+      amazonURL: "",
+      fictionOrNonFiction: "",
+      genre: "",
+      email: ""
+    };
+
+    if (!amazonURL) {
+      error.amazonURL = 'Please fill in an Amazon URL.';
+    } else if (!amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+      error.amazonURL = 'Please provide a valid Amazon.com URL.';
+    };
+    if (!fictionOrNonFiction) {
+      error.fictionOrNonFiction = 'this will not render to screen';
+    };
+    if (genre === 'Please select' && fictionOrNonFiction === 'Fiction') {
+      error.genre = 'Please select a genre.';
+    };
+    if (!email) {
+      error.email = 'Please enter an email.';
+    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+      error.email = 'Please provide a valid email address.';
+    };
     if (
-      !title ||
-      !asin ||
-      !amazonURL ||
-      !fictionOrNonFiction ||
-      !firstName ||
-      !lastName ||
-      !email
+      error.amazonURL ||
+      error.fictionOrNonFiction ||
+      error.genre ||
+      error.email
     ) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else if (
-      fictionOrNonFiction === 'Fiction' && !genre
-    ) {
-      this.setState(() => ({ error: "Please select a genre." }));
-    } else if (
-      !asin.match(/^[0-9A-Z]{10}$/)
-    ) {
-      this.setState(() => ({ error: "Please provide a valid ASIN." }));
-    } else if (
-      !amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)
-    ) {
-      this.setState(() => ({ error: "Please provide a valid Amazon url." }));
-    } else if (
-      !email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
-    ) {
-      this.setState(() => ({ error: "Please provide a valid email address." }));
-    } else {
-      console.log(this.state);
-
-      const error = "";
+      error.message = 'Please fix errors.'
       this.setState(() => ({ error }));
-
+    };
+    if (!error.message) {
+      console.log(this.state);
       const currentPage = "PressReleasePage2";
-      this.setState(() => ({ currentPage }));
-    }
-  }
+      this.setState(() => ({
+        error,
+        currentPage
+      }));
+    };
+  };
 
   // PressReleasePage2
 
@@ -190,56 +169,92 @@ export default class PressReleaseSubmitter extends Component {
 
   onSubmitPressReleasePage2(e) {
     e.preventDefault();
-    const { price, promoType, startDate, endDate } = this.state;
+    const {
+      price,
+      promoType
+    } = this.state;
+    let error = {
+      message: "",
+      price: "",
+      promoType: ""
+    }
+
+    if (!price) {
+      error.price = "Please enter a price.";
+    };
+    if (!promoType) {
+      error.promoType = "this also won't render";
+    };
     if (
-      !price ||
-      !promoType ||
-      !startDate ||
-      !endDate
+      error.price ||
+      error.promoType
     ) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else {
+      error.message = "Please fix all errors.";
+      this.setState(() => ({ error }));
+    };
+    if (!error.message) {
       console.log(this.state);
 
-      const error = "";
-      this.setState(() => ({ error }));
-
       const currentPage = "PressReleasePage3";
-      this.setState(() => ({ currentPage }));
+      this.setState(() => ({
+        error,
+        currentPage
+      }));
     }
-  }
+  };
 
   // PressReleasePage3
 
-  onDescriptionChange(e) {
-    const description = e.target.value;
-    this.setState(() => ({ description }));
-  }
+  onWebsiteChange(e) {
+    const website = e.target.value;
+    this.setState(() => ({ website }));
+  };
 
-  onAuthorBioChange(e) {
-    const authorBio = e.target.value;
-    this.setState(() => ({ authorBio }));
-  }
+  onKeywordsChange(e) {
+    const keywords = e.target.value;
+    this.setState(() => ({ keywords }));
+  };
+
+  onReleaseTextChange(e) {
+    const releaseText = e.target.value;
+    this.setState(() => ({ releaseText }));
+  };
 
   onSubmitPressReleasePage3(e) {
     e.preventDefault();
-    const { description, authorBio } = this.state;
+    const {
+      website,
+      keywords,
+      releaseText
+    } = this.state;
+    let error = {
+      message: "",
+      website: "",
+      keywords: "",
+      releaseText: ""
+    };
+
+    if (!releaseText) {
+      error.releaseText = "Please enter a Press Release.";
+    };
+    // test for if valid website address with RegEx
+    // if (website && )
     if (
-      !description ||
-      !authorBio
+      error.description ||
+      error.authorBio
     ) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else {
-
-      console.log(this.state);
-
-      const error = "";
+      error.message = "Please fix all errors.";
       this.setState(() => ({ error }));
-
+    }
+    if (!error.message) {
+      console.log(this.state);
       const currentPage = "SubmissionSuccess";
-      this.setState(() => ({ currentPage }));
+      this.setState(() => ({
+        error,
+        currentPage
+      }));
 
-      pressReleasePostToServer(this.state);
+      pressReleaseToNodemailer(this.state);
     }
   }
 
@@ -264,10 +279,7 @@ export default class PressReleaseSubmitter extends Component {
       price,
       fictionOrNonFiction,
       genre,
-      isGenreDisabled,
       subGenre,
-      firstName,
-      lastName,
       email,
       description,
       authorBio,
@@ -283,15 +295,10 @@ export default class PressReleaseSubmitter extends Component {
         error={error}
 
         // PressReleasePage1
-        title={title}
-        asin={asin}
         amazonURL={amazonURL}
         fictionOrNonFiction={fictionOrNonFiction}
         genre={genre}
-        isGenreDisabled={isGenreDisabled}
         subGenre={subGenre}
-        firstName={firstName}
-        lastName={lastName}
         email={email}
 
         // PressReleasePage2
@@ -309,14 +316,10 @@ export default class PressReleaseSubmitter extends Component {
         onBack={this.onBack}
 
         // PressReleasePage1
-        onTitleChange={this.onTitleChange}
-        onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
         onFictionOrNonFictionChange={this.onFictionOrNonFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}
-        onFirstNameChange={this.onFirstNameChange}
-        onLastNameChange={this.onLastNameChange}
         onEmailChange={this.onEmailChange}
         onSubmitPressReleasePage1={this.onSubmitPressReleasePage1}
 

@@ -13,7 +13,7 @@ export default class PromoSubmitter extends Component {
         message: "",
         amazonURL: "",
         fictionOrNonFiction: "",
-        genre: "Please select",
+        genre: "",
         email: "",
         price: "",
         promoType: "",
