@@ -125,12 +125,12 @@ exports[`should render Sidebar correctly 1`] = `
           ariaCurrent="true"
           className="nav-link"
           onClick={[Function]}
-          to="/html-generator"
+          to="/quill-html-gen"
         >
           <i
             className="icon-docs"
           />
-          HTML Generator
+          Quill HTML Gen
           <Badge
             className=""
             color="info"
@@ -151,6 +151,58 @@ exports[`should render Sidebar correctly 1`] = `
           ariaCurrent="true"
           className="nav-link"
           onClick={[Function]}
+          to="/quill-the-works"
+        >
+          <i
+            className="icon-docs"
+          />
+          Quill The Works
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
+        </NavLink>
+      </NavItem>
+      <NavItem
+        className=""
+        key="7"
+        tag="li"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav-link"
+          onClick={[Function]}
+          to="/draft-playground"
+        >
+          <i
+            className=""
+          />
+          Draft Playground
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
+        </NavLink>
+      </NavItem>
+      <NavItem
+        className=""
+        key="8"
+        tag="li"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav-link"
+          onClick={[Function]}
           to="/playground"
         >
           <i
@@ -161,7 +213,7 @@ exports[`should render Sidebar correctly 1`] = `
       </NavItem>
       <NavItem
         className=""
-        key="7"
+        key="9"
         tag="li"
       >
         <NavLink
@@ -175,32 +227,6 @@ exports[`should render Sidebar correctly 1`] = `
             className="fa fa-fort-awesome"
           />
           Playground 2
-        </NavLink>
-      </NavItem>
-      <NavItem
-        className=""
-        key="8"
-        tag="li"
-      >
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          className="nav-link"
-          onClick={[Function]}
-          to="/quill-playground"
-        >
-          <i
-            className="fa fa-fort-awesome"
-          />
-          Quill Playground
-          <Badge
-            className=""
-            color="info"
-            pill={false}
-            tag="span"
-          >
-            NEW
-          </Badge>
         </NavLink>
       </NavItem>
     </Nav>

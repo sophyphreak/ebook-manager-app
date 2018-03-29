@@ -2,43 +2,37 @@
 
 exports[`should render AlertsSubmitter correctly 1`] = `
 <AlertsComponent
+  alertMe={
+    Object {
+      "On the date": false,
+      "One week before": false,
+      "Two weeks before": false,
+    }
+  }
   amazonURL=""
-  asin=""
-  authorBio=""
-  calendarFocus={null}
-  currentPage="AlertsPage1"
-  description=""
+  calendarFocused={false}
+  currentPage="AlertsPage"
+  date={"2017-02-14T12:51:48.000Z"}
   email=""
-  endDate={"2017-02-14T12:51:48.000Z"}
-  error=""
-  fictionOrNonFiction=""
-  firstName=""
-  genre=""
-  isGenreDisabled={true}
-  lastName=""
+  email2=""
+  error={
+    Object {
+      "alertMe": "",
+      "amazonURL": "",
+      "email": "",
+      "email2": "",
+      "message": "",
+      "notes": "",
+    }
+  }
+  notes=""
+  onAlertMeChange={[Function]}
   onAmazonURLChange={[Function]}
-  onAsinChange={[Function]}
-  onAuthorBioChange={[Function]}
-  onBack={[Function]}
-  onDatesChange={[Function]}
-  onDescriptionChange={[Function]}
+  onDateChange={[Function]}
+  onEmail2Change={[Function]}
   onEmailChange={[Function]}
-  onFictionOrNonFictionChange={[Function]}
-  onFirstNameChange={[Function]}
   onFocusChange={[Function]}
-  onGenreChange={[Function]}
-  onLastNameChange={[Function]}
-  onPriceChange={[Function]}
-  onPromoTypeChange={[Function]}
-  onSubGenreChange={[Function]}
-  onSubmitAlertsPage1={[Function]}
-  onSubmitAlertsPage2={[Function]}
-  onSubmitAlertsPage3={[Function]}
-  onTitleChange={[Function]}
-  price=""
-  promoType=""
-  startDate={"2017-02-14T12:51:48.000Z"}
-  subGenre=""
-  title=""
+  onNotesChange={[Function]}
+  onSubmitAlert={[Function]}
 />
 `;

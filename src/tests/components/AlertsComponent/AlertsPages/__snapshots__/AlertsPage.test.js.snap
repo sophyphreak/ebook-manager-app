@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render PromoPage1 correctly 1`] = `
+exports[`should render AlertsPage correctly 1`] = `
 <Card
   className="animated fadeIn"
   tag="div"
@@ -10,7 +10,7 @@ exports[`should render PromoPage1 correctly 1`] = `
   >
     <h4>
       <strong>
-        Book Promo - 1 of 3
+        Create an Alert
       </strong>
     </h4>
   </CardHeader>
@@ -20,38 +20,28 @@ exports[`should render PromoPage1 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Title
-        errorMessage=""
-        hasError={false}
-      />
-      <ASIN
-        errorMessage=""
-        hasError={false}
-      />
       <AmazonURL
-        errorMessage=""
         hasError={false}
-        label="Amazon URL*"
+        label="Amazon URL"
       />
-      <FictionOrNonFiction
-        errorMessage=""
+      <AlertMe
         hasError={false}
+        label="Alert Me*"
       />
-      <SubGenre
-        hasError={false}
+      <SingleDate
+        label="Alert Date*"
       />
-      <FirstName
-        errorMessage=""
+      <Notes
         hasError={false}
-      />
-      <LastName
-        errorMessage=""
-        hasError={false}
+        label="Notes/Other Info*"
       />
       <Email
-        errorMessage=""
         hasError={false}
-        label="Email:*"
+        label="Email to notify*"
+      />
+      <Email
+        hasError={false}
+        label="Secondary email to notify"
       />
       <Button
         color="primary"
@@ -60,7 +50,7 @@ exports[`should render PromoPage1 correctly 1`] = `
         type="submit"
         value="Submit"
       >
-        Next Section
+        Submit
       </Button>
     </Form>
   </CardBody>
