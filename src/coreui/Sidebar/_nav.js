@@ -52,6 +52,14 @@ export default {
       }
     },
     {
+      name: 'Draft Playground',
+      url: '/draft-playground',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
+    },
+    {
       name: 'Playground',
       url: '/playground',
       icon: 'fa fa-fort-awesome'

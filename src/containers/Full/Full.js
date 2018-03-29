@@ -13,6 +13,7 @@ import PressReleaseSubmitter from '../PressReleaseSubmitter/PressReleaseSubmitte
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import QuillPlayground from '../../playground/QuillPlayground';
 import QuillTheWorks from '../../playground/QuillTheWorks'
+import DraftPlayground from '../../playground/DraftPlayground';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
 import NotFoundPage from '../../components/NotFoundPage';
@@ -35,6 +36,7 @@ class Full extends Component {
                 <Route path="/alerts-submitter" name="Alerts Submitter" component={AlertsSubmitter} />
                 <Route path="/quill-html-gen" name="Quill HTML Gen" component={QuillPlayground} />
                 <Route path="/quill-the-works" name="Quill The Works" component={QuillTheWorks} />
+                <Route path="/draft-playground" name="Draft Playground" component={DraftPlayground} />
                 <Route path="/playground" name="Playground" component={FormTests} />
                 <Route path="/playground2" name="Playground2" component={FormTests2} />
                 <Redirect from="/" to="/dashboard" exact={true}/>

@@ -7,6 +7,7 @@ const routes = {
   '/alerts-submitter': 'Alerts Submitter',
   '/quill-html-gen': 'Quill HTML Generator',
   '/quill-the-works': 'Quill The Works',
+  '/draft-playground': 'Draft Playground',
   '/playground': 'Playground',
   '/playground2': 'Playground 2'
 };
