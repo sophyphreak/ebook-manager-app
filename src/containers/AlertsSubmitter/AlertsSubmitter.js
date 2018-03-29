@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
-import alertsPostToServer from './alertsPostToServer/alertsPostToServer';
+import alertToNodemailer from './alertToNodemailer/alertToNodemailer';
 
 export default class AlertsSubmitter extends Component {
   constructor(props) {
@@ -133,7 +133,7 @@ export default class AlertsSubmitter extends Component {
         error,
         currentPage
       }));
-      alertsPostToServer(this.state);
+      alertToNodemailer(this.state);
     };
   };
   

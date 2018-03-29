@@ -4,7 +4,7 @@ import { html as beautify } from 'js-beautify';
 const postToNodemailer = (
   submissionType, 
   bodyObject, 
-  rowLabelArray, 
+  rowLabelOrder, 
   userEmail
 ) => {
   let coreHtml = '<table>';

@@ -1,3 +1,4 @@
+import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrder';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const promoToNodemailer = ({
@@ -17,8 +18,8 @@ const promoToNodemailer = ({
   description,
   authorBio
 }) => {
-  const submissionType = 'Book Promotion'
-  let bodyObject = {
+  const submissionType = 'Book Promotion';
+  let rawBody = {
     'Title': title,
     'ASIN': asin,
     'Amazon URL': amazonURL,
@@ -35,15 +36,13 @@ const promoToNodemailer = ({
     'Description': description,
     'Author Biography': authorBio
   };
-  let rowLabelArray = Object.keys(bodyObject);
-  rowLabelArray.filter((rowLabel) => {
-    if (bodyObject[rowLabel]) {
-      return true;
-    };
-    delete bodyObject[rowLabel];
-  });
+  const {
+    bodyObject,
+    rowLabelOrder
+  } = getFilteredBodyAndOrder(rawBody);
   const userEmail = email;
-  postToNodemailer(submissionType, bodyObject, rowLabelArray, userEmail);
+
+  postToNodemailer(submissionType, bodyObject, rowLabelOrder, userEmail);
 };
 
 export default promoToNodemailer;
