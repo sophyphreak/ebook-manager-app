@@ -19,8 +19,9 @@ export default class QuillTheWorks extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(value) {
-    this.setState({ text: value })
-  }
+    const text = value.replace(/<\/?span[^>]*>/g, "");
+    this.setState({ text });
+  };
   render() {
     const modules = {
       toolbar: [
