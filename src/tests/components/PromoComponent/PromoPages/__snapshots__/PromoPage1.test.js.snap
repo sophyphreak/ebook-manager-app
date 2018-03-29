@@ -20,14 +20,6 @@ exports[`should render PromoPage1 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Title
-        errorMessage=""
-        hasError={false}
-      />
-      <ASIN
-        errorMessage=""
-        hasError={false}
-      />
       <AmazonURL
         errorMessage=""
         hasError={false}
@@ -38,14 +30,6 @@ exports[`should render PromoPage1 correctly 1`] = `
         hasError={false}
       />
       <SubGenre
-        hasError={false}
-      />
-      <FirstName
-        errorMessage=""
-        hasError={false}
-      />
-      <LastName
-        errorMessage=""
         hasError={false}
       />
       <Email

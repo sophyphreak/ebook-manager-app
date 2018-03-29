@@ -3,7 +3,6 @@
 exports[`should render PromoSubmitter correctly 1`] = `
 <PromoComponent
   amazonURL=""
-  asin=""
   authorBio=""
   calendarFocus={null}
   currentPage="PromoPage1"
@@ -13,48 +12,37 @@ exports[`should render PromoSubmitter correctly 1`] = `
   error={
     Object {
       "amazonURL": "",
-      "asin": "",
       "authorBio": "",
       "datePicker": "",
       "description": "",
       "email": "",
       "fictionOrNonFiction": "",
-      "firstName": "",
       "genre": "Please select",
-      "lastName": "",
       "message": "",
       "price": "",
       "promoType": "",
-      "title": "",
     }
   }
   fictionOrNonFiction=""
-  firstName=""
   genre=""
-  lastName=""
   onAmazonURLChange={[Function]}
-  onAsinChange={[Function]}
   onAuthorBioChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
   onDescriptionChange={[Function]}
   onEmailChange={[Function]}
   onFictionOrNonFictionChange={[Function]}
-  onFirstNameChange={[Function]}
   onFocusChange={[Function]}
   onGenreChange={[Function]}
-  onLastNameChange={[Function]}
   onPriceChange={[Function]}
   onPromoTypeChange={[Function]}
   onSubGenreChange={[Function]}
   onSubmitPromoPage1={[Function]}
   onSubmitPromoPage2={[Function]}
   onSubmitPromoPage3={[Function]}
-  onTitleChange={[Function]}
   price=""
   promoType=""
   startDate={"2017-02-14T12:51:48.000Z"}
   subGenre=""
-  title=""
 />
 `;

@@ -20,14 +20,10 @@ exports[`should render SocialMediaPage1 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Title />
-      <ASIN />
       <AmazonURL />
       <FictionOrNonFiction />
       <Genre />
       <SubGenre />
-      <FirstName />
-      <LastName />
       <Email />
       <Button
         color="primary"

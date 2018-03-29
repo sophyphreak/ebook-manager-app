@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Description correctly 1`] = `
-<TextAreaInput
-  label="Book description:*"
-/>
-`;
+exports[`should render Description correctly 1`] = `<TextAreaInput />`;
