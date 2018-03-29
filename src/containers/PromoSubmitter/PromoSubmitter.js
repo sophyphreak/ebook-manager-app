@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import PromoComponent from '../../components/PromoComponent/PromoComponent';
-import promoPostToServer from './promoPostToServer/promoPostToServer';
+import promoToNodemailer from './promoToNodemailer/promoToNodemailer';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -305,7 +305,7 @@ export default class PromoSubmitter extends Component {
         currentPage 
       }));
 
-      promoPostToServer(this.state);
+      promoToNodemailer(this.state);
     }
   }
 
