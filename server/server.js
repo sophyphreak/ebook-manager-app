@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const htmlToText = require('html-to-text');
 
 const app = express();
 const publicPath = path.join(__dirname, '..', 'build');
@@ -34,9 +35,10 @@ app.post('/api/submitter', async (req, res) => {
       from: 'wise-fox-app@sent.this', // sender address
       to: 'arhorn@gmail.com', // list of receivers
       subject: req.body.toWiseFox.subject, // Subject line
-      text: req.body.toWiseFox.text,
-      html: req.body.toWiseFox.html
+      html: req.body.toWiseFox.html,
+      text: htmlToText.fromString(req.body.toWiseFox.html, { wordwrap: 130 })
     };
+    
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
@@ -61,9 +63,9 @@ app.post('/api/submitter', async (req, res) => {
       from: 'Wise Fox App <wise-fox-app@sent.this>', // sender address
       to: req.body.userEmail, // list of receivers
       subject: req.body.toUser.subject, // Subject line
-      text: req.body.toUser.text,
-      html: req.body.toUser.html
-    }
+      html: req.body.toUser.html,
+      text: htmlToText.fromString(req.body.toUser.html, { wordwrap: 130 })
+    };
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {

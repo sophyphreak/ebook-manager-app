@@ -1,6 +1,5 @@
 import axios from "axios";
 import { html as beautify } from 'js-beautify';
-import htmlToText from 'html-to-text';
 
 const postToNodemailer = (
   submissionType, 
@@ -16,7 +15,6 @@ const postToNodemailer = (
 
   const wiseFoxSubject = submissionType
   let wiseFoxHtml = `<h3>${submissionType} Request</h3>` + coreHtml;
-  const wiseFoxText = htmlToText.fromString(wiseFoxHtml, { wordwrap: 130 });
   wiseFoxHtml = beautify(wiseFoxHtml);
   
   const userSubject = `Your ${submissionType} Request Was Sent!`
@@ -26,19 +24,16 @@ const postToNodemailer = (
     <p>We will send you an email when the promotion submission is finished.</p><hr />`;
   userHtml += coreHtml;
   userHtml += '<hr /><p>Thanks again!</p ><p>--Wise Fox</p>'
-  const userText = htmlToText.fromString(userText, { wordwrap: 130 });
   userHtml = beautify(userHtml);
 
   axios
     .post("/api/submitter", {
       toWiseFox: {
         subject: wiseFoxSubject,
-        text: wiseFoxText,
         html: wiseFoxHtml
       },
       toUser: {
         subject: userSubject,
-        text: userText,
         html: userHtml
       },
       userEmail: userEmail
