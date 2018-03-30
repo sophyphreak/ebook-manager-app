@@ -17,6 +17,7 @@ exports[`should render TextAreaInput correctly 1`] = `
     }
   />
   <Input
+    className="textarea"
     type="textarea"
     valid={null}
   />

@@ -3,42 +3,48 @@
 exports[`should render PressReleaseSubmitter correctly 1`] = `
 <PressReleaseComponent
   amazonURL=""
-  asin=""
-  authorBio=""
   calendarFocus={null}
   currentPage="PressReleasePage1"
-  description=""
   email=""
   endDate={"2017-02-14T12:51:48.000Z"}
-  error=""
+  error={
+    Object {
+      "amazonURL": "",
+      "email": "",
+      "fictionOrNonFiction": "",
+      "genre": "",
+      "keywords": "",
+      "message": "",
+      "price": "",
+      "promoType": "",
+      "releaseText": "",
+      "website": "",
+    }
+  }
   fictionOrNonFiction=""
-  firstName=""
   genre=""
-  isGenreDisabled={true}
-  lastName=""
+  keywords=""
   onAmazonURLChange={[Function]}
-  onAsinChange={[Function]}
-  onAuthorBioChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
-  onDescriptionChange={[Function]}
   onEmailChange={[Function]}
   onFictionOrNonFictionChange={[Function]}
-  onFirstNameChange={[Function]}
   onFocusChange={[Function]}
   onGenreChange={[Function]}
-  onLastNameChange={[Function]}
+  onKeywordsChange={[Function]}
   onPriceChange={[Function]}
   onPromoTypeChange={[Function]}
+  onReleaseTextChange={[Function]}
   onSubGenreChange={[Function]}
   onSubmitPressReleasePage1={[Function]}
   onSubmitPressReleasePage2={[Function]}
   onSubmitPressReleasePage3={[Function]}
-  onTitleChange={[Function]}
+  onWebsiteChange={[Function]}
   price=""
   promoType=""
+  releaseText=""
   startDate={"2017-02-14T12:51:48.000Z"}
   subGenre=""
-  title=""
+  website=""
 />
 `;
