@@ -13,10 +13,6 @@ export default {
       name: 'Promo Submitter',
       url: '/promo-submitter',
       icon: 'icon-chart',
-      badge: {
-        variant: 'info',
-        text: ''
-      }
     },
     {
       name: 'Social Media',
@@ -26,7 +22,11 @@ export default {
     {
       name: 'Press Release',
       url: '/press-release-submitter',
-      icon: 'icon-docs'
+      icon: 'icon-docs',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
     },
     {
       name: 'Alerts Submitter',
@@ -37,27 +37,15 @@ export default {
       name: 'Quill HTML Gen',
       url: '/quill-html-gen',
       icon: 'icon-docs',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
     },
     {
       name: 'Quill The Works',
       url: '/quill-the-works',
       icon: 'icon-docs',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
     },
     {
       name: 'Draft Playground',
       url: '/draft-playground',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
     },
     {
       name: 'Playground',
