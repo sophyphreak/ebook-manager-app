@@ -17,7 +17,6 @@ export default class PressReleaseSubmitter extends Component {
         email: "",
         price: "",
         promoType: "",
-        datePicker: "",
         website: "",
         keywords: "",
         releaseText: ""
@@ -237,11 +236,12 @@ export default class PressReleaseSubmitter extends Component {
     if (!releaseText) {
       error.releaseText = "Please enter a Press Release.";
     };
-    // test for if valid website address with RegEx
-    // if (website && )
+    if (website && !website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
+      error.website = "Please enter a valid uril.";
+    };
     if (
-      error.description ||
-      error.authorBio
+      error.releaseText ||
+      error.website
     ) {
       error.message = "Please fix all errors.";
       this.setState(() => ({ error }));
@@ -273,20 +273,19 @@ export default class PressReleaseSubmitter extends Component {
     const {
       currentPage,
       error,
-      title,
-      asin,
       amazonURL,
-      price,
       fictionOrNonFiction,
       genre,
       subGenre,
       email,
-      description,
-      authorBio,
+      price,
       promoType,
       startDate,
       endDate,
-      calendarFocus
+      calendarFocus,
+      website,
+      keywords,
+      releaseText
     } = this.state;
     return (
       <PressReleaseComponent
@@ -309,8 +308,9 @@ export default class PressReleaseSubmitter extends Component {
         calendarFocus={calendarFocus}
 
         // PressReleasePage3
-        description={description}
-        authorBio={authorBio}
+        website={website}
+        keywords={keywords}
+        releaseText={releaseText}
 
         // Methods
         onBack={this.onBack}
@@ -331,8 +331,9 @@ export default class PressReleaseSubmitter extends Component {
         onSubmitPressReleasePage2={this.onSubmitPressReleasePage2}
 
         // PressReleasePage3
-        onDescriptionChange={this.onDescriptionChange}
-        onAuthorBioChange={this.onAuthorBioChange}
+        onWebsiteChange={this.onWebsiteChange}
+        onKeywordsChange={this.onKeywordsChange}
+        onReleaseTextChange={this.onReleaseTextChange}
         onSubmitPressReleasePage3={this.onSubmitPressReleasePage3}
       />
     );
