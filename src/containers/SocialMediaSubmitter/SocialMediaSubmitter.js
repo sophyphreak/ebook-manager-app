@@ -2,79 +2,74 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
-import socialMediaPostToServer from './socialMediaPostToServer/socialMediaPostToServer';
+import socialMediaToNodemailer from './socialMediaToNodemailer/socialMediaToNodemailer';
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: "SocialMediaPage1",
-      error: "",
+      error: {
+        message: "",
+        amazonURL: "",
+        fictionOrNonFiction: "",
+        genre: "",
+        email: "",
+        regPrice: "",
+        salePrice: "",
+        keywords: "",
+        tweet: "",
+        facebook: "",
+        notes: ""
+      },
 
       // SocialMediaPage1
-      title: "",
-      asin: "",
       amazonURL: "",
       fictionOrNonFiction: "",
       genre: "",
-      isGenreDisabled: true,
       subGenre: "",
-      firstName: "",
-      lastName: "",
       email: "",
 
       // SocialMediaPage2
-      price: "",
-      promoType: "",
-      startDate: moment(),
-      endDate: moment(),
+      regPrice: "",
+      salePrice: "",
+      startDate: null,
+      endDate: null,
       calendarFocus: null,
 
       // SocialMediaPage3
-      description: "",
-      authorBio: ""
+      keywords: "",
+      tweet: "",
+      facebook: "",
+      notes: ""
     };
 
     // SocialMediaPage1
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onAsinChange = this.onAsinChange.bind(this);
     this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
     this.onFictionOrNonFictionChange = this.onFictionOrNonFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
-    this.onFirstNameChange = this.onFirstNameChange.bind(this);
-    this.onLastNameChange = this.onLastNameChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitSocialMediaPage1 = this.onSubmitSocialMediaPage1.bind(this);
 
     // SocialMediaPage2
-    this.onPriceChange = this.onPriceChange.bind(this);
-    this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
+    this.onRegPriceChange = this.onRegPriceChange.bind(this);
+    this.onSalePriceChange = this.onSalePriceChange.bind(this);
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.onSubmitSocialMediaPage2 = this.onSubmitSocialMediaPage2.bind(this);
 
     // SocialMediaPage3
-    this.onDescriptionChange = this.onDescriptionChange.bind(this);
-    this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
+    this.onKeywordsChange = this.onKeywordsChange.bind(this);
+    this.onTweetChange = this.onTweetChange.bind(this);
+    this.onFacebookChange = this.onFacebookChange.bind(this);
+    this.onNotesChange = this.onNotesChange.bind(this);
     this.onSubmitSocialMediaPage3 = this.onSubmitSocialMediaPage3.bind(this);
 
     this.onBack = this.onBack.bind(this);
   }
 
   // SocialMediaPage1
-
-  onTitleChange(e) {
-    const title = e.target.value;
-    this.setState(() => ({ title }));
-  }
-
-  onAsinChange(e) {
-    const asin = e.target.value.toUpperCase();
-    if (asin.match(/^[0-9A-Z]{0,10}$/)) {
-      this.setState(() => ({ asin }));
-    }
-  }
 
   onAmazonURLChange(e) {
     const amazonURL = e.target.value;
@@ -83,13 +78,6 @@ export default class SocialMediaSubmitter extends Component {
 
   onFictionOrNonFictionChange(e) {
     const fictionOrNonFiction = e.target.value;
-    if (fictionOrNonFiction === 'Fiction') {
-      const isGenreDisabled = false;
-      this.setState(() => ({ isGenreDisabled }));
-    } else {
-      const isGenreDisabled = true;
-      this.setState(() => ({ isGenreDisabled }));
-    };
     this.setState(() => ({ fictionOrNonFiction }));
   }
 
@@ -103,16 +91,6 @@ export default class SocialMediaSubmitter extends Component {
     this.setState(() => ({ subGenre }));
   }
 
-  onFirstNameChange(e) {
-    const firstName = e.target.value;
-    this.setState(() => ({ firstName }));
-  }
-
-  onLastNameChange(e) {
-    const lastName = e.target.value;
-    this.setState(() => ({ lastName }));
-  }
-
   onEmailChange(e) {
     const email = e.target.value;
     this.setState(() => ({ email }));
@@ -121,63 +99,68 @@ export default class SocialMediaSubmitter extends Component {
   onSubmitSocialMediaPage1(e) {
     e.preventDefault();
     const {
-      title,
-      asin,
       amazonURL,
       fictionOrNonFiction,
-      firstName,
-      lastName,
+      genre,
       email
     } = this.state;
+    let error = {
+      message: "",
+      amazonURL: "",
+      fictionOrNonFiction: "",
+      genre: "",
+      email: ""
+    };
+
+    if (!amazonURL) {
+      error.amazonURL = 'Please fill in an Amazon URL.';
+    } else if (!amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+      error.amazonURL = 'Please provide a valid Amazon.com URL.';
+    };
+    if (!fictionOrNonFiction) {
+      error.fictionOrNonFiction = 'this will not render to screen';
+    };
+    if (genre === 'Please select' && fictionOrNonFiction === 'Fiction') {
+      error.genre = 'Please select a genre.';
+    };
+    if (!email) {
+      error.email = 'Please enter an email.';
+    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
+      error.email = 'Please provide a valid email address.';
+    };
     if (
-      !title ||
-      !asin ||
-      !amazonURL ||
-      !fictionOrNonFiction ||
-      !firstName ||
-      !lastName ||
-      !email
+      error.amazonURL ||
+      error.fictionOrNonFiction ||
+      error.genre ||
+      error.email
     ) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else if (
-      fictionOrNonFiction === 'Fiction' && !genre
-    ) {
-      this.setState(() => ({ error: "Please select a genre." }));
-    } else if (
-      !asin.match(/^[0-9A-Z]{10}$/)
-    ) {
-      this.setState(() => ({ error: "Please provide a valid ASIN." }));
-    } else if (
-      !amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)
-    ) {
-      this.setState(() => ({ error: "Please provide a valid Amazon url." }));
-    } else if (
-      !email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
-    ) {
-      this.setState(() => ({ error: "Please provide a valid email address." }));
-    } else {
-      console.log(this.state);
-
-      const error = "";
+      error.message = 'Please fix errors.'
       this.setState(() => ({ error }));
-
+    };
+    if (!error.message) {
+      console.log(this.state);
       const currentPage = "SocialMediaPage2";
-      this.setState(() => ({ currentPage }));
-    }
-  }
+      this.setState(() => ({
+        error,
+        currentPage
+      }));
+    };
+  };
 
   // SocialMediaPage2
 
-  onPriceChange(e) {
-    const price = e.target.value;
-    if (!price || price.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ price }));
+  onRegPriceChange(e) {
+    const regPrice = e.target.value;
+    if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ regPrice }));
     }
   }
 
-  onPromoTypeChange(e) {
-    const promoType = e.target.value;
-    this.setState(() => ({ promoType }));
+  onSalePriceChange(e) {
+    const salePrice = e.target.value;
+    if (!salePrice || salePrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ salePrice }));
+    }
   }
 
   onDatesChange({ startDate, endDate }) {
@@ -190,57 +173,65 @@ export default class SocialMediaSubmitter extends Component {
 
   onSubmitSocialMediaPage2(e) {
     e.preventDefault();
-    const { price, promoType, startDate, endDate } = this.state;
+    const {
+      regPrice,
+    } = this.state;
+    let error = {
+      message: "",
+      regPrice: "",
+    }
+
+    if (!regPrice) {
+      error.regPrice = "Please enter a regPrice.";
+    };
     if (
-      !price ||
-      !promoType ||
-      !startDate ||
-      !endDate
+      error.regPrice
     ) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else {
+      error.message = "Please fix all errors.";
+      this.setState(() => ({ error }));
+    };
+    if (!error.message) {
       console.log(this.state);
 
-      const error = "";
-      this.setState(() => ({ error }));
-
       const currentPage = "SocialMediaPage3";
-      this.setState(() => ({ currentPage }));
+      this.setState(() => ({
+        error,
+        currentPage
+      }));
     }
-  }
+  };
 
   // SocialMediaPage3
 
-  onDescriptionChange(e) {
-    const description = e.target.value;
-    this.setState(() => ({ description }));
+  onKeywordsChange(e) {
+    const keywords = e.target.value;
+    this.setState(() => ({ keywords }));
+  };
+
+  onTweetChange(e) {
+    const tweet = e.target.value.slice(0, 280);
+    this.setState(() => ({ tweet }));
+  };
+
+  onFacebookChange(e) {
+    const facebook = e.target.value.slice(0, 1999);
+    this.setState(() => ({ facebook }));
   }
 
-  onAuthorBioChange(e) {
-    const authorBio = e.target.value;
-    this.setState(() => ({ authorBio }));
+  onNotesChange(e) {
+    const notes = e.target.value;
+    this.setState(() => ({ notes }));
   }
 
   onSubmitSocialMediaPage3(e) {
     e.preventDefault();
-    const { description, authorBio } = this.state;
-    if (
-      !description ||
-      !authorBio
-    ) {
-      this.setState(() => ({ error: "Please fill in all required fields." }));
-    } else {
+    console.log(this.state);
+    const currentPage = "SubmissionSuccess";
+    this.setState(() => ({
+      currentPage
+    }));
 
-      console.log(this.state);
-
-      const error = "";
-      this.setState(() => ({ error }));
-
-      const currentPage = "SubmissionSuccess";
-      this.setState(() => ({ currentPage }));
-
-      socialMediaPostToServer(this.state);
-    }
+    socialMediaToNodemailer(this.state);
   }
 
   onBack(e) {
@@ -258,23 +249,20 @@ export default class SocialMediaSubmitter extends Component {
     const {
       currentPage,
       error,
-      title,
-      asin,
       amazonURL,
-      price,
       fictionOrNonFiction,
       genre,
-      isGenreDisabled,
       subGenre,
-      firstName,
-      lastName,
       email,
-      description,
-      authorBio,
-      promoType,
+      regPrice,
+      salePrice,
       startDate,
       endDate,
-      calendarFocus
+      calendarFocus,
+      keywords,
+      tweet,
+      facebook,
+      notes
     } = this.state;
     return (
       <SocialMediaComponent
@@ -283,53 +271,48 @@ export default class SocialMediaSubmitter extends Component {
         error={error}
 
         // SocialMediaPage1
-        title={title}
-        asin={asin}
         amazonURL={amazonURL}
         fictionOrNonFiction={fictionOrNonFiction}
         genre={genre}
-        isGenreDisabled={isGenreDisabled}
         subGenre={subGenre}
-        firstName={firstName}
-        lastName={lastName}
         email={email}
 
         // SocialMediaPage2
-        price={price}
-        promoType={promoType}
+        regPrice={regPrice}
+        salePrice={salePrice}
         startDate={startDate}
         endDate={endDate}
         calendarFocus={calendarFocus}
 
         // SocialMediaPage3
-        description={description}
-        authorBio={authorBio}
+        keywords={keywords}
+        tweet={tweet}
+        facebook={facebook}
+        notes={notes}
 
         // Methods
         onBack={this.onBack}
 
         // SocialMediaPage1
-        onTitleChange={this.onTitleChange}
-        onAsinChange={this.onAsinChange}
         onAmazonURLChange={this.onAmazonURLChange}
         onFictionOrNonFictionChange={this.onFictionOrNonFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}
-        onFirstNameChange={this.onFirstNameChange}
-        onLastNameChange={this.onLastNameChange}
         onEmailChange={this.onEmailChange}
         onSubmitSocialMediaPage1={this.onSubmitSocialMediaPage1}
 
         // SocialMediaPage2
-        onPriceChange={this.onPriceChange}
-        onPromoTypeChange={this.onPromoTypeChange}
+        onRegPriceChange={this.onRegPriceChange}
+        onSalePriceChange={this.onSalePriceChange}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
         onSubmitSocialMediaPage2={this.onSubmitSocialMediaPage2}
 
         // SocialMediaPage3
-        onDescriptionChange={this.onDescriptionChange}
-        onAuthorBioChange={this.onAuthorBioChange}
+        onKeywordsChange={this.onKeywordsChange}
+        onTweetChange={this.onTweetChange}
+        onFacebookChange={this.onFacebookChange}
+        onNotesChange={this.onNotesChange}
         onSubmitSocialMediaPage3={this.onSubmitSocialMediaPage3}
       />
     );
