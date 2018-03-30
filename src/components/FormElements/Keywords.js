@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import BasicInput from './BasicInput';
 
-const Price = (props) => (
+const Keywords = (props) => (
   <BasicInput
     {...props}
   />
 );
 
-export default Price;
+export default Keywords;

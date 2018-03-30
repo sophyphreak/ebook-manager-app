@@ -26,16 +26,9 @@ const PressReleasePage1 = ({
 
   genre,
   onGenreChange,
-  isGenreDisabled,
 
   subGenre,
   onSubGenreChange,
-
-  firstName,
-  onFirstNameChange,
-
-  lastName,
-  onLastNameChange,
 
   email,
   onEmailChange,
@@ -47,27 +40,43 @@ const PressReleasePage1 = ({
     <CardBody>
       <Form onSubmit={onSubmit}>
         <AmazonURL
+          label="Amazon URL*"
           value={amazonURL}
           onChange={onAmazonURLChange}
+          hasError={!!error.message}
+          errorMessage={error.amazonURL}
         />
         <FictionOrNonFiction
           value={fictionOrNonFiction}
           onChange={onFictionOrNonFictionChange}
+          hasError={!!error.messsage}
+          errorMessage={error.fictionOrNonFiction}
         />
-        <Genre
-          value={genre}
-          onChange={onGenreChange}
-          isGenreDisabled={isGenreDisabled}
-        />
+        {
+          fictionOrNonFiction === 'Fiction' &&
+          <div className="animated fadeIn">
+            <Genre
+              value={genre}
+              onChange={onGenreChange}
+              hasError={!!error.message}
+              errorMessage={error.genre}
+            />
+          </div>
+        }
         <SubGenre
           value={subGenre}
           onChange={onSubGenreChange}
+          hasError={!!error.message}
+          errorMessage={error.subGenre}
         />
         <Email
+          label="Email:*"
           value={email}
           onChange={onEmailChange}
+          hasError={!!error.message}
+          errorMessage={error.email}
         />
-        {error && <p>{error}</p>}        
+        {error.message && <p>{error.message}</p>}        
         <Button 
           type="submit" 
           size="sm" 

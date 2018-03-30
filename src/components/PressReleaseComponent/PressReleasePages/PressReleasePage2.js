@@ -35,12 +35,18 @@ const PressReleasePage2 = ({
       <CardBody>
         <Form onSubmit={onSubmit}>
           <Price
+            label="Regular Price*"
             value={price}
             onChange={onPriceChange}
+            hasError={!!error.message}
+            errorMessage={error.price}
           />
           <PromoType
+            label="Select Promotion Type*"
             value={promoType}
             onChange={onPromoTypeChange}
+            hasError={!!error.message}
+            errorMessage={error.promoType}
           />
           <DatesPicker
             startDate={startDate}
@@ -49,7 +55,7 @@ const PressReleasePage2 = ({
             focusedInput={focusedInput}
             onFocusChange={onFocusChange}
           />
-          {error && <p>{error}</p>}
+          {error.message && <p>{error.message}</p>}
           <Button
             onClick={onBack}
             size="sm"

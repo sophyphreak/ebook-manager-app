@@ -35,12 +35,14 @@ const PromoPage2 = ({
       <CardBody>
         <Form onSubmit={onSubmit}>
           <Price
+            label="Regular Price*"
             value={price}
             onChange={onPriceChange}
             hasError={!!error.message}
             errorMessage={error.price}
           />
           <PromoType
+            label="Select Promotion Type*"          
             value={promoType}
             onChange={onPromoTypeChange}
             hasError={!!error.message}

@@ -7,19 +7,24 @@ import {
   Form
 } from 'reactstrap';
 
-import Description from '../../FormElements/Description';
-import AuthorBio from '../../FormElements/AuthorBio';
+import Website from '../../FormElements/Website';
+import Keywords from '../../FormElements/Keywords';
+import ReleaseText from '../../FormElements/ReleaseText';
 
 const PressReleasePage3 = ({
   error,
   onBack,
   onSubmit,
 
-  description,
-  onDescriptionChange,
+  website,
+  onWebsiteChange,
 
-  authorBio,
-  onAuthorBioChange
+  keywords,
+  onKeywordsChange,
+
+  releaseText,
+  onReleaseTextChange
+
 }) => (
     <Card className="animated fadeIn">
       <CardHeader>
@@ -27,15 +32,28 @@ const PressReleasePage3 = ({
       </CardHeader>
       <CardBody>
         <Form onSubmit={onSubmit}>
-          <Description
-            value={description}
-            onChange={onDescriptionChange}
+          <Website
+            label="Website"
+            value={website}
+            onChange={onWebsiteChange}
+            hasError={!!error.message}
+            errorMessage={error.website}
           />
-          <AuthorBio
-            value={authorBio}
-            onChange={onAuthorBioChange}
+          <Keywords
+            label="Keywords"
+            value={keywords}
+            onChange={onKeywordsChange}
+            hasError={!!error.message}
+            errorMessage={error.keywords}
           />
-          {error && <p>{error}</p>}
+          <ReleaseText
+            label="Press Release*"
+            value={releaseText}
+            onChange={onReleaseTextChange}
+            hasError={!!error.message}
+            errorMessage={error.releaseText}
+          />
+          {error.message && <p>{error.message}</p>}
           <Button
             onClick={onBack}
             size="sm"

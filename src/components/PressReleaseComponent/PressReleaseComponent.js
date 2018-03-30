@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  Card,
-  CardBody,
-  CardHeader,
   Col,
   Row
 } from 'reactstrap';
@@ -17,15 +14,10 @@ const PressReleaseComponent = ({
   error,
 
   // PressReleasePage1
-  title,
-  asin,
   amazonURL,
   fictionOrNonFiction,
   genre,
-  isGenreDisabled,
   subGenre,
-  firstName,
-  lastName,
   email,
   
   // PressReleasePage2
@@ -36,21 +28,18 @@ const PressReleaseComponent = ({
   calendarFocus,
   
   // PressReleasePage3
-  description,
-  authorBio,
+  website,
+  keywords,
+  releaseText,
 
   // Methods
   onBack,
 
   // PressReleasePage1
-  onTitleChange,
-  onAsinChange,
   onAmazonURLChange,
   onFictionOrNonFictionChange,
   onGenreChange,
   onSubGenreChange,
-  onFirstNameChange,
-  onLastNameChange,
   onEmailChange,
   onSubmitPressReleasePage1,
   
@@ -62,36 +51,28 @@ const PressReleaseComponent = ({
   onSubmitPressReleasePage2,
   
   // PressReleasePage3
-  onDescriptionChange,
-  onAuthorBioChange,
+  onWebsiteChange,
+  onKeywordsChange,
+  onReleaseTextChange,
   onSubmitPressReleasePage3,
+
 }) => (
   <Row>
-    <Col sm="3" />
-    <Col xs="12" sm="6">
+    <Col xs="12" sm={{ size: 8, offset: 2 }}>
       {
         currentPage === "PressReleasePage1" && (
           <PressReleasePage1
             error={error}
-            title={title}
-            asin={asin}
             amazonURL={amazonURL}
             fictionOrNonFiction={fictionOrNonFiction}
             genre={genre}
-            isGenreDisabled={isGenreDisabled}
             subGenre={subGenre}
-            firstName={firstName}
-            lastName={lastName}
             email={email}
             
-            onTitleChange={onTitleChange}
-            onAsinChange={onAsinChange}
             onAmazonURLChange={onAmazonURLChange}
             onFictionOrNonFictionChange={onFictionOrNonFictionChange}
             onGenreChange={onGenreChange}
             onSubGenreChange={onSubGenreChange}
-            onFirstNameChange={onFirstNameChange}
-            onLastNameChange={onLastNameChange}
             onEmailChange={onEmailChange}
             onSubmit={onSubmitPressReleasePage1}
           />
@@ -119,11 +100,13 @@ const PressReleaseComponent = ({
         {currentPage === "PressReleasePage3" && (
           <PressReleasePage3
           error={error}
-          description={description}
-          authorBio={authorBio}
-          
-          onDescriptionChange={onDescriptionChange}
-          onAuthorBioChange={onAuthorBioChange}
+          website={website}
+          keywords={keywords}
+          releaseText={releaseText}
+
+          onWebsiteChange={onWebsiteChange}
+          onKeywordsChange={onKeywordsChange}
+          onReleaseTextChange={onReleaseTextChange}
           onBack={onBack}
           onSubmit={onSubmitPressReleasePage3}
         />
