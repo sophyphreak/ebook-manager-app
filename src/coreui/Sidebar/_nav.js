@@ -18,15 +18,15 @@ export default {
       name: 'Social Media',
       url: '/social-media-submitter',
       icon: 'icon-people',
+      badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
     },
     {
       name: 'Press Release',
       url: '/press-release-submitter',
-      icon: 'icon-docs',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
+      icon: 'icon-docs'
     },
     {
       name: 'Alerts Submitter',
