@@ -49,6 +49,7 @@ const PromoPage2 = ({
             errorMessage={error.promoType}
           />
           <DatesPicker
+            label="Dates for promotion*"
             startDate={startDate}
             endDate={endDate}
             onDatesChange={onDatesChange}

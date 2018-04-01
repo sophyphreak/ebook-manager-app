@@ -8,7 +8,6 @@ import {
 } from 'reactstrap';
 
 import Price from '../../FormElements/Price';
-import PromoType from '../../FormElements/PromoType';
 import DatesPicker from '../../FormElements/DatesPicker';
 
 const SocialMediaPage2 = ({
@@ -16,11 +15,11 @@ const SocialMediaPage2 = ({
   onBack,
   onSubmit,
 
-  price,
-  onPriceChange,
+  regPrice,
+  onRegPriceChange,
 
-  promoType,
-  onPromoTypeChange,
+  salePrice,
+  onSalePriceChange,
 
   startDate,
   endDate,
@@ -30,27 +29,35 @@ const SocialMediaPage2 = ({
 }) => (
     <Card className="animated fadeIn">
       <CardHeader>
-        <h4><strong>Social Media - 2 of 3</strong></h4>
+        <h4><strong>Social Media Submission - 2 of 3</strong></h4>
       </CardHeader>
       <CardBody>
         <Form onSubmit={onSubmit}>
           <Price
-            value={price}
-            onChange={onPriceChange}
+            label="Regular Price*"
+            value={regPrice}
+            onChange={onRegPriceChange}
+            hasError={!!error.message}
+            errorMessage={error.regPrice}
           />
-          <PromoType
-            value={promoType}
-            onChange={onPromoTypeChange}
+          <Price
+            label="Sale Price (if applicable)"
+            value={salePrice}
+            onChange={onSalePriceChange}
+            hasError={!!error.message}
+            errorMessage={error.salePrice}
           />
           <DatesPicker
+            label="Dates for promotion (if applicable)"
             startDate={startDate}
             endDate={endDate}
             onDatesChange={onDatesChange}
             focusedInput={focusedInput}
             onFocusChange={onFocusChange}
           />
-          {error && <p>{error}</p>}
+          {error.message && <p>{error.message}</p>}
           <Button
+            className="back-button"
             onClick={onBack}
             size="sm"
             color="basic"

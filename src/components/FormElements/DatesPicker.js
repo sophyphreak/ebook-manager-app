@@ -3,6 +3,7 @@ import { DateRangePicker } from 'react-dates';
 import { Col, Label } from 'reactstrap';
 
 const DatesPicker = ({
+  label,
   startDate,
   endDate,
   onDatesChange,
@@ -10,7 +11,7 @@ const DatesPicker = ({
   onFocusChange
 }) => (
   <div className="dates-picker__vertical">
-    <Label>Choose your dates:</Label>
+    <Label>{label}</Label>
     <DateRangePicker
       startDate={startDate}
       startDateId="startDate"

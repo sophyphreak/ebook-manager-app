@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { 
+import {
   Card,
   CardHeader,
   CardBody,
@@ -17,12 +17,6 @@ import Email from '../../FormElements/Email';
 const SocialMediaPage1 = ({
   error,
   onSubmit,
-  
-  title,
-  onTitleChange,
-
-  asin,
-  onAsinChange,
 
   amazonURL,
   onAmazonURLChange,
@@ -32,59 +26,68 @@ const SocialMediaPage1 = ({
 
   genre,
   onGenreChange,
-  isGenreDisabled,
 
   subGenre,
   onSubGenreChange,
 
-  firstName,
-  onFirstNameChange,
-
-  lastName,
-  onLastNameChange,
-
   email,
   onEmailChange,
 }) => (
-  <Card className="animated fadeIn">
-    <CardHeader>
-      <h4><strong>Social Media - 1 of 3</strong></h4>
-    </CardHeader>
-    <CardBody>
-      <Form onSubmit={onSubmit}>
-        <AmazonURL
-          value={amazonURL}
-          onChange={onAmazonURLChange}
-        />
-        <FictionOrNonFiction
-          value={fictionOrNonFiction}
-          onChange={onFictionOrNonFictionChange}
-        />
-        <Genre
-          value={genre}
-          onChange={onGenreChange}
-          isGenreDisabled={isGenreDisabled}
-        />
-        <SubGenre
-          value={subGenre}
-          onChange={onSubGenreChange}
-        />
-        <Email
-          value={email}
-          onChange={onEmailChange}
-        />
-        {error && <p>{error}</p>}        
-        <Button 
-          type="submit" 
-          size="sm" 
-          color="primary" 
-          value="Submit" 
-        >
-          Next Section
-        </Button>  
-      </Form>
-    </CardBody>
-  </Card>
-);
+    <Card className="animated fadeIn">
+      <CardHeader>
+        <h4><strong>Social Media Submission - 1 of 3</strong></h4>
+      </CardHeader>
+      <CardBody>
+        <Form onSubmit={onSubmit}>
+          <AmazonURL
+            label="Amazon URL*"
+            value={amazonURL}
+            onChange={onAmazonURLChange}
+            hasError={!!error.message}
+            errorMessage={error.amazonURL}
+          />
+          <FictionOrNonFiction
+            value={fictionOrNonFiction}
+            onChange={onFictionOrNonFictionChange}
+            hasError={!!error.message}
+            errorMessage={error.fictionOrNonFiction}
+          />
+          {
+            fictionOrNonFiction === 'Fiction' &&
+            <div className="animated fadeIn">
+              <Genre
+                value={genre}
+                onChange={onGenreChange}
+                hasError={!!error.message}
+                errorMessage={error.genre}
+              />
+            </div>
+          }
+          <SubGenre
+            value={subGenre}
+            onChange={onSubGenreChange}
+            hasError={!!error.message}
+            errorMessage={error.subGenre}
+          />
+          <Email
+            label="Email:*"
+            value={email}
+            onChange={onEmailChange}
+            hasError={!!error.message}
+            errorMessage={error.email}
+          />
+          {error.message && <p>{error.message}</p>}
+          <Button
+            type="submit"
+            size="sm"
+            color="primary"
+            value="Submit"
+          >
+            Next Section
+        </Button>
+        </Form>
+      </CardBody>
+    </Card>
+  );
 
 export default SocialMediaPage1;

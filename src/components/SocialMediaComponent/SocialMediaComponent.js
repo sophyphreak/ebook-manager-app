@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  Card,
-  CardBody,
-  CardHeader,
   Col,
   Row
 } from 'reactstrap';
@@ -17,125 +14,114 @@ const SocialMediaComponent = ({
   error,
 
   // SocialMediaPage1
-  title,
-  asin,
   amazonURL,
   fictionOrNonFiction,
   genre,
-  isGenreDisabled,
   subGenre,
-  firstName,
-  lastName,
   email,
-  
+
   // SocialMediaPage2
-  price,
-  promoType,
+  regPrice,
+  salePrice,
   startDate,
   endDate,
   calendarFocus,
-  
+
   // SocialMediaPage3
-  description,
-  authorBio,
+  keywords,
+  tweet,
+  facebook,
+  notes,
 
   // Methods
   onBack,
 
   // SocialMediaPage1
-  onTitleChange,
-  onAsinChange,
   onAmazonURLChange,
   onFictionOrNonFictionChange,
   onGenreChange,
   onSubGenreChange,
-  onFirstNameChange,
-  onLastNameChange,
   onEmailChange,
   onSubmitSocialMediaPage1,
-  
+
   // SocialMediaPage2
-  onPriceChange,
-  onPromoTypeChange,
+  onRegPriceChange,
+  onSalePriceChange,
   onDatesChange,
   onFocusChange,
   onSubmitSocialMediaPage2,
-  
+
   // SocialMediaPage3
-  onDescriptionChange,
-  onAuthorBioChange,
+  onKeywordsChange,
+  onTweetChange,
+  onFacebookChange,
+  onNotesChange,
   onSubmitSocialMediaPage3,
 }) => (
-  <Row>
-    <Col sm="3" />
-    <Col xs="12" sm="6">
-      {
-        currentPage === "SocialMediaPage1" && (
-          <SocialMediaPage1
-            error={error}
-            title={title}
-            asin={asin}
-            amazonURL={amazonURL}
-            fictionOrNonFiction={fictionOrNonFiction}
-            genre={genre}
-            isGenreDisabled={isGenreDisabled}
-            subGenre={subGenre}
-            firstName={firstName}
-            lastName={lastName}
-            email={email}
-            
-            onTitleChange={onTitleChange}
-            onAsinChange={onAsinChange}
-            onAmazonURLChange={onAmazonURLChange}
-            onFictionOrNonFictionChange={onFictionOrNonFictionChange}
-            onGenreChange={onGenreChange}
-            onSubGenreChange={onSubGenreChange}
-            onFirstNameChange={onFirstNameChange}
-            onLastNameChange={onLastNameChange}
-            onEmailChange={onEmailChange}
-            onSubmit={onSubmitSocialMediaPage1}
-          />
-        )
-      }
-      {
-        currentPage === "SocialMediaPage2" && (
-          <SocialMediaPage2
-            error={error}
-            price={price}
-            promoType={promoType}
-            startDate={startDate}
-            endDate={endDate}
-            focusedInput={calendarFocus}
-            
-            onPriceChange={onPriceChange}
-            onPromoTypeChange={onPromoTypeChange}
-            onDatesChange={onDatesChange}
-            onFocusChange={onFocusChange}
-            onBack={onBack}
-            onSubmit={onSubmitSocialMediaPage2}
-          />
-        )
-      }
+    <Row>
+      <Col xs="12" sm={{ size: 8, offset: 2 }}>
+        {
+          currentPage === "SocialMediaPage1" && (
+            <SocialMediaPage1
+              error={error}
+              amazonURL={amazonURL}
+              fictionOrNonFiction={fictionOrNonFiction}
+              genre={genre}
+              subGenre={subGenre}
+              email={email}
+
+              onAmazonURLChange={onAmazonURLChange}
+              onFictionOrNonFictionChange={onFictionOrNonFictionChange}
+              onGenreChange={onGenreChange}
+              onSubGenreChange={onSubGenreChange}
+              onEmailChange={onEmailChange}
+              onSubmit={onSubmitSocialMediaPage1}
+            />
+          )
+        }
+        {
+          currentPage === "SocialMediaPage2" && (
+            <SocialMediaPage2
+              error={error}
+              regPrice={regPrice}
+              salePrice={salePrice}
+              startDate={startDate}
+              endDate={endDate}
+              focusedInput={calendarFocus}
+
+              onRegPriceChange={onRegPriceChange}
+              onSalePriceChange={onSalePriceChange}
+              onDatesChange={onDatesChange}
+              onFocusChange={onFocusChange}
+              onBack={onBack}
+              onSubmit={onSubmitSocialMediaPage2}
+            />
+          )
+        }
         {currentPage === "SocialMediaPage3" && (
           <SocialMediaPage3
-          error={error}
-          description={description}
-          authorBio={authorBio}
-          
-          onDescriptionChange={onDescriptionChange}
-          onAuthorBioChange={onAuthorBioChange}
-          onBack={onBack}
-          onSubmit={onSubmitSocialMediaPage3}
-        />
-      )}
-      {currentPage === "SubmissionSuccess" && (
-        <p className="animated fadeIn">
-          Your Promo Submission has been submitted. Please wait for a
-          confirmation email.
+            error={error}
+            keywords={keywords}
+            tweet={tweet}
+            facebook={facebook}
+            notes={notes}
+            
+            onKeywordsChange={onKeywordsChange}
+            onTweetChange={onTweetChange}
+            onFacebookChange={onFacebookChange}
+            onNotesChange={onNotesChange}
+            onBack={onBack}
+            onSubmit={onSubmitSocialMediaPage3}
+          />
+        )}
+        {currentPage === "SubmissionSuccess" && (
+          <p className="animated fadeIn">
+            Your Promo Submission has been submitted. Please wait for a
+            confirmation email.
         </p>
-      )}
-    </Col>
-  </Row>
-);
+        )}
+      </Col>
+    </Row>
+  );
 
 export default SocialMediaComponent;

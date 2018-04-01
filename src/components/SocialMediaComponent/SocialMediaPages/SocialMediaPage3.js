@@ -7,36 +7,70 @@ import {
   Form
 } from 'reactstrap';
 
-import Description from '../../FormElements/Description';
-import AuthorBio from '../../FormElements/AuthorBio';
+import Keywords from '../../FormElements/Keywords';
+import Tweet from '../../FormElements/Tweet';
+import Facebook from '../../FormElements/Facebook';
+import Notes from '../../FormElements/Notes';
 
 const SocialMediaPage3 = ({
   error,
   onBack,
   onSubmit,
 
-  description,
-  onDescriptionChange,
+  keywords,
+  onKeywordsChange,
 
-  authorBio,
-  onAuthorBioChange
+  tweet,
+  onTweetChange,
+
+  facebook,
+  onFacebookChange,
+
+  notes,
+  onNotesChange
 }) => (
     <Card className="animated fadeIn">
       <CardHeader>
-        <h4><strong>Social Media - 3 of 3</strong></h4>
+        <h4><strong>Social Media Submission - 3 of 3</strong></h4>
       </CardHeader>
       <CardBody>
+        <p>
+          If you have a specific tweet, social media post, important info 
+          or hashtags to use, please include them below. Otherwise we 
+          will create a post based on the information provided. 
+        </p>
         <Form onSubmit={onSubmit}>
-          <Description
-            value={description}
-            onChange={onDescriptionChange}
+          <Keywords
+            label="Keywords / Hashtags (Comma Separated)"
+            value={keywords}
+            onChange={onKeywordsChange}
+            hasError={!!error.message}
+            errorMessage={error.keywords}
           />
-          <AuthorBio
-            value={authorBio}
-            onChange={onAuthorBioChange}
+          <Tweet
+            label="Tweet (280 characters max including hashtags)"
+            value={tweet}
+            onChange={onTweetChange}
+            hasError={!!error.message}
+            errorMessage={error.tweet}
           />
-          {error && <p>{error}</p>}
+          <Facebook
+            label="Facebook / Other social media (2,000 characters max)"
+            value={facebook}
+            onChange={onFacebookChange}
+            hasError={!!error.message}
+            errorMessage={error.facebook}
+          />
+          <Notes
+            label="Notes"
+            value={notes}
+            onChange={onNotesChange}
+            hasError={!!error.message}
+            errorMessage={error.notes}
+          />
+          {error.message && <p>{error.message}</p>}
           <Button
+            className=".back-button"
             onClick={onBack}
             size="sm"
             color="basic"
@@ -49,7 +83,7 @@ const SocialMediaPage3 = ({
             color="primary"
             value="Submit"
           >
-            Next Section
+            Submit
           </Button>
         </Form>
       </CardBody>
