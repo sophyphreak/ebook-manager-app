@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import RadioInput from '../../../components/FormElements/RadioInput';
+import RadioInput from '../../../../components/FormElements/MainElements/RadioInput';
 
 let options, wrapper;
 

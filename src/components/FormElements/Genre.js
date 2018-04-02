@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SelectInput from './SelectInput';
+import SelectInput from './MainElements/SelectInput';
 
 const Genre = ({
   isGenreDisabled,

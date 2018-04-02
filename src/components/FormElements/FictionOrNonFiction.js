@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RadioHorizontal from './RadioHorizontal';
+import RadioHorizontal from './MainElements/RadioHorizontal';
 
 const FictionOrNonFiction = (props) => (
   <RadioHorizontal

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import BasicInput from '../../../components/FormElements/BasicInput';
+import BasicInput from '../../../../components/FormElements/MainElements/BasicInput';
 
 let wrapper;
 

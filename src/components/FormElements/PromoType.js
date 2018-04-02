@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RadioInput from './RadioInput';
+import RadioInput from './MainElements/RadioInput';
 
 const PromoTypes = (props) => (
   <RadioInput

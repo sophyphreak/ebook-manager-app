@@ -4,7 +4,7 @@ import {
   Label,
   Input
 } from 'reactstrap';
-import isValid from './isValid/isValid';
+import isValid from '../isValid/isValid';
 
 const RadioInput = ({ 
   hasError, 

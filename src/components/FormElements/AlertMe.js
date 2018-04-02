@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CheckboxInput from './CheckboxInput';
+import CheckboxInput from './MainElements/CheckboxInput';
 
 const AlertMe = (props) => (
   <CheckboxInput

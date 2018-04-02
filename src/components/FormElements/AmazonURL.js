@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BasicInput from './BasicInput';
+import BasicInput from './MainElements/BasicInput';
 
 const AmazonURL = (props) => (
   <BasicInput

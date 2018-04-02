@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextAreaInput from './TextAreaInput';
+import TextAreaInput from './MainElements/TextAreaInput';
 
 const Description = (props) => (
   <TextAreaInput

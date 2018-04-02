@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SelectInput from '../../../components/FormElements/SelectInput';
+import SelectInput from '../../../../components/FormElements/MainElements/SelectInput';
 
 let options, wrapper;
 

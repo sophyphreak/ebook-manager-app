@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import RadioHorizontal from '../../../components/FormElements/RadioHorizontal';
+import RadioHorizontal from '../../../../components/FormElements/MainElements/RadioHorizontal';
 
 let options, wrapper;
 

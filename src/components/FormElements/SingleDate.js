@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BasicInput from './BasicInput';
+import BasicInput from './MainElements/BasicInput';
 import { SingleDatePicker } from 'react-dates';
 import { FormGroup, Label } from 'reactstrap';
 
