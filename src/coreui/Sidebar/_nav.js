@@ -19,8 +19,8 @@ export default {
       url: '/social-media-submitter',
       icon: 'icon-people',
       badge: {
-      variant: 'info',
-      text: 'NEW'
+        variant: 'info',
+        text: 'NEW'
     }
     },
     {
