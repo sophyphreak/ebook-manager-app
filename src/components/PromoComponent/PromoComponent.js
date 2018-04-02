@@ -7,6 +7,7 @@ import {
 import PromoPage1 from "./PromoPages/PromoPage1";
 import PromoPage2 from "./PromoPages/PromoPage2";
 import PromoPage3 from "./PromoPages/PromoPage3";
+import PromoSuccess from './PromoPages/PromoSuccess';
 
 const PromoComponent = ({
   // Variables
@@ -107,10 +108,7 @@ const PromoComponent = ({
         />
       )}
       {currentPage === "SubmissionSuccess" && (
-        <p className="animated fadeIn">
-          Your Promo Submission has been submitted. Please wait for a
-          confirmation email.
-        </p>
+        <PromoSuccess feature="Book Promotion" />
       )}
     </Col>
   </Row>

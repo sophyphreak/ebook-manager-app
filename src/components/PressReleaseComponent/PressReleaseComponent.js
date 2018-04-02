@@ -7,6 +7,7 @@ import {
 import PressReleasePage1 from "./PressReleasePages/PressReleasePage1";
 import PressReleasePage2 from "./PressReleasePages/PressReleasePage2";
 import PressReleasePage3 from "./PressReleasePages/PressReleasePage3";
+import PressReleaseSuccess from './PressReleasePages/PressReleaseSuccess';
 
 const PressReleaseComponent = ({
   // Variables
@@ -112,10 +113,7 @@ const PressReleaseComponent = ({
         />
       )}
       {currentPage === "SubmissionSuccess" && (
-        <p className="animated fadeIn">
-          Your Promo Submission has been submitted. Please wait for a
-          confirmation email.
-        </p>
+        <PressReleaseSuccess feature="press release" />
       )}
     </Col>
   </Row>

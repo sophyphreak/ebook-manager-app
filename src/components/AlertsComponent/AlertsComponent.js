@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 
 import AlertsPage from "./AlertsPage/AlertsPage";
+import AlertsSuccess from './AlertsPage/AlertsSuccess';
 
 const AlertsComponent = ({
   currentPage,
@@ -19,10 +20,7 @@ const AlertsComponent = ({
       }
       {
         currentPage === "SubmissionSuccess" && (
-          <p className="animated fadeIn">
-            Your Alert Submission has been submitted. Please wait for a
-            confirmation email.
-          </p>
+          <AlertsSuccess feature="alert" />
         )
       }
     </Col>

@@ -23,7 +23,7 @@ exports[`should render PromoPage3 correctly 1`] = `
       <Description
         errorMessage=""
         hasError={false}
-        label="Promotional Book Description (Max 2,000 characters)"
+        label="Promotional Book Description (Max 2,000 characters)*"
       />
       <AuthorBio
         errorMessage=""

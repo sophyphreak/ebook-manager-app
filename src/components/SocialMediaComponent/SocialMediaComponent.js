@@ -7,6 +7,7 @@ import {
 import SocialMediaPage1 from "./SocialMediaPages/SocialMediaPage1";
 import SocialMediaPage2 from "./SocialMediaPages/SocialMediaPage2";
 import SocialMediaPage3 from "./SocialMediaPages/SocialMediaPage3";
+import SocialMediaSuccess from './SocialMediaPages/SocialMediaSuccess';
 
 const SocialMediaComponent = ({
   // Variables
@@ -115,10 +116,7 @@ const SocialMediaComponent = ({
           />
         )}
         {currentPage === "SubmissionSuccess" && (
-          <p className="animated fadeIn">
-            Your Promo Submission has been submitted. Please wait for a
-            confirmation email.
-        </p>
+          <SocialMediaSuccess feature="social media submission" />
         )}
       </Col>
     </Row>
