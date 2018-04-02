@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render PressReleasePage3 correctly 1`] = `
+exports[`should render PressReleasePage1 correctly 1`] = `
 <Card
   className="animated fadeIn"
   tag="div"
@@ -10,7 +10,7 @@ exports[`should render PressReleasePage3 correctly 1`] = `
   >
     <h4>
       <strong>
-        Press Release - 3 of 3
+        Press Release - 1 of 3
       </strong>
     </h4>
   </CardHeader>
@@ -20,15 +20,20 @@ exports[`should render PressReleasePage3 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Description />
-      <AuthorBio />
-      <Button
-        color="basic"
-        size="sm"
-        tag="button"
-      >
-        Go Back
-      </Button>
+      <AmazonURL
+        hasError={false}
+        label="Amazon URL*"
+      />
+      <FictionOrNonFiction
+        hasError={false}
+      />
+      <SubGenre
+        hasError={false}
+      />
+      <Email
+        hasError={false}
+        label="Email:*"
+      />
       <Button
         color="primary"
         size="sm"

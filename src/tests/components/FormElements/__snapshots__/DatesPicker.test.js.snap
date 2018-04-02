@@ -15,9 +15,7 @@ exports[`should render DatesPicker correctly 1`] = `
         "xl",
       ]
     }
-  >
-    Choose your dates:
-  </Label>
+  />
   <withStyles(DateRangePicker)
     anchorDirection="left"
     block={false}

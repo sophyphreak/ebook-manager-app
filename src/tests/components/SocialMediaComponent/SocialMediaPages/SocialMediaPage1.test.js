@@ -2,10 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SocialMediaPage1 from '../../../../components/SocialMediaComponent/SocialMediaPages/SocialMediaPage1';
 
-let wrapper;
+let error, wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<SocialMediaPage1 />);
+  error = {
+    message: ""
+  };
+  wrapper = shallow(<SocialMediaPage1 error={error} />);
 });
 
 test('should render SocialMediaPage1 correctly', () => {

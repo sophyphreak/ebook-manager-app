@@ -10,7 +10,7 @@ exports[`should render SocialMediaPage1 correctly 1`] = `
   >
     <h4>
       <strong>
-        Social Media - 1 of 3
+        Social Media Submission - 1 of 3
       </strong>
     </h4>
   </CardHeader>
@@ -20,11 +20,20 @@ exports[`should render SocialMediaPage1 correctly 1`] = `
     <Form
       tag="form"
     >
-      <AmazonURL />
-      <FictionOrNonFiction />
-      <Genre />
-      <SubGenre />
-      <Email />
+      <AmazonURL
+        hasError={false}
+        label="Amazon URL*"
+      />
+      <FictionOrNonFiction
+        hasError={false}
+      />
+      <SubGenre
+        hasError={false}
+      />
+      <Email
+        hasError={false}
+        label="Email:*"
+      />
       <Button
         color="primary"
         size="sm"

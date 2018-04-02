@@ -3,42 +3,51 @@
 exports[`should render SocialMediaSubmitter correctly 1`] = `
 <SocialMediaComponent
   amazonURL=""
-  asin=""
-  authorBio=""
   calendarFocus={null}
   currentPage="SocialMediaPage1"
-  description=""
   email=""
-  endDate={"2017-02-14T12:51:48.000Z"}
-  error=""
+  endDate={null}
+  error={
+    Object {
+      "amazonURL": "",
+      "email": "",
+      "facebook": "",
+      "fictionOrNonFiction": "",
+      "genre": "",
+      "keywords": "",
+      "message": "",
+      "notes": "",
+      "regPrice": "",
+      "salePrice": "",
+      "tweet": "",
+    }
+  }
+  facebook=""
   fictionOrNonFiction=""
-  firstName=""
   genre=""
-  isGenreDisabled={true}
-  lastName=""
+  keywords=""
+  notes=""
   onAmazonURLChange={[Function]}
-  onAsinChange={[Function]}
-  onAuthorBioChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
-  onDescriptionChange={[Function]}
   onEmailChange={[Function]}
+  onFacebookChange={[Function]}
   onFictionOrNonFictionChange={[Function]}
-  onFirstNameChange={[Function]}
   onFocusChange={[Function]}
   onGenreChange={[Function]}
-  onLastNameChange={[Function]}
-  onPriceChange={[Function]}
-  onPromoTypeChange={[Function]}
+  onKeywordsChange={[Function]}
+  onNotesChange={[Function]}
+  onRegPriceChange={[Function]}
+  onSalePriceChange={[Function]}
   onSubGenreChange={[Function]}
   onSubmitSocialMediaPage1={[Function]}
   onSubmitSocialMediaPage2={[Function]}
   onSubmitSocialMediaPage3={[Function]}
-  onTitleChange={[Function]}
-  price=""
-  promoType=""
-  startDate={"2017-02-14T12:51:48.000Z"}
+  onTweetChange={[Function]}
+  regPrice=""
+  salePrice=""
+  startDate={null}
   subGenre=""
-  title=""
+  tweet=""
 />
 `;

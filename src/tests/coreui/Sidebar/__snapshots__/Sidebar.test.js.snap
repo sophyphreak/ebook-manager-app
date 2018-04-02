@@ -53,12 +53,6 @@ exports[`should render Sidebar correctly 1`] = `
             className="icon-chart"
           />
           Promo Submitter
-          <Badge
-            className=""
-            color="info"
-            pill={false}
-            tag="span"
-          />
         </NavLink>
       </NavItem>
       <NavItem
@@ -77,6 +71,14 @@ exports[`should render Sidebar correctly 1`] = `
             className="icon-people"
           />
           Social Media
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
         </NavLink>
       </NavItem>
       <NavItem
@@ -131,14 +133,6 @@ exports[`should render Sidebar correctly 1`] = `
             className="icon-docs"
           />
           Quill HTML Gen
-          <Badge
-            className=""
-            color="info"
-            pill={false}
-            tag="span"
-          >
-            NEW
-          </Badge>
         </NavLink>
       </NavItem>
       <NavItem
@@ -157,14 +151,6 @@ exports[`should render Sidebar correctly 1`] = `
             className="icon-docs"
           />
           Quill The Works
-          <Badge
-            className=""
-            color="info"
-            pill={false}
-            tag="span"
-          >
-            NEW
-          </Badge>
         </NavLink>
       </NavItem>
       <NavItem
@@ -183,14 +169,6 @@ exports[`should render Sidebar correctly 1`] = `
             className=""
           />
           Draft Playground
-          <Badge
-            className=""
-            color="info"
-            pill={false}
-            tag="span"
-          >
-            NEW
-          </Badge>
         </NavLink>
       </NavItem>
       <NavItem

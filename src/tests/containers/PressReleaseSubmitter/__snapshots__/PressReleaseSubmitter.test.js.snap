@@ -6,7 +6,7 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
   calendarFocus={null}
   currentPage="PressReleasePage1"
   email=""
-  endDate={"2017-02-14T12:51:48.000Z"}
+  endDate={null}
   error={
     Object {
       "amazonURL": "",
@@ -43,7 +43,7 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
   price=""
   promoType=""
   releaseText=""
-  startDate={"2017-02-14T12:51:48.000Z"}
+  startDate={null}
   subGenre=""
   website=""
 />

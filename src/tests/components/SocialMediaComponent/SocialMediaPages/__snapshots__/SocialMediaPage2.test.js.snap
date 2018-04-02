@@ -10,7 +10,7 @@ exports[`should render SocialMediaPage2 correctly 1`] = `
   >
     <h4>
       <strong>
-        Social Media - 2 of 3
+        Social Media Submission - 2 of 3
       </strong>
     </h4>
   </CardHeader>
@@ -20,10 +20,19 @@ exports[`should render SocialMediaPage2 correctly 1`] = `
     <Form
       tag="form"
     >
-      <Price />
-      <PromoTypes />
-      <DatesPicker />
+      <Price
+        hasError={false}
+        label="Regular Price*"
+      />
+      <Price
+        hasError={false}
+        label="Sale Price (if applicable)"
+      />
+      <DatesPicker
+        label="Dates for promotion (if applicable)"
+      />
       <Button
+        className="back-button"
         color="basic"
         size="sm"
         tag="button"

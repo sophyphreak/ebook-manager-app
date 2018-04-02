@@ -10,19 +10,37 @@ exports[`should render SocialMediaPage3 correctly 1`] = `
   >
     <h4>
       <strong>
-        Social Media - 3 of 3
+        Social Media Submission - 3 of 3
       </strong>
     </h4>
   </CardHeader>
   <CardBody
     tag="div"
   >
+    <p>
+      If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.
+    </p>
     <Form
       tag="form"
     >
-      <Description />
-      <AuthorBio />
+      <Keywords
+        hasError={false}
+        label="Keywords / Hashtags (Comma Separated)"
+      />
+      <Tweet
+        hasError={false}
+        label="Tweet (280 characters max including hashtags)"
+      />
+      <Facebook
+        hasError={false}
+        label="Facebook / Other social media (2,000 characters max)"
+      />
+      <Notes
+        hasError={false}
+        label="Notes"
+      />
       <Button
+        className=".back-button"
         color="basic"
         size="sm"
         tag="button"
@@ -36,7 +54,7 @@ exports[`should render SocialMediaPage3 correctly 1`] = `
         type="submit"
         value="Submit"
       >
-        Next Section
+        Submit
       </Button>
     </Form>
   </CardBody>
