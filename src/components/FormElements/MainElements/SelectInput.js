@@ -5,7 +5,7 @@ import {
   Label,
   Input
 } from 'reactstrap';
-import isValid from '../isValid/isValid';
+import getValidity from '../getValidity/getValidity';
 
 const SelectInput = ({ 
   hasError, 
@@ -20,7 +20,7 @@ const SelectInput = ({
     <Input
       type="select"
       onChange={onChange}
-      valid={isValid(hasError, errorMessage)}
+      valid={getValidity(hasError, errorMessage)}
     >
       {
         options.map((option, i) => (

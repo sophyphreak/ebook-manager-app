@@ -1,4 +1,4 @@
-const isValid = (hasError, errorMessage) => {
+const getValidity = (hasError, errorMessage) => {
   if (!hasError) {
     return null;
   }
@@ -8,4 +8,4 @@ const isValid = (hasError, errorMessage) => {
   return true;
 };
 
-export default isValid;
+export default getValidity;

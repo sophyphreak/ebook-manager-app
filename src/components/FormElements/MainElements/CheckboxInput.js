@@ -4,7 +4,7 @@ import {
   Label, 
   Input
 } from 'reactstrap';
-import isValid from '../isValid/isValid';
+import getValidity from '../getValidity/getValidity';
 
 const CheckboxInput = ({
   hasError,
@@ -23,7 +23,7 @@ const CheckboxInput = ({
             value={option}
             onChange={onChange}
             checked={options[option]}
-            valid={isValid(hasError, errorMessage)}
+            valid={getValidity(hasError, errorMessage)}
           />
           <Label check>
             {option}

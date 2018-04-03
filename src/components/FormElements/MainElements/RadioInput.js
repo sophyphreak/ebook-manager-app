@@ -4,7 +4,7 @@ import {
   Label,
   Input
 } from 'reactstrap';
-import isValid from '../isValid/isValid';
+import getValidity from '../getValidity/getValidity';
 
 const RadioInput = ({ 
   hasError, 
@@ -24,7 +24,7 @@ const RadioInput = ({
             value={option}
             onChange={onChange}
             checked={value === option}
-            valid={isValid(hasError, errorMessage)}
+            valid={getValidity(hasError, errorMessage)}
           />
           <Label check>
             {option}
