@@ -1,4 +1,4 @@
-import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrder';
+import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const pressReleaseToNodemailer = ({
@@ -24,19 +24,19 @@ const pressReleaseToNodemailer = ({
     'Email': email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
+    'Start Date': startDate && startDate.format("MMMM Do YYYY"),
+    'End Date': endDate && endDate.format("MMMM Do YYYY"),
     'Website': website,
     'Keywords': keywords,
     'Press Release': releaseText
   };
   const {
-    bodyObject,
-    rowLabelOrder
-  } = getFilteredBodyAndOrder(rawBody);
+    body,
+    rowOrder
+  } = getBodyRowOrder(rawBody);
   const userEmail = email;
 
-  postToNodemailer(submissionType, bodyObject, rowLabelOrder, userEmail);
+  postToNodemailer(submissionType, body, rowOrder, userEmail);
 }
 
 export default pressReleaseToNodemailer;

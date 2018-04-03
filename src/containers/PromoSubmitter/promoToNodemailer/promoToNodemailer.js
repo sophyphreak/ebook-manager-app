@@ -1,4 +1,4 @@
-import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrder';
+import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const promoToNodemailer = ({
@@ -29,12 +29,12 @@ const promoToNodemailer = ({
     'Author Biography': authorBio
   };
   const {
-    bodyObject,
-    rowLabelOrder
-  } = getFilteredBodyAndOrder(rawBody);
+    body,
+    rowOrder
+  } = getBodyRowOrder(rawBody);
   const userEmail = email;
 
-  postToNodemailer(submissionType, bodyObject, rowLabelOrder, userEmail);
+  postToNodemailer(submissionType, body, rowOrder, userEmail);
 };
 
 export default promoToNodemailer;

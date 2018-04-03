@@ -1,4 +1,4 @@
-import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrder';
+import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const alertToNodemailer = ({
@@ -33,12 +33,12 @@ const alertToNodemailer = ({
   };
   console.log(rawBody);
   const {
-    bodyObject,
-    rowLabelOrder
-  } = getFilteredBodyAndOrder(rawBody);
+    body,
+    rowOrder
+  } = getBodyRowOrder(rawBody);
   const userEmail = email;
   
-  postToNodemailer(submissionType, bodyObject, rowLabelOrder, userEmail)
+  postToNodemailer(submissionType, body, rowOrder, userEmail)
 };
 
 export default alertToNodemailer;
