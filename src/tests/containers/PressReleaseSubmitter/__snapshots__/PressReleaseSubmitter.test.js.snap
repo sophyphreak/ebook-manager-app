@@ -2,14 +2,14 @@
 
 exports[`should render PressReleaseSubmitter correctly 1`] = `
 <PressReleaseComponent
-  amazonURL=""
+  amazonUrl=""
   calendarFocus={null}
   currentPage="PressReleasePage1"
   email=""
   endDate={null}
   error={
     Object {
-      "amazonURL": "",
+      "amazonUrl": "",
       "email": "",
       "fictionOrNonFiction": "",
       "genre": "",
@@ -24,7 +24,7 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
   fictionOrNonFiction=""
   genre=""
   keywords=""
-  onAmazonURLChange={[Function]}
+  onAmazonUrlChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
   onEmailChange={[Function]}

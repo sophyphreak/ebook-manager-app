@@ -9,7 +9,7 @@ beforeEach(() => {
     message: "",
     title: "",
     asin: "",
-    amazonURL: "",
+    amazonUrl: "",
     fictionOrNonFiction: "",
     genre: "",
     firstName: "",

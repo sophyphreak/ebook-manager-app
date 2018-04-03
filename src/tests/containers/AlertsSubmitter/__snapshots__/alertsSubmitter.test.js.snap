@@ -9,7 +9,7 @@ exports[`should render AlertsSubmitter correctly 1`] = `
       "Two weeks before": false,
     }
   }
-  amazonURL=""
+  amazonUrl=""
   calendarFocused={false}
   currentPage="AlertsPage"
   date={"2017-02-14T12:51:48.000Z"}
@@ -18,7 +18,7 @@ exports[`should render AlertsSubmitter correctly 1`] = `
   error={
     Object {
       "alertMe": "",
-      "amazonURL": "",
+      "amazonUrl": "",
       "email": "",
       "email2": "",
       "message": "",
@@ -27,7 +27,7 @@ exports[`should render AlertsSubmitter correctly 1`] = `
   }
   notes=""
   onAlertMeChange={[Function]}
-  onAmazonURLChange={[Function]}
+  onAmazonUrlChange={[Function]}
   onDateChange={[Function]}
   onEmail2Change={[Function]}
   onEmailChange={[Function]}

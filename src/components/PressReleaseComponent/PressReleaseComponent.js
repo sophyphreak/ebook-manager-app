@@ -15,7 +15,7 @@ const PressReleaseComponent = ({
   error,
 
   // PressReleasePage1
-  amazonURL,
+  amazonUrl,
   fictionOrNonFiction,
   genre,
   subGenre,
@@ -37,7 +37,7 @@ const PressReleaseComponent = ({
   onBack,
 
   // PressReleasePage1
-  onAmazonURLChange,
+  onAmazonUrlChange,
   onFictionOrNonFictionChange,
   onGenreChange,
   onSubGenreChange,
@@ -64,13 +64,13 @@ const PressReleaseComponent = ({
         currentPage === "PressReleasePage1" && (
           <PressReleasePage1
             error={error}
-            amazonURL={amazonURL}
+            amazonUrl={amazonUrl}
             fictionOrNonFiction={fictionOrNonFiction}
             genre={genre}
             subGenre={subGenre}
             email={email}
             
-            onAmazonURLChange={onAmazonURLChange}
+            onAmazonUrlChange={onAmazonUrlChange}
             onFictionOrNonFictionChange={onFictionOrNonFictionChange}
             onGenreChange={onGenreChange}
             onSubGenreChange={onSubGenreChange}

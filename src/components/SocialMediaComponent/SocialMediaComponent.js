@@ -15,7 +15,7 @@ const SocialMediaComponent = ({
   error,
 
   // SocialMediaPage1
-  amazonURL,
+  amazonUrl,
   fictionOrNonFiction,
   genre,
   subGenre,
@@ -38,7 +38,7 @@ const SocialMediaComponent = ({
   onBack,
 
   // SocialMediaPage1
-  onAmazonURLChange,
+  onAmazonUrlChange,
   onFictionOrNonFictionChange,
   onGenreChange,
   onSubGenreChange,
@@ -65,13 +65,13 @@ const SocialMediaComponent = ({
           currentPage === "SocialMediaPage1" && (
             <SocialMediaPage1
               error={error}
-              amazonURL={amazonURL}
+              amazonUrl={amazonUrl}
               fictionOrNonFiction={fictionOrNonFiction}
               genre={genre}
               subGenre={subGenre}
               email={email}
 
-              onAmazonURLChange={onAmazonURLChange}
+              onAmazonUrlChange={onAmazonUrlChange}
               onFictionOrNonFictionChange={onFictionOrNonFictionChange}
               onGenreChange={onGenreChange}
               onSubGenreChange={onSubGenreChange}

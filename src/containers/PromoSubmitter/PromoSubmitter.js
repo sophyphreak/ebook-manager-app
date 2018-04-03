@@ -11,7 +11,7 @@ export default class PromoSubmitter extends Component {
       currentPage: "PromoPage1",
       error: {
         message: "",
-        amazonURL: "",
+        amazonUrl: "",
         fictionOrNonFiction: "",
         genre: "",
         email: "",
@@ -23,7 +23,7 @@ export default class PromoSubmitter extends Component {
       },
 
       // PromoPage1
-      amazonURL: "",
+      amazonUrl: "",
       fictionOrNonFiction: "",
       genre: "",
       subGenre: "",
@@ -42,7 +42,7 @@ export default class PromoSubmitter extends Component {
     };
 
     // PromoPage1
-    this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
+    this.onAmazonUrlChange = this.onAmazonUrlChange.bind(this);
     this.onFictionOrNonFictionChange = this.onFictionOrNonFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
@@ -66,9 +66,9 @@ export default class PromoSubmitter extends Component {
 
   // PromoPage1
 
-  onAmazonURLChange(e) {
-    const amazonURL = e.target.value;
-    this.setState(() => ({ amazonURL }));
+  onAmazonUrlChange(e) {
+    const amazonUrl = e.target.value;
+    this.setState(() => ({ amazonUrl }));
   }
 
   onFictionOrNonFictionChange(e) {
@@ -94,23 +94,23 @@ export default class PromoSubmitter extends Component {
   onSubmitPromoPage1(e) {
     e.preventDefault();
     const {
-      amazonURL,
+      amazonUrl,
       fictionOrNonFiction,
       genre,
       email
     } = this.state;
     let error = {
       message: "",
-      amazonURL: "",
+      amazonUrl: "",
       fictionOrNonFiction: "",
       genre: "",
       email: ""
     };
 
-    if (!amazonURL) {
-      error.amazonURL = 'Please fill in an Amazon URL.';
-    } else if (!amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonURL = 'Please provide a valid Amazon.com URL.';
+    if (!amazonUrl) {
+      error.amazonUrl = 'Please fill in an Amazon URL.';
+    } else if (!amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+      error.amazonUrl = 'Please provide a valid Amazon.com URL.';
     };
     if (!fictionOrNonFiction) {
       error.fictionOrNonFiction = 'this will not render to screen';
@@ -124,7 +124,7 @@ export default class PromoSubmitter extends Component {
       error.email = 'Please provide a valid email address.';
     };
     if (
-      error.amazonURL ||
+      error.amazonUrl ||
       error.fictionOrNonFiction ||
       error.genre ||
       error.email
@@ -266,7 +266,7 @@ export default class PromoSubmitter extends Component {
       error,
       title,
       asin,
-      amazonURL,
+      amazonUrl,
       price,
       fictionOrNonFiction,
       genre,
@@ -286,7 +286,7 @@ export default class PromoSubmitter extends Component {
         error={error}
 
         // PromoPage1
-        amazonURL={amazonURL}
+        amazonUrl={amazonUrl}
         fictionOrNonFiction={fictionOrNonFiction}
         genre={genre}
         subGenre={subGenre}
@@ -307,7 +307,7 @@ export default class PromoSubmitter extends Component {
         onBack={this.onBack}
 
         // PromoPage1
-        onAmazonURLChange={this.onAmazonURLChange}
+        onAmazonUrlChange={this.onAmazonUrlChange}
         onFictionOrNonFictionChange={this.onFictionOrNonFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}

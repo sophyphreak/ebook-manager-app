@@ -7,7 +7,7 @@ import {
   Form
 } from 'reactstrap';
 
-import AmazonURL from '../../FormElements/AmazonURL';
+import AmazonUrl from '../../FormElements/AmazonUrl';
 import AlertMe from '../../FormElements/AlertMe';
 import SingleDate from '../../FormElements/SingleDate';
 import Notes from '../../FormElements/Notes';
@@ -16,8 +16,8 @@ import Email from '../../FormElements/Email';
 const AlertsPage = ({
   error,
 
-  amazonURL,
-  onAmazonURLChange,
+  amazonUrl,
+  onAmazonUrlChange,
 
   alertMe,
   onAlertMeChange,
@@ -45,12 +45,12 @@ const AlertsPage = ({
     </CardHeader>
     <CardBody>
       <Form onSubmit={onSubmitAlert}>
-        <AmazonURL
+        <AmazonUrl
           label="Amazon URL"
-          value={amazonURL}
-          onChange={onAmazonURLChange}
+          value={amazonUrl}
+          onChange={onAmazonUrlChange}
           hasError={!!error.message}
-          errorMessage={error.amazonURL}
+          errorMessage={error.amazonUrl}
         />
         <AlertMe
           label="Alert Me*"

@@ -8,7 +8,7 @@ import {
   Label
 } from 'reactstrap';
 
-import AmazonURL from '../../FormElements/AmazonURL';
+import AmazonUrl from '../../FormElements/AmazonUrl';
 import FictionOrNonFiction from '../../FormElements/FictionOrNonFiction';
 import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
@@ -18,8 +18,8 @@ const SocialMediaPage1 = ({
   error,
   onSubmit,
 
-  amazonURL,
-  onAmazonURLChange,
+  amazonUrl,
+  onAmazonUrlChange,
 
   fictionOrNonFiction,
   onFictionOrNonFictionChange,
@@ -39,12 +39,12 @@ const SocialMediaPage1 = ({
       </CardHeader>
       <CardBody>
         <Form onSubmit={onSubmit}>
-          <AmazonURL
+          <AmazonUrl
             label="Amazon URL*"
-            value={amazonURL}
-            onChange={onAmazonURLChange}
+            value={amazonUrl}
+            onChange={onAmazonUrlChange}
             hasError={!!error.message}
-            errorMessage={error.amazonURL}
+            errorMessage={error.amazonUrl}
           />
           <FictionOrNonFiction
             value={fictionOrNonFiction}

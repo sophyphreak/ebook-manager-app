@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import BasicInput from './MainElements/BasicInput';
 
-const AmazonURL = (props) => (
+const AmazonUrl = (props) => (
   <BasicInput
     {...props}
   />
 );
 
-export default AmazonURL;
+export default AmazonUrl;

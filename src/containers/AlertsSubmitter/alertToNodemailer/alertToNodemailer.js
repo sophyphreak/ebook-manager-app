@@ -2,7 +2,7 @@ import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrde
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const alertToNodemailer = ({
-  amazonURL,
+  amazonUrl,
   alertMe,
   date,
   notes,
@@ -22,7 +22,7 @@ const alertToNodemailer = ({
 
   const submissionType = 'Alert';
   const rawBody = {
-    'Amazon URL': amazonURL,
+    'Amazon URL': amazonUrl,
     'Alert Me': onTheDate,
     'Alert Me ': oneWeekBefore,
     'Alert Me  ': twoWeeksBefore,

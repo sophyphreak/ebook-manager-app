@@ -2,7 +2,7 @@ import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrde
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const socialMediaToNodemailer = ({
-  amazonURL,
+  amazonUrl,
   fictionOrNonFiction,
   genre,
   subGenre,
@@ -18,7 +18,7 @@ const socialMediaToNodemailer = ({
 }) => {
   const submissionType = 'Social Media Submission';
   let rawBody = {
-    'Amazon URL': amazonURL,
+    'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': fictionOrNonFiction,
     'Genre': genre,
     'Sub-genre': subGenre,

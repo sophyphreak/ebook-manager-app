@@ -20,7 +20,7 @@ exports[`should render AlertsPage correctly 1`] = `
     <Form
       tag="form"
     >
-      <AmazonURL
+      <AmazonUrl
         hasError={false}
         label="Amazon URL"
       />

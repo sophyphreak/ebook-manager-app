@@ -2,7 +2,7 @@ import getFilteredBodyAndOrder from '../../submitterUtils/getFilteredBodyAndOrde
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const pressReleaseToNodemailer = ({
-  amazonURL,
+  amazonUrl,
   fictionOrNonFiction,
   genre,
   subGenre,
@@ -17,7 +17,7 @@ const pressReleaseToNodemailer = ({
 }) => {
   const submissionType = 'Press Release';
   let rawBody = {
-    'Amazon URL': amazonURL,
+    'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': fictionOrNonFiction,
     'Genre': genre,
     'Sub-genre': subGenre,

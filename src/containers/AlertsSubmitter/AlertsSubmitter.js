@@ -11,13 +11,13 @@ export default class AlertsSubmitter extends Component {
       currentPage: 'AlertsPage',
       error: {
         message: "",
-        amazonURL: "",
+        amazonUrl: "",
         alertMe: "",
         notes: "",
         email: "",
         email2: ""
       },
-      amazonURL: "",
+      amazonUrl: "",
       alertMe: {
         'On the date': false,
         'One week before': false,
@@ -30,7 +30,7 @@ export default class AlertsSubmitter extends Component {
       email2: ""
     };
 
-    this.onAmazonURLChange = this.onAmazonURLChange.bind(this);
+    this.onAmazonUrlChange = this.onAmazonUrlChange.bind(this);
     this.onAlertMeChange = this.onAlertMeChange.bind(this);
     this.onDateChange = this.onDateChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
@@ -40,9 +40,9 @@ export default class AlertsSubmitter extends Component {
     this.onSubmitAlert = this.onSubmitAlert.bind(this);
   };
 
-  onAmazonURLChange(e) {
-    const amazonURL = e.target.value;
-    this.setState(() => ({ amazonURL }));
+  onAmazonUrlChange(e) {
+    const amazonUrl = e.target.value;
+    this.setState(() => ({ amazonUrl }));
   }
 
   onAlertMeChange(e) { 
@@ -80,7 +80,7 @@ export default class AlertsSubmitter extends Component {
   onSubmitAlert(e) {
     e.preventDefault();
     const {
-      amazonURL,
+      amazonUrl,
       alertMe,
       date,
       notes,
@@ -89,15 +89,15 @@ export default class AlertsSubmitter extends Component {
     } = this.state;
     let error = {
       message: "",
-      amazonURL: "",
+      amazonUrl: "",
       alertMe: "",
       alertDate: "",
       notes: "",
       email: "",
       email2: ""
     }; 
-    if (amazonURL && !amazonURL.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonURL = 'Please provide a valid Amazon.com URL.';
+    if (amazonUrl && !amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
+      error.amazonUrl = 'Please provide a valid Amazon.com URL.';
     };
     if (
       alertMe['On the date'] === false &&
@@ -118,7 +118,7 @@ export default class AlertsSubmitter extends Component {
       error.email2 = 'Please provide a valid email adddress.';
     }
     if (
-      error.amazonURL ||
+      error.amazonUrl ||
       error.alertMe ||
       error.email ||
       error.email2
@@ -141,7 +141,7 @@ export default class AlertsSubmitter extends Component {
     const {
       currentPage,
       error,
-      amazonURL,
+      amazonUrl,
       alertMe,
       date,
       calendarFocused,
@@ -153,7 +153,7 @@ export default class AlertsSubmitter extends Component {
       <AlertsComponent
         currentPage={currentPage}
         error={error}
-        amazonURL={amazonURL}
+        amazonUrl={amazonUrl}
         alertMe={alertMe}
         date={date}
         calendarFocused={calendarFocused}
@@ -161,7 +161,7 @@ export default class AlertsSubmitter extends Component {
         email={email}
         email2={email2}
 
-        onAmazonURLChange={this.onAmazonURLChange}
+        onAmazonUrlChange={this.onAmazonUrlChange}
         onAlertMeChange={this.onAlertMeChange}
         onDateChange={this.onDateChange}
         onFocusChange={this.onFocusChange}

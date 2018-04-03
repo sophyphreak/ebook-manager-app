@@ -2,14 +2,14 @@
 
 exports[`should render SocialMediaSubmitter correctly 1`] = `
 <SocialMediaComponent
-  amazonURL=""
+  amazonUrl=""
   calendarFocus={null}
   currentPage="SocialMediaPage1"
   email=""
   endDate={null}
   error={
     Object {
-      "amazonURL": "",
+      "amazonUrl": "",
       "email": "",
       "facebook": "",
       "fictionOrNonFiction": "",
@@ -27,7 +27,7 @@ exports[`should render SocialMediaSubmitter correctly 1`] = `
   genre=""
   keywords=""
   notes=""
-  onAmazonURLChange={[Function]}
+  onAmazonUrlChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
   onEmailChange={[Function]}
