@@ -22,11 +22,11 @@ const CheckboxInput = ({
             type="checkbox"
             value={option}
             onChange={onChange}
-            checked={options[option]}
+            checked={options[option].isActive}
             valid={getValidity(hasError, errorMessage)}
           />
           <Label check>
-            {option}
+            {options[option].text}
           </Label>
         </FormGroup>
       ))

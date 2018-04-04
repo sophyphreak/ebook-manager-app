@@ -9,23 +9,18 @@ const alertToNodemailer = ({
   email,
   email2
 }) => {
-  let onTheDate, oneWeekBefore, twoWeeksBefore;
-  if (alertMe['On the date']) {
-    onTheDate = 'On the date';
-  };
-  if (alertMe['One week before']) {
-    oneWeekBefore = 'One week before';
-  };
-  if (alertMe['Two weeks before']) {
-    twoWeeksBefore = 'Two weeks before';
-  };
+  const {
+    onTheDate,
+    oneWeekBefore,
+    twoWeeksBefore
+  } = alertMe;
 
   const submissionType = 'Alert';
   const rawBody = {
     'Amazon URL': amazonUrl,
-    'Alert Me': onTheDate,
-    'Alert Me ': oneWeekBefore,
-    'Alert Me  ': twoWeeksBefore,
+    'Alert Me': onTheDate.isActive && onTheDate.text,
+    'Alert Me ': oneWeekBefore.isActive && oneWeekBefore.text,
+    'Alert Me  ': twoWeeksBefore.isActive && twoWeeksBefore.text,
     'Date': date.format("MMMM Do YYYY"),
     'Notes/Other Info': notes,
     'Email to nofify': email,

@@ -4,9 +4,18 @@ exports[`should render AlertsSubmitter correctly 1`] = `
 <AlertsComponent
   alertMe={
     Object {
-      "On the date": false,
-      "One week before": false,
-      "Two weeks before": false,
+      "onTheDate": Object {
+        "isActive": false,
+        "text": "On the date",
+      },
+      "oneWeekBefore": Object {
+        "isActive": false,
+        "text": "One week before",
+      },
+      "twoWeeksBefore": Object {
+        "isActive": false,
+        "text": "Two weeks before",
+      },
     }
   }
   amazonUrl=""

@@ -19,9 +19,18 @@ export default class AlertsSubmitter extends Component {
       },
       amazonUrl: "",
       alertMe: {
-        'On the date': false,
-        'One week before': false,
-        'Two weeks before': false
+        onTheDate: {
+          text: 'On the date',
+          isActive: false
+        },
+        oneWeekBefore: {
+          text: 'One week before',
+          isActive: false
+        },
+        twoWeeksBefore: {
+          text: 'Two weeks before',
+          isActive: false
+        },
       },
       date: moment(),
       calendarFocused: false, 
@@ -48,7 +57,7 @@ export default class AlertsSubmitter extends Component {
   onAlertMeChange(e) { 
     const option = e.target.value;
     let alertMe = this.state.alertMe;
-    alertMe[option] = !alertMe[option];
+    alertMe[option].isActive = !alertMe[option].isActive;
     this.setState(() => ({ alertMe }));
   }
 
