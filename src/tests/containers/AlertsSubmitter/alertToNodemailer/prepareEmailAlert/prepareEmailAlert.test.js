@@ -9,12 +9,18 @@ test('should convert min alert into correct object', () => {
     rowOrder,
     userEmail
   } = prepared;
+  const {
+    alertMe,
+    date,
+    notes,
+    email
+  } = alerts.min;
   expect(submissionType).toBe('Alert');
   expect(emailBody).toEqual({
-    'Alert Me ': 'One week before',
-    'Date': 'December 28th 2050',
-    'Notes/Other Info': 'Min notes.',
-    'Email to notify': 'example@example.email',
+    'Alert Me ': alertMe.oneWeekBefore.text,
+    'Date': date.format("MMMM Do YYYY"),
+    'Notes/Other Info': notes,
+    'Email to notify': email,
   });
   expect(rowOrder).toEqual([
     'Alert Me ',
@@ -33,16 +39,24 @@ test('should convert max alert into correct object', () => {
     rowOrder,
     userEmail
   } = prepared;
+  const {
+    amazonUrl,
+    alertMe,
+    date,
+    notes,
+    email,
+    email2
+  } = alerts.max;
   expect(submissionType).toBe('Alert');
   expect(emailBody).toEqual({
-    'Amazon URL': 'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
-    'Alert Me': 'On the date',
-    'Alert Me ': 'One week before',
-    'Alert Me  ': 'Two weeks before',
-    'Date': 'December 28th 2050',
-    'Notes/Other Info': 'These are some notes.',
-    'Email to notify': 'example@example.email',
-    'Secondary email': 'secondexample@example.email'
+    'Amazon URL': amazonUrl,
+    'Alert Me': alertMe.onTheDate.text,
+    'Alert Me ': alertMe.oneWeekBefore.text,
+    'Alert Me  ': alertMe.twoWeeksBefore.text,
+    'Date': date.format("MMMM Do YYYY"),
+    'Notes/Other Info': notes,
+    'Email to notify': email,
+    'Secondary email': email2
   });
   expect(rowOrder).toEqual([
     'Amazon URL',
