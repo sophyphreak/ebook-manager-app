@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
-import pressReleaseToNodemailer from './pressReleaseToNodemailer/pressReleaseToNodemailer';
+import prepareEmailRelease from './prepareEmailRelease/prepareEmailRelease'
+import postToNodemailer from "../submitterUtils/postToNodemailer";
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
@@ -254,7 +255,13 @@ export default class PressReleaseSubmitter extends Component {
         currentPage
       }));
 
-      pressReleaseToNodemailer(this.state);
+      const {
+        submissionType,
+        emailBody,
+        rowOrder,
+        userEmail
+      } = prepareEmailRelease(this.state);
+      postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
     }
   }
 

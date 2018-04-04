@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import PromoComponent from '../../components/PromoComponent/PromoComponent';
-import promoToNodemailer from './promoToNodemailer/promoToNodemailer';
+import prepareEmailPromo from './prepareEmailPromo/prepareEmailPromo';
+import postToNodemailer from '../submitterUtils/postToNodemailer';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -245,7 +246,13 @@ export default class PromoSubmitter extends Component {
         currentPage 
       }));
 
-      promoToNodemailer(this.state);
+      const {
+        submissionType,
+        emailBody,
+        rowOrder,
+        userEmail
+      } = prepareEmailPromo(this.state);
+      postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
     }
   }
 

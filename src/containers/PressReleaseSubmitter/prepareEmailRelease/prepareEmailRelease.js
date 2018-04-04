@@ -1,7 +1,6 @@
 import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
-import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
-const promoToNodemailer = ({
+const prepareEmailRelease = ({
   amazonUrl,
   fictionOrNonFiction,
   genre,
@@ -11,10 +10,11 @@ const promoToNodemailer = ({
   promoType,
   startDate,
   endDate,
-  description,
-  authorBio
+  website,
+  keywords,
+  releaseText
 }) => {
-  const submissionType = 'Book Promotion';
+  const submissionType = 'Press Release';
   let rawBody = {
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': fictionOrNonFiction,
@@ -23,18 +23,24 @@ const promoToNodemailer = ({
     'Email': email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
-    'Description': description,
-    'Author Biography': authorBio
+    'Start Date': startDate && startDate.format("MMMM Do YYYY"),
+    'End Date': endDate && endDate.format("MMMM Do YYYY"),
+    'Website': website,
+    'Keywords': keywords,
+    'Press Release': releaseText
   };
   const {
-    body,
+    emailBody,
     rowOrder
   } = getBodyRowOrder(rawBody);
   const userEmail = email;
 
-  postToNodemailer(submissionType, body, rowOrder, userEmail);
-};
+  return {
+    submissionType,
+    emailBody,
+    rowOrder,
+    userEmail
+  }
+}
 
-export default promoToNodemailer;
+export default prepareEmailRelease;

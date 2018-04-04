@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
-import socialMediaToNodemailer from './socialMediaToNodemailer/socialMediaToNodemailer';
+import prepareEmailMedia from './prepareEmailMedia/prepareEmailMedia';
+import postToNodemailer from "../submitterUtils/postToNodemailer";
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
@@ -230,8 +231,14 @@ export default class SocialMediaSubmitter extends Component {
     this.setState(() => ({
       currentPage
     }));
-
-    socialMediaToNodemailer(this.state);
+  
+    const {
+      submissionType,
+      emailBody,
+      rowOrder,
+      userEmail
+    } = prepareEmailMedia(this.state);
+    postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
   }
 
   onBack(e) {
