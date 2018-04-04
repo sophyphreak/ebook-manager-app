@@ -22,7 +22,7 @@ const prepareEmailAlert = ({
     'Alert Me  ': twoWeeksBefore.isActive && twoWeeksBefore.text,
     'Date': date.format("MMMM Do YYYY"),
     'Notes/Other Info': notes,
-    'Email to nofify': email,
+    'Email to notify': email,
     'Secondary email': email2
   };
   console.log(rawBody);
