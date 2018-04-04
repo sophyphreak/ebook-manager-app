@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
-import prepareEmailAlert from './prepareEmailAlert/prepareEmailAlert';
-import postToNodemailer from "../submitterUtils/postToNodemailer";
+import alertToNodemailer from './alertToNodemailer/alertToNodemailer';
 
 export default class AlertsSubmitter extends Component {
   constructor(props) {
@@ -149,13 +148,7 @@ export default class AlertsSubmitter extends Component {
         currentPage
       }));
 
-      const {
-        submissionType,
-        emailBody,
-        rowOrder,
-        userEmail
-      } = prepareEmailAlert(this.state);
-      postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
+      alertToNodemailer(this.state);
     };
   };
   
