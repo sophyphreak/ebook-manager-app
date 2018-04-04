@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
-import alertToNodemailer from './alertToNodemailer/alertToNodemailer';
+import prepareEmailAlert from './prepareEmailAlert/prepareEmailAlert';
+import postToNodemailer from "../submitterUtils/postToNodemailer";
 
 export default class AlertsSubmitter extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export default class AlertsSubmitter extends Component {
       },
       date: moment(),
       calendarFocused: false, 
-      notes: "",
+      notes: "", 
       email: "",
       email2: ""
     };
@@ -96,6 +97,11 @@ export default class AlertsSubmitter extends Component {
       email,
       email2
     } = this.state;
+    const {
+      onTheDate,
+      oneWeekBefore,
+      twoWeeksBefore
+    } = alertMe;
     let error = {
       message: "",
       amazonUrl: "",
@@ -109,9 +115,9 @@ export default class AlertsSubmitter extends Component {
       error.amazonUrl = 'Please provide a valid Amazon.com URL.';
     };
     if (
-      alertMe['On the date'] === false &&
-      alertMe['One week before'] === false &&
-      alertMe['Two weeks before'] === false
+      !onTheDate.isActive &&
+      !oneWeekBefore.isActive &&
+      !twoWeeksBefore.isActive
     ) {
       error.alertMe = 'This will not render.';
     }
@@ -142,7 +148,14 @@ export default class AlertsSubmitter extends Component {
         error,
         currentPage
       }));
-      alertToNodemailer(this.state);
+
+      const {
+        submissionType,
+        emailBody,
+        rowOrder,
+        userEmail
+      } = prepareEmailAlert(this.state);
+      postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
     };
   };
   

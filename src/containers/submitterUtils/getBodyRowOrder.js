@@ -6,9 +6,9 @@ const getBodyRowOrder = (rawBody) => {
     };
     delete rawBody[row];
   });
-  const body = rawBody;
+  const emailBody = rawBody;
   return {
-    body,
+    emailBody,
     rowOrder
   };
 };

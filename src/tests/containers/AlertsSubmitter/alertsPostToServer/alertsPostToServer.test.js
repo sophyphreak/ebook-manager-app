@@ -1,5 +1,6 @@
-import alertToNodemailer from '../../../../containers/AlertsSubmitter/alertToNodemailer/alertToNodemailer';
+import prepareEmailAlert from '../../../../containers/AlertsSubmitter/prepareEmailAlert/prepareEmailAlert';
+import alert from '../../fixtures/alert';
 
-test('1 should equal 1', () => {
+test('Should correctly transform alert into email data', () => {
   expect(1).toBe(1);
 });

@@ -1,7 +1,6 @@
 import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
-import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
-const alertToNodemailer = ({
+const prepareEmailAlert = ({
   amazonUrl,
   alertMe,
   date,
@@ -28,12 +27,17 @@ const alertToNodemailer = ({
   };
   console.log(rawBody);
   const {
-    body,
+    emailBody,
     rowOrder
   } = getBodyRowOrder(rawBody);
   const userEmail = email;
   
-  postToNodemailer(submissionType, body, rowOrder, userEmail)
+  return {
+    submissionType, 
+    emailBody, 
+    rowOrder, 
+    userEmail
+  };
 };
 
-export default alertToNodemailer;
+export default prepareEmailAlert;
