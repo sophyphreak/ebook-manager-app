@@ -1,4 +1,4 @@
-import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
+import getBodyRowOrder from '../../../submitterUtils/getBodyRowOrder';
 
 const prepareEmailPromo = ({
   amazonUrl,

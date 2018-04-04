@@ -1,4 +1,4 @@
-import prepareEmailMedia from '../prepareEmailMedia/prepareEmailMedia';
+import prepareEmailMedia from './prepareEmailMedia/prepareEmailMedia';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const mediaToNodemailer = (state) => {

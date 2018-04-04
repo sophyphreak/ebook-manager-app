@@ -1,4 +1,4 @@
-import prepareEmailAlert from '../prepareEmailAlert/prepareEmailAlert';
+import prepareEmailAlert from './prepareEmailAlert/prepareEmailAlert';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const alertToNodemailer = (state) => {

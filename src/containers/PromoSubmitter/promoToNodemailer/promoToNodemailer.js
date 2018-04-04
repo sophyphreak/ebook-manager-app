@@ -1,4 +1,4 @@
-import prepareEmailPromo from '../prepareEmailPromo/prepareEmailPromo';
+import prepareEmailPromo from './prepareEmailPromo/prepareEmailPromo';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const promoToNodemailer = (state) => {

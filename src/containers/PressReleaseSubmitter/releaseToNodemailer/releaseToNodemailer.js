@@ -1,4 +1,4 @@
-import prepareEmailRelease from '../prepareEmailRelease/prepareEmailRelease';
+import prepareEmailRelease from './prepareEmailRelease/prepareEmailRelease';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
 const releaseToNodemailer = (state) => {

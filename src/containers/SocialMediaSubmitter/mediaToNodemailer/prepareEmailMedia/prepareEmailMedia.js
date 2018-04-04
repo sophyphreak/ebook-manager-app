@@ -1,33 +1,35 @@
-import getBodyRowOrder from '../../submitterUtils/getBodyRowOrder';
+import getBodyRowOrder from '../../../submitterUtils/getBodyRowOrder';
 
-const prepareEmailRelease = ({
+const prepareEmailMedia = ({
   amazonUrl,
   fictionOrNonFiction,
   genre,
   subGenre,
   email,
-  price,
-  promoType,
+  regPrice,
+  salePrice,
   startDate,
   endDate,
-  website,
   keywords,
-  releaseText
+  tweet,
+  facebook,
+  notes
 }) => {
-  const submissionType = 'Press Release';
+  const submissionType = 'Social Media Submission';
   let rawBody = {
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': fictionOrNonFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,
-    'Regular Price': price,
-    'Promo Type': promoType,
+    'Regular Price': regPrice,
+    'Sale Price': salePrice,
     'Start Date': startDate && startDate.format("MMMM Do YYYY"),
     'End Date': endDate && endDate.format("MMMM Do YYYY"),
-    'Website': website,
     'Keywords': keywords,
-    'Press Release': releaseText
+    'Tweet': tweet,
+    'Facebook / Other social media post': facebook,
+    'Notes': notes
   };
   const {
     emailBody,
@@ -40,7 +42,7 @@ const prepareEmailRelease = ({
     emailBody,
     rowOrder,
     userEmail
-  }
-}
+  };
+};
 
-export default prepareEmailRelease;
+export default prepareEmailMedia;
