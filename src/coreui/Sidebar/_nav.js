@@ -17,11 +17,7 @@ export default {
     {
       name: 'Social Media',
       url: '/social-media-submitter',
-      icon: 'icon-people',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-    }
+      icon: 'icon-people'
     },
     {
       name: 'Press Release',
@@ -32,6 +28,15 @@ export default {
       name: 'Alerts Submitter',
       url: '/alerts-submitter',
       icon: 'icon-bell'
+    },
+    {
+      name: 'Sales Estimator',
+      url: '/sales-estimator',
+      icon: 'icon-wallet',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
     },
     {
       name: 'Quill HTML Gen',
@@ -46,6 +51,7 @@ export default {
     {
       name: 'Draft Playground',
       url: '/draft-playground',
+      icon: 'icon-docs'
     },
     {
       name: 'Playground',
