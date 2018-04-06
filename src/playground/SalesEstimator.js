@@ -31,7 +31,7 @@ export default class SalesEstimator extends Component {
 
   render() {
     return (
-      <Row>
+      <Row className="animated fadeIn">
         <Col xs="12" sm={{ size: 6, offset: 3 }}>
           <Card>
             <CardHeader>
