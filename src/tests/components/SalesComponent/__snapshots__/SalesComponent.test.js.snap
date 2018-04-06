@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SalesComponent correctly 1`] = `
+<Row
+  className="animated fadeIn"
+  tag="div"
+>
+  <Col
+    sm={
+      Object {
+        "offset": 3,
+        "size": 6,
+      }
+    }
+    tag="div"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
+    xs="12"
+  >
+    <Card
+      tag="div"
+    >
+      <CardHeader
+        tag="div"
+      >
+        <h4>
+          <strong>
+            Sales Estimator
+          </strong>
+        </h4>
+      </CardHeader>
+      <CardBody
+        tag="div"
+      >
+        <BasicInput
+          label="Enter BSR"
+        />
+        <br />
+      </CardBody>
+    </Card>
+  </Col>
+</Row>
+`;

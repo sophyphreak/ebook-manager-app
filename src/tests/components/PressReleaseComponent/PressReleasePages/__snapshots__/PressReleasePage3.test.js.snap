@@ -46,7 +46,7 @@ exports[`should render PressReleasePage3 correctly 1`] = `
         type="submit"
         value="Submit"
       >
-        Next Section
+        Submit
       </Button>
     </Form>
   </CardBody>

@@ -71,14 +71,6 @@ exports[`should render Sidebar correctly 1`] = `
             className="icon-people"
           />
           Social Media
-          <Badge
-            className=""
-            color="info"
-            pill={false}
-            tag="span"
-          >
-            NEW
-          </Badge>
         </NavLink>
       </NavItem>
       <NavItem
@@ -127,6 +119,32 @@ exports[`should render Sidebar correctly 1`] = `
           ariaCurrent="true"
           className="nav-link"
           onClick={[Function]}
+          to="/sales-estimator"
+        >
+          <i
+            className="icon-wallet"
+          />
+          Sales Estimator
+          <Badge
+            className=""
+            color="info"
+            pill={false}
+            tag="span"
+          >
+            NEW
+          </Badge>
+        </NavLink>
+      </NavItem>
+      <NavItem
+        className=""
+        key="6"
+        tag="li"
+      >
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav-link"
+          onClick={[Function]}
           to="/quill-html-gen"
         >
           <i
@@ -137,7 +155,7 @@ exports[`should render Sidebar correctly 1`] = `
       </NavItem>
       <NavItem
         className=""
-        key="6"
+        key="7"
         tag="li"
       >
         <NavLink
@@ -155,7 +173,7 @@ exports[`should render Sidebar correctly 1`] = `
       </NavItem>
       <NavItem
         className=""
-        key="7"
+        key="8"
         tag="li"
       >
         <NavLink
@@ -166,14 +184,14 @@ exports[`should render Sidebar correctly 1`] = `
           to="/draft-playground"
         >
           <i
-            className=""
+            className="icon-docs"
           />
           Draft Playground
         </NavLink>
       </NavItem>
       <NavItem
         className=""
-        key="8"
+        key="9"
         tag="li"
       >
         <NavLink
@@ -191,7 +209,7 @@ exports[`should render Sidebar correctly 1`] = `
       </NavItem>
       <NavItem
         className=""
-        key="9"
+        key="10"
         tag="li"
       >
         <NavLink
