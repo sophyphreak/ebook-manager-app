@@ -11,10 +11,10 @@ import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import SocialMediaSubmitter from '../SocialMediaSubmitter/SocialMediaSubmitter';
 import PressReleaseSubmitter from '../PressReleaseSubmitter/PressReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
+import SalesEstimator from '../SalesEstimator/SalesEstimator';
 import QuillPlayground from '../../playground/QuillPlayground';
 import QuillTheWorks from '../../playground/QuillTheWorks'
 import DraftPlayground from '../../playground/DraftPlayground';
-import SalesEstimator from '../../playground/SalesEstimator';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
 import NotFoundPage from '../../components/NotFoundPage';
