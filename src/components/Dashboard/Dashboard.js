@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import nothingToSeeGif from '../../../public/img/nothing-to-see-here.gif';
 
 class Dashboard extends Component {
 
@@ -6,7 +7,7 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <h4>Your Dashboard</h4>
-        <p>Nothing here. Oh no!</p>
+        <img src={nothingToSeeGif} />
       </div>
     )
   }
