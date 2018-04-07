@@ -1,14 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Dashboard correctly 1`] = `
-<div
+<Row
   className="animated fadeIn"
+  tag="div"
 >
-  <h4>
-    Your Dashboard
-  </h4>
-  <p>
-    Nothing here. Oh no!
-  </p>
-</div>
+  <Col
+    sm={
+      Object {
+        "offset": 3,
+        "size": 6,
+      }
+    }
+    tag="div"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
+    xs="12"
+  >
+    <h4>
+      Your Dashboard
+    </h4>
+    <img
+      src="test-file-stub"
+    />
+  </Col>
+</Row>
 `;

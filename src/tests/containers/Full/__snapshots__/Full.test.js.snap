@@ -45,6 +45,11 @@ exports[`should render Full correctly 1`] = `
           />
           <Route
             component={[Function]}
+            name="Sales Estimator"
+            path="/sales-estimator"
+          />
+          <Route
+            component={[Function]}
             name="Quill HTML Gen"
             path="/quill-html-gen"
           />
