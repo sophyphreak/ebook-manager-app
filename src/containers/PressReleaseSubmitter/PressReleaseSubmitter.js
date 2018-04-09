@@ -31,7 +31,7 @@ export default class PressReleaseSubmitter extends Component {
 
       // PressReleasePage2
       price: "",
-      promoType: "",
+      promoType: "Free (Limited Time)",
       startDate: null,
       endDate: null,
       calendarFocus: null,

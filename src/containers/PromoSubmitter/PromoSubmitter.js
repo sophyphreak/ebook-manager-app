@@ -31,7 +31,7 @@ export default class PromoSubmitter extends Component {
       
       // PromoPage2
       price: "",
-      promoType: "",
+      promoType: "Free (Limited Time)",
       startDate: moment(),
       endDate: moment(),
       calendarFocus: null,
