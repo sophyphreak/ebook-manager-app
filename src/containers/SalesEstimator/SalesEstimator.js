@@ -7,9 +7,11 @@ export default class SalesEstimator extends Component {
     super(props);
     this.state = {
       bsr: '',
-      sales: ''
+      kindleOrPrint: 'Kindle book',
+      sales: '',
     };
     this.onBsrChange = this.onBsrChange.bind(this);
+    this.onKindleOrPrintChange = this.onKindleOrPrintChange.bind(this);
   }
 
   onBsrChange(e) {
@@ -20,17 +22,25 @@ export default class SalesEstimator extends Component {
     }
   };
 
+  onKindleOrPrintChange(e) {
+    const kindleOrPrint = e.target.value;
+    this.setState(() => ({ kindleOrPrint }));
+  };
+
   render() {
     const {
       bsr,
-      sales
+      kindleOrPrint,
+      sales,
     } = this.state;
     
     return( 
       <SalesComponent 
         bsr={bsr}
+        kindleOrPrint={kindleOrPrint}
         sales={sales}
         onBsrChange={this.onBsrChange}
+        onKindleOrPrintChange={this.onKindleOrPrintChange}
       />
     );
   };

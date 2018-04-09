@@ -11,11 +11,14 @@ import {
 } from 'reactstrap';
 
 import BasicInput from '../FormElements/MainElements/BasicInput';
+import KindleOrPrint from '../FormElements/KindleOrPrint';
 
 const SalesComponent = ({
   bsr,
+  kindleOrPrint,
   sales,
-  onBsrChange
+  onBsrChange,
+  onKindleOrPrintChange
 }) => (
   <Row className="animated fadeIn">
     <Col xs="12" sm={{ size: 6, offset: 3 }}>
@@ -24,6 +27,10 @@ const SalesComponent = ({
           <h4><strong>Sales Estimator</strong></h4>
         </CardHeader>
         <CardBody>
+          <KindleOrPrint 
+            kindleOrPrint={kindleOrPrint}
+            onKindleOrPrintChange={onKindleOrPrintChange}
+          />
           <BasicInput
             label="Enter BSR"
             onChange={onBsrChange}
