@@ -24,7 +24,7 @@ export default class PromoSubmitter extends Component {
 
       // PromoPage1
       amazonUrl: "",
-      fictionOrNonFiction: "",
+      fictionOrNonFiction: "Non-fiction",
       genre: "",
       subGenre: "",
       email: "",

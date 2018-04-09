@@ -24,7 +24,7 @@ export default class PressReleaseSubmitter extends Component {
 
       // PressReleasePage1
       amazonUrl: "",
-      fictionOrNonFiction: "",
+      fictionOrNonFiction: "Non-fiction",
       genre: "",
       subGenre: "",
       email: "",

@@ -25,7 +25,7 @@ export default class SocialMediaSubmitter extends Component {
 
       // SocialMediaPage1
       amazonUrl: "",
-      fictionOrNonFiction: "",
+      fictionOrNonFiction: "Non-fiction",
       genre: "",
       subGenre: "",
       email: "",

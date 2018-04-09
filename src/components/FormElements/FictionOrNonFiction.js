@@ -4,7 +4,7 @@ import RadioHorizontal from './MainElements/RadioHorizontal';
 const FictionOrNonFiction = (props) => (
   <RadioHorizontal
     label=""
-    options={['Fiction', 'Non-fiction *']}
+    options={['Non-fiction', 'Fiction']}
     {...props}
   />
 );
