@@ -43,8 +43,8 @@ const PromoPage2 = ({
           />
           <PromoType
             label="Select Promotion Type*"          
-            value={promoType}
-            onChange={onPromoTypeChange}
+            promoType={promoType}
+            onPromoTypeChange={onPromoTypeChange}
             hasError={!!error.message}
             errorMessage={error.promoType}
           />
