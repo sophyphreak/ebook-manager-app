@@ -23,8 +23,8 @@ exports[`should render SocialMediaSubmitter correctly 1`] = `
     }
   }
   facebook=""
-  fictionOrNonFiction=""
-  genre=""
+  fictionOrNonFiction="Non-fiction"
+  genre="Please select"
   keywords=""
   notes=""
   onAmazonUrlChange={[Function]}

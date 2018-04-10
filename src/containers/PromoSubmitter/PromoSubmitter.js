@@ -3,6 +3,8 @@ import moment from "moment";
 
 import PromoComponent from '../../components/PromoComponent/PromoComponent';
 import promoToNodemailer from "./promoToNodemailer/promoToNodemailer";
+import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
+import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -24,14 +26,14 @@ export default class PromoSubmitter extends Component {
 
       // PromoPage1
       amazonUrl: "",
-      fictionOrNonFiction: "Non-fiction",
-      genre: "",
+      fictionOrNonFiction: nonFictionOrFictionOptions[0],
+      genre: "Please select",
       subGenre: "",
       email: "",
       
       // PromoPage2
       price: "",
-      promoType: "Free (Limited Time)",
+      promoType: promoTypeOptions[0],
       startDate: moment(),
       endDate: moment(),
       calendarFocus: null,

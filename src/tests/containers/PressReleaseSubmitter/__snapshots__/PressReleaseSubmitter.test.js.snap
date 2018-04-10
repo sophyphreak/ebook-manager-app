@@ -21,8 +21,8 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
       "website": "",
     }
   }
-  fictionOrNonFiction=""
-  genre=""
+  fictionOrNonFiction="Non-fiction"
+  genre="Please select"
   keywords=""
   onAmazonUrlChange={[Function]}
   onBack={[Function]}
@@ -41,7 +41,7 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
   onSubmitPressReleasePage3={[Function]}
   onWebsiteChange={[Function]}
   price=""
-  promoType=""
+  promoType="Free (Limited Time)"
   releaseText=""
   startDate={null}
   subGenre=""

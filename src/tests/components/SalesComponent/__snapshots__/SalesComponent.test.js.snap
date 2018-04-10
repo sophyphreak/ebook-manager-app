@@ -39,6 +39,7 @@ exports[`should render SalesComponent correctly 1`] = `
       <CardBody
         tag="div"
       >
+        <KindleOrPrint />
         <BasicInput
           label="Enter BSR"
         />

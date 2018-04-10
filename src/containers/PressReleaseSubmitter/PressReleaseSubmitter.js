@@ -3,6 +3,9 @@ import moment from "moment";
 
 import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
 import releaseToNodemailer from './releaseToNodemailer/releaseToNodemailer';
+import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
+import genreOptions from "../../components/FormElements/options/genreOptions";
+import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';  
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
@@ -24,14 +27,14 @@ export default class PressReleaseSubmitter extends Component {
 
       // PressReleasePage1
       amazonUrl: "",
-      fictionOrNonFiction: "Non-fiction",
-      genre: "",
+      fictionOrNonFiction: nonFictionOrFictionOptions[0],
+      genre: genreOptions[0],
       subGenre: "",
       email: "",
 
       // PressReleasePage2
       price: "",
-      promoType: "Free (Limited Time)",
+      promoType: promoTypeOptions[0],
       startDate: null,
       endDate: null,
       calendarFocus: null,

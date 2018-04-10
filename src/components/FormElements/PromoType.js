@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RadioInput from './MainElements/RadioInput';
+import promoTypeOptions from './options/promoTypeOptions';
 
 const PromoTypes = ({
   promoType,
@@ -7,7 +8,7 @@ const PromoTypes = ({
   ...props
 }) => (
   <RadioInput
-    options={['Free (Limited Time)', '99 cents', 'Perma Free']}
+    options={promoTypeOptions}
     value={promoType}
     onChange={onPromoTypeChange}
     {...props}

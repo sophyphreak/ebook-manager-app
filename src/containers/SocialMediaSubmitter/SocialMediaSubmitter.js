@@ -3,6 +3,8 @@ import moment from "moment";
 
 import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
 import mediaToNodemailer from "./mediaToNodemailer/mediaToNodemailer";
+import genreOptions from "../../components/FormElements/options/genreOptions";
+import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
@@ -25,8 +27,8 @@ export default class SocialMediaSubmitter extends Component {
 
       // SocialMediaPage1
       amazonUrl: "",
-      fictionOrNonFiction: "Non-fiction",
-      genre: "",
+      fictionOrNonFiction: nonFictionOrFictionOptions[0],
+      genre: genreOptions[0],
       subGenre: "",
       email: "",
 

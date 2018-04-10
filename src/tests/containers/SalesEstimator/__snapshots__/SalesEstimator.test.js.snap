@@ -3,7 +3,9 @@
 exports[`should render SalesEstimator correctly 1`] = `
 <SalesComponent
   bsr=""
+  kindleOrPrint="Kindle book"
   onBsrChange={[Function]}
+  onKindleOrPrintChange={[Function]}
   sales=""
 />
 `;

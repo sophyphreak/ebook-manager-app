@@ -23,8 +23,8 @@ exports[`should render PromoSubmitter correctly 1`] = `
       "promoType": "",
     }
   }
-  fictionOrNonFiction=""
-  genre=""
+  fictionOrNonFiction="Non-fiction"
+  genre="Please select"
   onAmazonUrlChange={[Function]}
   onAuthorBioChange={[Function]}
   onBack={[Function]}
@@ -41,7 +41,7 @@ exports[`should render PromoSubmitter correctly 1`] = `
   onSubmitPromoPage2={[Function]}
   onSubmitPromoPage3={[Function]}
   price=""
-  promoType=""
+  promoType="Free (Limited Time)"
   startDate={"2017-02-14T12:51:48.000Z"}
   subGenre=""
 />
