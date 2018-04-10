@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RadioHorizontal from './MainElements/RadioHorizontal';
 import nonFictionOrFictionOptions from './options/nonFictionOrFictionOptions';
 
-const FictionOrNonFiction = (props) => (
+const NonFictionOrFiction = (props) => (
   <RadioHorizontal
     label=""
     options={nonFictionOrFictionOptions}
@@ -10,4 +10,4 @@ const FictionOrNonFiction = (props) => (
   />
 );
 
-export default FictionOrNonFiction;
+export default NonFictionOrFiction;

@@ -11,27 +11,27 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
     Object {
       "amazonUrl": "",
       "email": "",
-      "fictionOrNonFiction": "",
       "genre": "",
       "keywords": "",
       "message": "",
+      "nonFictionOrFiction": "",
       "price": "",
       "promoType": "",
       "releaseText": "",
       "website": "",
     }
   }
-  fictionOrNonFiction="Non-fiction"
   genre="Please select"
   keywords=""
+  nonFictionOrFiction="Non-fiction"
   onAmazonUrlChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
   onEmailChange={[Function]}
-  onFictionOrNonFictionChange={[Function]}
   onFocusChange={[Function]}
   onGenreChange={[Function]}
   onKeywordsChange={[Function]}
+  onNonFictionOrFictionChange={[Function]}
   onPriceChange={[Function]}
   onPromoTypeChange={[Function]}
   onReleaseTextChange={[Function]}

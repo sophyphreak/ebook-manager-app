@@ -11,7 +11,7 @@ test('should convert min promo into correct object', () => {
   } = prepared;
   const {
     amazonUrl,
-    fictionOrNonFiction,
+    nonFictionOrFiction,
     email,
     price,
     promoType,
@@ -23,7 +23,7 @@ test('should convert min promo into correct object', () => {
   expect(submissionType).toBe('Book Promotion');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Email': email,
     'Regular Price': price,
     'Promo Type': promoType,
@@ -56,7 +56,7 @@ test('should convert max promo into correct object', () => {
   } = prepared;
   const {
     amazonUrl,
-    fictionOrNonFiction,
+    nonFictionOrFiction,
     genre,
     subGenre,
     email,
@@ -70,7 +70,7 @@ test('should convert max promo into correct object', () => {
   expect(submissionType).toBe('Book Promotion');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,

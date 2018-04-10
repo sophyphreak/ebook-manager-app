@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 
 import AmazonUrl from '../../FormElements/AmazonUrl';
-import FictionOrNonFiction from '../../FormElements/FictionOrNonFiction';
+import NonFictionOrFiction from '../../FormElements/NonFictionOrFiction';
 import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
 import Email from '../../FormElements/Email';
@@ -21,8 +21,8 @@ const SocialMediaPage1 = ({
   amazonUrl,
   onAmazonUrlChange,
 
-  fictionOrNonFiction,
-  onFictionOrNonFictionChange,
+  nonFictionOrFiction,
+  onNonFictionOrFictionChange,
 
   genre,
   onGenreChange,
@@ -46,14 +46,14 @@ const SocialMediaPage1 = ({
             hasError={!!error.message}
             errorMessage={error.amazonUrl}
           />
-          <FictionOrNonFiction
-            value={fictionOrNonFiction}
-            onChange={onFictionOrNonFictionChange}
+          <NonFictionOrFiction
+            value={nonFictionOrFiction}
+            onChange={onNonFictionOrFictionChange}
             hasError={!!error.message}
-            errorMessage={error.fictionOrNonFiction}
+            errorMessage={error.nonFictionOrFiction}
           />
           {
-            fictionOrNonFiction === 'Fiction' &&
+            nonFictionOrFiction === 'Fiction' &&
             <div className="animated fadeIn">
               <Genre
                 value={genre}

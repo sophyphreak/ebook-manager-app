@@ -16,24 +16,24 @@ exports[`should render PromoSubmitter correctly 1`] = `
       "datePicker": "",
       "description": "",
       "email": "",
-      "fictionOrNonFiction": "",
       "genre": "",
       "message": "",
+      "nonFictionOrFiction": "",
       "price": "",
       "promoType": "",
     }
   }
-  fictionOrNonFiction="Non-fiction"
   genre="Please select"
+  nonFictionOrFiction="Non-fiction"
   onAmazonUrlChange={[Function]}
   onAuthorBioChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
   onDescriptionChange={[Function]}
   onEmailChange={[Function]}
-  onFictionOrNonFictionChange={[Function]}
   onFocusChange={[Function]}
   onGenreChange={[Function]}
+  onNonFictionOrFictionChange={[Function]}
   onPriceChange={[Function]}
   onPromoTypeChange={[Function]}
   onSubGenreChange={[Function]}

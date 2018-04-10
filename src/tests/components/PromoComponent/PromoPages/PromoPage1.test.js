@@ -10,7 +10,7 @@ beforeEach(() => {
     title: "",
     asin: "",
     amazonUrl: "",
-    fictionOrNonFiction: "",
+    nonFictionOrFiction: "",
     genre: "",
     firstName: "",
     lastName: "",

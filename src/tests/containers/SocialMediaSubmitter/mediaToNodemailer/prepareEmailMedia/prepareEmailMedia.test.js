@@ -11,14 +11,14 @@ test('should convert min media into correct object', () => {
   } = prepared;
   const {
     amazonUrl,
-    fictionOrNonFiction,
+    nonFictionOrFiction,
     email,
     regPrice,
   } = media.min;
   expect(submissionType).toBe('Social Media Submission');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Email': email,
     'Regular Price': regPrice,
   });
@@ -41,7 +41,7 @@ test('should convert max media into correct object', () => {
   } = prepared;
   const {
     amazonUrl,
-    fictionOrNonFiction,
+    nonFictionOrFiction,
     genre,
     subGenre,
     email,
@@ -57,7 +57,7 @@ test('should convert max media into correct object', () => {
   expect(submissionType).toBe('Social Media Submission');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,

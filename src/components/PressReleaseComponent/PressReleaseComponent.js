@@ -16,7 +16,7 @@ const PressReleaseComponent = ({
 
   // PressReleasePage1
   amazonUrl,
-  fictionOrNonFiction,
+  nonFictionOrFiction,
   genre,
   subGenre,
   email,
@@ -38,7 +38,7 @@ const PressReleaseComponent = ({
 
   // PressReleasePage1
   onAmazonUrlChange,
-  onFictionOrNonFictionChange,
+  onNonFictionOrFictionChange,
   onGenreChange,
   onSubGenreChange,
   onEmailChange,
@@ -65,13 +65,13 @@ const PressReleaseComponent = ({
           <PressReleasePage1
             error={error}
             amazonUrl={amazonUrl}
-            fictionOrNonFiction={fictionOrNonFiction}
+            nonFictionOrFiction={nonFictionOrFiction}
             genre={genre}
             subGenre={subGenre}
             email={email}
             
             onAmazonUrlChange={onAmazonUrlChange}
-            onFictionOrNonFictionChange={onFictionOrNonFictionChange}
+            onNonFictionOrFictionChange={onNonFictionOrFictionChange}
             onGenreChange={onGenreChange}
             onSubGenreChange={onSubGenreChange}
             onEmailChange={onEmailChange}

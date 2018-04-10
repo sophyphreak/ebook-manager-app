@@ -24,7 +24,7 @@ exports[`should render PressReleasePage1 correctly 1`] = `
         hasError={false}
         label="Amazon URL*"
       />
-      <FictionOrNonFiction
+      <NonFictionOrFiction
         hasError={false}
       />
       <SubGenre

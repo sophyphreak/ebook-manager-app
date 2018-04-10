@@ -2,7 +2,7 @@ import getBodyRowOrder from '../../../submitterUtils/getBodyRowOrder';
 
 const prepareEmailMedia = ({
   amazonUrl,
-  fictionOrNonFiction,
+  nonFictionOrFiction,
   genre,
   subGenre,
   email,
@@ -18,7 +18,7 @@ const prepareEmailMedia = ({
   const submissionType = 'Social Media Submission';
   let rawBody = {
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,

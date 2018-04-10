@@ -25,7 +25,7 @@ exports[`should render PromoPage1 correctly 1`] = `
         hasError={false}
         label="Amazon URL*"
       />
-      <FictionOrNonFiction
+      <NonFictionOrFiction
         errorMessage=""
         hasError={false}
       />

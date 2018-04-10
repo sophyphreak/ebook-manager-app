@@ -2,7 +2,7 @@ import getBodyRowOrder from '../../../submitterUtils/getBodyRowOrder';
 
 const prepareEmailRelease = ({
   amazonUrl,
-  fictionOrNonFiction,
+  nonFictionOrFiction,
   genre,
   subGenre,
   email,
@@ -17,7 +17,7 @@ const prepareEmailRelease = ({
   const submissionType = 'Press Release';
   let rawBody = {
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,

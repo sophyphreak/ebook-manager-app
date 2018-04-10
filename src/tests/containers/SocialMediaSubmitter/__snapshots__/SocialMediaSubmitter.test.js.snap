@@ -12,10 +12,10 @@ exports[`should render SocialMediaSubmitter correctly 1`] = `
       "amazonUrl": "",
       "email": "",
       "facebook": "",
-      "fictionOrNonFiction": "",
       "genre": "",
       "keywords": "",
       "message": "",
+      "nonFictionOrFiction": "",
       "notes": "",
       "regPrice": "",
       "salePrice": "",
@@ -23,19 +23,19 @@ exports[`should render SocialMediaSubmitter correctly 1`] = `
     }
   }
   facebook=""
-  fictionOrNonFiction="Non-fiction"
   genre="Please select"
   keywords=""
+  nonFictionOrFiction="Non-fiction"
   notes=""
   onAmazonUrlChange={[Function]}
   onBack={[Function]}
   onDatesChange={[Function]}
   onEmailChange={[Function]}
   onFacebookChange={[Function]}
-  onFictionOrNonFictionChange={[Function]}
   onFocusChange={[Function]}
   onGenreChange={[Function]}
   onKeywordsChange={[Function]}
+  onNonFictionOrFictionChange={[Function]}
   onNotesChange={[Function]}
   onRegPriceChange={[Function]}
   onSalePriceChange={[Function]}

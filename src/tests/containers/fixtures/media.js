@@ -3,7 +3,7 @@ import moment from 'moment';
 export default {
   min: {
     amazonUrl: 'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
-    fictionOrNonFiction: 'Non-fiction *',
+    nonFictionOrFiction: 'Non-fiction *',
     genre: '',
     subGenre: '',
     email: 'example@example.email',
@@ -18,7 +18,7 @@ export default {
   },
   max: {
     amazonUrl: 'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
-    fictionOrNonFiction: 'Fiction',
+    nonFictionOrFiction: 'Fiction',
     genre: 'Romance',
     subGenre: 'Kink Life',
     email: 'example@example.email',

@@ -14,7 +14,7 @@ export default class PromoSubmitter extends Component {
       error: {
         message: "",
         amazonUrl: "",
-        fictionOrNonFiction: "",
+        nonFictionOrFiction: "",
         genre: "",
         email: "",
         price: "",
@@ -26,7 +26,7 @@ export default class PromoSubmitter extends Component {
 
       // PromoPage1
       amazonUrl: "",
-      fictionOrNonFiction: nonFictionOrFictionOptions[0],
+      nonFictionOrFiction: nonFictionOrFictionOptions[0],
       genre: "Please select",
       subGenre: "",
       email: "",
@@ -45,7 +45,7 @@ export default class PromoSubmitter extends Component {
 
     // PromoPage1
     this.onAmazonUrlChange = this.onAmazonUrlChange.bind(this);
-    this.onFictionOrNonFictionChange = this.onFictionOrNonFictionChange.bind(this);
+    this.onNonFictionOrFictionChange = this.onNonFictionOrFictionChange.bind(this);
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
@@ -73,9 +73,9 @@ export default class PromoSubmitter extends Component {
     this.setState(() => ({ amazonUrl }));
   }
 
-  onFictionOrNonFictionChange(e) {
-    const fictionOrNonFiction = e.target.value;
-    this.setState(() => ({ fictionOrNonFiction }));
+  onNonFictionOrFictionChange(e) {
+    const nonFictionOrFiction = e.target.value;
+    this.setState(() => ({ nonFictionOrFiction }));
   }
 
   onGenreChange(e) {
@@ -97,14 +97,14 @@ export default class PromoSubmitter extends Component {
     e.preventDefault();
     const {
       amazonUrl,
-      fictionOrNonFiction,
+      nonFictionOrFiction,
       genre,
       email
     } = this.state;
     let error = {
       message: "",
       amazonUrl: "",
-      fictionOrNonFiction: "",
+      nonFictionOrFiction: "",
       genre: "",
       email: ""
     };
@@ -114,10 +114,10 @@ export default class PromoSubmitter extends Component {
     } else if (!amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
       error.amazonUrl = 'Please provide a valid Amazon.com URL.';
     };
-    if (!fictionOrNonFiction) {
-      error.fictionOrNonFiction = 'this will not render to screen';
+    if (!nonFictionOrFiction) {
+      error.nonFictionOrFiction = 'this will not render to screen';
     };
-    if (genre === 'Please select' && fictionOrNonFiction === 'Fiction') {
+    if (genre === 'Please select' && nonFictionOrFiction === 'Fiction') {
       error.genre = 'Please select a genre.';
     };
     if (!email) {
@@ -127,7 +127,7 @@ export default class PromoSubmitter extends Component {
     };
     if (
       error.amazonUrl ||
-      error.fictionOrNonFiction ||
+      error.nonFictionOrFiction ||
       error.genre ||
       error.email
     ) {
@@ -270,7 +270,7 @@ export default class PromoSubmitter extends Component {
       asin,
       amazonUrl,
       price,
-      fictionOrNonFiction,
+      nonFictionOrFiction,
       genre,
       subGenre,
       email,
@@ -289,7 +289,7 @@ export default class PromoSubmitter extends Component {
 
         // PromoPage1
         amazonUrl={amazonUrl}
-        fictionOrNonFiction={fictionOrNonFiction}
+        nonFictionOrFiction={nonFictionOrFiction}
         genre={genre}
         subGenre={subGenre}
         email={email}
@@ -310,7 +310,7 @@ export default class PromoSubmitter extends Component {
 
         // PromoPage1
         onAmazonUrlChange={this.onAmazonUrlChange}
-        onFictionOrNonFictionChange={this.onFictionOrNonFictionChange}
+        onNonFictionOrFictionChange={this.onNonFictionOrFictionChange}
         onGenreChange={this.onGenreChange}
         onSubGenreChange={this.onSubGenreChange}
         onEmailChange={this.onEmailChange}

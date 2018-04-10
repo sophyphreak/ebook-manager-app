@@ -5,7 +5,7 @@ exports[`should render AlertsSubmitter correctly 1`] = `
   alertMe={
     Object {
       "onTheDate": Object {
-        "isActive": false,
+        "isActive": true,
         "text": "On the date",
       },
       "oneWeekBefore": Object {

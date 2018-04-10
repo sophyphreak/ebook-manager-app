@@ -2,7 +2,7 @@ import getBodyRowOrder from '../../../submitterUtils/getBodyRowOrder';
 
 const prepareEmailPromo = ({
   amazonUrl,
-  fictionOrNonFiction,
+  nonFictionOrFiction,
   genre,
   subGenre,
   email,
@@ -16,7 +16,7 @@ const prepareEmailPromo = ({
   const submissionType = 'Book Promotion';
   let rawBody = {
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,

@@ -11,7 +11,7 @@ test('should convert min release into correct object', () => {
   } = prepared;
   const {
     amazonUrl,
-    fictionOrNonFiction,
+    nonFictionOrFiction,
     email,
     price,
     promoType,
@@ -20,7 +20,7 @@ test('should convert min release into correct object', () => {
   expect(submissionType).toBe('Press Release');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Email': email,
     'Regular Price': price,
     'Promo Type': promoType,
@@ -47,7 +47,7 @@ test('should convert max release into correct object', () => {
   } = prepared;
   const {
     amazonUrl,
-    fictionOrNonFiction,
+    nonFictionOrFiction,
     genre,
     subGenre,
     email,
@@ -62,7 +62,7 @@ test('should convert max release into correct object', () => {
   expect(submissionType).toBe('Press Release');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
-    'Fiction or Nonfiction?': fictionOrNonFiction,
+    'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,
