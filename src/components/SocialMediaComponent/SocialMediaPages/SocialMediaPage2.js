@@ -35,15 +35,15 @@ const SocialMediaPage2 = ({
         <Form onSubmit={onSubmit}>
           <Price
             label="Regular Price*"
-            value={regPrice}
-            onChange={onRegPriceChange}
+            price={regPrice}
+            onPriceChange={onRegPriceChange}
             hasError={!!error.message}
             errorMessage={error.regPrice}
           />
           <Price
             label="Sale Price (if applicable)"
-            value={salePrice}
-            onChange={onSalePriceChange}
+            price={salePrice}
+            onPriceChange={onSalePriceChange}
             hasError={!!error.message}
             errorMessage={error.salePrice}
           />

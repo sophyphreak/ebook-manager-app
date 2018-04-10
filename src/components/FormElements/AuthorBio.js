@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import TextAreaInput from './MainElements/TextAreaInput';
 
-const AuthorBio = (props) => (
+const AuthorBio = ({
+  label,
+  authorBio,
+  onAuthorBioChange,
+  ...props
+}) => (
   <TextAreaInput
-    label="Author Biography:*"
+    label={label}
+    value={authorBio}
+    onChange={onAuthorBioChange}
     {...props}
   />
 );

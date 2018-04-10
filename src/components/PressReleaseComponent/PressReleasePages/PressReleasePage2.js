@@ -36,8 +36,8 @@ const PressReleasePage2 = ({
         <Form onSubmit={onSubmit}>
           <Price
             label="Regular Price*"
-            value={price}
-            onChange={onPriceChange}
+            price={price}
+            onPriceChange={onPriceChange}
             hasError={!!error.message}
             errorMessage={error.price}
           />

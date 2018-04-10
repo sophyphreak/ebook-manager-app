@@ -29,14 +29,15 @@ const PromoPage3 = ({
         <Form onSubmit={onSubmit}>
           <Description
             label="Promotional Book Description (Max 2,000 characters)*"
-            value={description}
-            onChange={onDescriptionChange}
+            description={description}
+            onDescriptionChange={onDescriptionChange}
             hasError={!!error.message}
             errorMessage={error.description}
           />
           <AuthorBio
-            value={authorBio}
-            onChange={onAuthorBioChange}
+            label="Author Biography:*"
+            authorBio={authorBio}
+            onAuthorBioChange={onAuthorBioChange}
             hasError={!!error.message}
             errorMessage={error.authorBio}
           />

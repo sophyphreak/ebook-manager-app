@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import BasicInput from './MainElements/BasicInput';
 
-const Price = (props) => (
+const Price = ({
+  label,
+  price,
+  onPriceChange,
+  ...props
+}) => (
   <BasicInput
+    label={label}
+    value={price}
+    onChange={onPriceChange}
     {...props}
   />
 );

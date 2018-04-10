@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render SubGenre correctly 1`] = `
-<BasicInput
-  label="Sub Genre:"
-/>
-`;
+exports[`should render SubGenre correctly 1`] = `<BasicInput />`;

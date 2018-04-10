@@ -47,8 +47,8 @@ const SocialMediaPage1 = ({
             errorMessage={error.amazonUrl}
           />
           <NonFictionOrFiction
-            value={nonFictionOrFiction}
-            onChange={onNonFictionOrFictionChange}
+            nonFictionOrFiction={nonFictionOrFiction}
+            onNonFictionOrFictionChange={onNonFictionOrFictionChange}
             hasError={!!error.message}
             errorMessage={error.nonFictionOrFiction}
           />
@@ -56,6 +56,7 @@ const SocialMediaPage1 = ({
             nonFictionOrFiction === 'Fiction' &&
             <div className="animated fadeIn">
               <Genre
+                label="Genre:*"
                 value={genre}
                 onChange={onGenreChange}
                 hasError={!!error.message}
@@ -64,15 +65,16 @@ const SocialMediaPage1 = ({
             </div>
           }
           <SubGenre
-            value={subGenre}
-            onChange={onSubGenreChange}
+            label="SubGenre:"
+            subGenre={subGenre}
+            onSubGenreChange={onSubGenreChange}
             hasError={!!error.message}
             errorMessage={error.subGenre}
           />
           <Email
             label="Email:*"
-            value={email}
-            onChange={onEmailChange}
+            email={email}
+            onEmailChange={onEmailChange}
             hasError={!!error.message}
             errorMessage={error.email}
           />

@@ -28,6 +28,7 @@ exports[`should render PromoPage3 correctly 1`] = `
       <AuthorBio
         errorMessage=""
         hasError={false}
+        label="Author Biography:*"
       />
       <Button
         className=".back-button"

@@ -24,7 +24,7 @@ const PromoPage2 = ({
 
   startDate,
   endDate,
-  focusedInput,
+  calendarFocus,
   onDatesChange,
   onFocusChange
 }) => (
@@ -36,8 +36,8 @@ const PromoPage2 = ({
         <Form onSubmit={onSubmit}>
           <Price
             label="Regular Price*"
-            value={price}
-            onChange={onPriceChange}
+            price={price}
+            onPriceChange={onPriceChange}
             hasError={!!error.message}
             errorMessage={error.price}
           />
@@ -53,7 +53,7 @@ const PromoPage2 = ({
             startDate={startDate}
             endDate={endDate}
             onDatesChange={onDatesChange}
-            focusedInput={focusedInput}
+            calendarFocus={calendarFocus}
             onFocusChange={onFocusChange}
           />
           {error.message && <p>{error.message}</p>}

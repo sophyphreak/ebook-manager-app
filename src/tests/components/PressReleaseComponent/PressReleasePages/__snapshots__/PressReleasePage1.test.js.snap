@@ -29,6 +29,7 @@ exports[`should render PressReleasePage1 correctly 1`] = `
       />
       <SubGenre
         hasError={false}
+        label="SubGenre:"
       />
       <Email
         hasError={false}

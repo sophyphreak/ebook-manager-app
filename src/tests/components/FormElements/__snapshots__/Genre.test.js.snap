@@ -2,7 +2,6 @@
 
 exports[`should render Genre correctly 1`] = `
 <SelectInput
-  label="Genre:*"
   options={
     Array [
       "Please select",

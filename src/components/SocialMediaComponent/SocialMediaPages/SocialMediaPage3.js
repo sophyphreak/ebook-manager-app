@@ -42,29 +42,29 @@ const SocialMediaPage3 = ({
         <Form onSubmit={onSubmit}>
           <Keywords
             label="Keywords / Hashtags (Comma Separated)"
-            value={keywords}
-            onChange={onKeywordsChange}
+            keywords={keywords}
+            onKeywordsChange={onKeywordsChange}
             hasError={!!error.message}
             errorMessage={error.keywords}
           />
           <Tweet
             label="Tweet (280 characters max including hashtags)"
-            value={tweet}
-            onChange={onTweetChange}
+            tweet={tweet}
+            onTweetChange={onTweetChange}
             hasError={!!error.message}
             errorMessage={error.tweet}
           />
           <Facebook
             label="Facebook / Other social media (2,000 characters max)"
-            value={facebook}
-            onChange={onFacebookChange}
+            facebook={facebook}
+            onFacebookChange={onFacebookChange}
             hasError={!!error.message}
             errorMessage={error.facebook}
           />
           <Notes
             label="Notes"
-            value={notes}
-            onChange={onNotesChange}
+            notes={notes}
+            onNotesChange={onNotesChange}
             hasError={!!error.message}
             errorMessage={error.notes}
           />

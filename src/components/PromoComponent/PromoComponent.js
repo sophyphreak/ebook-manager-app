@@ -84,7 +84,7 @@ const PromoComponent = ({
             promoType={promoType}
             startDate={startDate}
             endDate={endDate}
-            focusedInput={calendarFocus}
+            calendarFocus={calendarFocus}
             
             onPriceChange={onPriceChange}
             onPromoTypeChange={onPromoTypeChange}

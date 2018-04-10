@@ -34,22 +34,22 @@ const PressReleasePage3 = ({
         <Form onSubmit={onSubmit}>
           <Website
             label="Website"
-            value={website}
-            onChange={onWebsiteChange}
+            website={website}
+            onWebsiteChange={onWebsiteChange}
             hasError={!!error.message}
             errorMessage={error.website}
           />
           <Keywords
             label="Keywords"
-            value={keywords}
-            onChange={onKeywordsChange}
+            keywords={keywords}
+            onKeywordsChange={onKeywordsChange}
             hasError={!!error.message}
             errorMessage={error.keywords}
           />
           <ReleaseText
             label="Press Release*"
-            value={releaseText}
-            onChange={onReleaseTextChange}
+            releaseText={releaseText}
+            onReleaseTextChange={onReleaseTextChange}
             hasError={!!error.message}
             errorMessage={error.releaseText}
           />

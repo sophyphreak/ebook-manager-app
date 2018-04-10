@@ -7,7 +7,7 @@ const DatesPicker = ({
   startDate,
   endDate,
   onDatesChange,
-  focusedInput,
+  calendarFocus,
   onFocusChange
 }) => (
   <div className="dates-picker__vertical">
@@ -18,7 +18,7 @@ const DatesPicker = ({
       endDate={endDate}
       endDateId="endDate"
       onDatesChange={onDatesChange}
-      focusedInput={focusedInput}
+      focusedInput={calendarFocus}
       onFocusChange={onFocusChange}
     />
   </div>

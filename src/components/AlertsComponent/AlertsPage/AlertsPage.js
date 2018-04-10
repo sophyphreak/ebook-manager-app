@@ -47,15 +47,15 @@ const AlertsPage = ({
       <Form onSubmit={onSubmitAlert}>
         <AmazonUrl
           label="Amazon URL"
-          value={amazonUrl}
-          onChange={onAmazonUrlChange}
+          amazonUrl={amazonUrl}
+          onAmazonUrlChange={onAmazonUrlChange}
           hasError={!!error.message}
           errorMessage={error.amazonUrl}
         />
         <AlertMe
           label="Alert Me*"
-          options={alertMe}
-          onChange={onAlertMeChange}
+          alertMe={alertMe}
+          onAlertMeChange={onAlertMeChange}
           hasError={!!error.message}
           errorMessage={error.alertMe}
         />
@@ -63,27 +63,27 @@ const AlertsPage = ({
           label="Alert Date*"
           date={date}
           onDateChange={onDateChange}
-          focused={calendarFocused}
+          calendarFocused={calendarFocused}
           onFocusChange={onFocusChange}
         />
         <Notes 
           label="Notes/Other Info*"
-          value={notes}
-          onChange={onNotesChange}
+          notes={notes}
+          onNotesChange={onNotesChange}
           hasError={!!error.message}
           errorMessage={error.notes}
         />
         <Email
           label="Email to notify*"          
-          value={email}
-          onChange={onEmailChange}
+          email={email}
+          onEmailChange={onEmailChange}
           hasError={!!error.message}
           errorMessage={error.email}
         />
         <Email
           label="Secondary email to notify"
-          value={email2}
-          onChange={onEmail2Change}
+          email={email2}
+          onEmailChange={onEmail2Change}
           hasError={!!error.message}
           errorMessage={error.email2}
         />

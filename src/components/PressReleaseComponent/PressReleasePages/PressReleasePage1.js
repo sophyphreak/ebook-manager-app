@@ -41,14 +41,14 @@ const PressReleasePage1 = ({
       <Form onSubmit={onSubmit}>
         <AmazonUrl
           label="Amazon URL*"
-          value={amazonUrl}
-          onChange={onAmazonUrlChange}
+          amazonUrl={amazonUrl}
+          onAmazonUrlChange={onAmazonUrlChange}
           hasError={!!error.message}
           errorMessage={error.amazonUrl}
         />
         <NonFictionOrFiction
-          value={nonFictionOrFiction}
-          onChange={onNonFictionOrFictionChange}
+          nonFictionOrFiction={nonFictionOrFiction}
+          onNonFictionOrFictionChange={onNonFictionOrFictionChange}
           hasError={!!error.messsage}
           errorMessage={error.nonFictionOrFiction}
         />
@@ -56,23 +56,25 @@ const PressReleasePage1 = ({
           nonFictionOrFiction === 'Fiction' &&
           <div className="animated fadeIn">
             <Genre
-              value={genre}
-              onChange={onGenreChange}
+              label="Genre:*"
+              genre={genre}
+              onGenreChange={onGenreChange}
               hasError={!!error.message}
               errorMessage={error.genre}
             />
           </div>
         }
         <SubGenre
-          value={subGenre}
-          onChange={onSubGenreChange}
+          label="SubGenre:"
+          subGenre={subGenre}
+          onSubGenreChange={onSubGenreChange}
           hasError={!!error.message}
           errorMessage={error.subGenre}
         />
         <Email
           label="Email:*"
-          value={email}
-          onChange={onEmailChange}
+          email={email}
+          onEmailChange={onEmailChange}
           hasError={!!error.message}
           errorMessage={error.email}
         />
