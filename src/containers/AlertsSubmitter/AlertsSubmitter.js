@@ -21,7 +21,7 @@ export default class AlertsSubmitter extends Component {
       alertMe: {
         onTheDate: {
           text: 'On the date',
-          isActive: false
+          isActive: true
         },
         oneWeekBefore: {
           text: 'One week before',
