@@ -1,5 +1,5 @@
-import alertToNodemailer from '../../../../containers/AlertsSubmitter/alertToNodemailer/alertToNodemailer';
+import sendAlertToNodemailer from '../../../../containers/AlertsSubmitter/sendAlertToNodemailer/sendAlertToNodemailer';
 
-test('Should import alertToNodemailer correctly', () => {
+test('Should import sendAlertToNodemailer correctly', () => {
   expect(1).toBe(1);
 });

@@ -1,4 +1,4 @@
-import prepareEmailAlert from '../../../../../containers/AlertsSubmitter/alertToNodemailer/prepareEmailAlert/prepareEmailAlert';
+import prepareEmailAlert from '../../../../../containers/AlertsSubmitter/sendAlertToNodemailer/prepareEmailAlert/prepareEmailAlert';
 import alerts from '../../../fixtures/alerts';
 
 test('should convert min alert into correct object', () => {

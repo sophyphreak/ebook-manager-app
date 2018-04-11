@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
-import alertToNodemailer from './alertToNodemailer/alertToNodemailer';
+import flipClickedAlertMeOption from './onChangeHelpers/flipClickedAlertMeOption';
+import updateErrorsAlertsPage from './alertValidation/updateErrorsAlertsPage';
+import sendAlertToNodemailer from "./sendAlertToNodemailer/sendAlertToNodemailer";
 
 export default class AlertsSubmitter extends Component {
   constructor(props) {
@@ -57,7 +59,11 @@ export default class AlertsSubmitter extends Component {
   onAlertMeChange(e) { 
     const option = e.target.value;
     let alertMe = this.state.alertMe;
-    alertMe[option].isActive = !alertMe[option].isActive;
+    const alertMeAndOption = {
+      alertMe,
+      option
+    };
+    alertMe = flipClickedAlertMeOption(alertMeAndOption);
     this.setState(() => ({ alertMe }));
   }
 
@@ -89,67 +95,17 @@ export default class AlertsSubmitter extends Component {
   onSubmitAlert(e) {
     e.preventDefault();
     const {
-      amazonUrl,
-      alertMe,
-      date,
-      notes,
-      email,
-      email2
-    } = this.state;
-    const {
-      onTheDate,
-      oneWeekBefore,
-      twoWeeksBefore
-    } = alertMe;
-    let error = {
-      message: "",
-      amazonUrl: "",
-      alertMe: "",
-      alertDate: "",
-      notes: "",
-      email: "",
-      email2: ""
-    }; 
-    if (amazonUrl && !amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonUrl = 'Please provide a valid Amazon.com URL.';
+      error,
+      errorsExist
+    } = updateErrorsAlertsPage(this.state);
+    this.setState(() => ({ error }));    
+    if (errorsExist) {
+      return;
     };
-    if (
-      !onTheDate.isActive &&
-      !oneWeekBefore.isActive &&
-      !twoWeeksBefore.isActive
-    ) {
-      error.alertMe = 'This will not render.';
-    }
-    if (!notes) {
-      error.notes = 'Please enter notes.';
-    }
-    if (!email) {
-      error.email = 'Please enter an email.';
-    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      error.email = 'Please provide a valid email address.';
-    };
-    if (email2 && !email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      error.email2 = 'Please provide a valid email adddress.';
-    }
-    if (
-      error.amazonUrl ||
-      error.alertMe ||
-      error.email ||
-      error.email2
-    ) {
-      error.message = 'Please fix errors.'
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-      const currentPage = "SubmissionSuccess";
-      this.setState(() => ({
-        error,
-        currentPage
-      }));
-
-      alertToNodemailer(this.state);
-    };
+    console.log(this.state);
+    const currentPage = "SubmissionSuccess";
+    this.setState(() => ({ currentPage }));
+    sendAlertToNodemailer(this.state);
   };
   
   render() {

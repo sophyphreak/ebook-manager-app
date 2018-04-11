@@ -1,7 +1,7 @@
 import prepareEmailAlert from './prepareEmailAlert/prepareEmailAlert';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
-const alertToNodemailer = (state) => {
+const sendAlertToNodemailer = (state) => {
   const emailAlert = prepareEmailAlert(state);
   const {
     submissionType,
@@ -12,4 +12,4 @@ const alertToNodemailer = (state) => {
   postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
 }
 
-export default alertToNodemailer;
+export default sendAlertToNodemailer;
