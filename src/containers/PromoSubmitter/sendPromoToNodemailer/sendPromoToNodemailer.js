@@ -1,7 +1,7 @@
 import prepareEmailPromo from './prepareEmailPromo/prepareEmailPromo';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
-const promoToNodemailer = (state) => {
+const sendPromoToNodemailer = (state) => {
   const {
     submissionType,
     emailBody,
@@ -11,4 +11,4 @@ const promoToNodemailer = (state) => {
   postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
 }
 
-export default promoToNodemailer;
+export default sendPromoToNodemailer;

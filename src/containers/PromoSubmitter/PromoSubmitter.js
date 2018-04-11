@@ -2,27 +2,17 @@ import React, { Component } from "react";
 import moment from "moment";
 
 import PromoComponent from '../../components/PromoComponent/PromoComponent';
-import promoToNodemailer from "./promoToNodemailer/promoToNodemailer";
+import updateErrorsPromoPage1 from './promoPage1Validation/updateErrorsPromoPage1';
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
+import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: "PromoPage1",
-      error: {
-        message: "",
-        amazonUrl: "",
-        nonFictionOrFiction: "",
-        genre: "",
-        email: "",
-        price: "",
-        promoType: "",
-        datePicker: "",
-        description: "",
-        authorBio: ""
-      },
+      error: {},
 
       // PromoPage1
       amazonUrl: "",
@@ -96,52 +86,16 @@ export default class PromoSubmitter extends Component {
   onSubmitPromoPage1(e) {
     e.preventDefault();
     const {
-      amazonUrl,
-      nonFictionOrFiction,
-      genre,
-      email
-    } = this.state;
-    let error = {
-      message: "",
-      amazonUrl: "",
-      nonFictionOrFiction: "",
-      genre: "",
-      email: ""
+      error,
+      errorsExist
+    } = updateErrorsPromoPage1(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-
-    if (!amazonUrl) {
-      error.amazonUrl = 'Please fill in an Amazon URL.';
-    } else if (!amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonUrl = 'Please provide a valid Amazon.com URL.';
-    };
-    if (!nonFictionOrFiction) {
-      error.nonFictionOrFiction = 'this will not render to screen';
-    };
-    if (genre === 'Please select' && nonFictionOrFiction === 'Fiction') {
-      error.genre = 'Please select a genre.';
-    };
-    if (!email) {
-      error.email = 'Please enter an email.';
-    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      error.email = 'Please provide a valid email address.';
-    };
-    if (
-      error.amazonUrl ||
-      error.nonFictionOrFiction ||
-      error.genre ||
-      error.email
-    ) {
-      error.message = 'Please fix errors.'
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-      const currentPage = "PromoPage2";
-      this.setState(() => ({ 
-        error,
-        currentPage
-      }));
-    };
+    console.log(this.state);
+    const currentPage = "PromoPage2";
+    this.setState(() => ({ currentPage }));
   };
 
   // PromoPage2
@@ -247,7 +201,7 @@ export default class PromoSubmitter extends Component {
         currentPage 
       }));
 
-      promoToNodemailer(this.state);
+      sendPromoToNodemailer(this.state);
     }
   }
 

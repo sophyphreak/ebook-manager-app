@@ -9,20 +9,7 @@ exports[`should render PromoSubmitter correctly 1`] = `
   description=""
   email=""
   endDate={"2017-02-14T12:51:48.000Z"}
-  error={
-    Object {
-      "amazonUrl": "",
-      "authorBio": "",
-      "datePicker": "",
-      "description": "",
-      "email": "",
-      "genre": "",
-      "message": "",
-      "nonFictionOrFiction": "",
-      "price": "",
-      "promoType": "",
-    }
-  }
+  error={Object {}}
   genre="Please select"
   nonFictionOrFiction="Non-fiction"
   onAmazonUrlChange={[Function]}

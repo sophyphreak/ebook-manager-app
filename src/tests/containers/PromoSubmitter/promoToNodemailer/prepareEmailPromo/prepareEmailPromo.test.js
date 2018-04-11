@@ -1,4 +1,4 @@
-import prepareEmailPromo from '../../../../../containers/PromoSubmitter/promoToNodemailer/prepareEmailPromo/prepareEmailPromo';
+import prepareEmailPromo from '../../../../../containers/PromoSubmitter/sendPromoToNodemailer/prepareEmailPromo/prepareEmailPromo';
 import promos from '../../../fixtures/promos';
 
 test('should convert min promo into correct object', () => {
