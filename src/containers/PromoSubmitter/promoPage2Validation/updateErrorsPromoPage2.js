@@ -1,7 +1,7 @@
 
-import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
 import priceDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/priceDoesNotExist';
 import promoTypeDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/promoTypeDoesNotExist';
+import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
 
 
 const updateErrorsPromoPage2 = ({

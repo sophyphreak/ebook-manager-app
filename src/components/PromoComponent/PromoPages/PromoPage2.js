@@ -45,8 +45,6 @@ const PromoPage2 = ({
             label="Select Promotion Type*"          
             promoType={promoType}
             onPromoTypeChange={onPromoTypeChange}
-            hasError={!!error.message}
-            errorMessage={error.promoType}
           />
           <DatesPicker
             label="Dates for promotion*"
