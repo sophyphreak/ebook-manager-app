@@ -26,8 +26,6 @@ exports[`should render PromoPage2 correctly 1`] = `
         label="Regular Price*"
       />
       <PromoTypes
-        errorMessage=""
-        hasError={false}
         label="Select Promotion Type*"
       />
       <DatesPicker

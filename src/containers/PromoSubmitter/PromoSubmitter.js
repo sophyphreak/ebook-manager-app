@@ -7,6 +7,7 @@ import nonFictionOrFictionOptions from "../../components/FormElements/options/no
 import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
 import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
 import updateErrorsPromoPage2 from "./promoPage2Validation/updateErrorsPromoPage2";
+import updateErrorsPromoPage3 from "./promoPage3Validation/updateErrorsPromoPage3";
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -150,39 +151,18 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage3(e) {
     e.preventDefault();
-    const { 
-      description, 
-      authorBio
-    } = this.state;
-    let error = {
-      message: "",
-      description: "",
-      authorBio: ""
+    const {
+      error,
+      errorsExist
+    } = updateErrorsPromoPage3(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-
-    if (!description) {
-      error.description = "Please enter a book description.";
-    };
-    if (!authorBio) {
-      error.authorBio = "Please enter an author biography.";
-    };
-    if (
-      error.description ||
-      error.authorBio
-    ) {
-      error.message = "Please fix all errors.";
-      this.setState(() => ({ error }));
-    }
-    if (!error.message) {
-      console.log(this.state);
-      const currentPage = "SubmissionSuccess";
-      this.setState(() => ({ 
-        error,
-        currentPage 
-      }));
-
-      sendPromoToNodemailer(this.state);
-    }
+    console.log(this.state);
+    const currentPage = "SubmissionSuccess";
+    this.setState(() => ({ currentPage }));
+    sendPromoToNodemailer(this.state);
   }
 
   onBack(e) {
