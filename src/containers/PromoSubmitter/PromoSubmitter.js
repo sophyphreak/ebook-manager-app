@@ -6,6 +6,7 @@ import updateErrorsPromoPage1 from './promoPage1Validation/updateErrorsPromoPage
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
 import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
+import updateErrorsPromoPage2 from "./promoPage2Validation/updateErrorsPromoPage2";
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -122,38 +123,17 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage2(e) {
     e.preventDefault();
-    const { 
-      price, 
-      promoType
-    } = this.state;
-    let error = {
-      message: "",
-      price: "",
-      promoType: ""
-    }
-
-    if (!price) {
-      error.price = "Please enter a price.";
+    const {
+      error,
+      errorsExist
+    } = updateErrorsPromoPage2(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-    if (!promoType) {
-      error.promoType = "this also won't render";
-    };
-    if (
-      error.price ||
-      error.promoType
-    ) {
-      error.message = "Please fix all errors.";
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-
-      const currentPage = "PromoPage3";
-      this.setState(() => ({ 
-        error,
-        currentPage
-       }));
-    }  
+    console.log(this.state);
+    const currentPage = "PromoPage3";
+    this.setState(() => ({ currentPage }));
   };
 
   // PromoPage3
