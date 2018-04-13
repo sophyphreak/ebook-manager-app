@@ -6,6 +6,7 @@ import releaseToNodemailer from './releaseToNodemailer/releaseToNodemailer';
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';  
+import updateErrorsReleasePage1 from "./releasePage1Validation/updateErrorsReleasePage1";
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
@@ -99,52 +100,16 @@ export default class PressReleaseSubmitter extends Component {
   onSubmitPressReleasePage1(e) {
     e.preventDefault();
     const {
-      amazonUrl,
-      nonFictionOrFiction,
-      genre,
-      email
-    } = this.state;
-    let error = {
-      message: "",
-      amazonUrl: "",
-      nonFictionOrFiction: "",
-      genre: "",
-      email: ""
+      error,
+      errorsExist
+    } = updateErrorsReleasePage1(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-
-    if (!amazonUrl) {
-      error.amazonUrl = 'Please fill in an Amazon URL.';
-    } else if (!amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonUrl = 'Please provide a valid Amazon.com URL.';
-    };
-    if (!nonFictionOrFiction) {
-      error.nonFictionOrFiction = 'this will not render to screen';
-    };
-    if (genre === 'Please select' && nonFictionOrFiction === 'Fiction') {
-      error.genre = 'Please select a genre.';
-    };
-    if (!email) {
-      error.email = 'Please enter an email.';
-    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      error.email = 'Please provide a valid email address.';
-    };
-    if (
-      error.amazonUrl ||
-      error.nonFictionOrFiction ||
-      error.genre ||
-      error.email
-    ) {
-      error.message = 'Please fix errors.'
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-      const currentPage = "PressReleasePage2";
-      this.setState(() => ({
-        error,
-        currentPage
-      }));
-    };
+    console.log(this.state);
+    const currentPage = "PressReleasePage2";
+    this.setState(() => ({ currentPage }));
   };
 
   // PressReleasePage2
