@@ -4,7 +4,7 @@ import websiteUrlIsInvalid from './fieldSpecific/websiteUrlIsInvalid';
 import releaseTextDoesNotExist from './fieldSpecific/releaseTextDoesNotExist';
 
 
-const updateErrorsReleasePage3 = ({
+const releasePage3Validation = ({
   website,
   releaseText
 }) => {
@@ -25,4 +25,4 @@ const updateErrorsReleasePage3 = ({
   };
 };
 
-export default updateErrorsReleasePage3;
+export default releasePage3Validation;

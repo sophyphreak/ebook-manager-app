@@ -1,11 +1,11 @@
 import amazonUrlExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecificValidators/amazonUrlExistsButIsInvalid';
-import noAlertMeIsSelected from './fieldSpecificValidators/noAlertMeIsSelected';
+import noAlertMeIsSelected from './fieldSpecific/noAlertMeIsSelected';
 import notesDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/notesDoesNotExist';
 import emailDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/emailDoesNotExist';
 import emailExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecificValidators/emailExistsButIsInvalid';
 import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist'
 
-const updateErrorsAlertsPage = ({
+const alertsPageValidation = ({
   amazonUrl,
   alertMe,
   date,
@@ -42,5 +42,5 @@ const updateErrorsAlertsPage = ({
   };
 };
 
-export default updateErrorsAlertsPage;
+export default alertsPageValidation;
 

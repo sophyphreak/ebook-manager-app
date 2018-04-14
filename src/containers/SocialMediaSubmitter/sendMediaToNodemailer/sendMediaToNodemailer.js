@@ -1,7 +1,7 @@
 import prepareEmailMedia from './prepareEmailMedia/prepareEmailMedia';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
-const mediaToNodemailer = (state) => {
+const sendMediaToNodemailer = (state) => {
   const {
     submissionType,
     emailBody,
@@ -11,4 +11,4 @@ const mediaToNodemailer = (state) => {
   postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
 }
 
-export default mediaToNodemailer;
+export default sendMediaToNodemailer;

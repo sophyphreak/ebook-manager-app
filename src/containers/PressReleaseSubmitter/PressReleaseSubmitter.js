@@ -5,10 +5,10 @@ import nonFictionOrFictionOptions from "../../components/FormElements/options/no
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';  
 import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
-import updateErrorsReleasePage1 from "./releasePage1Validation/updateErrorsReleasePage1";
-import updateErrorsReleasePage2 from "./releasePage2Validation/updateErrorsReleasePage2";
+import releasePage1Validation from "./releasePage1Validation/releasePage1Validation";
+import releasePage2Validation from "./releasePage2Validation/releasePage2Validation";
 import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
-import updateErrorsReleasePage3 from "./releasePage3Validation/updateErrorsReleasePage3";
+import releasePage3Validation from "./releasePage3Validation/releasePage3Validation";
 import sendReleaseToNodemailer from "./sendReleaseToNodemailer/sendReleaseToNodemailer";
 
 export default class PressReleaseSubmitter extends Component {
@@ -105,7 +105,7 @@ export default class PressReleaseSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsReleasePage1(this.state);
+    } = releasePage1Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
@@ -142,7 +142,7 @@ export default class PressReleaseSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsReleasePage2(this.state);
+    } = releasePage2Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
@@ -174,7 +174,7 @@ export default class PressReleaseSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsReleasePage3(this.state);
+    } = releasePage3Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;

@@ -3,7 +3,7 @@ import moment from "moment";
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
 import flipClickedAlertMeOption from './onChangeHelpers/flipClickedAlertMeOption';
-import updateErrorsAlertsPage from './alertValidation/updateErrorsAlertsPage';
+import alertsPageValidation from './alertValidation/alertsPageValidation';
 import sendAlertToNodemailer from "./sendAlertToNodemailer/sendAlertToNodemailer";
 
 export default class AlertsSubmitter extends Component {
@@ -97,7 +97,7 @@ export default class AlertsSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsAlertsPage(this.state);
+    } = alertsPageValidation(this.state);
     this.setState(() => ({ error }));    
     if (errorsExist) {
       return;

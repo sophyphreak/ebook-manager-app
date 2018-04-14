@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-import updateErrorsPromoPage1 from './promoPage1Validation/updateErrorsPromoPage1';
-import updateErrorsPromoPage2 from "./promoPage2Validation/updateErrorsPromoPage2";
-import updateErrorsPromoPage3 from "./promoPage3Validation/updateErrorsPromoPage3";
+import promoPage1Validation from './promoPage1Validation/promoPage1Validation';
+import promoPage2Validation from "./promoPage2Validation/promoPage2Validation";
+import promoPage3Validation from "./promoPage3Validation/promoPage3Validation";
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
 import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
@@ -91,7 +91,7 @@ export default class PromoSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsPromoPage1(this.state);
+    } = promoPage1Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
@@ -128,7 +128,7 @@ export default class PromoSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsPromoPage2(this.state);
+    } = promoPage2Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
@@ -155,7 +155,7 @@ export default class PromoSubmitter extends Component {
     const {
       error,
       errorsExist
-    } = updateErrorsPromoPage3(this.state);
+    } = promoPage3Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;

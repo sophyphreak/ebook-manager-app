@@ -6,7 +6,7 @@ import emailExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecif
 import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
 
 
-const updateErrorsPromoPage1 = ({
+const promoPage1Validation = ({
   amazonUrl,
   nonFictionOrFiction,
   genre,
@@ -38,4 +38,4 @@ const updateErrorsPromoPage1 = ({
   };
 };
 
-export default updateErrorsPromoPage1;
+export default promoPage1Validation;

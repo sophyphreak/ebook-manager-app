@@ -4,7 +4,7 @@ import promoTypeDoesNotExist from '../../submitterUtils/validation/fieldSpecific
 import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
 
 
-const updateErrorsPromoPage2 = ({
+const promoPage2Validation = ({
   price
 }) => {
   let error = {};
@@ -21,4 +21,4 @@ const updateErrorsPromoPage2 = ({
   };
 };
 
-export default updateErrorsPromoPage2;
+export default promoPage2Validation;

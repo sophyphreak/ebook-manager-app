@@ -4,7 +4,7 @@ import authorBioDoesNotExist from '../../submitterUtils/validation/fieldSpecific
 import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
 
 
-const updateErrorsPromoPage3 = ({
+const promoPage3Validation = ({
   description,
   authorBio
 }) => {
@@ -25,4 +25,4 @@ const updateErrorsPromoPage3 = ({
   };
 };
 
-export default updateErrorsPromoPage3;
+export default promoPage3Validation;

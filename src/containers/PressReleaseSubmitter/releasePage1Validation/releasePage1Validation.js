@@ -6,7 +6,7 @@ import emailExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecif
 import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
 
 
-const updateErrorsReleasePage1 = ({
+const releasePage1Validation = ({
   amazonUrl,
   nonFictionOrFiction,
   genre,
@@ -38,4 +38,4 @@ const updateErrorsReleasePage1 = ({
   };
 };
 
-export default updateErrorsReleasePage1;
+export default releasePage1Validation;
