@@ -1,8 +1,8 @@
-import prepareEmailMedia from '../../../../../containers/SocialMediaSubmitter/mediaToNodemailer/prepareEmailMedia/prepareEmailMedia';
-import media from '../../../fixtures/media';
+import prepareEmailRelease from '../../../../../containers/PressReleaseSubmitter/sendReleaseToNodemailer/prepareEmailRelease/prepareEmailRelease';
+import releases from '../../../fixtures/releases';
 
-test('should convert min media into correct object', () => {
-  const prepared = prepareEmailMedia(media.min);
+test('should convert min release into correct object', () => {
+  const prepared = prepareEmailRelease(releases.min);
   const {
     submissionType,
     emailBody,
@@ -13,26 +13,32 @@ test('should convert min media into correct object', () => {
     amazonUrl,
     nonFictionOrFiction,
     email,
-    regPrice,
-  } = media.min;
-  expect(submissionType).toBe('Social Media Submission');
+    price,
+    promoType,
+    releaseText
+  } = releases.min;
+  expect(submissionType).toBe('Press Release');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
     'Email': email,
-    'Regular Price': regPrice,
+    'Regular Price': price,
+    'Promo Type': promoType,
+    'Press Release': releaseText
   });
   expect(rowOrder).toEqual([
     'Amazon URL',
     'Fiction or Nonfiction?',
     'Email',
     'Regular Price',
+    'Promo Type',
+    'Press Release'
   ]);
   expect(userEmail).toBe(email);
 });
 
-test('should convert max media into correct object', () => {
-  const prepared = prepareEmailMedia(media.max);
+test('should convert max release into correct object', () => {
+  const prepared = prepareEmailRelease(releases.max);
   const {
     submissionType,
     emailBody,
@@ -45,30 +51,28 @@ test('should convert max media into correct object', () => {
     genre,
     subGenre,
     email,
-    regPrice,
-    salePrice,
+    price,
+    promoType,
     startDate,
     endDate,
+    website,
     keywords,
-    tweet,
-    facebook,
-    notes
-  } = media.max;
-  expect(submissionType).toBe('Social Media Submission');
+    releaseText
+  } = releases.max;
+  expect(submissionType).toBe('Press Release');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
     'Genre': genre,
     'Sub-genre': subGenre,
     'Email': email,
-    'Regular Price': regPrice,
-    'Sale Price': salePrice,
+    'Regular Price': price,
+    'Promo Type': promoType,
     'Start Date': startDate.format("MMMM Do YYYY"),
     'End Date': endDate.format("MMMM Do YYYY"),
+    'Website': website,
     'Keywords': keywords,
-    'Tweet': tweet,
-    'Facebook / Other social media post': facebook,
-    'Notes': notes
+    'Press Release': releaseText
   });
   expect(rowOrder).toEqual([
     'Amazon URL',
@@ -77,13 +81,12 @@ test('should convert max media into correct object', () => {
     'Sub-genre',
     'Email',
     'Regular Price',
-    'Sale Price',
+    'Promo Type',
     'Start Date',
     'End Date',
+    'Website',
     'Keywords',
-    'Tweet',
-    'Facebook / Other social media post',
-    'Notes'
+    'Press Release'
   ]);
   expect(userEmail).toBe('example@example.email');
 });
