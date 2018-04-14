@@ -1,9 +1,12 @@
-import amazonUrlExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecificValidators/amazonUrlExistsButIsInvalid';
+import {
+  amazonUrlExistsButIsInvalid,
+  notesDoesNotExist,
+  emailDoesNotExist,
+  emailExistsButIsInvalid,
+  doErrorsExist
+} from 'dao-of-validation';
+
 import noAlertMeIsSelected from './fieldSpecific/noAlertMeIsSelected';
-import notesDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/notesDoesNotExist';
-import emailDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/emailDoesNotExist';
-import emailExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecificValidators/emailExistsButIsInvalid';
-import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist'
 
 const alertsPageValidation = ({
   amazonUrl,

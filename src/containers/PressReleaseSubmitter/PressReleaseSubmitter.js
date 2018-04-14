@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import moment from "moment";
+import { isValidPrice } from 'dao-of-validation';
 
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';  
-import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import releasePage1Validation from "./releasePage1Validation/releasePage1Validation";
 import releasePage2Validation from "./releasePage2Validation/releasePage2Validation";
 import releasePage3Validation from "./releasePage3Validation/releasePage3Validation";

@@ -1,6 +1,7 @@
-
-import priceDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/priceDoesNotExist';
-import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
+import {
+  priceDoesNotExist,
+  doErrorsExist
+} from 'dao-of-validation';
 
 const releasePage2Validation = ({
   price

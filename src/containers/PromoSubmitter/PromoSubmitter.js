@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import moment from "moment";
+import { isValidPrice } from 'dao-of-validation';
 
 import promoPage1Validation from './promoPage1Validation/promoPage1Validation';
 import promoPage2Validation from "./promoPage2Validation/promoPage2Validation";
 import promoPage3Validation from "./promoPage3Validation/promoPage3Validation";
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
-import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
 import PromoComponent from '../../components/PromoComponent/PromoComponent';
 

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import moment from "moment";
+import { isValidPrice } from 'dao-of-validation';
 
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
-import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import mediaPage1Validation from "./mediaPage1Validation/mediaPage1Validation";
 import mediaPage2Validation from "./mediaPage2Validation/mediaPage2Validation";
 import mediaPage3Validation from "./mediaPage3Validation/mediaPage3Validation";

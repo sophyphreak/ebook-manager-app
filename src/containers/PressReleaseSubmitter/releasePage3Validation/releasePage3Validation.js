@@ -1,8 +1,9 @@
 
-import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
-import websiteUrlIsInvalid from './fieldSpecific/websiteUrlIsInvalid';
-import releaseTextDoesNotExist from './fieldSpecific/releaseTextDoesNotExist';
-
+import {
+  websiteUrlIsInvalid,
+  releaseTextDoesNotExist,
+  doErrorsExist
+} from 'dao-of-validation';
 
 const releasePage3Validation = ({
   website,

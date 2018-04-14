@@ -1,10 +1,11 @@
-import amazonUrlDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/amazonUrlDoesNotExist';
-import amazonUrlExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecificValidators/amazonUrlExistsButIsInvalid';
-import fictionIsSelectedButGenreIsNotSelected from '../../submitterUtils/validation/fieldSpecificValidators/fictionIsSelectedButGenreIsNotSelected';
-import emailDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/emailDoesNotExist';
-import emailExistsButIsInvalid from '../../submitterUtils/validation/fieldSpecificValidators/emailExistsButIsInvalid';
-import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
-
+import {
+  amazonUrlDoesNotExist,
+  amazonUrlExistsButIsInvalid,
+  fictionIsSelectedButGenreIsNotSelected,
+  emailDoesNotExist,
+  emailExistsButIsInvalid,
+  doErrorsExist
+} from 'dao-of-validation';
 
 const promoPage1Validation = ({
   amazonUrl,
@@ -14,10 +15,10 @@ const promoPage1Validation = ({
 }) => {
   let error = {};
   if (amazonUrlDoesNotExist(amazonUrl)) {
-    error.amazonUrl = 'Please enter an Amazon.com URL.';
+    error.amazonUrl = 'Please enter an amazon.com URL.';
   }
   if (amazonUrlExistsButIsInvalid(amazonUrl)) {
-    error.amazonUrl = 'Please provide a valid Amazon.com URL.';
+    error.amazonUrl = 'Please provide a valid amazon.com URL.';
   };
   if (fictionIsSelectedButGenreIsNotSelected({ nonFictionOrFiction, genre })) {
     error.genre = 'This message will not render.';

@@ -1,8 +1,9 @@
 
-import descriptionDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/descriptionDoesNotExist';
-import authorBioDoesNotExist from '../../submitterUtils/validation/fieldSpecificValidators/authorBioDoesNotExist';
-import doErrorsExist from '../../submitterUtils/validation/doErrorsExist/doErrorsExist';
-
+import {
+  descriptionDoesNotExist,
+  authorBioDoesNotExist,
+  doErrorsExist
+} from 'dao-of-validation';
 
 const promoPage3Validation = ({
   description,
