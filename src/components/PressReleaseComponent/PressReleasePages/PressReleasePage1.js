@@ -49,8 +49,6 @@ const PressReleasePage1 = ({
         <NonFictionOrFiction
           nonFictionOrFiction={nonFictionOrFiction}
           onNonFictionOrFictionChange={onNonFictionOrFictionChange}
-          hasError={!!error.messsage}
-          errorMessage={error.nonFictionOrFiction}
         />
         {
           nonFictionOrFiction === 'Fiction' &&

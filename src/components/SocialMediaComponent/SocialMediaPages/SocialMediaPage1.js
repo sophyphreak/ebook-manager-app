@@ -49,8 +49,6 @@ const SocialMediaPage1 = ({
           <NonFictionOrFiction
             nonFictionOrFiction={nonFictionOrFiction}
             onNonFictionOrFictionChange={onNonFictionOrFictionChange}
-            hasError={!!error.message}
-            errorMessage={error.nonFictionOrFiction}
           />
           {
             nonFictionOrFiction === 'Fiction' &&
