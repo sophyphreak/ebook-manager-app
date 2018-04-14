@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
-import releaseToNodemailer from './releaseToNodemailer/releaseToNodemailer';
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';  
+import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import updateErrorsReleasePage1 from "./releasePage1Validation/updateErrorsReleasePage1";
+import releaseToNodemailer from './releaseToNodemailer/releaseToNodemailer';
+import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
@@ -116,7 +117,7 @@ export default class PressReleaseSubmitter extends Component {
 
   onPriceChange(e) {
     const price = e.target.value;
-    if (!price || price.match(/^\d{1,}(\.\d{0,2})?$/)) {
+    if (isValidPrice(price)) {
       this.setState(() => ({ price }));
     }
   }

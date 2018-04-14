@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-import PromoComponent from '../../components/PromoComponent/PromoComponent';
 import updateErrorsPromoPage1 from './promoPage1Validation/updateErrorsPromoPage1';
-import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
-import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
-import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
 import updateErrorsPromoPage2 from "./promoPage2Validation/updateErrorsPromoPage2";
 import updateErrorsPromoPage3 from "./promoPage3Validation/updateErrorsPromoPage3";
+import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
+import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
+import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
+import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
+import PromoComponent from '../../components/PromoComponent/PromoComponent';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -104,7 +105,7 @@ export default class PromoSubmitter extends Component {
 
   onPriceChange(e) {
     const price = e.target.value;
-    if (!price || price.match(/^\d{1,}(\.\d{0,2})?$/)) {
+    if (isValidPrice(price)) {
       this.setState(() => ({ price }));
     }
   }
