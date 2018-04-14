@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
-import mediaToNodemailer from "./mediaToNodemailer/mediaToNodemailer";
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
+import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import mediaPage1Validation from "./mediaPage1Validation/mediaPage1Validation";
 import mediaPage2Validation from "./mediaPage2Validation/mediaPage2Validation";
-import sendMediaToNodemailer from "./sendMediaToNodemailer/sendMediaToNodemailer";
 import mediaPage3Validation from "./mediaPage3Validation/mediaPage3Validation";
+import sendMediaToNodemailer from "./sendMediaToNodemailer/sendMediaToNodemailer";
+import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
@@ -121,14 +121,14 @@ export default class SocialMediaSubmitter extends Component {
 
   onRegPriceChange(e) {
     const regPrice = e.target.value;
-    if (!regPrice || regPrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+    if (isValidPrice(regPrice)) {
       this.setState(() => ({ regPrice }));
     }
   }
 
   onSalePriceChange(e) {
     const salePrice = e.target.value;
-    if (!salePrice || salePrice.match(/^\d{1,}(\.\d{0,2})?$/)) {
+    if (isValidPrice(salePrice)) {
       this.setState(() => ({ salePrice }));
     }
   }
