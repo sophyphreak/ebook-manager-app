@@ -1,7 +1,7 @@
 import prepareEmailRelease from './prepareEmailRelease/prepareEmailRelease';
 import postToNodemailer from '../../submitterUtils/postToNodemailer';
 
-const releaseToNodemailer = (state) => {
+const sendReleaseToNodemailer = (state) => {
   const {
     submissionType,
     emailBody,
@@ -11,4 +11,4 @@ const releaseToNodemailer = (state) => {
   postToNodemailer(submissionType, emailBody, rowOrder, userEmail);
 }
 
-export default releaseToNodemailer;
+export default sendReleaseToNodemailer;

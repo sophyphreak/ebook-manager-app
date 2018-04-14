@@ -6,8 +6,10 @@ import genreOptions from "../../components/FormElements/options/genreOptions";
 import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';  
 import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import updateErrorsReleasePage1 from "./releasePage1Validation/updateErrorsReleasePage1";
-import releaseToNodemailer from './releaseToNodemailer/releaseToNodemailer';
+import updateErrorsReleasePage2 from "./releasePage2Validation/updateErrorsReleasePage2";
 import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
+import updateErrorsReleasePage3 from "./releasePage3Validation/updateErrorsReleasePage3";
+import sendReleaseToNodemailer from "./sendReleaseToNodemailer/sendReleaseToNodemailer";
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
@@ -138,37 +140,16 @@ export default class PressReleaseSubmitter extends Component {
   onSubmitPressReleasePage2(e) {
     e.preventDefault();
     const {
-      price,
-      promoType
-    } = this.state;
-    let error = {
-      message: "",
-      price: "",
-      promoType: ""
-    }
-
-    if (!price) {
-      error.price = "Please enter a price.";
+      error,
+      errorsExist
+    } = updateErrorsReleasePage2(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-    if (!promoType) {
-      error.promoType = "this also won't render";
-    };
-    if (
-      error.price ||
-      error.promoType
-    ) {
-      error.message = "Please fix all errors.";
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-
-      const currentPage = "PressReleasePage3";
-      this.setState(() => ({
-        error,
-        currentPage
-      }));
-    }
+    console.log(this.state);
+    const currentPage = "PressReleasePage3";
+    this.setState(() => ({ currentPage }));
   };
 
   // PressReleasePage3
@@ -191,40 +172,17 @@ export default class PressReleaseSubmitter extends Component {
   onSubmitPressReleasePage3(e) {
     e.preventDefault();
     const {
-      website,
-      keywords,
-      releaseText
-    } = this.state;
-    let error = {
-      message: "",
-      website: "",
-      keywords: "",
-      releaseText: ""
+      error,
+      errorsExist
+    } = updateErrorsReleasePage3(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-
-    if (!releaseText) {
-      error.releaseText = "Please enter a Press Release.";
-    };
-    if (website && !website.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)) {
-      error.website = "Please enter a valid uril.";
-    };
-    if (
-      error.releaseText ||
-      error.website
-    ) {
-      error.message = "Please fix all errors.";
-      this.setState(() => ({ error }));
-    }
-    if (!error.message) {
-      console.log(this.state);
-      const currentPage = "SubmissionSuccess";
-      this.setState(() => ({
-        error,
-        currentPage
-      }));
-
-      releaseToNodemailer(this.state);
-    }
+    console.log(this.state);
+    const currentPage = "SubmissionSuccess";
+    this.setState(() => ({ currentPage }));
+    sendReleaseToNodemailer(this.state);
   }
 
   onBack(e) {
