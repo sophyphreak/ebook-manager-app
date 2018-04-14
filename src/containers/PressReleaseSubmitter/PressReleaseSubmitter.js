@@ -7,9 +7,9 @@ import promoTypeOptions from '../../components/FormElements/options/promoTypeOpt
 import isValidPrice from "../submitterUtils/validation/onChange/isValidPrice";
 import releasePage1Validation from "./releasePage1Validation/releasePage1Validation";
 import releasePage2Validation from "./releasePage2Validation/releasePage2Validation";
-import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
 import releasePage3Validation from "./releasePage3Validation/releasePage3Validation";
 import sendReleaseToNodemailer from "./sendReleaseToNodemailer/sendReleaseToNodemailer";
+import PressReleaseComponent from '../../components/PressReleaseComponent/PressReleaseComponent';
 
 export default class PressReleaseSubmitter extends Component {
   constructor(props) {
