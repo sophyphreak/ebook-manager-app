@@ -18,12 +18,14 @@ exports[`should render DatesPicker correctly 1`] = `
   />
   <withStyles(DateRangePicker)
     anchorDirection="left"
+    appendToBody={false}
     block={false}
     calendarInfoPosition="bottom"
     customArrowIcon={null}
     customCloseIcon={null}
     customInputIcon={null}
     daySize={39}
+    disableScroll={false}
     disabled={false}
     displayFormat={[Function]}
     enableOutsideDays={false}

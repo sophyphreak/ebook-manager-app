@@ -19,12 +19,14 @@ exports[`should render SingleDate correctly 1`] = `
   <br />
   <withStyles(SingleDatePicker)
     anchorDirection="left"
+    appendToBody={false}
     block={false}
     calendarInfoPosition="bottom"
     customCloseIcon={null}
     customInputIcon={null}
     date={null}
     daySize={39}
+    disableScroll={false}
     disabled={false}
     displayFormat={[Function]}
     enableOutsideDays={false}
