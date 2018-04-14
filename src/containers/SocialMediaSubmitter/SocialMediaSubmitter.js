@@ -5,6 +5,10 @@ import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMe
 import mediaToNodemailer from "./mediaToNodemailer/mediaToNodemailer";
 import genreOptions from "../../components/FormElements/options/genreOptions";
 import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
+import mediaPage1Validation from "./mediaPage1Validation/mediaPage1Validation";
+import mediaPage2Validation from "./mediaPage2Validation/mediaPage2Validation";
+import sendMediaToNodemailer from "./sendMediaToNodemailer/sendMediaToNodemailer";
+import mediaPage3Validation from "./mediaPage3Validation/mediaPage3Validation";
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
@@ -101,52 +105,16 @@ export default class SocialMediaSubmitter extends Component {
   onSubmitSocialMediaPage1(e) {
     e.preventDefault();
     const {
-      amazonUrl,
-      nonFictionOrFiction,
-      genre,
-      email
-    } = this.state;
-    let error = {
-      message: "",
-      amazonUrl: "",
-      nonFictionOrFiction: "",
-      genre: "",
-      email: ""
+      error,
+      errorsExist
+    } = mediaPage1Validation(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-
-    if (!amazonUrl) {
-      error.amazonUrl = 'Please fill in an Amazon URL.';
-    } else if (!amazonUrl.match(/^(http|https?:\/\/)?(www\.)?(amazon\.com)/)) {
-      error.amazonUrl = 'Please provide a valid Amazon.com URL.';
-    };
-    if (!nonFictionOrFiction) {
-      error.nonFictionOrFiction = 'this will not render to screen';
-    };
-    if (genre === 'Please select' && nonFictionOrFiction === 'Fiction') {
-      error.genre = 'Please select a genre.';
-    };
-    if (!email) {
-      error.email = 'Please enter an email.';
-    } else if (!email.match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)) {
-      error.email = 'Please provide a valid email address.';
-    };
-    if (
-      error.amazonUrl ||
-      error.nonFictionOrFiction ||
-      error.genre ||
-      error.email
-    ) {
-      error.message = 'Please fix errors.'
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-      const currentPage = "SocialMediaPage2";
-      this.setState(() => ({
-        error,
-        currentPage
-      }));
-    };
+    console.log(this.state);
+    const currentPage = "SocialMediaPage2";
+    this.setState(() => ({ currentPage }));
   };
 
   // SocialMediaPage2
@@ -176,31 +144,16 @@ export default class SocialMediaSubmitter extends Component {
   onSubmitSocialMediaPage2(e) {
     e.preventDefault();
     const {
-      regPrice,
-    } = this.state;
-    let error = {
-      message: "",
-      regPrice: "",
-    }
-
-    if (!regPrice) {
-      error.regPrice = "Please enter a regPrice.";
+      error,
+      errorsExist
+    } = mediaPage2Validation(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
     };
-    if (
-      error.regPrice
-    ) {
-      error.message = "Please fix all errors.";
-      this.setState(() => ({ error }));
-    };
-    if (!error.message) {
-      console.log(this.state);
-
-      const currentPage = "SocialMediaPage3";
-      this.setState(() => ({
-        error,
-        currentPage
-      }));
-    }
+    console.log(this.state);
+    const currentPage = "SocialMediaPage3";
+    this.setState(() => ({ currentPage }));
   };
 
   // SocialMediaPage3
@@ -227,13 +180,20 @@ export default class SocialMediaSubmitter extends Component {
 
   onSubmitSocialMediaPage3(e) {
     e.preventDefault();
+    const {
+      error, 
+      errorsExist
+    } = mediaPage3Validation(this.state);
+    this.setState(() => ({ error }));
+    if (errorsExist) {
+      return;
+    };
     console.log(this.state);
     const currentPage = "SubmissionSuccess";
     this.setState(() => ({
       currentPage
     }));
-  
-    mediaToNodemailer(this.state);
+    sendMediaToNodemailer(this.state);
   }
 
   onBack(e) {
