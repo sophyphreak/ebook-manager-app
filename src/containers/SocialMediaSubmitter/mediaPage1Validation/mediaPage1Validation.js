@@ -1,11 +1,12 @@
 import {
   amazonUrlDoesNotExist,
   amazonUrlExistsButIsInvalid,
-  fictionIsSelectedButGenreIsNotSelected,
   emailDoesNotExist,
   emailExistsButIsInvalid,
   doErrorsExist
 } from 'dao-of-validation';
+
+import fictionIsSelectedButGenreIsNotSelected from '../../submitterUtils/validation/fictionIsSelectedButGenreIsNotSelected';
 
 const mediaPage1Validation = ({
   amazonUrl,
