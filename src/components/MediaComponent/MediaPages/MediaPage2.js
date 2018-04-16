@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody, Button, Form } from 'reactstrap';
 import Price from '../../FormElements/Price';
 import DatesPicker from '../../FormElements/DatesPicker';
 
-const SocialMediaPage2 = ({
+const MediaPage2 = ({
   error,
   onBack,
   onSubmit,
@@ -68,4 +68,4 @@ const SocialMediaPage2 = ({
   </Card>
 );
 
-export default SocialMediaPage2;
+export default MediaPage2;

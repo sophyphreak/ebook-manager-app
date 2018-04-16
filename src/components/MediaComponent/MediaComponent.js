@@ -1,31 +1,31 @@
 import React from 'react';
 import { Col, Row } from 'reactstrap';
 
-import SocialMediaPage1 from './SocialMediaPages/SocialMediaPage1';
-import SocialMediaPage2 from './SocialMediaPages/SocialMediaPage2';
-import SocialMediaPage3 from './SocialMediaPages/SocialMediaPage3';
-import SocialMediaSuccess from './SocialMediaPages/SocialMediaSuccess';
+import MediaPage1 from './MediaPages/MediaPage1';
+import MediaPage2 from './MediaPages/MediaPage2';
+import MediaPage3 from './MediaPages/MediaPage3';
+import MediaSuccess from './MediaPages/MediaSuccess';
 
-const SocialMediaComponent = ({
+const MediaComponent = ({
   // Variables
   currentPage,
   error,
 
-  // SocialMediaPage1
+  // MediaPage1
   amazonUrl,
   nonFictionOrFiction,
   genre,
   subGenre,
   email,
 
-  // SocialMediaPage2
+  // MediaPage2
   regPrice,
   salePrice,
   startDate,
   endDate,
   calendarFocus,
 
-  // SocialMediaPage3
+  // MediaPage3
   keywords,
   tweet,
   facebook,
@@ -34,32 +34,32 @@ const SocialMediaComponent = ({
   // Methods
   onBack,
 
-  // SocialMediaPage1
+  // MediaPage1
   onAmazonUrlChange,
   onNonFictionOrFictionChange,
   onGenreChange,
   onSubGenreChange,
   onEmailChange,
-  onSubmitSocialMediaPage1,
+  onSubmitMediaPage1,
 
-  // SocialMediaPage2
+  // MediaPage2
   onRegPriceChange,
   onSalePriceChange,
   onDatesChange,
   onFocusChange,
-  onSubmitSocialMediaPage2,
+  onSubmitMediaPage2,
 
-  // SocialMediaPage3
+  // MediaPage3
   onKeywordsChange,
   onTweetChange,
   onFacebookChange,
   onNotesChange,
-  onSubmitSocialMediaPage3
+  onSubmitMediaPage3
 }) => (
   <Row>
     <Col xs="12" sm={{ size: 8, offset: 2 }}>
-      {currentPage === 'SocialMediaPage1' && (
-        <SocialMediaPage1
+      {currentPage === 'MediaPage1' && (
+        <MediaPage1
           error={error}
           amazonUrl={amazonUrl}
           nonFictionOrFiction={nonFictionOrFiction}
@@ -71,11 +71,11 @@ const SocialMediaComponent = ({
           onGenreChange={onGenreChange}
           onSubGenreChange={onSubGenreChange}
           onEmailChange={onEmailChange}
-          onSubmit={onSubmitSocialMediaPage1}
+          onSubmit={onSubmitMediaPage1}
         />
       )}
-      {currentPage === 'SocialMediaPage2' && (
-        <SocialMediaPage2
+      {currentPage === 'MediaPage2' && (
+        <MediaPage2
           error={error}
           regPrice={regPrice}
           salePrice={salePrice}
@@ -87,11 +87,11 @@ const SocialMediaComponent = ({
           onDatesChange={onDatesChange}
           onFocusChange={onFocusChange}
           onBack={onBack}
-          onSubmit={onSubmitSocialMediaPage2}
+          onSubmit={onSubmitMediaPage2}
         />
       )}
-      {currentPage === 'SocialMediaPage3' && (
-        <SocialMediaPage3
+      {currentPage === 'MediaPage3' && (
+        <MediaPage3
           error={error}
           keywords={keywords}
           tweet={tweet}
@@ -102,14 +102,14 @@ const SocialMediaComponent = ({
           onFacebookChange={onFacebookChange}
           onNotesChange={onNotesChange}
           onBack={onBack}
-          onSubmit={onSubmitSocialMediaPage3}
+          onSubmit={onSubmitMediaPage3}
         />
       )}
       {currentPage === 'SubmissionSuccess' && (
-        <SocialMediaSuccess feature="social media submission" />
+        <MediaSuccess feature="social media submission" />
       )}
     </Col>
   </Row>
 );
 
-export default SocialMediaComponent;
+export default MediaComponent;

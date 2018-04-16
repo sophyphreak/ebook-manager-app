@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render SocialMediaComponent correctly 1`] = `
+exports[`should render MediaComponent correctly 1`] = `
 <Row
   tag="div"
 >

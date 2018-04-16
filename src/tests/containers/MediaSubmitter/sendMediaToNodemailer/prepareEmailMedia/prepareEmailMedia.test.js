@@ -1,4 +1,4 @@
-import prepareEmailMedia from '../../../../../containers/SocialMediaSubmitter/sendMediaToNodemailer/prepareEmailMedia/prepareEmailMedia';
+import prepareEmailMedia from '../../../../../containers/MediaSubmitter/sendMediaToNodemailer/prepareEmailMedia/prepareEmailMedia';
 import media from '../../../fixtures/media';
 
 test('should convert min media into correct object', () => {

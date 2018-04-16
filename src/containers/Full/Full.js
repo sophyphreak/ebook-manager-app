@@ -8,7 +8,7 @@ import Footer from '../../coreui/Footer/Footer';
 
 import Dashboard from '../../components/Dashboard/Dashboard';
 import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
-import SocialMediaSubmitter from '../SocialMediaSubmitter/SocialMediaSubmitter';
+import MediaSubmitter from '../MediaSubmitter/MediaSubmitter';
 import ReleaseSubmitter from '../ReleaseSubmitter/ReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import SalesEstimator from '../SalesEstimator/SalesEstimator';
@@ -43,7 +43,7 @@ class Full extends Component {
                 <Route
                   path="/social-media-submitter"
                   name="Social Media Submitter"
-                  component={SocialMediaSubmitter}
+                  component={MediaSubmitter}
                 />
                 <Route
                   path="/press-release-submitter"

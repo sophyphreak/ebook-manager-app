@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render SocialMediaPage3 correctly 1`] = `
+exports[`should render MediaPage3 correctly 1`] = `
 <Card
   className="animated fadeIn"
   tag="div"

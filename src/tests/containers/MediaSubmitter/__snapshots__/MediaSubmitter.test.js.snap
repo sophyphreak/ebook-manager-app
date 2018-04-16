@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render SocialMediaSubmitter correctly 1`] = `
-<SocialMediaComponent
+exports[`should render MediaSubmitter correctly 1`] = `
+<MediaComponent
   amazonUrl=""
   calendarFocus={null}
-  currentPage="SocialMediaPage1"
+  currentPage="MediaPage1"
   email=""
   endDate={null}
   error={
@@ -40,9 +40,9 @@ exports[`should render SocialMediaSubmitter correctly 1`] = `
   onRegPriceChange={[Function]}
   onSalePriceChange={[Function]}
   onSubGenreChange={[Function]}
-  onSubmitSocialMediaPage1={[Function]}
-  onSubmitSocialMediaPage2={[Function]}
-  onSubmitSocialMediaPage3={[Function]}
+  onSubmitMediaPage1={[Function]}
+  onSubmitMediaPage2={[Function]}
+  onSubmitMediaPage3={[Function]}
   onTweetChange={[Function]}
   regPrice=""
   salePrice=""

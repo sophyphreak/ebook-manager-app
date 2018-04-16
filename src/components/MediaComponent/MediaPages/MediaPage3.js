@@ -6,7 +6,7 @@ import Tweet from '../../FormElements/Tweet';
 import Facebook from '../../FormElements/Facebook';
 import Notes from '../../FormElements/Notes';
 
-const SocialMediaPage3 = ({
+const MediaPage3 = ({
   error,
   onBack,
   onSubmit,
@@ -81,4 +81,4 @@ const SocialMediaPage3 = ({
   </Card>
 );
 
-export default SocialMediaPage3;
+export default MediaPage3;
