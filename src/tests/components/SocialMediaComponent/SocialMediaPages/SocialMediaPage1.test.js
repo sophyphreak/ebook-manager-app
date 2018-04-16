@@ -6,7 +6,7 @@ let error, wrapper;
 
 beforeEach(() => {
   error = {
-    message: ""
+    message: ''
   };
   wrapper = shallow(<SocialMediaPage1 error={error} />);
 });

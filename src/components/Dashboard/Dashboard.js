@@ -4,7 +4,6 @@ import { Col, Row } from 'reactstrap';
 import nothingToSeeGif from '../../../public/img/nothing-to-see-here.gif';
 
 class Dashboard extends Component {
-
   render() {
     return (
       <Row className="animated fadeIn">
@@ -13,7 +12,7 @@ class Dashboard extends Component {
           <img src={nothingToSeeGif} />
         </Col>
       </Row>
-    )
+    );
   }
 }
 

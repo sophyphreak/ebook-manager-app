@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  Col,
-  Row
-} from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 
-import SocialMediaPage1 from "./SocialMediaPages/SocialMediaPage1";
-import SocialMediaPage2 from "./SocialMediaPages/SocialMediaPage2";
-import SocialMediaPage3 from "./SocialMediaPages/SocialMediaPage3";
+import SocialMediaPage1 from './SocialMediaPages/SocialMediaPage1';
+import SocialMediaPage2 from './SocialMediaPages/SocialMediaPage2';
+import SocialMediaPage3 from './SocialMediaPages/SocialMediaPage3';
 import SocialMediaSuccess from './SocialMediaPages/SocialMediaSuccess';
 
 const SocialMediaComponent = ({
@@ -57,69 +54,62 @@ const SocialMediaComponent = ({
   onTweetChange,
   onFacebookChange,
   onNotesChange,
-  onSubmitSocialMediaPage3,
+  onSubmitSocialMediaPage3
 }) => (
-    <Row>
-      <Col xs="12" sm={{ size: 8, offset: 2 }}>
-        {
-          currentPage === "SocialMediaPage1" && (
-            <SocialMediaPage1
-              error={error}
-              amazonUrl={amazonUrl}
-              nonFictionOrFiction={nonFictionOrFiction}
-              genre={genre}
-              subGenre={subGenre}
-              email={email}
-
-              onAmazonUrlChange={onAmazonUrlChange}
-              onNonFictionOrFictionChange={onNonFictionOrFictionChange}
-              onGenreChange={onGenreChange}
-              onSubGenreChange={onSubGenreChange}
-              onEmailChange={onEmailChange}
-              onSubmit={onSubmitSocialMediaPage1}
-            />
-          )
-        }
-        {
-          currentPage === "SocialMediaPage2" && (
-            <SocialMediaPage2
-              error={error}
-              regPrice={regPrice}
-              salePrice={salePrice}
-              startDate={startDate}
-              endDate={endDate}
-              focusedInput={calendarFocus}
-
-              onRegPriceChange={onRegPriceChange}
-              onSalePriceChange={onSalePriceChange}
-              onDatesChange={onDatesChange}
-              onFocusChange={onFocusChange}
-              onBack={onBack}
-              onSubmit={onSubmitSocialMediaPage2}
-            />
-          )
-        }
-        {currentPage === "SocialMediaPage3" && (
-          <SocialMediaPage3
-            error={error}
-            keywords={keywords}
-            tweet={tweet}
-            facebook={facebook}
-            notes={notes}
-            
-            onKeywordsChange={onKeywordsChange}
-            onTweetChange={onTweetChange}
-            onFacebookChange={onFacebookChange}
-            onNotesChange={onNotesChange}
-            onBack={onBack}
-            onSubmit={onSubmitSocialMediaPage3}
-          />
-        )}
-        {currentPage === "SubmissionSuccess" && (
-          <SocialMediaSuccess feature="social media submission" />
-        )}
-      </Col>
-    </Row>
-  );
+  <Row>
+    <Col xs="12" sm={{ size: 8, offset: 2 }}>
+      {currentPage === 'SocialMediaPage1' && (
+        <SocialMediaPage1
+          error={error}
+          amazonUrl={amazonUrl}
+          nonFictionOrFiction={nonFictionOrFiction}
+          genre={genre}
+          subGenre={subGenre}
+          email={email}
+          onAmazonUrlChange={onAmazonUrlChange}
+          onNonFictionOrFictionChange={onNonFictionOrFictionChange}
+          onGenreChange={onGenreChange}
+          onSubGenreChange={onSubGenreChange}
+          onEmailChange={onEmailChange}
+          onSubmit={onSubmitSocialMediaPage1}
+        />
+      )}
+      {currentPage === 'SocialMediaPage2' && (
+        <SocialMediaPage2
+          error={error}
+          regPrice={regPrice}
+          salePrice={salePrice}
+          startDate={startDate}
+          endDate={endDate}
+          focusedInput={calendarFocus}
+          onRegPriceChange={onRegPriceChange}
+          onSalePriceChange={onSalePriceChange}
+          onDatesChange={onDatesChange}
+          onFocusChange={onFocusChange}
+          onBack={onBack}
+          onSubmit={onSubmitSocialMediaPage2}
+        />
+      )}
+      {currentPage === 'SocialMediaPage3' && (
+        <SocialMediaPage3
+          error={error}
+          keywords={keywords}
+          tweet={tweet}
+          facebook={facebook}
+          notes={notes}
+          onKeywordsChange={onKeywordsChange}
+          onTweetChange={onTweetChange}
+          onFacebookChange={onFacebookChange}
+          onNotesChange={onNotesChange}
+          onBack={onBack}
+          onSubmit={onSubmitSocialMediaPage3}
+        />
+      )}
+      {currentPage === 'SubmissionSuccess' && (
+        <SocialMediaSuccess feature="social media submission" />
+      )}
+    </Col>
+  </Row>
+);
 
 export default SocialMediaComponent;

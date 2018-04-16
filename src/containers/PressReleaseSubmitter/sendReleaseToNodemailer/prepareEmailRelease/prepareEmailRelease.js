@@ -18,21 +18,18 @@ const prepareEmailRelease = ({
   let rawBody = {
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Genre': genre,
+    Genre: genre,
     'Sub-genre': subGenre,
-    'Email': email,
+    Email: email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate && startDate.format("MMMM Do YYYY"),
-    'End Date': endDate && endDate.format("MMMM Do YYYY"),
-    'Website': website,
-    'Keywords': keywords,
+    'Start Date': startDate && startDate.format('MMMM Do YYYY'),
+    'End Date': endDate && endDate.format('MMMM Do YYYY'),
+    Website: website,
+    Keywords: keywords,
     'Press Release': releaseText
   };
-  const {
-    emailBody,
-    rowOrder
-  } = getBodyRowOrder(rawBody);
+  const { emailBody, rowOrder } = getBodyRowOrder(rawBody);
   const userEmail = email;
 
   return {
@@ -40,7 +37,7 @@ const prepareEmailRelease = ({
     emailBody,
     rowOrder,
     userEmail
-  }
-}
+  };
+};
 
 export default prepareEmailRelease;

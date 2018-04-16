@@ -18,11 +18,12 @@ export default {
       }
     },
     notes: 'Min notes.',
-    date: moment("20501228", "YYYYMMDD"),
+    date: moment('20501228', 'YYYYMMDD'),
     email: 'example@example.email'
   },
   max: {
-    amazonUrl: 'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
+    amazonUrl:
+      'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
     alertMe: {
       onTheDate: {
         text: 'On the date',
@@ -37,9 +38,9 @@ export default {
         isActive: true
       }
     },
-    date: moment("20501228", "YYYYMMDD"),
+    date: moment('20501228', 'YYYYMMDD'),
     notes: 'These are some notes.',
     email: 'example@example.email',
     email2: 'secondexample@example.email'
   }
-}
+};

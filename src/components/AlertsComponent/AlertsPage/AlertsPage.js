@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Button,
-  Form
-} from 'reactstrap';
+import { Card, CardHeader, CardBody, Button, Form } from 'reactstrap';
 
 import AmazonUrl from '../../FormElements/AmazonUrl';
 import AlertMe from '../../FormElements/AlertMe';
@@ -33,7 +27,7 @@ const AlertsPage = ({
 
   email,
   onEmailChange,
-  
+
   email2,
   onEmail2Change,
 
@@ -41,7 +35,9 @@ const AlertsPage = ({
 }) => (
   <Card className="animated fadeIn">
     <CardHeader>
-      <h4><strong>Create an Alert</strong></h4>
+      <h4>
+        <strong>Create an Alert</strong>
+      </h4>
     </CardHeader>
     <CardBody>
       <Form onSubmit={onSubmitAlert}>
@@ -59,14 +55,14 @@ const AlertsPage = ({
           hasError={!!error.message}
           errorMessage={error.alertMe}
         />
-        <SingleDate 
+        <SingleDate
           label="Alert Date*"
           date={date}
           onDateChange={onDateChange}
           calendarFocused={calendarFocused}
           onFocusChange={onFocusChange}
         />
-        <Notes 
+        <Notes
           label="Notes/Other Info*"
           notes={notes}
           onNotesChange={onNotesChange}
@@ -74,7 +70,7 @@ const AlertsPage = ({
           errorMessage={error.notes}
         />
         <Email
-          label="Email to notify*"          
+          label="Email to notify*"
           email={email}
           onEmailChange={onEmailChange}
           hasError={!!error.message}
@@ -88,14 +84,9 @@ const AlertsPage = ({
           errorMessage={error.email2}
         />
         {error.message && <p>{error.message}</p>}
-        <Button
-          type="submit"
-          size="sm"
-          color="primary"
-          value="Submit"
-        >
+        <Button type="submit" size="sm" color="primary" value="Submit">
           Submit
-      </Button>
+        </Button>
       </Form>
     </CardBody>
   </Card>

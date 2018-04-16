@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import moment from "moment";
+import React, { Component } from 'react';
+import moment from 'moment';
 
 import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
 import flipClickedAlertMeOption from './onChangeHelpers/flipClickedAlertMeOption';
 import alertsPageValidation from './alertValidation/alertsPageValidation';
-import sendAlertToNodemailer from "./sendAlertToNodemailer/sendAlertToNodemailer";
+import sendAlertToNodemailer from './sendAlertToNodemailer/sendAlertToNodemailer';
 
 export default class AlertsSubmitter extends Component {
   constructor(props) {
@@ -12,14 +12,14 @@ export default class AlertsSubmitter extends Component {
     this.state = {
       currentPage: 'AlertsPage',
       error: {
-        message: "",
-        amazonUrl: "",
-        alertMe: "",
-        notes: "",
-        email: "",
-        email2: ""
+        message: '',
+        amazonUrl: '',
+        alertMe: '',
+        notes: '',
+        email: '',
+        email2: ''
       },
-      amazonUrl: "",
+      amazonUrl: '',
       alertMe: {
         onTheDate: {
           text: 'On the date',
@@ -32,13 +32,13 @@ export default class AlertsSubmitter extends Component {
         twoWeeksBefore: {
           text: 'Two weeks before',
           isActive: false
-        },
+        }
       },
       date: moment(),
-      calendarFocused: false, 
-      notes: "", 
-      email: "",
-      email2: ""
+      calendarFocused: false,
+      notes: '',
+      email: '',
+      email2: ''
     };
 
     this.onAmazonUrlChange = this.onAmazonUrlChange.bind(this);
@@ -49,14 +49,14 @@ export default class AlertsSubmitter extends Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onEmail2Change = this.onEmail2Change.bind(this);
     this.onSubmitAlert = this.onSubmitAlert.bind(this);
-  };
+  }
 
   onAmazonUrlChange(e) {
     const amazonUrl = e.target.value;
     this.setState(() => ({ amazonUrl }));
   }
 
-  onAlertMeChange(e) { 
+  onAlertMeChange(e) {
     const option = e.target.value;
     let alertMe = this.state.alertMe;
     const alertMeAndOption = {
@@ -94,20 +94,17 @@ export default class AlertsSubmitter extends Component {
 
   onSubmitAlert(e) {
     e.preventDefault();
-    const {
-      error,
-      errorsExist
-    } = alertsPageValidation(this.state);
-    this.setState(() => ({ error }));    
+    const { error, errorsExist } = alertsPageValidation(this.state);
+    this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "SubmissionSuccess";
+    const currentPage = 'SubmissionSuccess';
     this.setState(() => ({ currentPage }));
     sendAlertToNodemailer(this.state);
-  };
-  
+  }
+
   render() {
     const {
       currentPage,
@@ -131,7 +128,6 @@ export default class AlertsSubmitter extends Component {
         notes={notes}
         email={email}
         email2={email2}
-
         onAmazonUrlChange={this.onAmazonUrlChange}
         onAlertMeChange={this.onAlertMeChange}
         onDateChange={this.onDateChange}

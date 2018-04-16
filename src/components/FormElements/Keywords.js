@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import BasicInput from './MainElements/BasicInput';
 
-const Keywords = ({
-  label,
-  keywords,
-  onKeywordsChange,
-  ...props
-}) => (
+const Keywords = ({ label, keywords, onKeywordsChange, ...props }) => (
   <BasicInput
     label={label}
     value={keywords}

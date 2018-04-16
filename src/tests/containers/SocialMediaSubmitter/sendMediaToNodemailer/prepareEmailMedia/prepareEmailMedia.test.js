@@ -3,42 +3,27 @@ import media from '../../../fixtures/media';
 
 test('should convert min media into correct object', () => {
   const prepared = prepareEmailMedia(media.min);
-  const {
-    submissionType,
-    emailBody,
-    rowOrder,
-    userEmail
-  } = prepared;
-  const {
-    amazonUrl,
-    nonFictionOrFiction,
-    email,
-    regPrice,
-  } = media.min;
+  const { submissionType, emailBody, rowOrder, userEmail } = prepared;
+  const { amazonUrl, nonFictionOrFiction, email, regPrice } = media.min;
   expect(submissionType).toBe('Social Media Submission');
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Email': email,
-    'Regular Price': regPrice,
+    Email: email,
+    'Regular Price': regPrice
   });
   expect(rowOrder).toEqual([
     'Amazon URL',
     'Fiction or Nonfiction?',
     'Email',
-    'Regular Price',
+    'Regular Price'
   ]);
   expect(userEmail).toBe(email);
 });
 
 test('should convert max media into correct object', () => {
   const prepared = prepareEmailMedia(media.max);
-  const {
-    submissionType,
-    emailBody,
-    rowOrder,
-    userEmail
-  } = prepared;
+  const { submissionType, emailBody, rowOrder, userEmail } = prepared;
   const {
     amazonUrl,
     nonFictionOrFiction,
@@ -58,17 +43,17 @@ test('should convert max media into correct object', () => {
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Genre': genre,
+    Genre: genre,
     'Sub-genre': subGenre,
-    'Email': email,
+    Email: email,
     'Regular Price': regPrice,
     'Sale Price': salePrice,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
-    'Keywords': keywords,
-    'Tweet': tweet,
+    'Start Date': startDate.format('MMMM Do YYYY'),
+    'End Date': endDate.format('MMMM Do YYYY'),
+    Keywords: keywords,
+    Tweet: tweet,
     'Facebook / Other social media post': facebook,
-    'Notes': notes
+    Notes: notes
   });
   expect(rowOrder).toEqual([
     'Amazon URL',

@@ -5,7 +5,7 @@ import AlertsSubmitter from '../../../containers/AlertsSubmitter/AlertsSubmitter
 let wrapper;
 
 beforeEach(() => {
-  Date.now = jest.fn(() => 1487076708000)
+  Date.now = jest.fn(() => 1487076708000);
   wrapper = shallow(<AlertsSubmitter />);
 });
 

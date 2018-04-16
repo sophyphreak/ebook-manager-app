@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Button,
   Col,
@@ -12,7 +12,7 @@ import {
   Label,
   Input,
   Row
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class FormTests extends React.Component {
   render() {

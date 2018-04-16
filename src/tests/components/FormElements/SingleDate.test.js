@@ -8,10 +8,7 @@ beforeEach(() => {
   onDateChange = jest.fn();
   onFocusChange = jest.fn();
   wrapper = shallow(
-    <SingleDate 
-      onDateChange={onDateChange} 
-      onFocusChange={onFocusChange}
-    />
+    <SingleDate onDateChange={onDateChange} onFocusChange={onFocusChange} />
   );
 });
 

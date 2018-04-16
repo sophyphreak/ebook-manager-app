@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
-import {
-  FormFeedback,
-  FormGroup,
-  Label,
-  Input
-} from 'reactstrap';
+import { FormFeedback, FormGroup, Label, Input } from 'reactstrap';
 import getValidity from '../getValidity/getValidity';
 
-const TextAreaInput = ({ 
-  hasError,
-  errorMessage,
-  label, 
-  value, 
-  onChange 
-}) => (
+const TextAreaInput = ({ hasError, errorMessage, label, value, onChange }) => (
   <FormGroup>
     <Label>{label}</Label>
     <Input

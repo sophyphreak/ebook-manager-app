@@ -17,26 +17,23 @@ const prepareEmailPromo = ({
   let rawBody = {
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Genre': genre,
+    Genre: genre,
     'Sub-genre': subGenre,
-    'Email': email,
+    Email: email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
-    'Description': description,
+    'Start Date': startDate.format('MMMM Do YYYY'),
+    'End Date': endDate.format('MMMM Do YYYY'),
+    Description: description,
     'Author Biography': authorBio
   };
-  const {
-    emailBody,
-    rowOrder
-  } = getBodyRowOrder(rawBody);
+  const { emailBody, rowOrder } = getBodyRowOrder(rawBody);
   const userEmail = email;
 
   return {
-    submissionType, 
-    emailBody, 
-    rowOrder, 
+    submissionType,
+    emailBody,
+    rowOrder,
     userEmail
   };
 };

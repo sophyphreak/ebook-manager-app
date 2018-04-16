@@ -5,12 +5,8 @@ import RadioInput from '../../../../components/FormElements/MainElements/RadioIn
 let options, wrapper;
 
 beforeEach(() => {
-  options = ['option 0', 'option 1', 'option 2'];  
-  wrapper = shallow(
-    <RadioInput 
-      options={options}
-    />
-  );
+  options = ['option 0', 'option 1', 'option 2'];
+  wrapper = shallow(<RadioInput options={options} />);
 });
 
 test('should render RadioInput correctly', () => {

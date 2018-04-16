@@ -6,11 +6,7 @@ let options, wrapper;
 
 beforeEach(() => {
   options = ['option 0', 'option 1', 'option 2'];
-  wrapper = shallow(
-    <SelectInput 
-      options={options}
-    />
-  );
+  wrapper = shallow(<SelectInput options={options} />);
 });
 
 test('should render SelectInput correctly', () => {

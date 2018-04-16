@@ -3,12 +3,7 @@ import releases from '../../../fixtures/releases';
 
 test('should convert min release into correct object', () => {
   const prepared = prepareEmailRelease(releases.min);
-  const {
-    submissionType,
-    emailBody,
-    rowOrder,
-    userEmail
-  } = prepared;
+  const { submissionType, emailBody, rowOrder, userEmail } = prepared;
   const {
     amazonUrl,
     nonFictionOrFiction,
@@ -21,7 +16,7 @@ test('should convert min release into correct object', () => {
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Email': email,
+    Email: email,
     'Regular Price': price,
     'Promo Type': promoType,
     'Press Release': releaseText
@@ -39,12 +34,7 @@ test('should convert min release into correct object', () => {
 
 test('should convert max release into correct object', () => {
   const prepared = prepareEmailRelease(releases.max);
-  const {
-    submissionType,
-    emailBody,
-    rowOrder,
-    userEmail
-  } = prepared;
+  const { submissionType, emailBody, rowOrder, userEmail } = prepared;
   const {
     amazonUrl,
     nonFictionOrFiction,
@@ -63,15 +53,15 @@ test('should convert max release into correct object', () => {
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Genre': genre,
+    Genre: genre,
     'Sub-genre': subGenre,
-    'Email': email,
+    Email: email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
-    'Website': website,
-    'Keywords': keywords,
+    'Start Date': startDate.format('MMMM Do YYYY'),
+    'End Date': endDate.format('MMMM Do YYYY'),
+    Website: website,
+    Keywords: keywords,
     'Press Release': releaseText
   });
   expect(rowOrder).toEqual([

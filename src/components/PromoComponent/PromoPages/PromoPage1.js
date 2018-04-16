@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import { 
-  Card,
-  CardHeader,
-  CardBody,
-  Button,
-  Form,
-  Label
-} from 'reactstrap';
+import { Card, CardHeader, CardBody, Button, Form, Label } from 'reactstrap';
 
 import AmazonUrl from '../../FormElements/AmazonUrl';
 import NonFictionOrFiction from '../../FormElements/NonFictionOrFiction';
@@ -17,7 +10,7 @@ import Email from '../../FormElements/Email';
 const PromoPage1 = ({
   error,
   onSubmit,
-  
+
   amazonUrl,
   onAmazonUrlChange,
 
@@ -31,11 +24,13 @@ const PromoPage1 = ({
   onSubGenreChange,
 
   email,
-  onEmailChange,
+  onEmailChange
 }) => (
   <Card className="animated fadeIn">
     <CardHeader>
-      <h4><strong>Book Promo - 1 of 3</strong></h4>
+      <h4>
+        <strong>Book Promo - 1 of 3</strong>
+      </h4>
     </CardHeader>
     <CardBody>
       <Form onSubmit={onSubmit}>
@@ -44,30 +39,29 @@ const PromoPage1 = ({
           value={amazonUrl}
           onChange={onAmazonUrlChange}
           hasError={!!error.message}
-          errorMessage={error.amazonUrl}          
+          errorMessage={error.amazonUrl}
         />
         <NonFictionOrFiction
           nonFictionOrFiction={nonFictionOrFiction}
           onNonFictionOrFictionChange={onNonFictionOrFictionChange}
         />
-        {
-          nonFictionOrFiction === 'Fiction' && 
+        {nonFictionOrFiction === 'Fiction' && (
           <div className="animated fadeIn">
-            <Genre 
+            <Genre
               label="Genre:*"
               genre={genre}
               onGenreChange={onGenreChange}
               hasError={!!error.message}
-              errorMessage={error.genre}                                  
+              errorMessage={error.genre}
             />
           </div>
-        }
+        )}
         <SubGenre
           label="SubGenre:"
           subGenre={subGenre}
           onSubGenreChange={onSubGenreChange}
           hasError={!!error.message}
-          errorMessage={error.subGenre}                              
+          errorMessage={error.subGenre}
         />
         <Email
           label="Email:*"
@@ -76,15 +70,10 @@ const PromoPage1 = ({
           hasError={!!error.message}
           errorMessage={error.email}
         />
-        {error.message && <p>{error.message}</p>}        
-        <Button 
-          type="submit" 
-          size="sm" 
-          color="primary" 
-          value="Submit" 
-        >
+        {error.message && <p>{error.message}</p>}
+        <Button type="submit" size="sm" color="primary" value="Submit">
           Next Section
-        </Button>  
+        </Button>
       </Form>
     </CardBody>
   </Card>

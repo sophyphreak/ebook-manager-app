@@ -19,22 +19,19 @@ const prepareEmailMedia = ({
   let rawBody = {
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Genre': genre,
+    Genre: genre,
     'Sub-genre': subGenre,
-    'Email': email,
+    Email: email,
     'Regular Price': regPrice,
     'Sale Price': salePrice,
-    'Start Date': startDate && startDate.format("MMMM Do YYYY"),
-    'End Date': endDate && endDate.format("MMMM Do YYYY"),
-    'Keywords': keywords,
-    'Tweet': tweet,
+    'Start Date': startDate && startDate.format('MMMM Do YYYY'),
+    'End Date': endDate && endDate.format('MMMM Do YYYY'),
+    Keywords: keywords,
+    Tweet: tweet,
     'Facebook / Other social media post': facebook,
-    'Notes': notes
+    Notes: notes
   };
-  const {
-    emailBody,
-    rowOrder
-  } = getBodyRowOrder(rawBody);
+  const { emailBody, rowOrder } = getBodyRowOrder(rawBody);
   const userEmail = email;
 
   return {

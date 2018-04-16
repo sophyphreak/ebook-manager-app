@@ -12,7 +12,7 @@ export default {
     {
       name: 'Promo Submitter',
       url: '/promo-submitter',
-      icon: 'icon-chart',
+      icon: 'icon-chart'
     },
     {
       name: 'Social Media',
@@ -41,12 +41,12 @@ export default {
     {
       name: 'Quill HTML Gen',
       url: '/quill-html-gen',
-      icon: 'icon-docs',
+      icon: 'icon-docs'
     },
     {
       name: 'Quill The Works',
       url: '/quill-the-works',
-      icon: 'icon-docs',
+      icon: 'icon-docs'
     },
     {
       name: 'Draft Playground',
@@ -61,7 +61,7 @@ export default {
     {
       name: 'Playground 2',
       url: '/playground2',
-      icon: 'fa fa-fort-awesome'      
+      icon: 'fa fa-fort-awesome'
     }
   ]
 };

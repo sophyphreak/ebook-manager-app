@@ -6,15 +6,15 @@ let error, wrapper;
 
 beforeEach(() => {
   error = {
-    message: "",
-    title: "",
-    asin: "",
-    amazonUrl: "",
-    nonFictionOrFiction: "",
-    genre: "",
-    firstName: "",
-    lastName: "",
-    email: ""
+    message: '',
+    title: '',
+    asin: '',
+    amazonUrl: '',
+    nonFictionOrFiction: '',
+    genre: '',
+    firstName: '',
+    lastName: '',
+    email: ''
   };
   wrapper = shallow(<PromoPage1 error={error} />);
 });

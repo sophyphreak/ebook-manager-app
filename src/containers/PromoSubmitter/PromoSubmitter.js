@@ -1,56 +1,58 @@
-import React, { Component } from "react";
-import moment from "moment";
+import React, { Component } from 'react';
+import moment from 'moment';
 import { isValidPrice } from 'dao-of-validation';
 
 import promoPage1Validation from './promoPage1Validation/promoPage1Validation';
-import promoPage2Validation from "./promoPage2Validation/promoPage2Validation";
-import promoPage3Validation from "./promoPage3Validation/promoPage3Validation";
-import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
-import promoTypeOptions from "../../components/FormElements/options/promoTypeOptions";
-import sendPromoToNodemailer from "./sendPromoToNodemailer/sendPromoToNodemailer";
+import promoPage2Validation from './promoPage2Validation/promoPage2Validation';
+import promoPage3Validation from './promoPage3Validation/promoPage3Validation';
+import nonFictionOrFictionOptions from '../../components/FormElements/options/nonFictionOrFictionOptions';
+import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';
+import sendPromoToNodemailer from './sendPromoToNodemailer/sendPromoToNodemailer';
 import PromoComponent from '../../components/PromoComponent/PromoComponent';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: "PromoPage1",
+      currentPage: 'PromoPage1',
       error: {},
 
       // PromoPage1
-      amazonUrl: "",
+      amazonUrl: '',
       nonFictionOrFiction: nonFictionOrFictionOptions[0],
-      genre: "Please select",
-      subGenre: "",
-      email: "",
-      
+      genre: 'Please select',
+      subGenre: '',
+      email: '',
+
       // PromoPage2
-      price: "",
+      price: '',
       promoType: promoTypeOptions[0],
       startDate: moment(),
       endDate: moment(),
       calendarFocus: null,
-      
+
       // PromoPage3
-      description: "",
-      authorBio: ""
+      description: '',
+      authorBio: ''
     };
 
     // PromoPage1
     this.onAmazonUrlChange = this.onAmazonUrlChange.bind(this);
-    this.onNonFictionOrFictionChange = this.onNonFictionOrFictionChange.bind(this);
+    this.onNonFictionOrFictionChange = this.onNonFictionOrFictionChange.bind(
+      this
+    );
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onSubmitPromoPage1 = this.onSubmitPromoPage1.bind(this);
-    
+
     // PromoPage2
     this.onPriceChange = this.onPriceChange.bind(this);
     this.onPromoTypeChange = this.onPromoTypeChange.bind(this);
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.onSubmitPromoPage2 = this.onSubmitPromoPage2.bind(this);
-    
+
     // PromoPage3
     this.onDescriptionChange = this.onDescriptionChange.bind(this);
     this.onAuthorBioChange = this.onAuthorBioChange.bind(this);
@@ -88,18 +90,15 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage1(e) {
     e.preventDefault();
-    const {
-      error,
-      errorsExist
-    } = promoPage1Validation(this.state);
+    const { error, errorsExist } = promoPage1Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "PromoPage2";
+    const currentPage = 'PromoPage2';
     this.setState(() => ({ currentPage }));
-  };
+  }
 
   // PromoPage2
 
@@ -125,18 +124,15 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage2(e) {
     e.preventDefault();
-    const {
-      error,
-      errorsExist
-    } = promoPage2Validation(this.state);
+    const { error, errorsExist } = promoPage2Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "PromoPage3";
+    const currentPage = 'PromoPage3';
     this.setState(() => ({ currentPage }));
-  };
+  }
 
   // PromoPage3
 
@@ -152,27 +148,24 @@ export default class PromoSubmitter extends Component {
 
   onSubmitPromoPage3(e) {
     e.preventDefault();
-    const {
-      error,
-      errorsExist
-    } = promoPage3Validation(this.state);
+    const { error, errorsExist } = promoPage3Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "SubmissionSuccess";
+    const currentPage = 'SubmissionSuccess';
     this.setState(() => ({ currentPage }));
     sendPromoToNodemailer(this.state);
   }
 
   onBack(e) {
-    if (this.state.currentPage === "PromoPage2") {
-      const currentPage = "PromoPage1";
+    if (this.state.currentPage === 'PromoPage2') {
+      const currentPage = 'PromoPage1';
       this.setState(() => ({ currentPage }));
     }
-    if (this.state.currentPage === "PromoPage3") {
-      const currentPage = "PromoPage2";
+    if (this.state.currentPage === 'PromoPage3') {
+      const currentPage = 'PromoPage2';
       this.setState(() => ({ currentPage }));
     }
   }
@@ -197,32 +190,27 @@ export default class PromoSubmitter extends Component {
       calendarFocus
     } = this.state;
     return (
-      <PromoComponent 
+      <PromoComponent
         // State
         currentPage={currentPage}
         error={error}
-
         // PromoPage1
         amazonUrl={amazonUrl}
         nonFictionOrFiction={nonFictionOrFiction}
         genre={genre}
         subGenre={subGenre}
         email={email}
-        
         // PromoPage2
         price={price}
         promoType={promoType}
         startDate={startDate}
         endDate={endDate}
         calendarFocus={calendarFocus}
-        
         // PromoPage3
         description={description}
         authorBio={authorBio}
-
         // Methods
         onBack={this.onBack}
-
         // PromoPage1
         onAmazonUrlChange={this.onAmazonUrlChange}
         onNonFictionOrFictionChange={this.onNonFictionOrFictionChange}
@@ -230,14 +218,12 @@ export default class PromoSubmitter extends Component {
         onSubGenreChange={this.onSubGenreChange}
         onEmailChange={this.onEmailChange}
         onSubmitPromoPage1={this.onSubmitPromoPage1}
-        
         // PromoPage2
         onPriceChange={this.onPriceChange}
         onPromoTypeChange={this.onPromoTypeChange}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
         onSubmitPromoPage2={this.onSubmitPromoPage2}
-        
         // PromoPage3
         onDescriptionChange={this.onDescriptionChange}
         onAuthorBioChange={this.onAuthorBioChange}

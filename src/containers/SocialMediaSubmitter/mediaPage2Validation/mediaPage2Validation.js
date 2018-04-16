@@ -1,19 +1,14 @@
-import {
-  thisIsEmpty,
-  doErrorsExist
-} from 'dao-of-validation';
+import { thisIsEmpty, doErrorsExist } from 'dao-of-validation';
 
-const mediaPage2Validation = ({
-  regPrice
-}) => {
+const mediaPage2Validation = ({ regPrice }) => {
   let error = {};
   if (thisIsEmpty(regPrice)) {
-    error.regPrice = "Please enter a price.";
+    error.regPrice = 'Please enter a price.';
   }
   const errorsExist = doErrorsExist(error);
   if (errorsExist) {
-    error.message = 'Please fix errors.'
-  };
+    error.message = 'Please fix errors.';
+  }
   return {
     error,
     errorsExist

@@ -5,7 +5,7 @@ import PromoSubmitter from '../../../containers/PromoSubmitter/PromoSubmitter';
 let wrapper;
 
 beforeEach(() => {
-  Date.now = jest.fn(() => 1487076708000)
+  Date.now = jest.fn(() => 1487076708000);
   wrapper = shallow(<PromoSubmitter />);
 });
 

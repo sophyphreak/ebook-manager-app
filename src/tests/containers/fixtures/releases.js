@@ -2,7 +2,8 @@ import moment from 'moment';
 
 export default {
   min: {
-    amazonUrl: 'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
+    amazonUrl:
+      'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
     nonFictionOrFiction: 'Non-fiction *',
     genre: '',
     subGenre: '',
@@ -13,20 +14,23 @@ export default {
     endDate: null,
     website: '',
     keywords: '',
-    releaseText: 'This is the text of a sample press release for testing purposes.'
+    releaseText:
+      'This is the text of a sample press release for testing purposes.'
   },
   max: {
-    amazonUrl: 'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
+    amazonUrl:
+      'https://www.amazon.com/Chuang-Tzu-Writings-Burton-Watson/dp/0231105959',
     nonFictionOrFiction: 'Fiction',
     genre: 'Romance',
     subGenre: 'Kink Life',
     email: 'example@example.email',
     price: '111',
     promoType: '99 cents',
-    startDate: moment("20501228", "YYYYMMDD"),
-    endDate: moment("20501231", "YYYYMMDD"),
+    startDate: moment('20501228', 'YYYYMMDD'),
+    endDate: moment('20501231', 'YYYYMMDD'),
     website: 'http://wisefoxpub.com/',
     keywords: 'wise, fox, publishing',
-    releaseText: 'This is the text of a sample press release for testing purposes.'
+    releaseText:
+      'This is the text of a sample press release for testing purposes.'
   }
-}
+};

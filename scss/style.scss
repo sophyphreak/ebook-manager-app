@@ -7,26 +7,26 @@
  */
 
 // Override Boostrap variables
-@import "bootstrap-variables";
+@import 'bootstrap-variables';
 
 // Import Bootstrap source files
-@import "node_modules/bootstrap/scss/bootstrap";
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 // Override core variables
-@import "core-variables";
+@import 'core-variables';
 
 // Import core styles
-@import "core/core";
+@import 'core/core';
 
 // Custom styles
-@import "custom";
+@import 'custom';
 
 // Specific component styles
-@import "components/FormElements/_radio-input.scss";
-@import "components/FormElements/_dates-picker.scss";
-@import "components/FormElements/_horizontal-radio.scss";
-@import "components/FormElements/_back-button.scss";
-@import "components/FormElements/_checkbox-input.scss";
-@import "components/ReactQuill/_react-quill.scss";
-@import "components/Draftjs/_draft-js.scss";
-@import "components/FormElements/_textarea.scss";
+@import 'components/FormElements/_radio-input.scss';
+@import 'components/FormElements/_dates-picker.scss';
+@import 'components/FormElements/_horizontal-radio.scss';
+@import 'components/FormElements/_back-button.scss';
+@import 'components/FormElements/_checkbox-input.scss';
+@import 'components/ReactQuill/_react-quill.scss';
+@import 'components/Draftjs/_draft-js.scss';
+@import 'components/FormElements/_textarea.scss';

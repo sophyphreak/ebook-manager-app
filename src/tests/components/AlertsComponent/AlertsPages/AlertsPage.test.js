@@ -6,7 +6,7 @@ let error, wrapper;
 
 beforeEach(() => {
   error = {
-    message: ""
+    message: ''
   };
   wrapper = shallow(<AlertsPage error={error} />);
 });

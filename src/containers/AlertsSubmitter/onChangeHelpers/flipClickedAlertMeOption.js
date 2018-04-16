@@ -1,7 +1,4 @@
-const flipClickedAlertMeOption = ({
-  alertMe,
-  option
-}) => {
+const flipClickedAlertMeOption = ({ alertMe, option }) => {
   alertMe[option].isActive = !alertMe[option].isActive;
   return alertMe;
 };

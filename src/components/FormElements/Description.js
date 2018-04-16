@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import TextAreaInput from './MainElements/TextAreaInput';
 
-const Description = ({
-  label,
-  description,
-  onDescriptionChange,
-  ...props
-}) => (
+const Description = ({ label, description, onDescriptionChange, ...props }) => (
   <TextAreaInput
     label={label}
     value={description}

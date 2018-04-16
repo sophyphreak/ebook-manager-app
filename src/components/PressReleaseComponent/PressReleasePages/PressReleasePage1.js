@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import { 
-  Card,
-  CardHeader,
-  CardBody,
-  Button,
-  Form,
-  Label
-} from 'reactstrap';
+import { Card, CardHeader, CardBody, Button, Form, Label } from 'reactstrap';
 
 import AmazonUrl from '../../FormElements/AmazonUrl';
 import NonFictionOrFiction from '../../FormElements/NonFictionOrFiction';
@@ -17,7 +10,7 @@ import Email from '../../FormElements/Email';
 const PressReleasePage1 = ({
   error,
   onSubmit,
-  
+
   amazonUrl,
   onAmazonUrlChange,
 
@@ -31,11 +24,13 @@ const PressReleasePage1 = ({
   onSubGenreChange,
 
   email,
-  onEmailChange,
+  onEmailChange
 }) => (
   <Card className="animated fadeIn">
     <CardHeader>
-      <h4><strong>Press Release - 1 of 3</strong></h4>
+      <h4>
+        <strong>Press Release - 1 of 3</strong>
+      </h4>
     </CardHeader>
     <CardBody>
       <Form onSubmit={onSubmit}>
@@ -50,8 +45,7 @@ const PressReleasePage1 = ({
           nonFictionOrFiction={nonFictionOrFiction}
           onNonFictionOrFictionChange={onNonFictionOrFictionChange}
         />
-        {
-          nonFictionOrFiction === 'Fiction' &&
+        {nonFictionOrFiction === 'Fiction' && (
           <div className="animated fadeIn">
             <Genre
               label="Genre:*"
@@ -61,7 +55,7 @@ const PressReleasePage1 = ({
               errorMessage={error.genre}
             />
           </div>
-        }
+        )}
         <SubGenre
           label="SubGenre:"
           subGenre={subGenre}
@@ -76,15 +70,10 @@ const PressReleasePage1 = ({
           hasError={!!error.message}
           errorMessage={error.email}
         />
-        {error.message && <p>{error.message}</p>}        
-        <Button 
-          type="submit" 
-          size="sm" 
-          color="primary" 
-          value="Submit" 
-        >
+        {error.message && <p>{error.message}</p>}
+        <Button type="submit" size="sm" color="primary" value="Submit">
           Next Section
-        </Button>  
+        </Button>
       </Form>
     </CardBody>
   </Card>

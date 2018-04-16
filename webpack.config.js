@@ -51,18 +51,20 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.(scss)$/,
-          use: ['css-hot-loader'].concat(extractSCSS.extract({
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {alias: {'../img': '../public/img'}}
-              },
-              {
-                loader: 'sass-loader'
-              }
-            ]
-          }))
+          use: ['css-hot-loader'].concat(
+            extractSCSS.extract({
+              fallback: 'style-loader',
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: { alias: { '../img': '../public/img' } }
+                },
+                {
+                  loader: 'sass-loader'
+                }
+              ]
+            })
+          )
         },
         {
           test: /\.css$/,
@@ -89,7 +91,8 @@ module.exports = (env = {}) => {
           options: {
             name: './fonts/[name].[hash].[ext]'
           }
-        }]
+        }
+      ]
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
@@ -97,17 +100,13 @@ module.exports = (env = {}) => {
       new webpack.NamedModulesPlugin(),
       extractCSS,
       extractSCSS,
-      new HtmlWebpackPlugin(
-        {
-          inject: true,
-          template: './public/index.html'
-        }
-      ),
-      new CopyWebpackPlugin([
-          {from: './public/img', to: 'img'}
-        ],
-        {copyUnmodified: false}
-      )
+      new HtmlWebpackPlugin({
+        inject: true,
+        template: './public/index.html'
+      }),
+      new CopyWebpackPlugin([{ from: './public/img', to: 'img' }], {
+        copyUnmodified: false
+      })
     ]
-  }
+  };
 };

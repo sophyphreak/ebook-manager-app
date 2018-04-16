@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Button,
   Card,
@@ -11,7 +11,7 @@ import {
   Label,
   Input,
   Row
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class FormTests2 extends React.Component {
   render() {

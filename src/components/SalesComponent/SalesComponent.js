@@ -24,27 +24,26 @@ const SalesComponent = ({
     <Col xs="12" sm={{ size: 6, offset: 3 }}>
       <Card>
         <CardHeader>
-          <h4><strong>Sales Estimator</strong></h4>
+          <h4>
+            <strong>Sales Estimator</strong>
+          </h4>
         </CardHeader>
         <CardBody>
-          <KindleOrPrint 
+          <KindleOrPrint
             kindleOrPrint={kindleOrPrint}
             onKindleOrPrintChange={onKindleOrPrintChange}
           />
-          <BasicInput
-            label="Enter BSR"
-            onChange={onBsrChange}
-            value={bsr}
-          />
+          <BasicInput label="Enter BSR" onChange={onBsrChange} value={bsr} />
           <br />
-          {
-            bsr &&
+          {bsr && (
             <FormGroup className="animated fadeIn">
               <Label>Estimated sales</Label>
-              <br /> 
-              <Label><b>{sales} units per month</b></Label>
+              <br />
+              <Label>
+                <b>{sales} units per month</b>
+              </Label>
             </FormGroup>
-          }
+          )}
         </CardBody>
       </Card>
     </Col>

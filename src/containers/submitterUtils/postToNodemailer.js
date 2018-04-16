@@ -1,33 +1,28 @@
-import axios from "axios";
+import axios from 'axios';
 import { html as beautify } from 'js-beautify';
 
-const postToNodemailer = (
-  submissionType, 
-  body, 
-  rowOrder, 
-  userEmail
-) => {
+const postToNodemailer = (submissionType, body, rowOrder, userEmail) => {
   let coreHtml = '<table>';
-  Object.keys(body).map((row) => {
+  Object.keys(body).map(row => {
     coreHtml += `<tr><td>${row}</td><td>${body[row]}</td></tr>`;
   });
   coreHtml += '</table>';
 
-  const wiseFoxSubject = submissionType
+  const wiseFoxSubject = submissionType;
   let wiseFoxHtml = `<h3>${submissionType} Request</h3>` + coreHtml;
   wiseFoxHtml = beautify(wiseFoxHtml);
-  
-  const userSubject = `Your ${submissionType} Request Was Sent!`
+
+  const userSubject = `Your ${submissionType} Request Was Sent!`;
   let userHtml = `
     <p>Thank you for sending your promotion submission request!</p>
     <p>Please let us know if any of the below information is incorrect.</p>
     <p>We will send you an email when the promotion submission is finished.</p><hr />`;
   userHtml += coreHtml;
-  userHtml += '<hr /><p>Thanks again!</p ><p>--Wise Fox</p>'
+  userHtml += '<hr /><p>Thanks again!</p ><p>--Wise Fox</p>';
   userHtml = beautify(userHtml);
 
   axios
-    .post("/api/submitter", {
+    .post('/api/submitter', {
       toWiseFox: {
         subject: wiseFoxSubject,
         html: wiseFoxHtml

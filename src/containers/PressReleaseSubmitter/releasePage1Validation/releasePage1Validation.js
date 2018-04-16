@@ -19,20 +19,20 @@ const releasePage1Validation = ({
   }
   if (amazonUrlExistsButIsInvalid(amazonUrl)) {
     error.amazonUrl = 'Please provide a valid amazon.com URL.';
-  };
+  }
   if (fictionIsSelectedButGenreIsNotSelected({ nonFictionOrFiction, genre })) {
     error.genre = 'This message will not render.';
-  };
+  }
   if (thisIsEmpty(email)) {
     error.email = 'Please enter an email.';
-  };
+  }
   if (emailExistsButIsInvalid(email)) {
     error.email = 'Please provide a valid email address.';
-  };
+  }
   const errorsExist = doErrorsExist(error);
   if (errorsExist) {
-    error.message = 'Please fix errors.'
-  };
+    error.message = 'Please fix errors.';
+  }
   return {
     error,
     errorsExist

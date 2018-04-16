@@ -11,14 +11,14 @@ const SingleDate = ({
   onFocusChange
 }) => (
   <FormGroup>
-      <Label>{label}</Label>
-      <br />
-      <SingleDatePicker
-        date={date}
-        onDateChange={onDateChange}
-        focused={calendarFocused}
-        onFocusChange={onFocusChange}
-      />
+    <Label>{label}</Label>
+    <br />
+    <SingleDatePicker
+      date={date}
+      onDateChange={onDateChange}
+      focused={calendarFocused}
+      onFocusChange={onFocusChange}
+    />
   </FormGroup>
 );
 

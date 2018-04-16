@@ -1,58 +1,60 @@
-import React, { Component } from "react";
-import moment from "moment";
+import React, { Component } from 'react';
+import moment from 'moment';
 import { isValidPrice } from 'dao-of-validation';
 
-import genreOptions from "../../components/FormElements/options/genreOptions";
-import nonFictionOrFictionOptions from "../../components/FormElements/options/nonFictionOrFictionOptions";
-import mediaPage1Validation from "./mediaPage1Validation/mediaPage1Validation";
-import mediaPage2Validation from "./mediaPage2Validation/mediaPage2Validation";
-import mediaPage3Validation from "./mediaPage3Validation/mediaPage3Validation";
-import sendMediaToNodemailer from "./sendMediaToNodemailer/sendMediaToNodemailer";
+import genreOptions from '../../components/FormElements/options/genreOptions';
+import nonFictionOrFictionOptions from '../../components/FormElements/options/nonFictionOrFictionOptions';
+import mediaPage1Validation from './mediaPage1Validation/mediaPage1Validation';
+import mediaPage2Validation from './mediaPage2Validation/mediaPage2Validation';
+import mediaPage3Validation from './mediaPage3Validation/mediaPage3Validation';
+import sendMediaToNodemailer from './sendMediaToNodemailer/sendMediaToNodemailer';
 import SocialMediaComponent from '../../components/SocialMediaComponent/SocialMediaComponent';
 
 export default class SocialMediaSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: "SocialMediaPage1",
+      currentPage: 'SocialMediaPage1',
       error: {
-        message: "",
-        amazonUrl: "",
-        nonFictionOrFiction: "",
-        genre: "",
-        email: "",
-        regPrice: "",
-        salePrice: "",
-        keywords: "",
-        tweet: "",
-        facebook: "",
-        notes: ""
+        message: '',
+        amazonUrl: '',
+        nonFictionOrFiction: '',
+        genre: '',
+        email: '',
+        regPrice: '',
+        salePrice: '',
+        keywords: '',
+        tweet: '',
+        facebook: '',
+        notes: ''
       },
 
       // SocialMediaPage1
-      amazonUrl: "",
+      amazonUrl: '',
       nonFictionOrFiction: nonFictionOrFictionOptions[0],
       genre: genreOptions[0],
-      subGenre: "",
-      email: "",
+      subGenre: '',
+      email: '',
 
       // SocialMediaPage2
-      regPrice: "",
-      salePrice: "",
+      regPrice: '',
+      salePrice: '',
       startDate: null,
       endDate: null,
       calendarFocus: null,
 
       // SocialMediaPage3
-      keywords: "",
-      tweet: "",
-      facebook: "",
-      notes: ""
+      keywords: '',
+      tweet: '',
+      facebook: '',
+      notes: ''
     };
 
     // SocialMediaPage1
     this.onAmazonUrlChange = this.onAmazonUrlChange.bind(this);
-    this.onNonFictionOrFictionChange = this.onNonFictionOrFictionChange.bind(this);
+    this.onNonFictionOrFictionChange = this.onNonFictionOrFictionChange.bind(
+      this
+    );
     this.onGenreChange = this.onGenreChange.bind(this);
     this.onSubGenreChange = this.onSubGenreChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
@@ -104,18 +106,15 @@ export default class SocialMediaSubmitter extends Component {
 
   onSubmitSocialMediaPage1(e) {
     e.preventDefault();
-    const {
-      error,
-      errorsExist
-    } = mediaPage1Validation(this.state);
+    const { error, errorsExist } = mediaPage1Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "SocialMediaPage2";
+    const currentPage = 'SocialMediaPage2';
     this.setState(() => ({ currentPage }));
-  };
+  }
 
   // SocialMediaPage2
 
@@ -143,30 +142,27 @@ export default class SocialMediaSubmitter extends Component {
 
   onSubmitSocialMediaPage2(e) {
     e.preventDefault();
-    const {
-      error,
-      errorsExist
-    } = mediaPage2Validation(this.state);
+    const { error, errorsExist } = mediaPage2Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "SocialMediaPage3";
+    const currentPage = 'SocialMediaPage3';
     this.setState(() => ({ currentPage }));
-  };
+  }
 
   // SocialMediaPage3
 
   onKeywordsChange(e) {
     const keywords = e.target.value;
     this.setState(() => ({ keywords }));
-  };
+  }
 
   onTweetChange(e) {
     const tweet = e.target.value.slice(0, 280);
     this.setState(() => ({ tweet }));
-  };
+  }
 
   onFacebookChange(e) {
     const facebook = e.target.value.slice(0, 1999);
@@ -180,16 +176,13 @@ export default class SocialMediaSubmitter extends Component {
 
   onSubmitSocialMediaPage3(e) {
     e.preventDefault();
-    const {
-      error, 
-      errorsExist
-    } = mediaPage3Validation(this.state);
+    const { error, errorsExist } = mediaPage3Validation(this.state);
     this.setState(() => ({ error }));
     if (errorsExist) {
       return;
-    };
+    }
     console.log(this.state);
-    const currentPage = "SubmissionSuccess";
+    const currentPage = 'SubmissionSuccess';
     this.setState(() => ({
       currentPage
     }));
@@ -197,12 +190,12 @@ export default class SocialMediaSubmitter extends Component {
   }
 
   onBack(e) {
-    if (this.state.currentPage === "SocialMediaPage2") {
-      const currentPage = "SocialMediaPage1";
+    if (this.state.currentPage === 'SocialMediaPage2') {
+      const currentPage = 'SocialMediaPage1';
       this.setState(() => ({ currentPage }));
     }
-    if (this.state.currentPage === "SocialMediaPage3") {
-      const currentPage = "SocialMediaPage2";
+    if (this.state.currentPage === 'SocialMediaPage3') {
+      const currentPage = 'SocialMediaPage2';
       this.setState(() => ({ currentPage }));
     }
   }
@@ -231,30 +224,25 @@ export default class SocialMediaSubmitter extends Component {
         // State
         currentPage={currentPage}
         error={error}
-
         // SocialMediaPage1
         amazonUrl={amazonUrl}
         nonFictionOrFiction={nonFictionOrFiction}
         genre={genre}
         subGenre={subGenre}
         email={email}
-
         // SocialMediaPage2
         regPrice={regPrice}
         salePrice={salePrice}
         startDate={startDate}
         endDate={endDate}
         calendarFocus={calendarFocus}
-
         // SocialMediaPage3
         keywords={keywords}
         tweet={tweet}
         facebook={facebook}
         notes={notes}
-
         // Methods
         onBack={this.onBack}
-
         // SocialMediaPage1
         onAmazonUrlChange={this.onAmazonUrlChange}
         onNonFictionOrFictionChange={this.onNonFictionOrFictionChange}
@@ -262,14 +250,12 @@ export default class SocialMediaSubmitter extends Component {
         onSubGenreChange={this.onSubGenreChange}
         onEmailChange={this.onEmailChange}
         onSubmitSocialMediaPage1={this.onSubmitSocialMediaPage1}
-
         // SocialMediaPage2
         onRegPriceChange={this.onRegPriceChange}
         onSalePriceChange={this.onSalePriceChange}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
         onSubmitSocialMediaPage2={this.onSubmitSocialMediaPage2}
-
         // SocialMediaPage3
         onKeywordsChange={this.onKeywordsChange}
         onTweetChange={this.onTweetChange}

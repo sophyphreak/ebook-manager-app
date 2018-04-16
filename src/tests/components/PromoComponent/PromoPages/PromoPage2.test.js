@@ -6,9 +6,9 @@ let error, wrapper;
 
 beforeEach(() => {
   error = {
-    message: "",
-    price: "",
-    promoType: ""
+    message: '',
+    price: '',
+    promoType: ''
   };
   wrapper = shallow(<PromoPage2 error={error} />);
 });

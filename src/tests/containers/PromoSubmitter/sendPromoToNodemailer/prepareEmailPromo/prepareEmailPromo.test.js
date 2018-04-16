@@ -3,12 +3,7 @@ import promos from '../../../fixtures/promos';
 
 test('should convert min promo into correct object', () => {
   const prepared = prepareEmailPromo(promos.min);
-  const {
-    submissionType,
-    emailBody,
-    rowOrder,
-    userEmail
-  } = prepared;
+  const { submissionType, emailBody, rowOrder, userEmail } = prepared;
   const {
     amazonUrl,
     nonFictionOrFiction,
@@ -24,12 +19,12 @@ test('should convert min promo into correct object', () => {
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Email': email,
+    Email: email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
-    'Description': description,
+    'Start Date': startDate.format('MMMM Do YYYY'),
+    'End Date': endDate.format('MMMM Do YYYY'),
+    Description: description,
     'Author Biography': authorBio
   });
   expect(rowOrder).toEqual([
@@ -48,12 +43,7 @@ test('should convert min promo into correct object', () => {
 
 test('should convert max promo into correct object', () => {
   const prepared = prepareEmailPromo(promos.max);
-  const {
-    submissionType,
-    emailBody,
-    rowOrder,
-    userEmail
-  } = prepared;
+  const { submissionType, emailBody, rowOrder, userEmail } = prepared;
   const {
     amazonUrl,
     nonFictionOrFiction,
@@ -71,14 +61,14 @@ test('should convert max promo into correct object', () => {
   expect(emailBody).toEqual({
     'Amazon URL': amazonUrl,
     'Fiction or Nonfiction?': nonFictionOrFiction,
-    'Genre': genre,
+    Genre: genre,
     'Sub-genre': subGenre,
-    'Email': email,
+    Email: email,
     'Regular Price': price,
     'Promo Type': promoType,
-    'Start Date': startDate.format("MMMM Do YYYY"),
-    'End Date': endDate.format("MMMM Do YYYY"),
-    'Description': description,
+    'Start Date': startDate.format('MMMM Do YYYY'),
+    'End Date': endDate.format('MMMM Do YYYY'),
+    Description: description,
     'Author Biography': authorBio
   });
   expect(rowOrder).toEqual([

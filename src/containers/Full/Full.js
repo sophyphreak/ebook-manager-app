@@ -13,7 +13,7 @@ import PressReleaseSubmitter from '../PressReleaseSubmitter/PressReleaseSubmitte
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import SalesEstimator from '../SalesEstimator/SalesEstimator';
 import QuillPlayground from '../../playground/QuillPlayground';
-import QuillTheWorks from '../../playground/QuillTheWorks'
+import QuillTheWorks from '../../playground/QuillTheWorks';
 import DraftPlayground from '../../playground/DraftPlayground';
 import FormTests from '../../playground/FormTests';
 import FormTests2 from '../../playground/FormTests2';
@@ -25,23 +25,67 @@ class Full extends Component {
       <div className="app">
         <Header />
         <div className="app-body">
-          <Sidebar {...this.props}/>
+          <Sidebar {...this.props} />
           <main className="main">
             <Breadcrumb />
             <Container fluid>
               <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                <Route path="/promo-submitter" name="Promo Submitter" component={PromoSubmitter} />
-                <Route path="/social-media-submitter" name="Social Media Submitter" component={SocialMediaSubmitter} />
-                <Route path="/press-release-submitter" name="Press Release Submitter" component={PressReleaseSubmitter} />
-                <Route path="/alerts-submitter" name="Alerts Submitter" component={AlertsSubmitter} />
-                <Route path="/sales-estimator" name="Sales Estimator" component={SalesEstimator} />
-                <Route path="/quill-html-gen" name="Quill HTML Gen" component={QuillPlayground} />
-                <Route path="/quill-the-works" name="Quill The Works" component={QuillTheWorks} />
-                <Route path="/draft-playground" name="Draft Playground" component={DraftPlayground} />
-                <Route path="/playground" name="Playground" component={FormTests} />
-                <Route path="/playground2" name="Playground2" component={FormTests2} />
-                <Redirect from="/" to="/dashboard" exact={true}/>
+                <Route
+                  path="/dashboard"
+                  name="Dashboard"
+                  component={Dashboard}
+                />
+                <Route
+                  path="/promo-submitter"
+                  name="Promo Submitter"
+                  component={PromoSubmitter}
+                />
+                <Route
+                  path="/social-media-submitter"
+                  name="Social Media Submitter"
+                  component={SocialMediaSubmitter}
+                />
+                <Route
+                  path="/press-release-submitter"
+                  name="Press Release Submitter"
+                  component={PressReleaseSubmitter}
+                />
+                <Route
+                  path="/alerts-submitter"
+                  name="Alerts Submitter"
+                  component={AlertsSubmitter}
+                />
+                <Route
+                  path="/sales-estimator"
+                  name="Sales Estimator"
+                  component={SalesEstimator}
+                />
+                <Route
+                  path="/quill-html-gen"
+                  name="Quill HTML Gen"
+                  component={QuillPlayground}
+                />
+                <Route
+                  path="/quill-the-works"
+                  name="Quill The Works"
+                  component={QuillTheWorks}
+                />
+                <Route
+                  path="/draft-playground"
+                  name="Draft Playground"
+                  component={DraftPlayground}
+                />
+                <Route
+                  path="/playground"
+                  name="Playground"
+                  component={FormTests}
+                />
+                <Route
+                  path="/playground2"
+                  name="Playground2"
+                  component={FormTests2}
+                />
+                <Redirect from="/" to="/dashboard" exact={true} />
                 <Route component={NotFoundPage} />
               </Switch>
             </Container>

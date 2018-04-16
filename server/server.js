@@ -38,7 +38,6 @@ app.post('/api/submitter', async (req, res) => {
       html: req.body.toWiseFox.html,
       text: htmlToText.fromString(req.body.toWiseFox.html, { wordwrap: 130 })
     };
-    
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
@@ -49,7 +48,7 @@ app.post('/api/submitter', async (req, res) => {
       // Preview only available when sending through an Ethereal account
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-  
+
     // Use my smcm.edu email for really sending emails
     transporter = nodemailer.createTransport({
       service: 'Gmail',
@@ -73,11 +72,9 @@ app.post('/api/submitter', async (req, res) => {
       }
       console.log('Message sent: %s', info.messageId);
     });
-
-
   } catch (e) {
     res.status(400).send(e);
-  };
+  }
 });
 
 app.listen(port, () => {
