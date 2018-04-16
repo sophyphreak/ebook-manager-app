@@ -1,7 +1,6 @@
 import {
   amazonUrlExistsButIsInvalid,
-  notesDoesNotExist,
-  emailDoesNotExist,
+  thisIsEmpty,
   emailExistsButIsInvalid,
   doErrorsExist
 } from 'dao-of-validation';
@@ -23,10 +22,10 @@ const alertsPageValidation = ({
   if (noAlertMeIsSelected(alertMe)) {
     error.alertMe = 'This message will not render.';
   };
-  if (notesDoesNotExist(notes)) {
+  if (thisIsEmpty(notes)) {
     error.notes = 'Please enter notes.';
   };
-  if (emailDoesNotExist(email)) {
+  if (thisIsEmpty(email)) {
     error.email = 'Please enter an email.';
   };
   if (emailExistsButIsInvalid(email)) {

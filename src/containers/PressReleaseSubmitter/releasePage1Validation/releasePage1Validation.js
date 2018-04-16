@@ -1,7 +1,6 @@
 import {
-  amazonUrlDoesNotExist,
+  thisIsEmpty,
   amazonUrlExistsButIsInvalid,
-  emailDoesNotExist,
   emailExistsButIsInvalid,
   doErrorsExist
 } from 'dao-of-validation';
@@ -15,7 +14,7 @@ const releasePage1Validation = ({
   email
 }) => {
   let error = {};
-  if (amazonUrlDoesNotExist(amazonUrl)) {
+  if (thisIsEmpty(amazonUrl)) {
     error.amazonUrl = 'Please enter an amazon.com URL.';
   }
   if (amazonUrlExistsButIsInvalid(amazonUrl)) {
@@ -24,7 +23,7 @@ const releasePage1Validation = ({
   if (fictionIsSelectedButGenreIsNotSelected({ nonFictionOrFiction, genre })) {
     error.genre = 'This message will not render.';
   };
-  if (emailDoesNotExist(email)) {
+  if (thisIsEmpty(email)) {
     error.email = 'Please enter an email.';
   };
   if (emailExistsButIsInvalid(email)) {

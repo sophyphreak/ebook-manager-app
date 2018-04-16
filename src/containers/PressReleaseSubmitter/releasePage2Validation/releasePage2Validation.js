@@ -1,5 +1,5 @@
 import {
-  priceDoesNotExist,
+  thisIsEmpty,
   doErrorsExist
 } from 'dao-of-validation';
 
@@ -7,7 +7,7 @@ const releasePage2Validation = ({
   price
 }) => {
   let error = {};
-  if (priceDoesNotExist(price)) {
+  if (thisIsEmpty(price)) {
     error.price = "Please enter a price.";
   }
   const errorsExist = doErrorsExist(error);

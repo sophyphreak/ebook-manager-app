@@ -1,7 +1,6 @@
 
 import {
-  descriptionDoesNotExist,
-  authorBioDoesNotExist,
+  thisIsEmpty,
   doErrorsExist
 } from 'dao-of-validation';
 
@@ -10,10 +9,10 @@ const promoPage3Validation = ({
   authorBio
 }) => {
   let error = {};
-  if (descriptionDoesNotExist(description)) {
+  if (thisIsEmpty(description)) {
     error.description = "Please enter a book description.";    
   }
-  if (authorBioDoesNotExist(authorBio)) {
+  if (thisIsEmpty(authorBio)) {
     error.authorBio = "Please enter an author biography.";    
   }
   const errorsExist = doErrorsExist(error);

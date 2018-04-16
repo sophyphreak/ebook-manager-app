@@ -1,5 +1,5 @@
 import {
-  priceDoesNotExist,
+  thisIsEmpty,
   doErrorsExist
 } from 'dao-of-validation';
 
@@ -7,7 +7,7 @@ const mediaPage2Validation = ({
   regPrice
 }) => {
   let error = {};
-  if (priceDoesNotExist(regPrice)) {
+  if (thisIsEmpty(regPrice)) {
     error.regPrice = "Please enter a price.";
   }
   const errorsExist = doErrorsExist(error);
