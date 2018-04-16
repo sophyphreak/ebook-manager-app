@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render PressReleasePage3 correctly 1`] = `
+exports[`should render ReleasePage3 correctly 1`] = `
 <Card
   className="animated fadeIn"
   tag="div"

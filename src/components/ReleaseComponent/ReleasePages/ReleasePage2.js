@@ -5,7 +5,7 @@ import Price from '../../FormElements/Price';
 import PromoType from '../../FormElements/PromoType';
 import DatesPicker from '../../FormElements/DatesPicker';
 
-const PressReleasePage2 = ({
+const ReleasePage2 = ({
   error,
   onBack,
   onSubmit,
@@ -64,4 +64,4 @@ const PressReleasePage2 = ({
   </Card>
 );
 
-export default PressReleasePage2;
+export default ReleasePage2;

@@ -5,7 +5,7 @@ import Website from '../../FormElements/Website';
 import Keywords from '../../FormElements/Keywords';
 import ReleaseText from '../../FormElements/ReleaseText';
 
-const PressReleasePage3 = ({
+const ReleasePage3 = ({
   error,
   onBack,
   onSubmit,
@@ -60,4 +60,4 @@ const PressReleasePage3 = ({
   </Card>
 );
 
-export default PressReleasePage3;
+export default ReleasePage3;

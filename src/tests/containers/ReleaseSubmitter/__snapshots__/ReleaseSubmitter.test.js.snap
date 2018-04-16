@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render PressReleaseSubmitter correctly 1`] = `
-<PressReleaseComponent
+exports[`should render ReleaseSubmitter correctly 1`] = `
+<ReleaseComponent
   amazonUrl=""
   calendarFocus={null}
-  currentPage="PressReleasePage1"
+  currentPage="ReleasePage1"
   email=""
   endDate={null}
   error={
@@ -36,9 +36,9 @@ exports[`should render PressReleaseSubmitter correctly 1`] = `
   onPromoTypeChange={[Function]}
   onReleaseTextChange={[Function]}
   onSubGenreChange={[Function]}
-  onSubmitPressReleasePage1={[Function]}
-  onSubmitPressReleasePage2={[Function]}
-  onSubmitPressReleasePage3={[Function]}
+  onSubmitReleasePage1={[Function]}
+  onSubmitReleasePage2={[Function]}
+  onSubmitReleasePage3={[Function]}
   onWebsiteChange={[Function]}
   price=""
   promoType="Free (Limited Time)"

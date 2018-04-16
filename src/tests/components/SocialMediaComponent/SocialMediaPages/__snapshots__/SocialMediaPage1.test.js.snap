@@ -24,9 +24,7 @@ exports[`should render SocialMediaPage1 correctly 1`] = `
         hasError={false}
         label="Amazon URL*"
       />
-      <NonFictionOrFiction
-        hasError={false}
-      />
+      <NonFictionOrFiction />
       <SubGenre
         hasError={false}
         label="SubGenre:"

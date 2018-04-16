@@ -1,4 +1,4 @@
-import prepareEmailRelease from '../../../../../containers/PressReleaseSubmitter/sendReleaseToNodemailer/prepareEmailRelease/prepareEmailRelease';
+import prepareEmailRelease from '../../../../../containers/ReleaseSubmitter/sendReleaseToNodemailer/prepareEmailRelease/prepareEmailRelease';
 import releases from '../../../fixtures/releases';
 
 test('should convert min release into correct object', () => {

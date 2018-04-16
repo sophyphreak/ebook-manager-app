@@ -1,31 +1,31 @@
 import React from 'react';
 import { Col, Row } from 'reactstrap';
 
-import PressReleasePage1 from './PressReleasePages/PressReleasePage1';
-import PressReleasePage2 from './PressReleasePages/PressReleasePage2';
-import PressReleasePage3 from './PressReleasePages/PressReleasePage3';
-import PressReleaseSuccess from './PressReleasePages/PressReleaseSuccess';
+import ReleasePage1 from './ReleasePages/ReleasePage1';
+import ReleasePage2 from './ReleasePages/ReleasePage2';
+import ReleasePage3 from './ReleasePages/ReleasePage3';
+import ReleaseSuccess from './ReleasePages/ReleaseSuccess';
 
-const PressReleaseComponent = ({
+const ReleaseComponent = ({
   // Variables
   currentPage,
   error,
 
-  // PressReleasePage1
+  // ReleasePage1
   amazonUrl,
   nonFictionOrFiction,
   genre,
   subGenre,
   email,
 
-  // PressReleasePage2
+  // ReleasePage2
   price,
   promoType,
   startDate,
   endDate,
   calendarFocus,
 
-  // PressReleasePage3
+  // ReleasePage3
   website,
   keywords,
   releaseText,
@@ -33,31 +33,31 @@ const PressReleaseComponent = ({
   // Methods
   onBack,
 
-  // PressReleasePage1
+  // ReleasePage1
   onAmazonUrlChange,
   onNonFictionOrFictionChange,
   onGenreChange,
   onSubGenreChange,
   onEmailChange,
-  onSubmitPressReleasePage1,
+  onSubmitReleasePage1,
 
-  // PressReleasePage2
+  // ReleasePage2
   onPriceChange,
   onPromoTypeChange,
   onDatesChange,
   onFocusChange,
-  onSubmitPressReleasePage2,
+  onSubmitReleasePage2,
 
-  // PressReleasePage3
+  // ReleasePage3
   onWebsiteChange,
   onKeywordsChange,
   onReleaseTextChange,
-  onSubmitPressReleasePage3
+  onSubmitReleasePage3
 }) => (
   <Row>
     <Col xs="12" sm={{ size: 8, offset: 2 }}>
-      {currentPage === 'PressReleasePage1' && (
-        <PressReleasePage1
+      {currentPage === 'ReleasePage1' && (
+        <ReleasePage1
           error={error}
           amazonUrl={amazonUrl}
           nonFictionOrFiction={nonFictionOrFiction}
@@ -69,11 +69,11 @@ const PressReleaseComponent = ({
           onGenreChange={onGenreChange}
           onSubGenreChange={onSubGenreChange}
           onEmailChange={onEmailChange}
-          onSubmit={onSubmitPressReleasePage1}
+          onSubmit={onSubmitReleasePage1}
         />
       )}
-      {currentPage === 'PressReleasePage2' && (
-        <PressReleasePage2
+      {currentPage === 'ReleasePage2' && (
+        <ReleasePage2
           error={error}
           price={price}
           promoType={promoType}
@@ -85,11 +85,11 @@ const PressReleaseComponent = ({
           onDatesChange={onDatesChange}
           onFocusChange={onFocusChange}
           onBack={onBack}
-          onSubmit={onSubmitPressReleasePage2}
+          onSubmit={onSubmitReleasePage2}
         />
       )}
-      {currentPage === 'PressReleasePage3' && (
-        <PressReleasePage3
+      {currentPage === 'ReleasePage3' && (
+        <ReleasePage3
           error={error}
           website={website}
           keywords={keywords}
@@ -98,14 +98,14 @@ const PressReleaseComponent = ({
           onKeywordsChange={onKeywordsChange}
           onReleaseTextChange={onReleaseTextChange}
           onBack={onBack}
-          onSubmit={onSubmitPressReleasePage3}
+          onSubmit={onSubmitReleasePage3}
         />
       )}
       {currentPage === 'SubmissionSuccess' && (
-        <PressReleaseSuccess feature="press release" />
+        <ReleaseSuccess feature="press release" />
       )}
     </Col>
   </Row>
 );
 
-export default PressReleaseComponent;
+export default ReleaseComponent;

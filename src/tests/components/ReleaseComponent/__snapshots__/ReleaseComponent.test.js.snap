@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render PressReleaseComponent correctly 1`] = `
+exports[`should render ReleaseComponent correctly 1`] = `
 <Row
   tag="div"
 >

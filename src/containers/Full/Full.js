@@ -9,7 +9,7 @@ import Footer from '../../coreui/Footer/Footer';
 import Dashboard from '../../components/Dashboard/Dashboard';
 import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import SocialMediaSubmitter from '../SocialMediaSubmitter/SocialMediaSubmitter';
-import PressReleaseSubmitter from '../PressReleaseSubmitter/PressReleaseSubmitter';
+import ReleaseSubmitter from '../ReleaseSubmitter/ReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import SalesEstimator from '../SalesEstimator/SalesEstimator';
 import QuillPlayground from '../../playground/QuillPlayground';
@@ -48,7 +48,7 @@ class Full extends Component {
                 <Route
                   path="/press-release-submitter"
                   name="Press Release Submitter"
-                  component={PressReleaseSubmitter}
+                  component={ReleaseSubmitter}
                 />
                 <Route
                   path="/alerts-submitter"

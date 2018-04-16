@@ -7,7 +7,7 @@ import Genre from '../../FormElements/Genre';
 import SubGenre from '../../FormElements/SubGenre';
 import Email from '../../FormElements/Email';
 
-const PressReleasePage1 = ({
+const ReleasePage1 = ({
   error,
   onSubmit,
 
@@ -79,4 +79,4 @@ const PressReleasePage1 = ({
   </Card>
 );
 
-export default PressReleasePage1;
+export default ReleasePage1;
