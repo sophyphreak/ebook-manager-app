@@ -5,7 +5,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ClippyIcon } from 'react-octicons';
 import { Button, Col, Input, Row } from 'reactstrap';
 
-export default class QuillTheWorks extends React.Component {
+export default class ListingGenerator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

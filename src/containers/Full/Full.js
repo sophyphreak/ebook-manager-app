@@ -12,9 +12,7 @@ import MediaSubmitter from '../MediaSubmitter/MediaSubmitter';
 import ReleaseSubmitter from '../ReleaseSubmitter/ReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import SalesEstimator from '../SalesEstimator/SalesEstimator';
-import QuillPlayground from '../../playground/QuillPlayground';
-import QuillTheWorks from '../../playground/QuillTheWorks';
-import DraftPlayground from '../../playground/DraftPlayground';
+import ListingGenerator from '../ListingGenerator/ListingGenerator';
 import NotFoundPage from '../../components/NotFoundPage';
 
 class Full extends Component {
@@ -59,19 +57,9 @@ class Full extends Component {
                   component={SalesEstimator}
                 />
                 <Route
-                  path="/quill-html-gen"
-                  name="Quill HTML Gen"
-                  component={QuillPlayground}
-                />
-                <Route
-                  path="/quill-the-works"
-                  name="Quill The Works"
-                  component={QuillTheWorks}
-                />
-                <Route
-                  path="/draft-playground"
-                  name="Draft Playground"
-                  component={DraftPlayground}
+                  path="/listing-generator"
+                  name="Listing Genenerator"
+                  component={ListingGenerator}
                 />
                 <Redirect from="/" to="/dashboard" exact={true} />
                 <Route component={NotFoundPage} />

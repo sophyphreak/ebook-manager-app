@@ -39,18 +39,8 @@ export default {
       }
     },
     {
-      name: 'Quill HTML Gen',
-      url: '/quill-html-gen',
-      icon: 'icon-docs'
-    },
-    {
-      name: 'Quill The Works',
-      url: '/quill-the-works',
-      icon: 'icon-docs'
-    },
-    {
-      name: 'Draft Playground',
-      url: '/draft-playground',
+      name: 'Listing Generator',
+      url: '/listing-generator',
       icon: 'icon-docs'
     }
   ]
