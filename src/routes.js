@@ -6,6 +6,6 @@ const routes = {
   '/press-release-submitter': 'Press Release Submitter',
   '/alerts-submitter': 'Alerts Submitter',
   '/sales-estimator': 'Sales Estimator',
-  '/listing-generator': 'Listing Generator',
+  '/listing-generator': 'Listing Generator'
 };
 export default routes;
