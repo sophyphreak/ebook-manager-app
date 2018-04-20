@@ -20,7 +20,13 @@ export default class ListingGenerator extends React.Component {
       .replace(/ class="ql-align-right"/g, '');
     this.setState({ text });
   }
-  render() {
+  getDisplayHtml(text) {
+    if (text === '<p><br></p>') {
+      return '';
+    }
+    return text;
+  }
+  render({ text } = this.state) {
     const modules = {
       toolbar: [
         [{ header: [1, 2, 3, false] }],
@@ -34,7 +40,7 @@ export default class ListingGenerator extends React.Component {
       <Row className="animated fadeIn">
         <Col xs="12" sm="6">
           <ReactQuill
-            value={this.state.text}
+            value={text}
             onChange={this.handleChange}
             placeholder="Please type or paste your listing here"
             modules={modules}
@@ -44,14 +50,11 @@ export default class ListingGenerator extends React.Component {
           <Input
             type="textarea"
             className="ql-editor--textarea"
-            value={beautify(this.state.text)}
+            value={this.getDisplayHtml(text)}
             readOnly={true}
           />
           {this.state.text.length > 11 && (
-            <CopyToClipboard
-              className="animated fadeIn"
-              text={beautify(this.state.text)}
-            >
+            <CopyToClipboard className="animated fadeIn" text={beautify(text)}>
               <button>
                 <ClippyIcon />
               </button>
