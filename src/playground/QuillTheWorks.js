@@ -21,9 +21,8 @@ export default class QuillTheWorks extends React.Component {
     const modules = {
       toolbar: [
         [{ header: [1, 2, 3, false] }],
-        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        ['bold', 'italic', 'underline', 'strike'],
         [{ list: 'ordered' }, { list: 'bullet' }],
-        [{ script: 'sub' }, { script: 'super' }],
         ['link'],
         ['clean']
       ]
