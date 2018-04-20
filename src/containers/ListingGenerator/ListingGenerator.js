@@ -14,7 +14,10 @@ export default class ListingGenerator extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(value) {
-    const text = value.replace(/<\/?span[^>]*>/g, '');
+    const text = value
+      .replace(/<\/?span[^>]*>/g, '')
+      .replace(/ class="ql-align-center"/g, '')
+      .replace(/ class="ql-align-right"/g, '');
     this.setState({ text });
   }
   render() {
