@@ -52,16 +52,6 @@ export default {
       name: 'Draft Playground',
       url: '/draft-playground',
       icon: 'icon-docs'
-    },
-    {
-      name: 'Playground',
-      url: '/playground',
-      icon: 'fa fa-fort-awesome'
-    },
-    {
-      name: 'Playground 2',
-      url: '/playground2',
-      icon: 'fa fa-fort-awesome'
     }
   ]
 };

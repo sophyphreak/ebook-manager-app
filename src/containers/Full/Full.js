@@ -15,8 +15,6 @@ import SalesEstimator from '../SalesEstimator/SalesEstimator';
 import QuillPlayground from '../../playground/QuillPlayground';
 import QuillTheWorks from '../../playground/QuillTheWorks';
 import DraftPlayground from '../../playground/DraftPlayground';
-import FormTests from '../../playground/FormTests';
-import FormTests2 from '../../playground/FormTests2';
 import NotFoundPage from '../../components/NotFoundPage';
 
 class Full extends Component {
@@ -74,16 +72,6 @@ class Full extends Component {
                   path="/draft-playground"
                   name="Draft Playground"
                   component={DraftPlayground}
-                />
-                <Route
-                  path="/playground"
-                  name="Playground"
-                  component={FormTests}
-                />
-                <Route
-                  path="/playground2"
-                  name="Playground2"
-                  component={FormTests2}
                 />
                 <Redirect from="/" to="/dashboard" exact={true} />
                 <Route component={NotFoundPage} />
