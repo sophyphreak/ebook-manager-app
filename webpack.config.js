@@ -92,7 +92,8 @@ module.exports = (env = {}) => {
             name: './fonts/[name].[hash].[ext]'
           }
         }
-      ]
+      ],
+      noParse: /node_modules\/quill\/dist/
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
