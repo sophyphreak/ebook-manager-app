@@ -61,6 +61,7 @@
     "simple-line-icons": "2.4.1",
     "style-loader": "0.20.1",
     "uglify-js": "3.3.9",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "url-loader": "0.6.2",
     "webpack": "3.10.0"
   },
@@ -77,7 +78,6 @@
     "react-test-renderer": "^16.3.1",
     "rimraf": "2.6.2",
     "source-list-map": "2.0.0",
-    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack-dev-server": "2.11.1"
   },
   "engines": {
