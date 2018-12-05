@@ -22,11 +22,10 @@
 @import 'custom';
 
 // Specific component styles
-@import 'components/FormElements/_radio-input.scss';
-@import 'components/FormElements/_dates-picker.scss';
-@import 'components/FormElements/_horizontal-radio.scss';
-@import 'components/FormElements/_back-button.scss';
-@import 'components/FormElements/_checkbox-input.scss';
-@import 'components/ReactQuill/_react-quill.scss';
-@import 'components/Draftjs/_draft-js.scss';
-@import 'components/FormElements/_textarea.scss';
+@import 'views/FormElements/_radio-input.scss';
+@import 'views/FormElements/_dates-picker.scss';
+@import 'views/FormElements/_horizontal-radio.scss';
+@import 'views/FormElements/_back-button.scss';
+@import 'views/FormElements/_checkbox-input.scss';
+@import 'views/ReactQuill/_react-quill.scss';
+@import 'views/FormElements/_textarea.scss';

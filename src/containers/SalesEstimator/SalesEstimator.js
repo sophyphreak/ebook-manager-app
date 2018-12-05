@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SalesComponent from '../../components/SalesComponent/SalesComponent';
+import SalesComponent from '../../views/SalesComponent/SalesComponent';
 
 export default class SalesEstimator extends Component {
   constructor(props) {

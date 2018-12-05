@@ -50,28 +50,8 @@ exports[`should render Full correctly 1`] = `
           />
           <Route
             component={[Function]}
-            name="Quill HTML Gen"
-            path="/quill-html-gen"
-          />
-          <Route
-            component={[Function]}
-            name="Quill The Works"
-            path="/quill-the-works"
-          />
-          <Route
-            component={[Function]}
-            name="Draft Playground"
-            path="/draft-playground"
-          />
-          <Route
-            component={[Function]}
-            name="Playground"
-            path="/playground"
-          />
-          <Route
-            component={[Function]}
-            name="Playground2"
-            path="/playground2"
+            name="HTML Generator"
+            path="/html-generator"
           />
           <Redirect
             exact={true}

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { isValidPrice } from 'dao-of-validation';
 
-import genreOptions from '../../components/FormElements/options/genreOptions';
-import nonFictionOrFictionOptions from '../../components/FormElements/options/nonFictionOrFictionOptions';
+import genreOptions from '../../views/FormElements/options/genreOptions';
+import nonFictionOrFictionOptions from '../../views/FormElements/options/nonFictionOrFictionOptions';
 import mediaPage1Validation from './mediaPage1Validation/mediaPage1Validation';
 import mediaPage2Validation from './mediaPage2Validation/mediaPage2Validation';
 import mediaPage3Validation from './mediaPage3Validation/mediaPage3Validation';
 import sendMediaToNodemailer from './sendMediaToNodemailer/sendMediaToNodemailer';
-import MediaComponent from '../../components/MediaComponent/MediaComponent';
+import MediaComponent from '../../views/MediaComponent/MediaComponent';
 
 export default class MediaSubmitter extends Component {
   constructor(props) {

@@ -16,8 +16,6 @@ import '../scss/core/_dropdown-menu-right.scss';
 import 'react-dates/lib/css/_datepicker.css';
 // import ReactQuill styles
 import 'react-quill/dist/quill.snow.css';
-// import React Draft WYSIWYG styles
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 // Containers
 import Full from './containers/Full/Full';

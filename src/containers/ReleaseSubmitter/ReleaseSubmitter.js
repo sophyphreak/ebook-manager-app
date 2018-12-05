@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { isValidPrice } from 'dao-of-validation';
 
-import nonFictionOrFictionOptions from '../../components/FormElements/options/nonFictionOrFictionOptions';
-import genreOptions from '../../components/FormElements/options/genreOptions';
-import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';
+import nonFictionOrFictionOptions from '../../views/FormElements/options/nonFictionOrFictionOptions';
+import genreOptions from '../../views/FormElements/options/genreOptions';
+import promoTypeOptions from '../../views/FormElements/options/promoTypeOptions';
 import releasePage1Validation from './releasePage1Validation/releasePage1Validation';
 import releasePage2Validation from './releasePage2Validation/releasePage2Validation';
 import releasePage3Validation from './releasePage3Validation/releasePage3Validation';
 import sendReleaseToNodemailer from './sendReleaseToNodemailer/sendReleaseToNodemailer';
-import ReleaseComponent from '../../components/ReleaseComponent/ReleaseComponent';
+import ReleaseComponent from '../../views/ReleaseComponent/ReleaseComponent';
 
 export default class ReleaseSubmitter extends Component {
   constructor(props) {

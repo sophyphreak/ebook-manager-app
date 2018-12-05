@@ -5,10 +5,10 @@ import { isValidPrice } from 'dao-of-validation';
 import promoPage1Validation from './promoPage1Validation/promoPage1Validation';
 import promoPage2Validation from './promoPage2Validation/promoPage2Validation';
 import promoPage3Validation from './promoPage3Validation/promoPage3Validation';
-import nonFictionOrFictionOptions from '../../components/FormElements/options/nonFictionOrFictionOptions';
-import promoTypeOptions from '../../components/FormElements/options/promoTypeOptions';
+import nonFictionOrFictionOptions from '../../views/FormElements/options/nonFictionOrFictionOptions';
+import promoTypeOptions from '../../views/FormElements/options/promoTypeOptions';
 import sendPromoToNodemailer from './sendPromoToNodemailer/sendPromoToNodemailer';
-import PromoComponent from '../../components/PromoComponent/PromoComponent';
+import PromoComponent from '../../views/PromoComponent/PromoComponent';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {

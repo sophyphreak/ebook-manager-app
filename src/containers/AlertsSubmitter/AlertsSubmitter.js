@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import AlertsComponent from '../../components/AlertsComponent/AlertsComponent';
+import AlertsComponent from '../../views/AlertsComponent/AlertsComponent';
 import flipClickedAlertMeOption from './onChangeHelpers/flipClickedAlertMeOption';
 import alertsPageValidation from './alertValidation/alertsPageValidation';
 import sendAlertToNodemailer from './sendAlertToNodemailer/sendAlertToNodemailer';

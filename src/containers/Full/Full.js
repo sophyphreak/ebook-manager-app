@@ -6,14 +6,14 @@ import Sidebar from '../../coreui/Sidebar/Sidebar';
 import Breadcrumb from '../../coreui/Breadcrumb/Breadcrumb';
 import Footer from '../../coreui/Footer/Footer';
 
-import Dashboard from '../../components/Dashboard/Dashboard';
+import Dashboard from '../../views/Dashboard/Dashboard';
 import PromoSubmitter from '../PromoSubmitter/PromoSubmitter';
 import MediaSubmitter from '../MediaSubmitter/MediaSubmitter';
 import ReleaseSubmitter from '../ReleaseSubmitter/ReleaseSubmitter';
 import AlertsSubmitter from '../AlertsSubmitter/AlertsSubmitter';
 import SalesEstimator from '../SalesEstimator/SalesEstimator';
 import ListingGenerator from '../ListingGenerator/ListingGenerator';
-import NotFoundPage from '../../components/NotFoundPage';
+import NotFoundPage from '../../views/NotFoundPage';
 
 class Full extends Component {
   render() {
