@@ -32,11 +32,7 @@ export default {
     {
       name: 'Sales Estimator',
       url: '/sales-estimator',
-      icon: 'icon-wallet',
-      badge: {
-        variant: 'info',
-        text: 'NEW'
-      }
+      icon: 'icon-wallet'
     },
     {
       name: 'Listing Generator',
