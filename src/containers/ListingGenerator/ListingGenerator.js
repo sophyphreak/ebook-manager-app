@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import { html as beautify } from 'js-beautify';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { ClippyIcon } from 'react-octicons';
-import { Button, Col, Input, Row } from 'reactstrap';
+import { Col, Input, Row } from 'reactstrap';
 
 export default class ListingGenerator extends React.Component {
   constructor(props) {
@@ -23,8 +23,8 @@ export default class ListingGenerator extends React.Component {
   getDisplayHtml(text) {
     if (text === '<p><br></p>') {
       return '';
-    }
-    return text;
+    };
+    return beautify(text);
   }
   render({ text } = this.state) {
     const modules = {

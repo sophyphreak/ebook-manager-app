@@ -1,5 +1,5 @@
 import React from 'react';
-import greatSuccessGif from '../../../public/img/great-success.gif';
+import greatSuccessGif from '../../assets/img/great-success.gif';
 
 const SuccessPage = ({ feature }) => (
   <div className="animated fadeIn">

@@ -174,8 +174,6 @@ export default class PromoSubmitter extends Component {
     const {
       currentPage,
       error,
-      title,
-      asin,
       amazonUrl,
       price,
       nonFictionOrFiction,
