@@ -6,7 +6,7 @@
   "copyright": "Copyright 2018 Redbeard Andrew Horn",
   "private": true,
   "scripts": {
-    "start": "node server/server.js",
+    "start": "NODE_ENV=production node server/server.js",
     "dev": "concurrently \"react-scripts start\" \"node server/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
