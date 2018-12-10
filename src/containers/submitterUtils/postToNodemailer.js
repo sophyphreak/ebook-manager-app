@@ -3,7 +3,7 @@ import { html as beautify } from 'js-beautify';
 
 const postToNodemailer = (submissionType, body, rowOrder, userEmail) => {
   let coreHtml = '<table>';
-  Object.keys(body).map(row => {
+  Object.keys(body).forEach(row => {
     coreHtml += `<tr><td>${row}</td><td>${body[row]}</td></tr>`;
   });
   coreHtml += '</table>';

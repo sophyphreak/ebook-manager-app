@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CheckboxInput from './MainElements/CheckboxInput';
 
 const AlertMe = ({ label, alertMe, onAlertMeChange, ...props }) => (

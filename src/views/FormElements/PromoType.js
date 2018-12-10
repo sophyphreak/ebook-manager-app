@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RadioInput from './MainElements/RadioInput';
 import promoTypeOptions from './options/promoTypeOptions';
 

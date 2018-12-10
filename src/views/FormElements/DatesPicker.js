@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { DateRangePicker } from 'react-dates';
-import { Col, Label } from 'reactstrap';
+import { Label } from 'reactstrap';
 
 const DatesPicker = ({
   label,

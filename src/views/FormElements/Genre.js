@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SelectInput from './MainElements/SelectInput';
 import genreOptions from './options/genreOptions';
 

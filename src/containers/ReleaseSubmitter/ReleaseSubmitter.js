@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import { isValidPrice } from 'dao-of-validation';
 
 import nonFictionOrFictionOptions from '../../views/FormElements/options/nonFictionOrFictionOptions';

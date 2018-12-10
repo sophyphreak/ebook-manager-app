@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, Button, Form, Label } from 'reactstrap';
+import { Card, CardHeader, CardBody, Button, Form } from 'reactstrap';
 
 import AmazonUrl from '../../FormElements/AmazonUrl';
 import NonFictionOrFiction from '../../FormElements/NonFictionOrFiction';

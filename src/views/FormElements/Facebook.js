@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TextAreaInput from './MainElements/TextAreaInput';
 
 const Facebook = ({ label, facebook, onFacebookChange, ...props }) => (

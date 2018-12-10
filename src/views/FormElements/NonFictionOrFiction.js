@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RadioHorizontal from './MainElements/RadioHorizontal';
 import nonFictionOrFictionOptions from './options/nonFictionOrFictionOptions';
 

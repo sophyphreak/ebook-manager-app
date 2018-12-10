@@ -1,7 +1,5 @@
 import {
-  amazonUrlDoesNotExist,
   amazonUrlExistsButIsInvalid,
-  emailDoesNotExist,
   emailExistsButIsInvalid,
   thisIsEmpty,
   doErrorsExist

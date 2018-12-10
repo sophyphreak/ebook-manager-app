@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BasicInput from './MainElements/BasicInput';
 
 const AmazonUrl = ({ label, amazonUrl, onAmazonUrlChange, ...props }) => (

@@ -6,7 +6,7 @@ const SuccessPage = ({ feature }) => (
     <p>
       Your {feature} has been submitted. Please wait for a confirmation email.
     </p>
-    <img src={greatSuccessGif} />
+    <img src={greatSuccessGif} alt="Great success" />
   </div>
 );
 

@@ -5,7 +5,6 @@ import {
   CardHeader,
   Col,
   FormGroup,
-  Input,
   Label,
   Row
 } from 'reactstrap';

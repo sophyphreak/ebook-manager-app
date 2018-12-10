@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardHeader, CardBody, Button, Form } from 'reactstrap';
 
 import Website from '../../FormElements/Website';
