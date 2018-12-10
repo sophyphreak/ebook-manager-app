@@ -1,2 +1,0 @@
-- Upgrade to new coreui configuration.
-- Integrate Node backend
