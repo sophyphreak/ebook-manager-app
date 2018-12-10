@@ -75,7 +75,7 @@
     "source-list-map": "2.0.1"
   },
   "engines": {
-    "node": ">= 11.4.0",
+    "node": "11.4.0",
     "npm": ">= 6.4.1"
   },
   "browserslist": [
