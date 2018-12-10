@@ -1,6 +1,6 @@
 const getBodyRowOrder = rawBody => {
   const rawRowOrder = Object.keys(rawBody);
-  const rowOrder = rawRowOrder.forEach(row => {
+  const rowOrder = rawRowOrder.filter(row => {
     if (rawBody[row]) {
       return true;
     }

@@ -111,7 +111,8 @@ ShallowWrapper {
           regular={false}
           renderCalendarInfo={null}
           renderDayContents={null}
-          renderMonth={null}
+          renderMonthElement={null}
+          renderMonthText={null}
           reopenPickerOnClearDates={false}
           required={false}
           screenReaderInputMessage=""
@@ -176,6 +177,7 @@ ShallowWrapper {
           "focusedInput": null,
           "hideKeyboardShortcutsPanel": false,
           "horizontalMargin": 0,
+          "horizontalMonthPadding": undefined,
           "initialVisibleMonth": null,
           "inputIconPosition": "before",
           "isDayBlocked": [Function],
@@ -233,7 +235,8 @@ ShallowWrapper {
           "renderCalendarDay": undefined,
           "renderCalendarInfo": null,
           "renderDayContents": null,
-          "renderMonth": null,
+          "renderMonthElement": null,
+          "renderMonthText": null,
           "reopenPickerOnClearDates": false,
           "required": false,
           "screenReaderInputMessage": "",
@@ -354,7 +357,8 @@ ShallowWrapper {
             regular={false}
             renderCalendarInfo={null}
             renderDayContents={null}
-            renderMonth={null}
+            renderMonthElement={null}
+            renderMonthText={null}
             reopenPickerOnClearDates={false}
             required={false}
             screenReaderInputMessage=""
@@ -419,6 +423,7 @@ ShallowWrapper {
             "focusedInput": null,
             "hideKeyboardShortcutsPanel": false,
             "horizontalMargin": 0,
+            "horizontalMonthPadding": undefined,
             "initialVisibleMonth": null,
             "inputIconPosition": "before",
             "isDayBlocked": [Function],
@@ -476,7 +481,8 @@ ShallowWrapper {
             "renderCalendarDay": undefined,
             "renderCalendarInfo": null,
             "renderDayContents": null,
-            "renderMonth": null,
+            "renderMonthElement": null,
+            "renderMonthText": null,
             "reopenPickerOnClearDates": false,
             "required": false,
             "screenReaderInputMessage": "",

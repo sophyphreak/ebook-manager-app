@@ -51,6 +51,7 @@ ShallowWrapper {
           focused={false}
           hideKeyboardShortcutsPanel={false}
           horizontalMargin={0}
+          horizontalMonthPadding={13}
           id="date"
           initialVisibleMonth={null}
           inputIconPosition="before"
@@ -108,7 +109,8 @@ ShallowWrapper {
           regular={false}
           renderCalendarInfo={null}
           renderDayContents={null}
-          renderMonth={null}
+          renderMonthElement={null}
+          renderMonthText={null}
           reopenPickerOnClearDate={false}
           required={false}
           screenReaderInputMessage=""
@@ -176,6 +178,7 @@ ShallowWrapper {
           "focused": false,
           "hideKeyboardShortcutsPanel": false,
           "horizontalMargin": 0,
+          "horizontalMonthPadding": 13,
           "id": "date",
           "initialVisibleMonth": null,
           "inputIconPosition": "before",
@@ -232,7 +235,8 @@ ShallowWrapper {
           "renderCalendarDay": undefined,
           "renderCalendarInfo": null,
           "renderDayContents": null,
-          "renderMonth": null,
+          "renderMonthElement": null,
+          "renderMonthText": null,
           "reopenPickerOnClearDate": false,
           "required": false,
           "screenReaderInputMessage": "",
@@ -290,6 +294,7 @@ ShallowWrapper {
             focused={false}
             hideKeyboardShortcutsPanel={false}
             horizontalMargin={0}
+            horizontalMonthPadding={13}
             id="date"
             initialVisibleMonth={null}
             inputIconPosition="before"
@@ -347,7 +352,8 @@ ShallowWrapper {
             regular={false}
             renderCalendarInfo={null}
             renderDayContents={null}
-            renderMonth={null}
+            renderMonthElement={null}
+            renderMonthText={null}
             reopenPickerOnClearDate={false}
             required={false}
             screenReaderInputMessage=""
@@ -415,6 +421,7 @@ ShallowWrapper {
             "focused": false,
             "hideKeyboardShortcutsPanel": false,
             "horizontalMargin": 0,
+            "horizontalMonthPadding": 13,
             "id": "date",
             "initialVisibleMonth": null,
             "inputIconPosition": "before",
@@ -471,7 +478,8 @@ ShallowWrapper {
             "renderCalendarDay": undefined,
             "renderCalendarInfo": null,
             "renderDayContents": null,
-            "renderMonth": null,
+            "renderMonthElement": null,
+            "renderMonthText": null,
             "reopenPickerOnClearDate": false,
             "required": false,
             "screenReaderInputMessage": "",
