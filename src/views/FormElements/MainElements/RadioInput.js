@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
-import getValidity from '../getValidity/getValidity';
+import isValid from '../getValidity/isInvalid';
+import isInvalid from '../getValidity/isInvalid';
 
 const RadioInput = ({
   hasError,
@@ -19,7 +20,8 @@ const RadioInput = ({
           value={option}
           onChange={onChange}
           checked={value === option}
-          valid={getValidity(hasError, errorMessage)}
+          valid={isValid(hasError, errorMessage)}
+          invalid={isInvalid(hasError, errorMessage)}
         />
         <Label check>{option}</Label>
       </FormGroup>

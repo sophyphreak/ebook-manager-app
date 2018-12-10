@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardHeader, CardBody, Button, Form, Label } from 'reactstrap';
 
 import AmazonUrl from '../../FormElements/AmazonUrl';

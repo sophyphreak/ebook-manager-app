@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
-import getValidity from '../getValidity/getValidity';
+import isValid from '../getValidity/isValid';
+import isInvalid from '../getValidity/isInvalid';
 
 const CheckboxInput = ({
   hasError,
@@ -18,7 +19,8 @@ const CheckboxInput = ({
           value={option}
           onChange={onChange}
           checked={options[option].isActive}
-          valid={getValidity(hasError, errorMessage)}
+          valid={isValid(hasError, errorMessage)}
+          invalid={isInvalid(hasError, errorMessage)}
         />
         <Label check>{options[option].text}</Label>
       </FormGroup>

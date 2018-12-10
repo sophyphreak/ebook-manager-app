@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FormFeedback, FormGroup, Label, Input } from 'reactstrap';
-import getValidity from '../getValidity/getValidity';
+import isValid from '../getValidity/isInvalid';
+import isInvalid from '../getValidity/isInvalid';
 
 const SelectInput = ({
   hasError,
@@ -15,7 +16,8 @@ const SelectInput = ({
     <Input
       type="select"
       onChange={onChange}
-      valid={getValidity(hasError, errorMessage)}
+      valid={isValid(hasError, errorMessage)}
+      invalid={isInvalid(hasError, errorMessage)}
     >
       {options.map((option, i) => (
         <option value={option} key={i}>

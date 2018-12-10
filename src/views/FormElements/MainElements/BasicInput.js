@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FormFeedback, FormGroup, Label, Input } from 'reactstrap';
-import getValidity from '../getValidity/getValidity';
+import isValid from '../getValidity/isValid';
+import isInvalid from '../getValidity/isInvalid';
 
 const BasicInput = ({ hasError, errorMessage, label, value, onChange }) => (
   <FormGroup>
@@ -9,7 +10,8 @@ const BasicInput = ({ hasError, errorMessage, label, value, onChange }) => (
       type="text"
       value={value}
       onChange={onChange}
-      valid={getValidity(hasError, errorMessage)}
+      valid={isValid(hasError, errorMessage)}
+      invalid={isInvalid(hasError, errorMessage)}
     />
     {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}
   </FormGroup>
