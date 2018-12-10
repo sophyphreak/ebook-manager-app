@@ -5,6 +5,7 @@ const getBodyRowOrder = rawBody => {
       return true;
     }
     delete rawBody[row];
+    return false;
   });
   const emailBody = rawBody;
   return {
