@@ -1,58 +1,651 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render AlertsPage correctly 1`] = `
-<Card
-  className="animated fadeIn"
-  tag="div"
->
-  <CardHeader
-    tag="div"
-  >
-    <h4>
-      <strong>
-        Create an Alert
-      </strong>
-    </h4>
-  </CardHeader>
-  <CardBody
-    tag="div"
-  >
-    <Form
-      tag="form"
-    >
-      <AmazonUrl
-        hasError={false}
-        label="Amazon URL"
-      />
-      <AlertMe
-        hasError={false}
-        label="Alert Me*"
-      />
-      <SingleDate
-        label="Alert Date*"
-      />
-      <Notes
-        hasError={false}
-        label="Notes/Other Info*"
-      />
-      <Email
-        hasError={false}
-        label="Email to notify*"
-      />
-      <Email
-        hasError={false}
-        label="Secondary email to notify"
-      />
-      <Button
-        color="primary"
-        size="sm"
-        tag="button"
-        type="submit"
-        value="Submit"
-      >
-        Submit
-      </Button>
-    </Form>
-  </CardBody>
-</Card>
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AlertsPage
+    error={
+      Object {
+        "message": "",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <CardHeader
+          tag="div"
+        >
+          <h4>
+            <strong>
+              Create an Alert
+            </strong>
+          </h4>
+        </CardHeader>,
+        <CardBody
+          tag="div"
+        >
+          <Form
+            tag="form"
+          >
+            <AmazonUrl
+              hasError={false}
+              label="Amazon URL"
+            />
+            <AlertMe
+              hasError={false}
+              label="Alert Me*"
+            />
+            <SingleDate
+              label="Alert Date*"
+            />
+            <Notes
+              hasError={false}
+              label="Notes/Other Info*"
+            />
+            <Email
+              hasError={false}
+              label="Email to notify*"
+            />
+            <Email
+              hasError={false}
+              label="Secondary email to notify"
+            />
+            
+            <Button
+              color="primary"
+              size="sm"
+              tag="button"
+              type="submit"
+              value="Submit"
+            >
+              Submit
+            </Button>
+          </Form>
+        </CardBody>,
+      ],
+      "className": "animated fadeIn",
+      "tag": "div",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <h4>
+            <strong>
+              Create an Alert
+            </strong>
+          </h4>,
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <strong>
+              Create an Alert
+            </strong>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Create an Alert",
+            },
+            "ref": null,
+            "rendered": "Create an Alert",
+            "type": "strong",
+          },
+          "type": "h4",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Form
+            tag="form"
+          >
+            <AmazonUrl
+              hasError={false}
+              label="Amazon URL"
+            />
+            <AlertMe
+              hasError={false}
+              label="Alert Me*"
+            />
+            <SingleDate
+              label="Alert Date*"
+            />
+            <Notes
+              hasError={false}
+              label="Notes/Other Info*"
+            />
+            <Email
+              hasError={false}
+              label="Email to notify*"
+            />
+            <Email
+              hasError={false}
+              label="Secondary email to notify"
+            />
+            
+            <Button
+              color="primary"
+              size="sm"
+              tag="button"
+              type="submit"
+              value="Submit"
+            >
+              Submit
+            </Button>
+          </Form>,
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <AmazonUrl
+                hasError={false}
+                label="Amazon URL"
+              />,
+              <AlertMe
+                hasError={false}
+                label="Alert Me*"
+              />,
+              <SingleDate
+                label="Alert Date*"
+              />,
+              <Notes
+                hasError={false}
+                label="Notes/Other Info*"
+              />,
+              <Email
+                hasError={false}
+                label="Email to notify*"
+              />,
+              <Email
+                hasError={false}
+                label="Secondary email to notify"
+              />,
+              "",
+              <Button
+                color="primary"
+                size="sm"
+                tag="button"
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </Button>,
+            ],
+            "onSubmit": undefined,
+            "tag": "form",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "amazonUrl": undefined,
+                "errorMessage": undefined,
+                "hasError": false,
+                "label": "Amazon URL",
+                "onAmazonUrlChange": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "alertMe": undefined,
+                "errorMessage": undefined,
+                "hasError": false,
+                "label": "Alert Me*",
+                "onAlertMeChange": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "calendarFocused": undefined,
+                "date": undefined,
+                "label": "Alert Date*",
+                "onDateChange": undefined,
+                "onFocusChange": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "errorMessage": undefined,
+                "hasError": false,
+                "label": "Notes/Other Info*",
+                "notes": undefined,
+                "onNotesChange": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "email": undefined,
+                "errorMessage": undefined,
+                "hasError": false,
+                "label": "Email to notify*",
+                "onEmailChange": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "email": undefined,
+                "errorMessage": undefined,
+                "hasError": false,
+                "label": "Secondary email to notify",
+                "onEmailChange": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Submit",
+                "color": "primary",
+                "size": "sm",
+                "tag": "button",
+                "type": "submit",
+                "value": "Submit",
+              },
+              "ref": null,
+              "rendered": "Submit",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <CardHeader
+            tag="div"
+          >
+            <h4>
+              <strong>
+                Create an Alert
+              </strong>
+            </h4>
+          </CardHeader>,
+          <CardBody
+            tag="div"
+          >
+            <Form
+              tag="form"
+            >
+              <AmazonUrl
+                hasError={false}
+                label="Amazon URL"
+              />
+              <AlertMe
+                hasError={false}
+                label="Alert Me*"
+              />
+              <SingleDate
+                label="Alert Date*"
+              />
+              <Notes
+                hasError={false}
+                label="Notes/Other Info*"
+              />
+              <Email
+                hasError={false}
+                label="Email to notify*"
+              />
+              <Email
+                hasError={false}
+                label="Secondary email to notify"
+              />
+              
+              <Button
+                color="primary"
+                size="sm"
+                tag="button"
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </Button>
+            </Form>
+          </CardBody>,
+        ],
+        "className": "animated fadeIn",
+        "tag": "div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <h4>
+              <strong>
+                Create an Alert
+              </strong>
+            </h4>,
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <strong>
+                Create an Alert
+              </strong>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Create an Alert",
+              },
+              "ref": null,
+              "rendered": "Create an Alert",
+              "type": "strong",
+            },
+            "type": "h4",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Form
+              tag="form"
+            >
+              <AmazonUrl
+                hasError={false}
+                label="Amazon URL"
+              />
+              <AlertMe
+                hasError={false}
+                label="Alert Me*"
+              />
+              <SingleDate
+                label="Alert Date*"
+              />
+              <Notes
+                hasError={false}
+                label="Notes/Other Info*"
+              />
+              <Email
+                hasError={false}
+                label="Email to notify*"
+              />
+              <Email
+                hasError={false}
+                label="Secondary email to notify"
+              />
+              
+              <Button
+                color="primary"
+                size="sm"
+                tag="button"
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </Button>
+            </Form>,
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <AmazonUrl
+                  hasError={false}
+                  label="Amazon URL"
+                />,
+                <AlertMe
+                  hasError={false}
+                  label="Alert Me*"
+                />,
+                <SingleDate
+                  label="Alert Date*"
+                />,
+                <Notes
+                  hasError={false}
+                  label="Notes/Other Info*"
+                />,
+                <Email
+                  hasError={false}
+                  label="Email to notify*"
+                />,
+                <Email
+                  hasError={false}
+                  label="Secondary email to notify"
+                />,
+                "",
+                <Button
+                  color="primary"
+                  size="sm"
+                  tag="button"
+                  type="submit"
+                  value="Submit"
+                >
+                  Submit
+                </Button>,
+              ],
+              "onSubmit": undefined,
+              "tag": "form",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "amazonUrl": undefined,
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Amazon URL",
+                  "onAmazonUrlChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "alertMe": undefined,
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Alert Me*",
+                  "onAlertMeChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "calendarFocused": undefined,
+                  "date": undefined,
+                  "label": "Alert Date*",
+                  "onDateChange": undefined,
+                  "onFocusChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Notes/Other Info*",
+                  "notes": undefined,
+                  "onNotesChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "email": undefined,
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Email to notify*",
+                  "onEmailChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "email": undefined,
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Secondary email to notify",
+                  "onEmailChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Submit",
+                  "color": "primary",
+                  "size": "sm",
+                  "tag": "button",
+                  "type": "submit",
+                  "value": "Submit",
+                },
+                "ref": null,
+                "rendered": "Submit",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;

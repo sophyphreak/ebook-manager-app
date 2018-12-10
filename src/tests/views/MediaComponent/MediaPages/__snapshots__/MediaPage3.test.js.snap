@@ -1,62 +1,671 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render MediaPage3 correctly 1`] = `
-<Card
-  className="animated fadeIn"
-  tag="div"
->
-  <CardHeader
-    tag="div"
-  >
-    <h4>
-      <strong>
-        Social Media Submission - 3 of 3
-      </strong>
-    </h4>
-  </CardHeader>
-  <CardBody
-    tag="div"
-  >
-    <p>
-      If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.
-    </p>
-    <Form
-      tag="form"
-    >
-      <Keywords
-        hasError={false}
-        label="Keywords / Hashtags (Comma Separated)"
-      />
-      <Tweet
-        hasError={false}
-        label="Tweet (280 characters max including hashtags)"
-      />
-      <Facebook
-        hasError={false}
-        label="Facebook / Other social media (2,000 characters max)"
-      />
-      <Notes
-        hasError={false}
-        label="Notes"
-      />
-      <Button
-        className=".back-button"
-        color="basic"
-        size="sm"
-        tag="button"
-      >
-        Go Back
-      </Button>
-      <Button
-        color="primary"
-        size="sm"
-        tag="button"
-        type="submit"
-        value="Submit"
-      >
-        Submit
-      </Button>
-    </Form>
-  </CardBody>
-</Card>
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MediaPage3
+    error={
+      Object {
+        "message": "",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <CardHeader
+          tag="div"
+        >
+          <h4>
+            <strong>
+              Social Media Submission - 3 of 3
+            </strong>
+          </h4>
+        </CardHeader>,
+        <CardBody
+          tag="div"
+        >
+          <p>
+            If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.
+          </p>
+          <Form
+            tag="form"
+          >
+            <Keywords
+              hasError={false}
+              label="Keywords / Hashtags (Comma Separated)"
+            />
+            <Tweet
+              hasError={false}
+              label="Tweet (280 characters max including hashtags)"
+            />
+            <Facebook
+              hasError={false}
+              label="Facebook / Other social media (2,000 characters max)"
+            />
+            <Notes
+              hasError={false}
+              label="Notes"
+            />
+            
+            <Button
+              className=".back-button"
+              color="basic"
+              size="sm"
+              tag="button"
+            >
+              Go Back
+            </Button>
+            <Button
+              color="primary"
+              size="sm"
+              tag="button"
+              type="submit"
+              value="Submit"
+            >
+              Submit
+            </Button>
+          </Form>
+        </CardBody>,
+      ],
+      "className": "animated fadeIn",
+      "tag": "div",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <h4>
+            <strong>
+              Social Media Submission - 3 of 3
+            </strong>
+          </h4>,
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <strong>
+              Social Media Submission - 3 of 3
+            </strong>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Social Media Submission - 3 of 3",
+            },
+            "ref": null,
+            "rendered": "Social Media Submission - 3 of 3",
+            "type": "strong",
+          },
+          "type": "h4",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <p>
+              If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.
+            </p>,
+            <Form
+              tag="form"
+            >
+              <Keywords
+                hasError={false}
+                label="Keywords / Hashtags (Comma Separated)"
+              />
+              <Tweet
+                hasError={false}
+                label="Tweet (280 characters max including hashtags)"
+              />
+              <Facebook
+                hasError={false}
+                label="Facebook / Other social media (2,000 characters max)"
+              />
+              <Notes
+                hasError={false}
+                label="Notes"
+              />
+              
+              <Button
+                className=".back-button"
+                color="basic"
+                size="sm"
+                tag="button"
+              >
+                Go Back
+              </Button>
+              <Button
+                color="primary"
+                size="sm"
+                tag="button"
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </Button>
+            </Form>,
+          ],
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.",
+            },
+            "ref": null,
+            "rendered": "If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Keywords
+                  hasError={false}
+                  label="Keywords / Hashtags (Comma Separated)"
+                />,
+                <Tweet
+                  hasError={false}
+                  label="Tweet (280 characters max including hashtags)"
+                />,
+                <Facebook
+                  hasError={false}
+                  label="Facebook / Other social media (2,000 characters max)"
+                />,
+                <Notes
+                  hasError={false}
+                  label="Notes"
+                />,
+                "",
+                <Button
+                  className=".back-button"
+                  color="basic"
+                  size="sm"
+                  tag="button"
+                >
+                  Go Back
+                </Button>,
+                <Button
+                  color="primary"
+                  size="sm"
+                  tag="button"
+                  type="submit"
+                  value="Submit"
+                >
+                  Submit
+                </Button>,
+              ],
+              "onSubmit": undefined,
+              "tag": "form",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "keywords": undefined,
+                  "label": "Keywords / Hashtags (Comma Separated)",
+                  "onKeywordsChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Tweet (280 characters max including hashtags)",
+                  "onTweetChange": undefined,
+                  "tweet": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "errorMessage": undefined,
+                  "facebook": undefined,
+                  "hasError": false,
+                  "label": "Facebook / Other social media (2,000 characters max)",
+                  "onFacebookChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "errorMessage": undefined,
+                  "hasError": false,
+                  "label": "Notes",
+                  "notes": undefined,
+                  "onNotesChange": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Go Back",
+                  "className": ".back-button",
+                  "color": "basic",
+                  "onClick": undefined,
+                  "size": "sm",
+                  "tag": "button",
+                },
+                "ref": null,
+                "rendered": "Go Back",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Submit",
+                  "color": "primary",
+                  "size": "sm",
+                  "tag": "button",
+                  "type": "submit",
+                  "value": "Submit",
+                },
+                "ref": null,
+                "rendered": "Submit",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <CardHeader
+            tag="div"
+          >
+            <h4>
+              <strong>
+                Social Media Submission - 3 of 3
+              </strong>
+            </h4>
+          </CardHeader>,
+          <CardBody
+            tag="div"
+          >
+            <p>
+              If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.
+            </p>
+            <Form
+              tag="form"
+            >
+              <Keywords
+                hasError={false}
+                label="Keywords / Hashtags (Comma Separated)"
+              />
+              <Tweet
+                hasError={false}
+                label="Tweet (280 characters max including hashtags)"
+              />
+              <Facebook
+                hasError={false}
+                label="Facebook / Other social media (2,000 characters max)"
+              />
+              <Notes
+                hasError={false}
+                label="Notes"
+              />
+              
+              <Button
+                className=".back-button"
+                color="basic"
+                size="sm"
+                tag="button"
+              >
+                Go Back
+              </Button>
+              <Button
+                color="primary"
+                size="sm"
+                tag="button"
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </Button>
+            </Form>
+          </CardBody>,
+        ],
+        "className": "animated fadeIn",
+        "tag": "div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <h4>
+              <strong>
+                Social Media Submission - 3 of 3
+              </strong>
+            </h4>,
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <strong>
+                Social Media Submission - 3 of 3
+              </strong>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Social Media Submission - 3 of 3",
+              },
+              "ref": null,
+              "rendered": "Social Media Submission - 3 of 3",
+              "type": "strong",
+            },
+            "type": "h4",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <p>
+                If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.
+              </p>,
+              <Form
+                tag="form"
+              >
+                <Keywords
+                  hasError={false}
+                  label="Keywords / Hashtags (Comma Separated)"
+                />
+                <Tweet
+                  hasError={false}
+                  label="Tweet (280 characters max including hashtags)"
+                />
+                <Facebook
+                  hasError={false}
+                  label="Facebook / Other social media (2,000 characters max)"
+                />
+                <Notes
+                  hasError={false}
+                  label="Notes"
+                />
+                
+                <Button
+                  className=".back-button"
+                  color="basic"
+                  size="sm"
+                  tag="button"
+                >
+                  Go Back
+                </Button>
+                <Button
+                  color="primary"
+                  size="sm"
+                  tag="button"
+                  type="submit"
+                  value="Submit"
+                >
+                  Submit
+                </Button>
+              </Form>,
+            ],
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.",
+              },
+              "ref": null,
+              "rendered": "If you have a specific tweet, social media post, important info or hashtags to use, please include them below. Otherwise we will create a post based on the information provided.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Keywords
+                    hasError={false}
+                    label="Keywords / Hashtags (Comma Separated)"
+                  />,
+                  <Tweet
+                    hasError={false}
+                    label="Tweet (280 characters max including hashtags)"
+                  />,
+                  <Facebook
+                    hasError={false}
+                    label="Facebook / Other social media (2,000 characters max)"
+                  />,
+                  <Notes
+                    hasError={false}
+                    label="Notes"
+                  />,
+                  "",
+                  <Button
+                    className=".back-button"
+                    color="basic"
+                    size="sm"
+                    tag="button"
+                  >
+                    Go Back
+                  </Button>,
+                  <Button
+                    color="primary"
+                    size="sm"
+                    tag="button"
+                    type="submit"
+                    value="Submit"
+                  >
+                    Submit
+                  </Button>,
+                ],
+                "onSubmit": undefined,
+                "tag": "form",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "errorMessage": undefined,
+                    "hasError": false,
+                    "keywords": undefined,
+                    "label": "Keywords / Hashtags (Comma Separated)",
+                    "onKeywordsChange": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "errorMessage": undefined,
+                    "hasError": false,
+                    "label": "Tweet (280 characters max including hashtags)",
+                    "onTweetChange": undefined,
+                    "tweet": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "errorMessage": undefined,
+                    "facebook": undefined,
+                    "hasError": false,
+                    "label": "Facebook / Other social media (2,000 characters max)",
+                    "onFacebookChange": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "errorMessage": undefined,
+                    "hasError": false,
+                    "label": "Notes",
+                    "notes": undefined,
+                    "onNotesChange": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Go Back",
+                    "className": ".back-button",
+                    "color": "basic",
+                    "onClick": undefined,
+                    "size": "sm",
+                    "tag": "button",
+                  },
+                  "ref": null,
+                  "rendered": "Go Back",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Submit",
+                    "color": "primary",
+                    "size": "sm",
+                    "tag": "button",
+                    "type": "submit",
+                    "value": "Submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;

@@ -1,50 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ReleaseSubmitter correctly 1`] = `
-<ReleaseComponent
-  amazonUrl=""
-  calendarFocus={null}
-  currentPage="ReleasePage1"
-  email=""
-  endDate={null}
-  error={
-    Object {
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReleaseSubmitter />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
       "amazonUrl": "",
+      "calendarFocus": null,
+      "currentPage": "ReleasePage1",
       "email": "",
-      "genre": "",
+      "endDate": null,
+      "error": Object {
+        "amazonUrl": "",
+        "email": "",
+        "genre": "",
+        "keywords": "",
+        "message": "",
+        "nonFictionOrFiction": "",
+        "price": "",
+        "promoType": "",
+        "releaseText": "",
+        "website": "",
+      },
+      "genre": "Please select",
       "keywords": "",
-      "message": "",
-      "nonFictionOrFiction": "",
+      "nonFictionOrFiction": "Non-fiction",
+      "onAmazonUrlChange": [Function],
+      "onBack": [Function],
+      "onDatesChange": [Function],
+      "onEmailChange": [Function],
+      "onFocusChange": [Function],
+      "onGenreChange": [Function],
+      "onKeywordsChange": [Function],
+      "onNonFictionOrFictionChange": [Function],
+      "onPriceChange": [Function],
+      "onPromoTypeChange": [Function],
+      "onReleaseTextChange": [Function],
+      "onSubGenreChange": [Function],
+      "onSubmitReleasePage1": [Function],
+      "onSubmitReleasePage2": [Function],
+      "onSubmitReleasePage3": [Function],
+      "onWebsiteChange": [Function],
       "price": "",
-      "promoType": "",
+      "promoType": "Free (Limited Time)",
       "releaseText": "",
+      "startDate": null,
+      "subGenre": "",
       "website": "",
-    }
-  }
-  genre="Please select"
-  keywords=""
-  nonFictionOrFiction="Non-fiction"
-  onAmazonUrlChange={[Function]}
-  onBack={[Function]}
-  onDatesChange={[Function]}
-  onEmailChange={[Function]}
-  onFocusChange={[Function]}
-  onGenreChange={[Function]}
-  onKeywordsChange={[Function]}
-  onNonFictionOrFictionChange={[Function]}
-  onPriceChange={[Function]}
-  onPromoTypeChange={[Function]}
-  onReleaseTextChange={[Function]}
-  onSubGenreChange={[Function]}
-  onSubmitReleasePage1={[Function]}
-  onSubmitReleasePage2={[Function]}
-  onSubmitReleasePage3={[Function]}
-  onWebsiteChange={[Function]}
-  price=""
-  promoType="Free (Limited Time)"
-  releaseText=""
-  startDate={null}
-  subGenre=""
-  website=""
-/>
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "amazonUrl": "",
+        "calendarFocus": null,
+        "currentPage": "ReleasePage1",
+        "email": "",
+        "endDate": null,
+        "error": Object {
+          "amazonUrl": "",
+          "email": "",
+          "genre": "",
+          "keywords": "",
+          "message": "",
+          "nonFictionOrFiction": "",
+          "price": "",
+          "promoType": "",
+          "releaseText": "",
+          "website": "",
+        },
+        "genre": "Please select",
+        "keywords": "",
+        "nonFictionOrFiction": "Non-fiction",
+        "onAmazonUrlChange": [Function],
+        "onBack": [Function],
+        "onDatesChange": [Function],
+        "onEmailChange": [Function],
+        "onFocusChange": [Function],
+        "onGenreChange": [Function],
+        "onKeywordsChange": [Function],
+        "onNonFictionOrFictionChange": [Function],
+        "onPriceChange": [Function],
+        "onPromoTypeChange": [Function],
+        "onReleaseTextChange": [Function],
+        "onSubGenreChange": [Function],
+        "onSubmitReleasePage1": [Function],
+        "onSubmitReleasePage2": [Function],
+        "onSubmitReleasePage3": [Function],
+        "onWebsiteChange": [Function],
+        "price": "",
+        "promoType": "Free (Limited Time)",
+        "releaseText": "",
+        "startDate": null,
+        "subGenre": "",
+        "website": "",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
 `;
