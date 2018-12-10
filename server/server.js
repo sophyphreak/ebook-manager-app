@@ -5,16 +5,9 @@ const nodemailer = require('nodemailer');
 const htmlToText = require('html-to-text');
 
 const app = express();
-const publicPath = path.join(__dirname, '..', 'build');
 const port = process.env.PORT || 5000;
 
-app.use(express.static(publicPath));
-
 app.use(bodyParser.json());
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
-});
 
 app.post('/api/submitter', async (req, res) => {
   try {
