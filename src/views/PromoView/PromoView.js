@@ -6,7 +6,7 @@ import PromoPage2 from './PromoPages/PromoPage2';
 import PromoPage3 from './PromoPages/PromoPage3';
 import PromoSuccess from './PromoPages/PromoSuccess';
 
-const PromoComponent = ({
+const PromoView = ({
   // Variables
   currentPage,
   error,
@@ -104,4 +104,4 @@ const PromoComponent = ({
   </Row>
 );
 
-export default PromoComponent;
+export default PromoView;

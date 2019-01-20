@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import AlertsComponent from '../../views/AlertsComponent/AlertsComponent';
+import AlertsView from '../../views/AlertsView/AlertsView';
 import flipClickedAlertMeOption from './onChangeHelpers/flipClickedAlertMeOption';
 import alertsPageValidation from './alertValidation/alertsPageValidation';
 import sendAlertToNodemailer from './sendAlertToNodemailer/sendAlertToNodemailer';
@@ -118,7 +118,7 @@ export default class AlertsSubmitter extends Component {
       email2
     } = this.state;
     return (
-      <AlertsComponent
+      <AlertsView
         currentPage={currentPage}
         error={error}
         amazonUrl={amazonUrl}

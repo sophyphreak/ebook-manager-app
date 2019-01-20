@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReleaseSuccess from '../../../../views/ReleaseComponent/ReleasePages/ReleaseSuccess';
+import ReleaseSuccess from '../../../../views/ReleaseView/ReleasePages/ReleaseSuccess';
 
 let wrapper;
 

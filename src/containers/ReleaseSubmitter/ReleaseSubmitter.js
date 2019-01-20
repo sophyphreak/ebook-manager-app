@@ -8,7 +8,7 @@ import releasePage1Validation from './releasePage1Validation/releasePage1Validat
 import releasePage2Validation from './releasePage2Validation/releasePage2Validation';
 import releasePage3Validation from './releasePage3Validation/releasePage3Validation';
 import sendReleaseToNodemailer from './sendReleaseToNodemailer/sendReleaseToNodemailer';
-import ReleaseComponent from '../../views/ReleaseComponent/ReleaseComponent';
+import ReleaseView from '../../views/ReleaseView/ReleaseView';
 
 export default class ReleaseSubmitter extends Component {
   constructor(props) {
@@ -207,7 +207,7 @@ export default class ReleaseSubmitter extends Component {
       releaseText
     } = this.state;
     return (
-      <ReleaseComponent
+      <ReleaseView
         // State
         currentPage={currentPage}
         error={error}

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReleaseComponent from '../../../views/ReleaseComponent/ReleaseComponent';
+import ReleaseView from '../../../views/ReleaseView/ReleaseView';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<ReleaseComponent />);
+  wrapper = shallow(<ReleaseView />);
 });
 
-test('should render ReleaseComponent correctly', () => {
+test('should render ReleaseView correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });

@@ -12,7 +12,7 @@ import {
 import BasicInput from '../FormElements/MainElements/BasicInput';
 import KindleOrPrint from '../FormElements/KindleOrPrint';
 
-const SalesComponent = ({
+const SalesView = ({
   bsr,
   kindleOrPrint,
   sales,
@@ -49,4 +49,4 @@ const SalesComponent = ({
   </Row>
 );
 
-export default SalesComponent;
+export default SalesView;

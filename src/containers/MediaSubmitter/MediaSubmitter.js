@@ -7,7 +7,7 @@ import mediaPage1Validation from './mediaPage1Validation/mediaPage1Validation';
 import mediaPage2Validation from './mediaPage2Validation/mediaPage2Validation';
 import mediaPage3Validation from './mediaPage3Validation/mediaPage3Validation';
 import sendMediaToNodemailer from './sendMediaToNodemailer/sendMediaToNodemailer';
-import MediaComponent from '../../views/MediaComponent/MediaComponent';
+import MediaView from '../../views/MediaView/MediaView';
 
 export default class MediaSubmitter extends Component {
   constructor(props) {
@@ -219,7 +219,7 @@ export default class MediaSubmitter extends Component {
       notes
     } = this.state;
     return (
-      <MediaComponent
+      <MediaView
         // State
         currentPage={currentPage}
         error={error}

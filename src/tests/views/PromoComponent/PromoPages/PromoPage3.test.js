@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import PromoPage3 from '../../../../views/PromoComponent/PromoPages/PromoPage3';
+import PromoPage3 from '../../../../views/PromoView/PromoPages/PromoPage3';
 
 let error, wrapper;
 

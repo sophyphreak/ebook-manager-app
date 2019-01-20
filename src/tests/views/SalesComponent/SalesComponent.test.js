@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SalesComponent from '../../../views/SalesComponent/SalesComponent';
+import SalesView from '../../../views/SalesView/SalesView';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<SalesComponent />);
+  wrapper = shallow(<SalesView />);
 });
 
-test('should render SalesComponent correctly', () => {
+test('should render SalesView correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });

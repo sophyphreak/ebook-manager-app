@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SalesComponent from '../../views/SalesComponent/SalesComponent';
+import SalesView from '../../views/SalesView/SalesView';
 
 export default class SalesEstimator extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ export default class SalesEstimator extends Component {
     const { bsr, kindleOrPrint, sales } = this.state;
 
     return (
-      <SalesComponent
+      <SalesView
         bsr={bsr}
         kindleOrPrint={kindleOrPrint}
         sales={sales}

@@ -8,7 +8,7 @@ import promoPage3Validation from './promoPage3Validation/promoPage3Validation';
 import nonFictionOrFictionOptions from '../../views/FormElements/options/nonFictionOrFictionOptions';
 import promoTypeOptions from '../../views/FormElements/options/promoTypeOptions';
 import sendPromoToNodemailer from './sendPromoToNodemailer/sendPromoToNodemailer';
-import PromoComponent from '../../views/PromoComponent/PromoComponent';
+import PromoView from '../../views/PromoView/PromoView';
 
 export default class PromoSubmitter extends Component {
   constructor(props) {
@@ -188,7 +188,7 @@ export default class PromoSubmitter extends Component {
       calendarFocus
     } = this.state;
     return (
-      <PromoComponent
+      <PromoView
         // State
         currentPage={currentPage}
         error={error}

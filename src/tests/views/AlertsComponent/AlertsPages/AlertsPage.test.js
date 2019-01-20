@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AlertsPage from '../../../../views/AlertsComponent/AlertsPage/AlertsPage';
+import AlertsPage from '../../../../views/AlertsView/AlertsPage/AlertsPage';
 
 let error, wrapper;
 

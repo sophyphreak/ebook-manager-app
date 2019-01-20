@@ -4,7 +4,7 @@ import { Col, Row } from 'reactstrap';
 import AlertsPage from './AlertsPage/AlertsPage';
 import AlertsSuccess from './AlertsPage/AlertsSuccess';
 
-const AlertsComponent = ({ currentPage, ...props }) => (
+const AlertsView = ({ currentPage, ...props }) => (
   <Row>
     <Col xs="12" sm={{ size: 8, offset: 2 }}>
       {currentPage === 'AlertsPage' && <AlertsPage {...props} />}
@@ -13,4 +13,4 @@ const AlertsComponent = ({ currentPage, ...props }) => (
   </Row>
 );
 
-export default AlertsComponent;
+export default AlertsView;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AlertsComponent from '../../../views/AlertsComponent/AlertsComponent';
+import AlertsView from '../../../views/AlertsView/AlertsView';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<AlertsComponent />);
+  wrapper = shallow(<AlertsView />);
 });
 
-test('should render AlertsComponent correctly', () => {
+test('should render AlertsView correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });

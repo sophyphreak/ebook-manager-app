@@ -6,7 +6,7 @@ import ReleasePage2 from './ReleasePages/ReleasePage2';
 import ReleasePage3 from './ReleasePages/ReleasePage3';
 import ReleaseSuccess from './ReleasePages/ReleaseSuccess';
 
-const ReleaseComponent = ({
+const ReleaseView = ({
   // Variables
   currentPage,
   error,
@@ -108,4 +108,4 @@ const ReleaseComponent = ({
   </Row>
 );
 
-export default ReleaseComponent;
+export default ReleaseView;

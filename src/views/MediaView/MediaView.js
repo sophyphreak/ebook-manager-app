@@ -6,7 +6,7 @@ import MediaPage2 from './MediaPages/MediaPage2';
 import MediaPage3 from './MediaPages/MediaPage3';
 import MediaSuccess from './MediaPages/MediaSuccess';
 
-const MediaComponent = ({
+const MediaView = ({
   // Variables
   currentPage,
   error,
@@ -112,4 +112,4 @@ const MediaComponent = ({
   </Row>
 );
 
-export default MediaComponent;
+export default MediaView;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MediaComponent from '../../../views/MediaComponent/MediaComponent';
+import MediaView from '../../../views/MediaView/MediaView';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<MediaComponent />);
+  wrapper = shallow(<MediaView />);
 });
 
-test('should render MediaComponent correctly', () => {
+test('should render MediaView correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import PromoComponent from '../../../views/PromoComponent/PromoComponent';
+import PromoView from '../../../views/PromoView/PromoView';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<PromoComponent />);
+  wrapper = shallow(<PromoView />);
 });
 
-test('should render PromoComponent correctly', () => {
+test('should render PromoView correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });

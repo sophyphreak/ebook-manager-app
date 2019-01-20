@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MediaPage1 from '../../../../views/MediaComponent/MediaPages/MediaPage1';
+import MediaPage1 from '../../../../views/MediaView/MediaPages/MediaPage1';
 
 let error, wrapper;
 

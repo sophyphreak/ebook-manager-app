@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReleasePage3 from '../../../../views/ReleaseComponent/ReleasePages/ReleasePage3';
+import ReleasePage3 from '../../../../views/ReleaseView/ReleasePages/ReleasePage3';
 
 let error, wrapper;
 
