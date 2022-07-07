@@ -45,7 +45,7 @@
     "html-loader": "0.5.5",
     "html-to-text": "^4.0.0",
     "js-beautify": "^1.7.5",
-    "moment": "^2.22.0",
+    "moment": "^2.29.4",
     "node-sass": "^4.10.0",
     "nodemailer": "^4.6.4",
     "prop-types": "^15.6.2",
